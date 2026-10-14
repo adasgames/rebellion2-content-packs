@@ -1,0 +1,215 @@
+name: Publish content pack
+
+on:
+  workflow_dispatch:
+    inputs:
+      pack_id:
+        description: Stable lowercase content-pack ID
+        required: true
+        type: string
+      publish:
+        description: Upload the release and update catalogue.json
+        required: true
+        default: false
+        type: boolean
+      allow_rollback:
+        description: Allow this pack to move to an older version
+        required: true
+        default: false
+        type: boolean
+
+concurrency:
+  group: content-pack-release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Package content pack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          lfs: false
+
+      - name: Read and validate pack metadata
+        id: pack
+        env:
+          PACK_ID: ${{ inputs.pack_id }}
+        run: |
+          set -euo pipefail
+          [[ "$PACK_ID" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]
+          metadata="packs/${PACK_ID}.json"
+          test -f "$metadata"
+          directory="$(jq -r '.directory' "$metadata")"
+          name="$(jq -r '.name' "$metadata")"
+          description="$(jq -r '.description' "$metadata")"
+          base_pack_id="$(jq -r '.basePackId // ""' "$metadata")"
+          [[ "$directory" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]]
+          pack_xml="Content/Packs/${directory}/pack.xml"
+          test -f "$pack_xml"
+          version="$(sed -n 's:.*<Version>\([^<]*\)</Version>.*:\1:p' "$pack_xml")"
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+([+-][0-9A-Za-z.-]+)?$ ]]
+          {
+            echo "directory=$directory"
+            echo "name=$name"
+            echo "description=$description"
+            echo "base_pack_id=$base_pack_id"
+            echo "version=$version"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Fetch content-pack LFS objects from R2
+        env:
+          LFS_PROXY_URL: ${{ vars.LFS_PROXY_URL }}
+          PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
+          R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          set -euo pipefail
+          git lfs install
+          proxy="${LFS_PROXY_URL%/}"
+          proxy_host="${proxy#https://}"
+          storage_host="${R2_ENDPOINT#https://}"
+          git config lfs.url "https://${R2_ACCESS_KEY_ID}:${R2_SECRET_ACCESS_KEY}@${proxy_host}/${storage_host}/${R2_BUCKET}"
+          git config lfs.concurrenttransfers 4
+          git lfs pull --include="Content/Packs/${PACK_DIRECTORY}/**" --exclude=""
+          pack="Content/Packs/${PACK_DIRECTORY}"
+          if grep -RIl '^version https://git-lfs.github.com/spec/v1$' "$pack"; then
+            echo "Content-pack checkout still contains Git LFS pointers." >&2
+            exit 1
+          fi
+
+      - name: Verify pack identity
+        env:
+          BASE_PACK_ID: ${{ steps.pack.outputs.base_pack_id }}
+          DISPLAY_NAME: ${{ steps.pack.outputs.name }}
+          PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
+          PACK_ID: ${{ inputs.pack_id }}
+          VERSION: ${{ steps.pack.outputs.version }}
+        run: |
+          python - <<'PY'
+          import os
+          import xml.etree.ElementTree as ET
+          root = ET.parse(f"Content/Packs/{os.environ['PACK_DIRECTORY']}/pack.xml").getroot()
+          values = {child.tag: (child.text or '').strip() for child in root}
+          assert values.get('ID') == os.environ['PACK_ID']
+          assert values.get('Version') == os.environ['VERSION']
+          assert values.get('DisplayName') == os.environ['DISPLAY_NAME']
+          assert values.get('BasePackID', '') == os.environ['BASE_PACK_ID']
+          PY
+
+      - name: Package immutable content pack
+        env:
+          BASE_PACK_ID: ${{ steps.pack.outputs.base_pack_id }}
+          DESCRIPTION: ${{ steps.pack.outputs.description }}
+          DISPLAY_NAME: ${{ steps.pack.outputs.name }}
+          PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
+          PACK_ID: ${{ inputs.pack_id }}
+          VERSION: ${{ steps.pack.outputs.version }}
+        run: |
+          set -euo pipefail
+          node scripts/package-update-layer.mjs \
+            "Content/Packs/${PACK_DIRECTORY}" \
+            "$VERSION" \
+            "package/manifest.json" \
+            "package/blobs"
+          jq -n \
+            --arg id "$PACK_ID" \
+            --arg name "$DISPLAY_NAME" \
+            --arg description "$DESCRIPTION" \
+            --arg version "$VERSION" \
+            --arg directory "$PACK_DIRECTORY" \
+            --arg manifest "dist/content-packs/${PACK_ID}/manifest-${VERSION}.json" \
+            --arg blobs "content-pack-blobs/" \
+            --arg basePackId "$BASE_PACK_ID" \
+            '{id:$id,name:$name,description:$description,version:$version,directory:$directory,manifest:$manifest,blobs:$blobs,basePackId:$basePackId}' \
+            > package/release.json
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: content-pack
+          path: package
+          if-no-files-found: error
+
+  publish:
+    name: Publish content pack
+    if: inputs.publish
+    needs: package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: content-pack
+          path: package
+
+      - name: Publish immutable files before catalogue.json
+        env:
+          ALLOW_ROLLBACK: ${{ inputs.allow_rollback }}
+          CHANNEL_BASE: ${{ vars.CONTENT_PACK_BASE_URL }}
+          PACK_ID: ${{ inputs.pack_id }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
+          R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq rclone
+          export RCLONE_CONFIG_R2_TYPE=s3
+          export RCLONE_CONFIG_R2_PROVIDER=Cloudflare
+          export RCLONE_CONFIG_R2_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID"
+          export RCLONE_CONFIG_R2_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY"
+          export RCLONE_CONFIG_R2_ENDPOINT="$R2_ENDPOINT"
+          export RCLONE_CONFIG_R2_REGION=auto
+          remote="r2:${R2_BUCKET}"
+          current_catalogue=package/current-catalogue.json
+          previous_catalogue=false
+          if rclone lsf "${remote}/dist" --files-only --include catalogue.json | grep -Fxq catalogue.json; then
+            rclone copyto "${remote}/dist/catalogue.json" "$current_catalogue"
+            previous_catalogue=true
+          else
+            printf '%s\n' '{"schemaVersion":1,"packs":[]}' > "$current_catalogue"
+          fi
+          version="$(jq -r '.version' package/release.json)"
+          current_version="$(jq -r --arg id "$PACK_ID" '.packs[] | select(.id==$id) | .version' "$current_catalogue")"
+          if [[ -n "$current_version" && "$ALLOW_ROLLBACK" != true && "$(node scripts/semver.mjs "$version" "$current_version")" == -1 ]]; then
+            echo "Refusing to move $PACK_ID backward from $current_version to $version." >&2
+            exit 1
+          fi
+          node scripts/update-content-pack-catalog.mjs \
+            "$current_catalogue" \
+            package/release.json \
+            package/manifest.json \
+            package/catalogue.json
+          rclone copy package/blobs "${remote}/content-pack-blobs" --ignore-existing
+          rclone copyto \
+            package/manifest.json \
+            "${remote}/dist/content-packs/${PACK_ID}/manifest-${version}.json"
+          restore_catalogue() {
+            if [[ "$previous_catalogue" == true ]]; then
+              rclone copyto "$current_catalogue" "${remote}/dist/catalogue.json"
+            else
+              rclone deletefile "${remote}/dist/catalogue.json" || true
+            fi
+          }
+          on_exit() {
+            status=$?
+            trap - EXIT
+            if [[ "$status" -ne 0 ]]; then restore_catalogue; fi
+            exit "$status"
+          }
+          trap on_exit EXIT
+          rclone copyto package/catalogue.json "${remote}/dist/catalogue.json"
+          base="${CHANNEL_BASE%/}"
+          for _ in 1 2 3 4 5 6; do
+            published="$(curl --fail --location --silent --show-error "$base/dist/catalogue.json" | jq -r --arg id "$PACK_ID" '.packs[] | select(.id==$id) | .version' || true)"
+            [[ "$published" == "$version" ]] && break
+            sleep 5
+          done
+          [[ "$published" == "$version" ]]
+          trap - EXIT

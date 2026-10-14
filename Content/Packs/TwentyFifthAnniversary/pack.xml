@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPack>
+  <ID>twenty-fifth-anniversary</ID>
+  <BasePackID>classic-galactic-civil-war</BasePackID>
+  <Version>1.0.0</Version>
+  <DisplayName>25th Anniversary (by Metasharp)</DisplayName>
+  <DefaultScenarioID>standard</DefaultScenarioID>
+  <MainMenuMusicPath>Pack/Shared/Strategy/Audio/Music/battle-of-endor-1-medley</MainMenuMusicPath>
+  <PlanetSectorsPath>Shared/Data/planet-sectors.xml</PlanetSectorsPath>
+  <BuildingsPath>Data/buildings.xml</BuildingsPath>
+  <GameEventsPath>Shared/Data/game-events.xml</GameEventsPath>
+  <MessageDefinitionsPath>Shared/Data/message-definitions.xml</MessageDefinitionsPath>
+  <EncyclopediaEntriesPath>Shared/Data/encyclopedia-entries.xml</EncyclopediaEntriesPath>
+  <NeutralThemePath>Shared/Strategy/UI/Neutral/theme.xml</NeutralThemePath>
+  <FactionPaths>
+    <Path>Factions/Alliance/faction.xml</Path>
+    <Path>Factions/Empire/faction.xml</Path>
+  </FactionPaths>
+  <ScenarioPaths>
+    <Path>Scenarios/Standard/scenario.xml</Path>
+  </ScenarioPaths>
+  <Preloads>
+    <Preload>
+      <ID>main-menu</ID>
+      <Path>Preload/main-menu.xml</Path>
+    </Preload>
+    <Preload>
+      <ID>strategy</ID>
+      <Path>Preload/strategy.xml</Path>
+    </Preload>
+  </Preloads>
+</ContentPack>

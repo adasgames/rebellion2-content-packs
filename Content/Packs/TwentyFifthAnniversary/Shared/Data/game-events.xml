@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GameEvents>
+  <GameEvent>
+    <InstanceID>LUKE_VISITS_YODA</InstanceID>
+    <Schedule>
+      <RandomDelay MinimumTicks="200" MaximumTicks="300"/>
+    </Schedule>
+    <Conditionals>
+      <IsActive NodeInstanceID="LUKE_SKYWALKER"/>
+      <Not>
+        <Any>
+          <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+          <IsKilled OfficerInstanceID="LUKE_SKYWALKER"/>
+          <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
+          <IsOnMission UnitInstanceID="LUKE_SKYWALKER"/>
+        </Any>
+      </Not>
+    </Conditionals>
+    <Actions>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+        <Subject>Luke Goes to Dagobah</Subject>
+        <Body>Luke has been sent to Dagobah to be trained by Yoda.</Body>
+        <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-goes-to-dagobah"/>
+        <BackgroundAudio Path="Pack/Shared/Events/LukeGoesToDagobah/Audio/dialogue"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SetNodeState InstanceID="LUKE_SKYWALKER" State="Inactive"/>
+      <SetDisplayStatus TargetInstanceID="LUKE_SKYWALKER" Status="On Mission (Dagobah)"/>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>EMPEROR_RETURNS_TO_CORUSCANT</InstanceID>
+    <Triggers>
+      <UnitArrived UnitInstanceID="EMPEROR_PALPATINE" DestinationInstanceID="CORUSCANT"/>
+    </Triggers>
+    <Actions>
+      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="EMPEROR_PALPATINE" LocationInstanceID="CORUSCANT" Type="Mission">
+        <Subject>Emperor Arrives at Coruscant</Subject>
+        <Body>I have returned to the Seat of Power at Coruscant.</Body>
+        <BackgroundImage Path="Pack/Factions/Empire/Strategy/Messages/Images/emperor-arrives-at-coruscant"/>
+        <OfficerVoice Path="Pack/Factions/Empire/Units/Officers/OFEM001/Voice/seat-of-power-01"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>LUKE_LEAVES_DAGOBAH</InstanceID>
+    <Schedule>
+      <After EventInstanceID="LUKE_VISITS_YODA" DelayTicks="100"/>
+    </Schedule>
+    <Conditionals>
+      <HasEventActivated EventInstanceID="LUKE_VISITS_YODA"/>
+    </Conditionals>
+    <Actions>
+      <IncreaseForceRank OfficerInstanceID="LUKE_SKYWALKER">
+        <PercentOfEffective>60</PercentOfEffective>
+      </IncreaseForceRank>
+      <SetNodeState InstanceID="LUKE_SKYWALKER" State="Active"/>
+      <ClearDisplayStatus TargetInstanceID="LUKE_SKYWALKER"/>
+      <SetOfficerImages OfficerInstanceID="LUKE_SKYWALKER">
+        <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL003/jedi-display</DisplayImagePath>
+        <SmallDisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL003/jedi-small-display</SmallDisplayImagePath>
+        <MessageImagePath>Pack/Factions/Alliance/Units/Officers/OFAL003/jedi-message</MessageImagePath>
+        <EncyclopediaImagePath>Pack/Factions/Alliance/Units/Officers/OFAL003/jedi-encyclopedia</EncyclopediaImagePath>
+      </SetOfficerImages>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission" ShowSubjectImage="true">
+        <Subject>Luke Leaves Dagobah</Subject>
+        <Body>I have finished my training with Yoda.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+        <OfficerVoice Path="Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/dagobah-completed-01"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SetOfficerVoiceSet OfficerInstanceID="LUKE_SKYWALKER">
+        <PersonnelArrived>
+          <Path>Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/advanced-personnel-arrived-01</Path>
+          <Path>Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/advanced-personnel-arrived-02</Path>
+        </PersonnelArrived>
+        <MissionAbort>
+          <Path>Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/advanced-mission-abort-01</Path>
+        </MissionAbort>
+        <Released>
+          <Path>Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/advanced-released-01</Path>
+        </Released>
+        <Recovered>
+          <Path>Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/advanced-recovered-01</Path>
+        </Recovered>
+        <EnemyDetected>
+          <Path>Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/advanced-enemy-detected-01</Path>
+        </EnemyDetected>
+        <ForceGrowth>
+          <Path>Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/advanced-force-growth-01</Path>
+        </ForceGrowth>
+        <TraitorDiscovered>
+          <Path>Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/advanced-traitor-discovered-01</Path>
+        </TraitorDiscovered>
+        <RescueAttempt>
+          <Path>Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/advanced-rescue-attempt-01</Path>
+        </RescueAttempt>
+      </SetOfficerVoiceSet>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>HAN_BOUNTY_HUNTERS</InstanceID>
+    <Schedule>
+      <RandomInterval MinimumTicks="1" MaximumTicks="100">
+        <Until>
+          <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
+        </Until>
+      </RandomInterval>
+    </Schedule>
+    <Conditionals>
+      <TickCount Comparison="GreaterThanOrEqual" Ticks="200"/>
+      <IsActive NodeInstanceID="HAN_SOLO"/>
+      <Not>
+        <Any>
+          <IsCaptured OfficerInstanceID="HAN_SOLO"/>
+          <IsKilled OfficerInstanceID="HAN_SOLO"/>
+          <IsOnMission UnitInstanceID="HAN_SOLO"/>
+          <IsInTransit UnitInstanceID="HAN_SOLO"/>
+        </Any>
+      </Not>
+    </Conditionals>
+    <Actions>
+      <RollOutcome>
+        <Outcomes>
+          <Outcome Weight="40">
+            <Actions>
+              <SetEventVariable>
+                <Key>jabba.bounty.capture.completed</Key>
+                <Operation>Set</Operation>
+                <Operand>1</Operand>
+              </SetEventVariable>
+              <SetCaptureStatus OfficerInstanceID="HAN_SOLO" IsCaptured="true" CaptorFactionInstanceID="FNEMP1" CanEscape="false"/>
+              <SetNodeState InstanceID="HAN_SOLO" State="Inactive"/>
+              <SetDisplayStatus TargetInstanceID="HAN_SOLO" Status="Jabba's Palace"/>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="HAN_SOLO" Type="Mission">
+                <Subject>Han Solo Captured</Subject>
+                <Body>Han Solo was captured by bounty hunters and taken to Jabba's Palace.</Body>
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/han-captured-by-bounty-hunters"/>
+                <BackgroundAudio Path="Pack/Shared/Events/HanCapturedByBountyHunters/Audio/dialogue"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </Actions>
+          </Outcome>
+          <Outcome Weight="60">
+            <Actions>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="HAN_SOLO" Type="Mission">
+                <Subject>Han Solo Attacked by Bounty Hunters</Subject>
+                <Body>Han Solo was attacked by bounty hunters, who failed to capture him.</Body>
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/han-evades-bounty-hunters"/>
+                <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+                <OfficerVoice Path="Pack/Factions/Alliance/Units/Officers/OFAL004/Voice/bounty-attack-01"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+              <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="HAN_SOLO" Type="Mission">
+                <Subject>Bounty Hunters Locate Solo</Subject>
+                <Body>Bounty hunters have reported that Han Solo is located on {location}.</Body>
+                <BackgroundImage Path="Pack/Factions/Empire/Strategy/Messages/Images/bounty-hunters-locate-han"/>
+                <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </Actions>
+          </Outcome>
+        </Outcomes>
+      </RollOutcome>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_RESCUES_HAN_FROM_JABBA</InstanceID>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Conditionals>
+      <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
+      <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
+      <IsActive NodeInstanceID="LUKE_SKYWALKER"/>
+      <Not>
+        <Any>
+          <HasEventActivated EventInstanceID="JABBA_DELIVERS_PRISONERS"/>
+          <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+          <IsKilled OfficerInstanceID="LUKE_SKYWALKER"/>
+          <IsOnMission UnitInstanceID="LUKE_SKYWALKER"/>
+          <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
+        </Any>
+      </Not>
+      <IsCaptured OfficerInstanceID="HAN_SOLO"/>
+    </Conditionals>
+    <Actions>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission" ShowSubjectImage="true">
+        <Subject>Luke Skywalker Rescue Attempt</Subject>
+        <Body>Han Solo has been captured by bounty hunters and taken to Jabba's palace.  I will be departing immediately to attempt a rescue.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+        <OfficerVoice Path="Pack/Factions/Alliance/Units/Officers/OFAL003/Voice/rescue-attempt-01"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SetNodeState InstanceID="LUKE_SKYWALKER" State="Inactive"/>
+      <SetDisplayStatus TargetInstanceID="LUKE_SKYWALKER" Status="On Mission"/>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>LUKE_RESCUE_OF_HAN_RESOLVES</InstanceID>
+    <Schedule>
+      <After EventInstanceID="LUKE_RESCUES_HAN_FROM_JABBA" DelayTicks="10"/>
+    </Schedule>
+    <Actions>
+      <If>
+        <Conditionals>
+          <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
+        </Conditionals>
+        <Actions>
+          <PerformSkillCheck OfficerInstanceID="LUKE_SKYWALKER" Rating="Combat" ProbabilityTable="Rescue">
+            <OnSuccess>
+              <SetEventVariable>
+                <Key>jabba.rescue.completed</Key>
+                <Operation>Set</Operation>
+                <Operand>1</Operand>
+              </SetEventVariable>
+              <SetCaptureStatus OfficerInstanceID="HAN_SOLO" IsCaptured="false"/>
+              <SetNodeState InstanceID="HAN_SOLO" State="Active"/>
+              <ClearDisplayStatus TargetInstanceID="HAN_SOLO"/>
+              <SetNodeState InstanceID="LUKE_SKYWALKER" State="Active"/>
+              <ClearDisplayStatus TargetInstanceID="LUKE_SKYWALKER"/>
+              <SendUnits UnitInstanceID="HAN_SOLO">
+                <Destination>
+                  <SelectFirst>
+                    <From>
+                      <SelectNearestParent Type="CapitalShip">
+                        <From>
+                          <SelectOfficers InstanceID="LUKE_SKYWALKER"/>
+                        </From>
+                      </SelectNearestParent>
+                      <SelectNearestParent Type="Fleet">
+                        <From>
+                          <SelectOfficers InstanceID="LUKE_SKYWALKER"/>
+                        </From>
+                      </SelectNearestParent>
+                      <SelectNearestParent Type="Planet">
+                        <From>
+                          <SelectOfficers InstanceID="LUKE_SKYWALKER"/>
+                        </From>
+                      </SelectNearestParent>
+                      <SelectPlanets OwnerFactionInstanceID="FNALL1"/>
+                    </From>
+                  </SelectFirst>
+                </Destination>
+              </SendUnits>
+              <ChangeOfficerRating OfficerInstanceID="LUKE_SKYWALKER" Rating="Combat">
+                <Amount>1</Amount>
+              </ChangeOfficerRating>
+              <ChangeOfficerRating OfficerInstanceID="LUKE_SKYWALKER" Rating="Espionage">
+                <Amount>1</Amount>
+              </ChangeOfficerRating>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission" ShowSubjectImage="true">
+                <Subject>{subject} Mission Report</Subject>
+                <Body>My mission to rescue Han Solo from Jabba's Palace was a success.</Body>
+                <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+                <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+                <OfficerVoice Preset="MissionSuccess"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </OnSuccess>
+            <OnFailure>
+              <SetCaptureStatus OfficerInstanceID="LUKE_SKYWALKER" IsCaptured="true" CaptorFactionInstanceID="FNEMP1" CanEscape="false"/>
+              <ClearDisplayStatus TargetInstanceID="LUKE_SKYWALKER"/>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+                <Subject>Jabba Captures {subject}</Subject>
+                <Body>{subject} was captured by Jabba while attempting to rescue Han Solo.</Body>
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/jabba-captures-prisoner"/>
+                <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+                <AdvisorNotification Preset="SubjectCaptured"/>
+              </SendMessage>
+            </OnFailure>
+          </PerformSkillCheck>
+        </Actions>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LEIA_RESCUES_HAN_FROM_JABBA</InstanceID>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Conditionals>
+      <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
+      <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
+      <IsActive NodeInstanceID="LEIA_ORGANA"/>
+      <Not>
+        <Any>
+          <HasEventActivated EventInstanceID="JABBA_DELIVERS_PRISONERS"/>
+          <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+          <IsKilled OfficerInstanceID="LEIA_ORGANA"/>
+          <IsOnMission UnitInstanceID="LEIA_ORGANA"/>
+          <IsInTransit UnitInstanceID="LEIA_ORGANA"/>
+        </Any>
+      </Not>
+      <IsCaptured OfficerInstanceID="HAN_SOLO"/>
+    </Conditionals>
+    <Actions>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" Type="Mission">
+        <Subject>Leia Organa Rescue Attempt</Subject>
+        <Body>Han Solo has been captured by bounty hunters and taken to Jabba's palace.  I will be departing immediately to attempt a rescue.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <OverlayImage Path="Pack/Factions/Alliance/Units/Officers/OFAL002/message"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+        <OfficerVoice Path="Pack/Factions/Alliance/Units/Officers/OFAL002/Voice/rescue-attempt-01"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SetNodeState InstanceID="LEIA_ORGANA" State="Inactive"/>
+      <SetDisplayStatus TargetInstanceID="LEIA_ORGANA" Status="On Mission"/>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>LEIA_RESCUE_OF_HAN_RESOLVES</InstanceID>
+    <Schedule>
+      <After EventInstanceID="LEIA_RESCUES_HAN_FROM_JABBA" DelayTicks="10"/>
+    </Schedule>
+    <Actions>
+      <If>
+        <Conditionals>
+          <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
+        </Conditionals>
+        <Actions>
+          <PerformSkillCheck OfficerInstanceID="LEIA_ORGANA" Rating="Combat" ProbabilityTable="Rescue">
+            <OnSuccess>
+              <SetEventVariable>
+                <Key>jabba.rescue.completed</Key>
+                <Operation>Set</Operation>
+                <Operand>1</Operand>
+              </SetEventVariable>
+              <SetCaptureStatus OfficerInstanceID="HAN_SOLO" IsCaptured="false"/>
+              <SetNodeState InstanceID="HAN_SOLO" State="Active"/>
+              <ClearDisplayStatus TargetInstanceID="HAN_SOLO"/>
+              <SetNodeState InstanceID="LEIA_ORGANA" State="Active"/>
+              <ClearDisplayStatus TargetInstanceID="LEIA_ORGANA"/>
+              <SendUnits UnitInstanceID="HAN_SOLO">
+                <Destination>
+                  <SelectFirst>
+                    <From>
+                      <SelectNearestParent Type="CapitalShip">
+                        <From>
+                          <SelectOfficers InstanceID="LEIA_ORGANA"/>
+                        </From>
+                      </SelectNearestParent>
+                      <SelectNearestParent Type="Fleet">
+                        <From>
+                          <SelectOfficers InstanceID="LEIA_ORGANA"/>
+                        </From>
+                      </SelectNearestParent>
+                      <SelectNearestParent Type="Planet">
+                        <From>
+                          <SelectOfficers InstanceID="LEIA_ORGANA"/>
+                        </From>
+                      </SelectNearestParent>
+                      <SelectPlanets OwnerFactionInstanceID="FNALL1"/>
+                    </From>
+                  </SelectFirst>
+                </Destination>
+              </SendUnits>
+              <ChangeOfficerRating OfficerInstanceID="LEIA_ORGANA" Rating="Combat">
+                <Amount>1</Amount>
+              </ChangeOfficerRating>
+              <ChangeOfficerRating OfficerInstanceID="LEIA_ORGANA" Rating="Espionage">
+                <Amount>1</Amount>
+              </ChangeOfficerRating>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" Type="Mission" ShowSubjectImage="true">
+                <Subject>{subject} Mission Report</Subject>
+                <Body>My mission to rescue Han Solo from Jabba's Palace was a success.</Body>
+                <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+                <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+                <OfficerVoice Preset="MissionSuccess"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </OnSuccess>
+            <OnFailure>
+              <SetCaptureStatus OfficerInstanceID="LEIA_ORGANA" IsCaptured="true" CaptorFactionInstanceID="FNEMP1" CanEscape="false"/>
+              <ClearDisplayStatus TargetInstanceID="LEIA_ORGANA"/>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" Type="Mission">
+                <Subject>Jabba Captures {subject}</Subject>
+                <Body>{subject} was captured by Jabba while attempting to rescue Han Solo.</Body>
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/jabba-captures-prisoner"/>
+                <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+                <AdvisorNotification Preset="SubjectCaptured"/>
+              </SendMessage>
+            </OnFailure>
+          </PerformSkillCheck>
+        </Actions>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>CHEWBACCA_RESCUES_HAN_FROM_JABBA</InstanceID>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Conditionals>
+      <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
+      <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
+      <IsActive NodeInstanceID="CHEWBACCA"/>
+      <Not>
+        <Any>
+          <HasEventActivated EventInstanceID="JABBA_DELIVERS_PRISONERS"/>
+          <IsCaptured OfficerInstanceID="CHEWBACCA"/>
+          <IsKilled OfficerInstanceID="CHEWBACCA"/>
+          <IsOnMission UnitInstanceID="CHEWBACCA"/>
+          <IsInTransit UnitInstanceID="CHEWBACCA"/>
+        </Any>
+      </Not>
+      <IsCaptured OfficerInstanceID="HAN_SOLO"/>
+    </Conditionals>
+    <Actions>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="CHEWBACCA" Type="Mission">
+        <Subject>Chewbacca Rescue Attempt</Subject>
+        <Body>Han Solo has been captured by bounty hunters and taken to Jabba's palace.  I will be departing immediately to attempt a rescue.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <OverlayImage Path="Pack/Factions/Alliance/Units/Officers/OFAL008/message"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SetNodeState InstanceID="CHEWBACCA" State="Inactive"/>
+      <SetDisplayStatus TargetInstanceID="CHEWBACCA" Status="On Mission"/>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>CHEWBACCA_RESCUE_OF_HAN_RESOLVES</InstanceID>
+    <Schedule>
+      <After EventInstanceID="CHEWBACCA_RESCUES_HAN_FROM_JABBA" DelayTicks="10"/>
+    </Schedule>
+    <Actions>
+      <If>
+        <Conditionals>
+          <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
+        </Conditionals>
+        <Actions>
+          <PerformSkillCheck OfficerInstanceID="CHEWBACCA" Rating="Combat" ProbabilityTable="Rescue">
+            <OnSuccess>
+              <SetEventVariable>
+                <Key>jabba.rescue.completed</Key>
+                <Operation>Set</Operation>
+                <Operand>1</Operand>
+              </SetEventVariable>
+              <SetCaptureStatus OfficerInstanceID="HAN_SOLO" IsCaptured="false"/>
+              <SetNodeState InstanceID="HAN_SOLO" State="Active"/>
+              <ClearDisplayStatus TargetInstanceID="HAN_SOLO"/>
+              <SetNodeState InstanceID="CHEWBACCA" State="Active"/>
+              <ClearDisplayStatus TargetInstanceID="CHEWBACCA"/>
+              <SendUnits UnitInstanceID="HAN_SOLO">
+                <Destination>
+                  <SelectFirst>
+                    <From>
+                      <SelectNearestParent Type="CapitalShip">
+                        <From>
+                          <SelectOfficers InstanceID="CHEWBACCA"/>
+                        </From>
+                      </SelectNearestParent>
+                      <SelectNearestParent Type="Fleet">
+                        <From>
+                          <SelectOfficers InstanceID="CHEWBACCA"/>
+                        </From>
+                      </SelectNearestParent>
+                      <SelectNearestParent Type="Planet">
+                        <From>
+                          <SelectOfficers InstanceID="CHEWBACCA"/>
+                        </From>
+                      </SelectNearestParent>
+                      <SelectPlanets OwnerFactionInstanceID="FNALL1"/>
+                    </From>
+                  </SelectFirst>
+                </Destination>
+              </SendUnits>
+              <ChangeOfficerRating OfficerInstanceID="CHEWBACCA" Rating="Combat">
+                <Amount>1</Amount>
+              </ChangeOfficerRating>
+              <ChangeOfficerRating OfficerInstanceID="CHEWBACCA" Rating="Espionage">
+                <Amount>1</Amount>
+              </ChangeOfficerRating>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="CHEWBACCA" Type="Mission" ShowSubjectImage="true">
+                <Subject>{subject} Mission Report</Subject>
+                <Body>My mission to rescue Han Solo from Jabba's Palace was a success.</Body>
+                <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+                <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+                <OfficerVoice Preset="MissionSuccess"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </OnSuccess>
+            <OnFailure>
+              <SetCaptureStatus OfficerInstanceID="CHEWBACCA" IsCaptured="true" CaptorFactionInstanceID="FNEMP1" CanEscape="false"/>
+              <ClearDisplayStatus TargetInstanceID="CHEWBACCA"/>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="CHEWBACCA" Type="Mission">
+                <Subject>Jabba Captures {subject}</Subject>
+                <Body>{subject} was captured by Jabba while attempting to rescue Han Solo.</Body>
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/jabba-captures-prisoner"/>
+                <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+                <AdvisorNotification Preset="SubjectCaptured"/>
+              </SendMessage>
+            </OnFailure>
+          </PerformSkillCheck>
+        </Actions>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>JABBA_RESCUE_CLEANUP</InstanceID>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Conditionals>
+      <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="1"/>
+    </Conditionals>
+    <Actions>
+      <If>
+        <Conditionals>
+          <HasEventActivated EventInstanceID="LUKE_RESCUES_HAN_FROM_JABBA"/>
+        </Conditionals>
+        <Actions>
+          <If>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="LUKE_SKYWALKER" CaptorFactionInstanceID="FNEMP1"/>
+            </Conditionals>
+            <Actions>
+              <SetCaptureStatus OfficerInstanceID="LUKE_SKYWALKER" IsCaptured="false"/>
+            </Actions>
+          </If>
+          <SetNodeState InstanceID="LUKE_SKYWALKER" State="Active"/>
+          <ClearDisplayStatus TargetInstanceID="LUKE_SKYWALKER"/>
+        </Actions>
+      </If>
+      <If>
+        <Conditionals>
+          <HasEventActivated EventInstanceID="LEIA_RESCUES_HAN_FROM_JABBA"/>
+        </Conditionals>
+        <Actions>
+          <If>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="LEIA_ORGANA" CaptorFactionInstanceID="FNEMP1"/>
+            </Conditionals>
+            <Actions>
+              <SetCaptureStatus OfficerInstanceID="LEIA_ORGANA" IsCaptured="false"/>
+            </Actions>
+          </If>
+          <SetNodeState InstanceID="LEIA_ORGANA" State="Active"/>
+          <ClearDisplayStatus TargetInstanceID="LEIA_ORGANA"/>
+        </Actions>
+      </If>
+      <If>
+        <Conditionals>
+          <HasEventActivated EventInstanceID="CHEWBACCA_RESCUES_HAN_FROM_JABBA"/>
+        </Conditionals>
+        <Actions>
+          <If>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="CHEWBACCA" CaptorFactionInstanceID="FNEMP1"/>
+            </Conditionals>
+            <Actions>
+              <SetCaptureStatus OfficerInstanceID="CHEWBACCA" IsCaptured="false"/>
+            </Actions>
+          </If>
+          <SetNodeState InstanceID="CHEWBACCA" State="Active"/>
+          <ClearDisplayStatus TargetInstanceID="CHEWBACCA"/>
+        </Actions>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>VADER_COLLECTS_JABBAS_PRISONERS</InstanceID>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Conditionals>
+      <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
+      <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
+      <IsActive NodeInstanceID="DARTH_VADER"/>
+      <Not>
+        <Any>
+          <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+          <IsKilled OfficerInstanceID="DARTH_VADER"/>
+          <IsOnMission UnitInstanceID="DARTH_VADER"/>
+          <IsInTransit UnitInstanceID="DARTH_VADER"/>
+        </Any>
+      </Not>
+      <All>
+        <Any>
+          <HasEventActivated EventInstanceID="LUKE_RESCUE_OF_HAN_RESOLVES"/>
+          <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+          <IsKilled OfficerInstanceID="LUKE_SKYWALKER"/>
+        </Any>
+        <Any>
+          <HasEventActivated EventInstanceID="LEIA_RESCUE_OF_HAN_RESOLVES"/>
+          <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+          <IsKilled OfficerInstanceID="LEIA_ORGANA"/>
+        </Any>
+        <Any>
+          <HasEventActivated EventInstanceID="CHEWBACCA_RESCUE_OF_HAN_RESOLVES"/>
+          <IsCaptured OfficerInstanceID="CHEWBACCA"/>
+          <IsKilled OfficerInstanceID="CHEWBACCA"/>
+        </Any>
+      </All>
+    </Conditionals>
+    <Actions>
+      <SetNodeState InstanceID="DARTH_VADER" State="Inactive"/>
+      <SetDisplayStatus TargetInstanceID="DARTH_VADER" Status="On Mission (Jabba's Palace)"/>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>JABBA_DELIVERS_PRISONERS</InstanceID>
+    <Schedule>
+      <After EventInstanceID="VADER_COLLECTS_JABBAS_PRISONERS" DelayTicks="100"/>
+    </Schedule>
+    <Conditionals>
+      <HasEventActivated EventInstanceID="VADER_COLLECTS_JABBAS_PRISONERS"/>
+    </Conditionals>
+    <Actions>
+      <SetNodeState InstanceID="DARTH_VADER" State="Active"/>
+      <ClearDisplayStatus TargetInstanceID="DARTH_VADER"/>
+      <If>
+        <Conditionals>
+          <Any>
+            <IsCaptured OfficerInstanceID="HAN_SOLO"/>
+            <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+            <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+            <IsCaptured OfficerInstanceID="CHEWBACCA"/>
+          </Any>
+        </Conditionals>
+        <Actions>
+          <SetCaptureStatus IsCaptured="true" CaptorFactionInstanceID="FNEMP1" CanEscape="true">
+            <Officers>
+              <SelectOfficers InstanceID="HAN_SOLO" IsCaptured="true" IncludeInactive="true"/>
+              <SelectOfficers InstanceID="LUKE_SKYWALKER" IsCaptured="true" IncludeInactive="true"/>
+              <SelectOfficers InstanceID="LEIA_ORGANA" IsCaptured="true" IncludeInactive="true"/>
+              <SelectOfficers InstanceID="CHEWBACCA" IsCaptured="true" IncludeInactive="true"/>
+            </Officers>
+          </SetCaptureStatus>
+          <SetNodeState State="Active">
+            <Targets>
+              <SelectOfficers InstanceID="HAN_SOLO" IsCaptured="true" IncludeInactive="true"/>
+              <SelectOfficers InstanceID="LUKE_SKYWALKER" IsCaptured="true" IncludeInactive="true"/>
+              <SelectOfficers InstanceID="LEIA_ORGANA" IsCaptured="true" IncludeInactive="true"/>
+              <SelectOfficers InstanceID="CHEWBACCA" IsCaptured="true" IncludeInactive="true"/>
+            </Targets>
+          </SetNodeState>
+          <PlaceUnits>
+            <Units>
+              <SelectOfficers InstanceID="HAN_SOLO" IsCaptured="true" IncludeInactive="true"/>
+              <SelectOfficers InstanceID="LUKE_SKYWALKER" IsCaptured="true" IncludeInactive="true"/>
+              <SelectOfficers InstanceID="LEIA_ORGANA" IsCaptured="true" IncludeInactive="true"/>
+              <SelectOfficers InstanceID="CHEWBACCA" IsCaptured="true" IncludeInactive="true"/>
+            </Units>
+            <Destination>
+              <SelectNearestParent Type="Planet">
+                <From>
+                  <SelectOfficers InstanceID="DARTH_VADER"/>
+                </From>
+              </SelectNearestParent>
+            </Destination>
+          </PlaceUnits>
+          <If>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="LUKE_SKYWALKER" CaptorFactionInstanceID="FNEMP1"/>
+            </Conditionals>
+            <Actions>
+              <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" Type="Mission">
+                <Subject>Jabba Delivers Prisoners</Subject>
+                <Body>Jabba has delivered Luke Skywalker and the other prisoners to Darth Vader. They are now prisoners of the Empire.</Body>
+                <BackgroundImage Path="Pack/Factions/Empire/Strategy/Messages/Images/jabba-delivers-prisoners-with-luke"/>
+                <BackgroundAudio Path="Pack/Shared/Events/JabbaDeliversPrisoners/Audio/with-luke"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </Actions>
+            <Else>
+              <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" Type="Mission">
+                <Subject>Jabba Delivers Prisoners</Subject>
+                <Body>Jabba has delivered his prisoners to Darth Vader. They are now prisoners of the Empire.</Body>
+                <BackgroundImage Path="Pack/Factions/Empire/Strategy/Messages/Images/jabba-delivers-prisoners-without-luke"/>
+                <BackgroundAudio Path="Pack/Shared/Events/JabbaDeliversPrisoners/Audio/without-luke"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </Else>
+          </If>
+        </Actions>
+      </If>
+    </Actions>
+  </GameEvent>
+  <!-- Linked-character comparisons are one-shot story encounters, resolved only when the pair meets. -->
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_ENCOUNTERS_VADER</InstanceID>
+    <Triggers>
+      <MissionStarted>
+        <Participants Match="Any">
+          <Units>
+            <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+            <Unit UnitInstanceID="DARTH_VADER"/>
+          </Units>
+        </Participants>
+      </MissionStarted>
+      <UnitArrived/>
+    </Triggers>
+    <Conditionals>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+          <Unit UnitInstanceID="DARTH_VADER"/>
+        </Units>
+      </ShareAncestor>
+      <Not>
+        <Any>
+          <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+          <IsKilled OfficerInstanceID="LUKE_SKYWALKER"/>
+          <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
+          <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+          <IsKilled OfficerInstanceID="DARTH_VADER"/>
+          <IsInTransit UnitInstanceID="DARTH_VADER"/>
+        </Any>
+      </Not>
+    </Conditionals>
+    <Actions>
+      <If>
+        <Conditionals>
+          <Not>
+            <HasEventActivated EventInstanceID="LUKE_LEAVES_DAGOBAH"/>
+          </Not>
+        </Conditionals>
+        <Actions>
+          <TriggerDuel FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="DARTH_VADER">
+            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-vader-untrained</ImagePath>
+            <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/luke-vader-dagobah-incomplete</AudioPath>
+          </TriggerDuel>
+        </Actions>
+        <Else>
+          <TriggerDuel FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="DARTH_VADER">
+            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-vader-trained</ImagePath>
+            <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/luke-vader-dagobah-complete</AudioPath>
+          </TriggerDuel>
+        </Else>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_VADER_ENCOUNTER_EFFECTS</InstanceID>
+    <Triggers>
+      <DuelCompleted SourceEventInstanceID="LUKE_ENCOUNTERS_VADER" FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="DARTH_VADER">
+        <Bindings>
+          <Bind Argument="ImagePath" As="$imagePath"/>
+          <Bind Argument="AudioPath" As="$audioPath"/>
+        </Bindings>
+      </DuelCompleted>
+    </Triggers>
+    <Actions>
+      <IncreaseForceRank OfficerInstanceID="LUKE_SKYWALKER" ReferenceOfficerInstanceID="DARTH_VADER" MinimumAmount="1">
+        <PercentOfPositiveGap>25</PercentOfPositiveGap>
+      </IncreaseForceRank>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
+        <BackgroundImage Binding="$imagePath"/>
+        <BackgroundAudio Binding="$audioPath"/>
+        <Subject>{subject} Confronts {relatedSubject}</Subject>
+        <Body>{subject} has fought {relatedSubject}.  </Body>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_DISCOVERS_HERITAGE</InstanceID>
+    <Bindings>
+      <Bind As="$lukeForce">
+        <OfficerForce OfficerInstanceID="LUKE_SKYWALKER"/>
+      </Bind>
+    </Bindings>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Conditionals>
+      <HasEventActivated EventInstanceID="LUKE_VADER_ENCOUNTER_EFFECTS"/>
+      <EvaluateBinding Binding="$lukeForce" Comparison="GreaterThanOrEqual" CompareTo="60"/>
+    </Conditionals>
+    <Actions>
+      <If>
+        <Conditionals>
+          <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+        </Conditionals>
+        <Actions>
+          <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+            <Subject>Luke Discovers His Heritage</Subject>
+            <Body>Luke has learned that Vader is his father. Luke has been captured by Vader.</Body>
+            <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-discovers-heritage"/>
+            <BackgroundAudio Path="Pack/Shared/Events/LukeDiscoversHeritage/Audio/dialogue"/>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+        </Actions>
+        <Else>
+          <If>
+            <Conditionals>
+              <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+            </Conditionals>
+            <Actions>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+                <Subject>Luke Discovers His Heritage</Subject>
+                <Body>Luke has learned that Vader is his father. Luke was injured during the battle.</Body>
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-discovers-heritage"/>
+                <BackgroundAudio Path="Pack/Shared/Events/LukeDiscoversHeritage/Audio/dialogue"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </Actions>
+            <Else>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+                <Subject>Luke Discovers His Heritage</Subject>
+                <Body>Luke has learned that Vader is his father. Luke escaped capture after the battle.</Body>
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-discovers-heritage"/>
+                <BackgroundAudio Path="Pack/Shared/Events/LukeDiscoversHeritage/Audio/dialogue"/>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </Else>
+          </If>
+        </Else>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LEIA_DISCOVERS_HERITAGE</InstanceID>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Conditionals>
+      <HasEventActivated EventInstanceID="LUKE_VADER_ENCOUNTER_EFFECTS"/>
+    </Conditionals>
+    <Actions>
+      <SetForceSensitive OfficerInstanceID="LEIA_ORGANA"/>
+      <SetForceEligible OfficerInstanceID="LEIA_ORGANA"/>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" Type="Mission">
+        <Subject>Leia Uses Force</Subject>
+        <Body>My heritage as a member of the Skywalker family has given me the ability to use the Force, as it has my brother and father.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <OverlayImage Path="Pack/Factions/Alliance/Units/Officers/OFAL002/message"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_ENCOUNTERS_PALPATINE</InstanceID>
+    <Triggers>
+      <MissionStarted>
+        <Participants Match="Any">
+          <Units>
+            <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+            <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
+          </Units>
+        </Participants>
+      </MissionStarted>
+      <UnitArrived/>
+    </Triggers>
+    <Conditionals>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Units>
+      </ShareAncestor>
+      <Not>
+        <Any>
+          <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+          <IsKilled OfficerInstanceID="LUKE_SKYWALKER"/>
+          <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
+          <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+          <IsKilled OfficerInstanceID="EMPEROR_PALPATINE"/>
+          <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Any>
+      </Not>
+    </Conditionals>
+    <Actions>
+      <If>
+        <Conditionals>
+          <Not>
+            <HasEventActivated EventInstanceID="LUKE_LEAVES_DAGOBAH"/>
+          </Not>
+        </Conditionals>
+        <Actions>
+          <TriggerDuel FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="EMPEROR_PALPATINE">
+            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-palpatine-untrained</ImagePath>
+            <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/luke-palpatine-dagobah-incomplete</AudioPath>
+          </TriggerDuel>
+        </Actions>
+        <Else>
+          <TriggerDuel FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="EMPEROR_PALPATINE">
+            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-palpatine-trained</ImagePath>
+            <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/luke-palpatine-dagobah-complete</AudioPath>
+          </TriggerDuel>
+        </Else>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_PALPATINE_ENCOUNTER_EFFECTS</InstanceID>
+    <Triggers>
+      <DuelCompleted SourceEventInstanceID="LUKE_ENCOUNTERS_PALPATINE" FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="EMPEROR_PALPATINE">
+        <Bindings>
+          <Bind Argument="ImagePath" As="$imagePath"/>
+          <Bind Argument="AudioPath" As="$audioPath"/>
+        </Bindings>
+      </DuelCompleted>
+    </Triggers>
+    <Actions>
+      <IncreaseForceRank OfficerInstanceID="LUKE_SKYWALKER" ReferenceOfficerInstanceID="EMPEROR_PALPATINE" MinimumAmount="1">
+        <PercentOfPositiveGap>20</PercentOfPositiveGap>
+      </IncreaseForceRank>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
+        <BackgroundImage Binding="$imagePath"/>
+        <BackgroundAudio Binding="$audioPath"/>
+        <Subject>{subject} Confronts {relatedSubject}</Subject>
+        <Body>{subject} has fought {relatedSubject}.  </Body>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LEIA_ENCOUNTERS_VADER</InstanceID>
+    <Triggers>
+      <MissionStarted>
+        <Participants Match="Any">
+          <Units>
+            <Unit UnitInstanceID="LEIA_ORGANA"/>
+            <Unit UnitInstanceID="DARTH_VADER"/>
+          </Units>
+        </Participants>
+      </MissionStarted>
+      <UnitArrived/>
+    </Triggers>
+    <Conditionals>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LEIA_ORGANA"/>
+          <Unit UnitInstanceID="DARTH_VADER"/>
+        </Units>
+      </ShareAncestor>
+      <Not>
+        <Any>
+          <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+          <IsKilled OfficerInstanceID="LEIA_ORGANA"/>
+          <IsInTransit UnitInstanceID="LEIA_ORGANA"/>
+          <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+          <IsKilled OfficerInstanceID="DARTH_VADER"/>
+          <IsInTransit UnitInstanceID="DARTH_VADER"/>
+        </Any>
+      </Not>
+    </Conditionals>
+    <Actions>
+      <TriggerDuel FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="DARTH_VADER">
+        <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/leia-encounters-vader</ImagePath>
+        <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/leia-vader</AudioPath>
+      </TriggerDuel>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LEIA_VADER_ENCOUNTER_EFFECTS</InstanceID>
+    <Triggers>
+      <DuelCompleted SourceEventInstanceID="LEIA_ENCOUNTERS_VADER" FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="DARTH_VADER">
+        <Bindings>
+          <Bind Argument="ImagePath" As="$imagePath"/>
+          <Bind Argument="AudioPath" As="$audioPath"/>
+        </Bindings>
+      </DuelCompleted>
+    </Triggers>
+    <Actions>
+      <IncreaseForceRank OfficerInstanceID="LEIA_ORGANA" ReferenceOfficerInstanceID="DARTH_VADER" MinimumAmount="1">
+        <PercentOfPositiveGap>20</PercentOfPositiveGap>
+      </IncreaseForceRank>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
+        <BackgroundImage Binding="$imagePath"/>
+        <BackgroundAudio Binding="$audioPath"/>
+        <Subject>{subject} Confronts {relatedSubject}</Subject>
+        <Body>{subject} has fought {relatedSubject}.  </Body>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LEIA_ENCOUNTERS_PALPATINE</InstanceID>
+    <Triggers>
+      <MissionStarted>
+        <Participants Match="Any">
+          <Units>
+            <Unit UnitInstanceID="LEIA_ORGANA"/>
+            <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
+          </Units>
+        </Participants>
+      </MissionStarted>
+      <UnitArrived/>
+    </Triggers>
+    <Conditionals>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LEIA_ORGANA"/>
+          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Units>
+      </ShareAncestor>
+      <Not>
+        <Any>
+          <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+          <IsKilled OfficerInstanceID="LEIA_ORGANA"/>
+          <IsInTransit UnitInstanceID="LEIA_ORGANA"/>
+          <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+          <IsKilled OfficerInstanceID="EMPEROR_PALPATINE"/>
+          <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Any>
+      </Not>
+    </Conditionals>
+    <Actions>
+      <TriggerDuel FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="EMPEROR_PALPATINE">
+        <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/leia-encounters-palpatine</ImagePath>
+        <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/leia-palpatine</AudioPath>
+      </TriggerDuel>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LEIA_PALPATINE_ENCOUNTER_EFFECTS</InstanceID>
+    <Triggers>
+      <DuelCompleted SourceEventInstanceID="LEIA_ENCOUNTERS_PALPATINE" FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="EMPEROR_PALPATINE">
+        <Bindings>
+          <Bind Argument="ImagePath" As="$imagePath"/>
+          <Bind Argument="AudioPath" As="$audioPath"/>
+        </Bindings>
+      </DuelCompleted>
+    </Triggers>
+    <Actions>
+      <IncreaseForceRank OfficerInstanceID="LEIA_ORGANA" ReferenceOfficerInstanceID="EMPEROR_PALPATINE" MinimumAmount="1">
+        <PercentOfPositiveGap>20</PercentOfPositiveGap>
+      </IncreaseForceRank>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
+        <BackgroundImage Binding="$imagePath"/>
+        <BackgroundAudio Binding="$audioPath"/>
+        <Subject>{subject} Confronts {relatedSubject}</Subject>
+        <Body>{subject} has fought {relatedSubject}.  </Body>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_AND_VADER_DETECT_EACH_OTHER</InstanceID>
+    <Triggers>
+      <UnitArrived UnitInstanceID="LUKE_SKYWALKER"/>
+      <UnitArrived UnitInstanceID="DARTH_VADER"/>
+    </Triggers>
+    <Conditionals>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+          <Unit UnitInstanceID="DARTH_VADER"/>
+        </Units>
+      </ShareAncestor>
+      <IsForceEligible OfficerInstanceID="LUKE_SKYWALKER"/>
+      <IsForceEligible OfficerInstanceID="DARTH_VADER"/>
+    </Conditionals>
+    <Actions>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
+        <Subject>{subject} Detects {relatedSubject}</Subject>
+        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+        <Subject>{subject} Detects {relatedSubject}</Subject>
+        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_AND_PALPATINE_DETECT_EACH_OTHER</InstanceID>
+    <Triggers>
+      <UnitArrived UnitInstanceID="LUKE_SKYWALKER"/>
+      <UnitArrived UnitInstanceID="EMPEROR_PALPATINE"/>
+    </Triggers>
+    <Conditionals>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Units>
+      </ShareAncestor>
+      <IsForceEligible OfficerInstanceID="LUKE_SKYWALKER"/>
+      <IsForceEligible OfficerInstanceID="EMPEROR_PALPATINE"/>
+    </Conditionals>
+    <Actions>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
+        <Subject>{subject} Detects {relatedSubject}</Subject>
+        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="EMPEROR_PALPATINE" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+        <Subject>{subject} Detects {relatedSubject}</Subject>
+        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LEIA_AND_VADER_DETECT_EACH_OTHER</InstanceID>
+    <Triggers>
+      <UnitArrived UnitInstanceID="LEIA_ORGANA"/>
+      <UnitArrived UnitInstanceID="DARTH_VADER"/>
+    </Triggers>
+    <Conditionals>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LEIA_ORGANA"/>
+          <Unit UnitInstanceID="DARTH_VADER"/>
+        </Units>
+      </ShareAncestor>
+      <IsForceEligible OfficerInstanceID="LEIA_ORGANA"/>
+      <IsForceEligible OfficerInstanceID="DARTH_VADER"/>
+    </Conditionals>
+    <Actions>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
+        <Subject>{subject} Detects {relatedSubject}</Subject>
+        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" RelatedSubjectInstanceID="LEIA_ORGANA" Type="Mission">
+        <Subject>{subject} Detects {relatedSubject}</Subject>
+        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LEIA_AND_PALPATINE_DETECT_EACH_OTHER</InstanceID>
+    <Triggers>
+      <UnitArrived UnitInstanceID="LEIA_ORGANA"/>
+      <UnitArrived UnitInstanceID="EMPEROR_PALPATINE"/>
+    </Triggers>
+    <Conditionals>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LEIA_ORGANA"/>
+          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Units>
+      </ShareAncestor>
+      <IsForceEligible OfficerInstanceID="LEIA_ORGANA"/>
+      <IsForceEligible OfficerInstanceID="EMPEROR_PALPATINE"/>
+    </Conditionals>
+    <Actions>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
+        <Subject>{subject} Detects {relatedSubject}</Subject>
+        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="EMPEROR_PALPATINE" RelatedSubjectInstanceID="LEIA_ORGANA" Type="Mission">
+        <Subject>{subject} Detects {relatedSubject}</Subject>
+        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
+        <BackgroundImage Key="mission_report"/>
+        <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>VADER_TAKES_LUKE_TO_EMPEROR</InstanceID>
+    <Bindings>
+      <Bind As="$lukeForce">
+        <OfficerForce OfficerInstanceID="LUKE_SKYWALKER"/>
+      </Bind>
+    </Bindings>
+    <Schedule>
+      <Every Ticks="1">
+        <Until>
+          <Any>
+            <HasEventActivated EventInstanceID="LUKE_WINS_FINAL_BATTLE"/>
+            <HasEventActivated EventInstanceID="LUKE_LOSES_FINAL_BATTLE"/>
+          </Any>
+        </Until>
+      </Every>
+    </Schedule>
+    <Conditionals>
+      <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+      <IsCaptured OfficerInstanceID="LUKE_SKYWALKER" CaptorFactionInstanceID="FNEMP1"/>
+      <EvaluateBinding Binding="$lukeForce" Comparison="GreaterThanOrEqual" CompareTo="60"/>
+      <IsActive NodeInstanceID="DARTH_VADER"/>
+      <IsActive NodeInstanceID="EMPEROR_PALPATINE"/>
+      <Not>
+        <Any>
+          <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+          <IsKilled OfficerInstanceID="DARTH_VADER"/>
+          <IsOnMission UnitInstanceID="DARTH_VADER"/>
+          <IsInTransit UnitInstanceID="DARTH_VADER"/>
+          <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+          <IsKilled OfficerInstanceID="EMPEROR_PALPATINE"/>
+          <IsOnMission UnitInstanceID="EMPEROR_PALPATINE"/>
+          <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
+          <ShareAncestor Type="Planet">
+            <Units>
+              <Unit UnitInstanceID="DARTH_VADER"/>
+              <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+            </Units>
+          </ShareAncestor>
+        </Any>
+      </Not>
+    </Conditionals>
+    <Actions>
+      <SendUnits UnitInstanceID="DARTH_VADER">
+        <Destination>
+          <SelectNearestParent Type="Planet">
+            <From>
+              <SelectOfficers InstanceID="LUKE_SKYWALKER"/>
+            </From>
+          </SelectNearestParent>
+        </Destination>
+      </SendUnits>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>VADER_REACHES_LUKE</InstanceID>
+    <Schedule>
+      <Every Ticks="1">
+        <Until>
+          <Any>
+            <HasEventActivated EventInstanceID="LUKE_WINS_FINAL_BATTLE"/>
+            <HasEventActivated EventInstanceID="LUKE_LOSES_FINAL_BATTLE"/>
+          </Any>
+        </Until>
+      </Every>
+    </Schedule>
+    <Conditionals>
+      <HasEventActivated EventInstanceID="VADER_TAKES_LUKE_TO_EMPEROR"/>
+      <IsCaptured OfficerInstanceID="LUKE_SKYWALKER" CaptorFactionInstanceID="FNEMP1"/>
+      <IsActive NodeInstanceID="DARTH_VADER"/>
+      <IsActive NodeInstanceID="EMPEROR_PALPATINE"/>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="DARTH_VADER"/>
+          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+        </Units>
+      </ShareAncestor>
+      <Not>
+        <Any>
+          <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+          <IsKilled OfficerInstanceID="DARTH_VADER"/>
+          <IsOnMission UnitInstanceID="DARTH_VADER"/>
+          <IsInTransit UnitInstanceID="DARTH_VADER"/>
+          <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
+          <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+          <IsKilled OfficerInstanceID="EMPEROR_PALPATINE"/>
+          <IsOnMission UnitInstanceID="EMPEROR_PALPATINE"/>
+          <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
+          <ShareAncestor Type="Planet">
+            <Units>
+              <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+              <Unit UnitInstanceID="DARTH_VADER"/>
+              <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
+            </Units>
+          </ShareAncestor>
+        </Any>
+      </Not>
+    </Conditionals>
+    <Actions>
+      <SendUnits>
+        <Units>
+          <SelectOfficers InstanceID="DARTH_VADER"/>
+          <SelectOfficers InstanceID="LUKE_SKYWALKER"/>
+        </Units>
+        <Destination>
+          <SelectNearestParent Type="Planet">
+            <From>
+              <SelectOfficers InstanceID="EMPEROR_PALPATINE"/>
+            </From>
+          </SelectNearestParent>
+        </Destination>
+      </SendUnits>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_WINS_FINAL_BATTLE</InstanceID>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Conditionals>
+      <HasEventActivated EventInstanceID="VADER_REACHES_LUKE"/>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+          <Unit UnitInstanceID="DARTH_VADER"/>
+          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Units>
+      </ShareAncestor>
+      <Not>
+        <Any>
+          <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
+          <IsInTransit UnitInstanceID="DARTH_VADER"/>
+          <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Any>
+      </Not>
+      <HasForceRank OfficerInstanceID="LUKE_SKYWALKER" Comparison="GreaterThanOrEqual" Rank="ForceKnight"/>
+    </Conditionals>
+    <Actions>
+      <SetCaptureStatus OfficerInstanceID="LUKE_SKYWALKER" IsCaptured="false"/>
+      <SetCaptureStatus OfficerInstanceID="DARTH_VADER" IsCaptured="true" CaptorFactionInstanceID="FNALL1"/>
+      <SetCaptureStatus OfficerInstanceID="EMPEROR_PALPATINE" IsCaptured="true" CaptorFactionInstanceID="FNALL1"/>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+        <Subject>The Final Battle</Subject>
+        <Body>Luke has been brought before the Emperor by Vader.  Luke confronted and overcame the Emperor.  Both Emperor Palpatine and Darth Vader were lost.</Body>
+        <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/final-battle-won"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Advisor/Audio/Notifications/final-battle-won"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent MaximumActivations="1">
+    <InstanceID>LUKE_LOSES_FINAL_BATTLE</InstanceID>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Conditionals>
+      <HasEventActivated EventInstanceID="VADER_REACHES_LUKE"/>
+      <ShareAncestor Type="Planet">
+        <Units>
+          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+          <Unit UnitInstanceID="DARTH_VADER"/>
+          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Units>
+      </ShareAncestor>
+      <Not>
+        <Any>
+          <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
+          <IsInTransit UnitInstanceID="DARTH_VADER"/>
+          <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
+        </Any>
+      </Not>
+      <HasForceRank OfficerInstanceID="LUKE_SKYWALKER" Comparison="LessThan" Rank="ForceKnight"/>
+    </Conditionals>
+    <Actions>
+      <SetCaptureStatus OfficerInstanceID="LUKE_SKYWALKER" IsCaptured="true" CaptorFactionInstanceID="FNEMP1"/>
+      <ApplyOfficerInjury OfficerInstanceID="LUKE_SKYWALKER">
+        <MinimumInjury>1</MinimumInjury>
+        <MaximumInjury>200</MaximumInjury>
+      </ApplyOfficerInjury>
+      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+        <Subject>The Final Battle</Subject>
+        <Body>Luke has been brought before the Emperor by Vader.  The Emperor confronted Luke and captured him.</Body>
+        <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/final-battle-lost"/>
+        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Advisor/Audio/Notifications/final-battle-lost"/>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>PLANET_INFORMANTS</InstanceID>
+    <Bindings>
+      <Bind As="$planet">
+        <From>
+          <SelectRandom Count="1">
+            <From>
+              <SelectPlanets/>
+            </From>
+          </SelectRandom>
+        </From>
+      </Bind>
+    </Bindings>
+    <Schedule>
+      <RandomInterval MinimumTicks="30" MaximumTicks="1000"/>
+    </Schedule>
+    <Conditionals>
+      <IsOwned PlanetBinding="$planet"/>
+    </Conditionals>
+    <Actions>
+      <If>
+        <Conditionals>
+          <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+          <Not>
+            <RollAgainstPopularSupport PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+          </Not>
+        </Conditionals>
+        <Actions>
+          <RevealToFaction FactionInstanceID="FNEMP1">
+            <Targets>
+              <SelectRandom Count="1">
+                <From>
+                  <SelectBinding Binding="$planet"/>
+                  <SelectCapitalShips PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
+                  <SelectStarfighters PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
+                  <SelectRegiments PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
+                  <SelectSpecialForces PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
+                  <SelectBuildings PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
+                  <SelectOfficers PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
+                  <SelectMissions PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
+                </From>
+              </SelectRandom>
+            </Targets>
+          </RevealToFaction>
+          <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Advice">
+            <Subject>Informants Provide Information</Subject>
+            <Body>Informants have provided us with information about {location}.</Body>
+            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/informants-provide-information"/>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+        </Actions>
+      </If>
+      <If>
+        <Conditionals>
+          <IsOwned PlanetBinding="$planet" FactionInstanceID="FNEMP1"/>
+          <Not>
+            <RollAgainstPopularSupport PlanetBinding="$planet" FactionInstanceID="FNEMP1"/>
+          </Not>
+        </Conditionals>
+        <Actions>
+          <RevealToFaction FactionInstanceID="FNALL1">
+            <Targets>
+              <SelectRandom Count="1">
+                <From>
+                  <SelectBinding Binding="$planet"/>
+                  <SelectCapitalShips PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
+                  <SelectStarfighters PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
+                  <SelectRegiments PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
+                  <SelectSpecialForces PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
+                  <SelectBuildings PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
+                  <SelectOfficers PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
+                  <SelectMissions PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
+                </From>
+              </SelectRandom>
+            </Targets>
+          </RevealToFaction>
+          <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Advice">
+            <Subject>Informants Provide Information</Subject>
+            <Body>Informants have provided us with information about {location}.</Body>
+            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/informants-provide-information"/>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+        </Actions>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>NATURAL_DISASTER</InstanceID>
+    <Bindings>
+      <Bind As="$planet">
+        <From>
+          <SelectRandom Count="1">
+            <From>
+              <SelectPlanets SectorType="Core"/>
+            </From>
+          </SelectRandom>
+        </From>
+      </Bind>
+    </Bindings>
+    <Schedule>
+      <RandomInterval MinimumTicks="1" MaximumTicks="400"/>
+    </Schedule>
+    <Actions>
+      <DamagePlanetResources LossProbabilityPerResource="0.05" MinimumTotalLoss="1" PlanetBinding="$planet"/>
+      <DestroyUnits PlanetBinding="$planet">
+        <Units>
+          <SelectRandom ChancePercent="10">
+            <From>
+              <SelectBuildings PlanetBinding="$planet" Category="ManufacturingFacility"/>
+              <SelectBuildings PlanetBinding="$planet" Category="PlanetaryDefense"/>
+            </From>
+          </SelectRandom>
+        </Units>
+      </DestroyUnits>
+      <If>
+        <Conditionals>
+          <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+        </Conditionals>
+        <Actions>
+          <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+            <Subject>Natural Disaster on {subject}</Subject>
+            <Body>There has been a natural disaster on {subject} which has destroyed resources there.</Body>
+            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/natural-disaster"/>
+          </SendMessage>
+        </Actions>
+        <Else>
+          <If>
+            <Conditionals>
+              <IsOwned PlanetBinding="$planet" FactionInstanceID="FNEMP1"/>
+            </Conditionals>
+            <Actions>
+              <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                <Subject>Natural Disaster on {subject}</Subject>
+                <Body>There has been a natural disaster on {subject} which has destroyed resources there.</Body>
+                <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/natural-disaster"/>
+              </SendMessage>
+            </Actions>
+          </If>
+        </Else>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>ENDOR_EWOK_ATTACK</InstanceID>
+    <Bindings>
+      <Bind As="$planet">
+        <From>
+          <SelectPlanets InstanceID="ENDOR"/>
+        </From>
+      </Bind>
+    </Bindings>
+    <Schedule>
+      <RandomInterval MinimumTicks="100" MaximumTicks="600"/>
+    </Schedule>
+    <Conditionals>
+      <IsOwned PlanetInstanceID="ENDOR"/>
+    </Conditionals>
+    <Actions>
+      <DestroyUnits PlanetBinding="$planet">
+        <Units>
+          <SelectRandom ChancePercent="25" MinimumCount="1" MaximumCount="3">
+            <From>
+              <SelectBuildings PlanetInstanceID="ENDOR" Category="PlanetaryDefense"/>
+              <SelectRegiments PlanetInstanceID="ENDOR"/>
+            </From>
+          </SelectRandom>
+        </Units>
+      </DestroyUnits>
+      <If>
+        <Conditionals>
+          <IsOwned PlanetInstanceID="ENDOR" FactionInstanceID="FNALL1"/>
+        </Conditionals>
+        <Actions>
+          <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="ENDOR" LocationInstanceID="ENDOR" Type="Defense">
+            <Subject>Ewok Attack on Endor</Subject>
+            <Body>Ewoks have attacked our defenses on Endor.</Body>
+            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/endor-ewok-attack"/>
+          </SendMessage>
+        </Actions>
+        <Else>
+          <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="ENDOR" LocationInstanceID="ENDOR" Type="Defense">
+            <Subject>Ewok Attack on Endor</Subject>
+            <Body>Ewoks have attacked our defenses on Endor.</Body>
+            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/endor-ewok-attack"/>
+          </SendMessage>
+        </Else>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
+    <InstanceID>RESOURCE_CHANGE</InstanceID>
+    <Bindings>
+      <Bind As="$planet">
+        <From>
+          <SelectRandom Count="1">
+            <From>
+              <SelectPlanets SectorType="Core"/>
+            </From>
+          </SelectRandom>
+        </From>
+      </Bind>
+      <Bind As="$rawResourceNodes">
+        <PlanetStat PlanetBinding="$planet" Stat="RawResourceNodes"/>
+      </Bind>
+      <Bind As="$energyCapacity">
+        <PlanetStat PlanetBinding="$planet" Stat="EnergyCapacity"/>
+      </Bind>
+    </Bindings>
+    <Schedule>
+      <RandomInterval MinimumTicks="1" MaximumTicks="500"/>
+    </Schedule>
+    <Conditionals>
+      <Any>
+        <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+        <IsOwned PlanetBinding="$planet" FactionInstanceID="FNEMP1"/>
+      </Any>
+    </Conditionals>
+    <Actions>
+      <RollOutcome>
+        <Outcomes>
+          <Outcome Weight="1">
+            <Conditionals>
+              <EvaluateBinding Binding="$rawResourceNodes" Comparison="GreaterThan" CompareTo="0"/>
+              <HasBuildingType Type="Mine" PlanetBinding="$planet"/>
+            </Conditionals>
+            <Actions>
+              <ChangeRawResourceNodes PlanetBinding="$planet">
+                <Amount>-1</Amount>
+              </ChangeRawResourceNodes>
+              <If>
+                <Conditionals>
+                  <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                </Conditionals>
+                <Actions>
+                  <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                    <Subject>Resources Depleted on {subject}</Subject>
+                    <Body>Operations on {subject} have reduced the raw materials available.</Body>
+                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                  </SendMessage>
+                </Actions>
+                <Else>
+                  <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                    <Subject>Resources Depleted on {subject}</Subject>
+                    <Body>Operations on {subject} have reduced the raw materials available.</Body>
+                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                  </SendMessage>
+                </Else>
+              </If>
+            </Actions>
+          </Outcome>
+          <Outcome Weight="1">
+            <Conditionals>
+              <EvaluateBinding Binding="$energyCapacity" Comparison="GreaterThan" CompareTo="0"/>
+              <Any>
+                <HasBuildingType Type="Mine" PlanetBinding="$planet"/>
+                <HasBuildingType Type="Refinery" PlanetBinding="$planet"/>
+                <HasBuildingType Type="Shipyard" PlanetBinding="$planet"/>
+                <HasBuildingType Type="TrainingFacility" PlanetBinding="$planet"/>
+                <HasBuildingType Type="ConstructionFacility" PlanetBinding="$planet"/>
+                <HasBuildingType Type="Defense" PlanetBinding="$planet"/>
+                <HasBuildingType Type="Weapon" PlanetBinding="$planet"/>
+                <HasBuildingType Type="Headquarters" PlanetBinding="$planet"/>
+              </Any>
+            </Conditionals>
+            <Actions>
+              <ChangeEnergyCapacity PlanetBinding="$planet">
+                <Amount>-1</Amount>
+              </ChangeEnergyCapacity>
+              <If>
+                <Conditionals>
+                  <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                </Conditionals>
+                <Actions>
+                  <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                    <Subject>Resources Depleted on {subject}</Subject>
+                    <Body>Operations on {subject} have reduced the energy available.</Body>
+                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                  </SendMessage>
+                </Actions>
+                <Else>
+                  <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                    <Subject>Resources Depleted on {subject}</Subject>
+                    <Body>Operations on {subject} have reduced the energy available.</Body>
+                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                  </SendMessage>
+                </Else>
+              </If>
+            </Actions>
+          </Outcome>
+          <Outcome Weight="1">
+            <Conditionals>
+              <EvaluateBinding Binding="$rawResourceNodes" Comparison="LessThan" CompareTo="15"/>
+            </Conditionals>
+            <Actions>
+              <ChangeRawResourceNodes PlanetBinding="$planet">
+                <Amount>1</Amount>
+              </ChangeRawResourceNodes>
+              <If>
+                <Conditionals>
+                  <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                </Conditionals>
+                <Actions>
+                  <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                    <Subject>New Resources on {subject}</Subject>
+                    <Body>New sources of raw materials have been discovered on {subject}.</Body>
+                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                  </SendMessage>
+                </Actions>
+                <Else>
+                  <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                    <Subject>New Resources on {subject}</Subject>
+                    <Body>New sources of raw materials have been discovered on {subject}.</Body>
+                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                  </SendMessage>
+                </Else>
+              </If>
+            </Actions>
+          </Outcome>
+          <Outcome Weight="1">
+            <Conditionals>
+              <EvaluateBinding Binding="$energyCapacity" Comparison="LessThan" CompareTo="15"/>
+            </Conditionals>
+            <Actions>
+              <ChangeEnergyCapacity PlanetBinding="$planet">
+                <Amount>1</Amount>
+              </ChangeEnergyCapacity>
+              <If>
+                <Conditionals>
+                  <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                </Conditionals>
+                <Actions>
+                  <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                    <Subject>New Resources on {subject}</Subject>
+                    <Body>New sources of energy have been discovered on {subject}.</Body>
+                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                  </SendMessage>
+                </Actions>
+                <Else>
+                  <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                    <Subject>New Resources on {subject}</Subject>
+                    <Body>New sources of energy have been discovered on {subject}.</Body>
+                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                  </SendMessage>
+                </Else>
+              </If>
+            </Actions>
+          </Outcome>
+        </Outcomes>
+      </RollOutcome>
+    </Actions>
+  </GameEvent>
+</GameEvents>
