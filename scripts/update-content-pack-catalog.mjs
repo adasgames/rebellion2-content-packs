@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
+import { isSemanticVersion } from "./semver.mjs";
 
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 const directory = /^[A-Za-z0-9][A-Za-z0-9._-]*$/u;
@@ -38,7 +39,9 @@ export function updateContentPackCatalog(catalog, release, manifest) {
 function validateRelease(release) {
   if (!slug.test(release.id)) throw new Error("Content-pack id must be a lowercase slug.");
   if (!release.name?.trim()) throw new Error("Content-pack name is required.");
-  if (!release.version?.trim()) throw new Error("Content-pack version is required.");
+  if (!isSemanticVersion(release.version)) {
+    throw new Error("Content-pack version must be a semantic version.");
+  }
   if (
     !directory.test(release.directory) ||
     release.directory === "." ||
@@ -55,6 +58,20 @@ function validateRelease(release) {
   }
   if (release.basePackId && !slug.test(release.basePackId)) {
     throw new Error("Base content-pack id must be a lowercase slug.");
+  }
+  if (Boolean(release.basePackId) !== Boolean(release.basePackVersion)) {
+    throw new Error("Base content-pack id and version must be declared together.");
+  }
+  if (release.basePackVersion && !isSemanticVersion(release.basePackVersion)) {
+    throw new Error("Base content-pack version must be a semantic version.");
+  }
+  if (
+    !Array.isArray(release.compatibleGameVersions) ||
+    release.compatibleGameVersions.length === 0 ||
+    release.compatibleGameVersions.some((version) => !isSemanticVersion(version)) ||
+    new Set(release.compatibleGameVersions).size !== release.compatibleGameVersions.length
+  ) {
+    throw new Error("Compatible game versions must be unique semantic versions.");
   }
 }
 

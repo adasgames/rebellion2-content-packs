@@ -47,16 +47,20 @@ jobs:
           name="$(jq -r '.name' "$metadata")"
           description="$(jq -r '.description' "$metadata")"
           base_pack_id="$(jq -r '.basePackId // ""' "$metadata")"
+          base_pack_version="$(jq -r '.basePackVersion // ""' "$metadata")"
+          compatible_game_versions="$(jq -c '.compatibleGameVersions' "$metadata")"
           [[ "$directory" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]]
           pack_xml="Content/Packs/${directory}/pack.xml"
           test -f "$pack_xml"
           version="$(sed -n 's:.*<Version>\([^<]*\)</Version>.*:\1:p' "$pack_xml")"
-          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+([+-][0-9A-Za-z.-]+)?$ ]]
+          node scripts/semver.mjs "$version" "$version" >/dev/null
           {
             echo "directory=$directory"
             echo "name=$name"
             echo "description=$description"
             echo "base_pack_id=$base_pack_id"
+            echo "base_pack_version=$base_pack_version"
+            echo "compatible_game_versions=$compatible_game_versions"
             echo "version=$version"
           } >> "$GITHUB_OUTPUT"
 
@@ -86,6 +90,7 @@ jobs:
       - name: Verify pack identity
         env:
           BASE_PACK_ID: ${{ steps.pack.outputs.base_pack_id }}
+          COMPATIBLE_GAME_VERSIONS: ${{ steps.pack.outputs.compatible_game_versions }}
           DISPLAY_NAME: ${{ steps.pack.outputs.name }}
           PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
           PACK_ID: ${{ inputs.pack_id }}
@@ -93,6 +98,7 @@ jobs:
         run: |
           python - <<'PY'
           import os
+          import json
           import xml.etree.ElementTree as ET
           root = ET.parse(f"Content/Packs/{os.environ['PACK_DIRECTORY']}/pack.xml").getroot()
           values = {child.tag: (child.text or '').strip() for child in root}
@@ -100,11 +106,15 @@ jobs:
           assert values.get('Version') == os.environ['VERSION']
           assert values.get('DisplayName') == os.environ['DISPLAY_NAME']
           assert values.get('BasePackID', '') == os.environ['BASE_PACK_ID']
+          compatible_versions = json.loads(os.environ['COMPATIBLE_GAME_VERSIONS'])
+          assert isinstance(compatible_versions, list) and compatible_versions
           PY
 
       - name: Package immutable content pack
         env:
           BASE_PACK_ID: ${{ steps.pack.outputs.base_pack_id }}
+          BASE_PACK_VERSION: ${{ steps.pack.outputs.base_pack_version }}
+          COMPATIBLE_GAME_VERSIONS: ${{ steps.pack.outputs.compatible_game_versions }}
           DESCRIPTION: ${{ steps.pack.outputs.description }}
           DISPLAY_NAME: ${{ steps.pack.outputs.name }}
           PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
@@ -126,7 +136,9 @@ jobs:
             --arg manifest "dist/content-packs/${PACK_ID}/manifest-${VERSION}.json" \
             --arg blobs "content-pack-blobs/" \
             --arg basePackId "$BASE_PACK_ID" \
-            '{id:$id,name:$name,description:$description,version:$version,directory:$directory,manifest:$manifest,blobs:$blobs,basePackId:$basePackId}' \
+            --arg basePackVersion "$BASE_PACK_VERSION" \
+            --argjson compatibleGameVersions "$COMPATIBLE_GAME_VERSIONS" \
+            '{id:$id,name:$name,description:$description,version:$version,directory:$directory,manifest:$manifest,blobs:$blobs,basePackId:$basePackId,basePackVersion:$basePackVersion,compatibleGameVersions:$compatibleGameVersions}' \
             > package/release.json
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -181,15 +193,27 @@ jobs:
             echo "Refusing to move $PACK_ID backward from $current_version to $version." >&2
             exit 1
           fi
+          manifest_path="dist/content-packs/${PACK_ID}/manifest-${version}.json"
+          manifest_directory="${manifest_path%/*}"
+          manifest_name="${manifest_path##*/}"
+          manifest_exists=false
+          if rclone lsf "${remote}/${manifest_directory}" --files-only --include "$manifest_name" | grep -Fxq "$manifest_name"; then
+            rclone copyto "${remote}/${manifest_path}" package/published-manifest.json
+            if ! cmp -s package/manifest.json package/published-manifest.json; then
+              echo "Refusing to replace immutable manifest ${manifest_path}. Publish a new pack version." >&2
+              exit 1
+            fi
+            manifest_exists=true
+          fi
           node scripts/update-content-pack-catalog.mjs \
             "$current_catalogue" \
             package/release.json \
             package/manifest.json \
             package/catalogue.json
           rclone copy package/blobs "${remote}/content-pack-blobs" --ignore-existing
-          rclone copyto \
-            package/manifest.json \
-            "${remote}/dist/content-packs/${PACK_ID}/manifest-${version}.json"
+          if [[ "$manifest_exists" == false ]]; then
+            rclone copyto package/manifest.json "${remote}/${manifest_path}"
+          fi
           restore_catalogue() {
             if [[ "$previous_catalogue" == true ]]; then
               rclone copyto "$current_catalogue" "${remote}/dist/catalogue.json"

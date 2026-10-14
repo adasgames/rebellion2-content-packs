@@ -1,8 +1,8 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import { isSemanticVersion } from "./semver.mjs";
 
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
-const semanticVersion = /^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/u;
 const safeDirectory = /^[A-Za-z0-9][A-Za-z0-9._-]*$/u;
 const packsRoot = path.join("Content", "Packs");
 
@@ -23,6 +23,18 @@ for (const registryFile of registryFiles) {
   requireValue(registry.name?.trim(), `${registryFile} has no display name.`);
   requireValue(registry.description?.trim(), `${registryFile} has no description.`);
   requireValue(
+    Array.isArray(registry.compatibleGameVersions) && registry.compatibleGameVersions.length > 0,
+    `${registryFile} has no compatible game versions.`,
+  );
+  requireValue(
+    registry.compatibleGameVersions.every((version) => isSemanticVersion(version)),
+    `${registryFile} has an invalid compatible game version.`,
+  );
+  requireValue(
+    new Set(registry.compatibleGameVersions).size === registry.compatibleGameVersions.length,
+    `${registryFile} repeats a compatible game version.`,
+  );
+  requireValue(
     safeDirectory.test(registry.directory) && ![".", ".."].includes(registry.directory),
     `${registryFile} has an unsafe directory.`,
   );
@@ -42,12 +54,20 @@ for (const registryFile of registryFiles) {
     `${registryFile} name differs from pack.xml.`,
   );
   requireValue(
-    semanticVersion.test(xmlValue(packXml, "Version")),
+    isSemanticVersion(xmlValue(packXml, "Version")),
     `${registryFile} pack.xml has an invalid version.`,
   );
   requireValue(
     xmlValue(packXml, "BasePackID") === (registry.basePackId ?? ""),
     `${registryFile} base pack differs from pack.xml.`,
+  );
+  requireValue(
+    Boolean(registry.basePackId) === Boolean(registry.basePackVersion),
+    `${registryFile} must declare its base pack id and version together.`,
+  );
+  requireValue(
+    !registry.basePackVersion || isSemanticVersion(registry.basePackVersion),
+    `${registryFile} has an invalid base pack version.`,
   );
 }
 
