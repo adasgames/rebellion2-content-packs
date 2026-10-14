@@ -46,9 +46,7 @@ jobs:
           directory="$(jq -r '.directory' "$metadata")"
           name="$(jq -r '.name' "$metadata")"
           description="$(jq -r '.description' "$metadata")"
-          base_pack_id="$(jq -r '.basePackId // ""' "$metadata")"
-          base_pack_version="$(jq -r '.basePackVersion // ""' "$metadata")"
-          compatible_game_versions="$(jq -c '.compatibleGameVersions' "$metadata")"
+          dependencies="$(jq -c '.depends' "$metadata")"
           [[ "$directory" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]]
           pack_xml="Content/Packs/${directory}/pack.xml"
           test -f "$pack_xml"
@@ -58,9 +56,7 @@ jobs:
             echo "directory=$directory"
             echo "name=$name"
             echo "description=$description"
-            echo "base_pack_id=$base_pack_id"
-            echo "base_pack_version=$base_pack_version"
-            echo "compatible_game_versions=$compatible_game_versions"
+            echo "dependencies=$dependencies"
             echo "version=$version"
           } >> "$GITHUB_OUTPUT"
 
@@ -89,8 +85,7 @@ jobs:
 
       - name: Verify pack identity
         env:
-          BASE_PACK_ID: ${{ steps.pack.outputs.base_pack_id }}
-          COMPATIBLE_GAME_VERSIONS: ${{ steps.pack.outputs.compatible_game_versions }}
+          DEPENDENCIES: ${{ steps.pack.outputs.dependencies }}
           DISPLAY_NAME: ${{ steps.pack.outputs.name }}
           PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
           PACK_ID: ${{ inputs.pack_id }}
@@ -105,16 +100,16 @@ jobs:
           assert values.get('ID') == os.environ['PACK_ID']
           assert values.get('Version') == os.environ['VERSION']
           assert values.get('DisplayName') == os.environ['DISPLAY_NAME']
-          assert values.get('BasePackID', '') == os.environ['BASE_PACK_ID']
-          compatible_versions = json.loads(os.environ['COMPATIBLE_GAME_VERSIONS'])
-          assert isinstance(compatible_versions, list) and compatible_versions
+          dependencies = json.loads(os.environ['DEPENDENCIES'])
+          assert 'rebellion2' in dependencies
+          base_pack_id = values.get('BasePackID', '')
+          content_dependencies = set(dependencies) - {'rebellion2'}
+          assert content_dependencies == ({base_pack_id} if base_pack_id else set())
           PY
 
       - name: Package immutable content pack
         env:
-          BASE_PACK_ID: ${{ steps.pack.outputs.base_pack_id }}
-          BASE_PACK_VERSION: ${{ steps.pack.outputs.base_pack_version }}
-          COMPATIBLE_GAME_VERSIONS: ${{ steps.pack.outputs.compatible_game_versions }}
+          DEPENDENCIES: ${{ steps.pack.outputs.dependencies }}
           DESCRIPTION: ${{ steps.pack.outputs.description }}
           DISPLAY_NAME: ${{ steps.pack.outputs.name }}
           PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
@@ -135,10 +130,8 @@ jobs:
             --arg directory "$PACK_DIRECTORY" \
             --arg manifest "dist/content-packs/${PACK_ID}/manifest-${VERSION}.json" \
             --arg blobs "content-pack-blobs/" \
-            --arg basePackId "$BASE_PACK_ID" \
-            --arg basePackVersion "$BASE_PACK_VERSION" \
-            --argjson compatibleGameVersions "$COMPATIBLE_GAME_VERSIONS" \
-            '{id:$id,name:$name,description:$description,version:$version,directory:$directory,manifest:$manifest,blobs:$blobs,basePackId:$basePackId,basePackVersion:$basePackVersion,compatibleGameVersions:$compatibleGameVersions}' \
+            --argjson depends "$DEPENDENCIES" \
+            '{id:$id,name:$name,description:$description,version:$version,directory:$directory,manifest:$manifest,blobs:$blobs,depends:$depends}' \
             > package/release.json
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -185,7 +178,7 @@ jobs:
             rclone copyto "${remote}/dist/catalogue.json" "$current_catalogue"
             previous_catalogue=true
           else
-            printf '%s\n' '{"schemaVersion":1,"packs":[]}' > "$current_catalogue"
+            printf '%s\n' '{"schemaVersion":2,"packs":[]}' > "$current_catalogue"
           fi
           version="$(jq -r '.version' package/release.json)"
           current_version="$(jq -r --arg id "$PACK_ID" '.packs[] | select(.id==$id) | .version' "$current_catalogue")"
