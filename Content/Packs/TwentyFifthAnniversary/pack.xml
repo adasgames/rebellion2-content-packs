@@ -2,7 +2,6 @@
 <ContentPack>
   <ID>twenty-fifth-anniversary</ID>
   <BasePackID>classic-galactic-civil-war</BasePackID>
-  <BasePackVersion>1.0.0</BasePackVersion>
   <Version>1.0.1</Version>
   <DisplayName>25th Anniversary (by Metasharp)</DisplayName>
   <DefaultScenarioID>standard</DefaultScenarioID>

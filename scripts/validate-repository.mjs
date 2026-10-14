@@ -1,8 +1,8 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import { isSemanticVersion } from "./semver.mjs";
 
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
-const semanticVersion = /^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/u;
 const safeDirectory = /^[A-Za-z0-9][A-Za-z0-9._-]*$/u;
 const packsRoot = path.join("Content", "Packs");
 
@@ -27,7 +27,7 @@ for (const registryFile of registryFiles) {
     `${registryFile} has no compatible game versions.`,
   );
   requireValue(
-    registry.compatibleGameVersions.every((version) => semanticVersion.test(version)),
+    registry.compatibleGameVersions.every((version) => isSemanticVersion(version)),
     `${registryFile} has an invalid compatible game version.`,
   );
   requireValue(
@@ -54,7 +54,7 @@ for (const registryFile of registryFiles) {
     `${registryFile} name differs from pack.xml.`,
   );
   requireValue(
-    semanticVersion.test(xmlValue(packXml, "Version")),
+    isSemanticVersion(xmlValue(packXml, "Version")),
     `${registryFile} pack.xml has an invalid version.`,
   );
   requireValue(
@@ -66,12 +66,8 @@ for (const registryFile of registryFiles) {
     `${registryFile} must declare its base pack id and version together.`,
   );
   requireValue(
-    !registry.basePackVersion || semanticVersion.test(registry.basePackVersion),
+    !registry.basePackVersion || isSemanticVersion(registry.basePackVersion),
     `${registryFile} has an invalid base pack version.`,
-  );
-  requireValue(
-    xmlValue(packXml, "BasePackVersion") === (registry.basePackVersion ?? ""),
-    `${registryFile} base pack version differs from pack.xml.`,
   );
 }
 

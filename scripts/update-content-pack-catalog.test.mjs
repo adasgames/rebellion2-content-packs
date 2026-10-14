@@ -84,6 +84,34 @@ test("catalog rejects a release without compatible game versions", () => {
   );
 });
 
+test("catalog rejects noncanonical semantic versions", () => {
+  for (const version of ["01.0.0", "1.0.0-beta.01"]) {
+    assert.throws(
+      () =>
+        updateContentPackCatalog(
+          { schemaVersion: 1, packs: [] },
+          release({ compatibleGameVersions: [version] }),
+          manifest(),
+        ),
+      /semantic versions/u,
+    );
+  }
+});
+
+test("catalog rejects a noncanonical pack version", () => {
+  for (const version of ["next", "01.0.0", "1.0.0-beta.01"]) {
+    assert.throws(
+      () =>
+        updateContentPackCatalog(
+          { schemaVersion: 1, packs: [] },
+          release({ version }),
+          manifest({ version }),
+        ),
+      /Content-pack version/u,
+    );
+  }
+});
+
 test("catalog requires a base pack id and version together", () => {
   assert.throws(
     () =>

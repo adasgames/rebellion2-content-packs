@@ -32,6 +32,16 @@ export function compareSemanticVersions(left, right) {
   return 0;
 }
 
+/** Returns whether a value is a semantic version accepted by the release workflows. */
+export function isSemanticVersion(version) {
+  try {
+    parseSemanticVersion(version);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /** Parses the subset of semantic versions accepted by the release workflows. */
 function parseSemanticVersion(version) {
   const match = /^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.-]+))?(?:\+([0-9A-Za-z.-]+))?$/u.exec(

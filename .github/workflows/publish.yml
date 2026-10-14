@@ -53,7 +53,7 @@ jobs:
           pack_xml="Content/Packs/${directory}/pack.xml"
           test -f "$pack_xml"
           version="$(sed -n 's:.*<Version>\([^<]*\)</Version>.*:\1:p' "$pack_xml")"
-          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+([+-][0-9A-Za-z.-]+)?$ ]]
+          node scripts/semver.mjs "$version" "$version" >/dev/null
           {
             echo "directory=$directory"
             echo "name=$name"
@@ -90,7 +90,6 @@ jobs:
       - name: Verify pack identity
         env:
           BASE_PACK_ID: ${{ steps.pack.outputs.base_pack_id }}
-          BASE_PACK_VERSION: ${{ steps.pack.outputs.base_pack_version }}
           COMPATIBLE_GAME_VERSIONS: ${{ steps.pack.outputs.compatible_game_versions }}
           DISPLAY_NAME: ${{ steps.pack.outputs.name }}
           PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
@@ -107,7 +106,6 @@ jobs:
           assert values.get('Version') == os.environ['VERSION']
           assert values.get('DisplayName') == os.environ['DISPLAY_NAME']
           assert values.get('BasePackID', '') == os.environ['BASE_PACK_ID']
-          assert values.get('BasePackVersion', '') == os.environ['BASE_PACK_VERSION']
           compatible_versions = json.loads(os.environ['COMPATIBLE_GAME_VERSIONS'])
           assert isinstance(compatible_versions, list) and compatible_versions
           PY
