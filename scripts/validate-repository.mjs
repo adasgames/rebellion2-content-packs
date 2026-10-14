@@ -1,6 +1,6 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
-import { isSemanticVersion } from "./semver.mjs";
+import { isSemanticVersion, isVersionRequirement } from "./semver.mjs";
 
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 const safeDirectory = /^[A-Za-z0-9][A-Za-z0-9._-]*$/u;
@@ -23,17 +23,17 @@ for (const registryFile of registryFiles) {
   requireValue(registry.name?.trim(), `${registryFile} has no display name.`);
   requireValue(registry.description?.trim(), `${registryFile} has no description.`);
   requireValue(
-    Array.isArray(registry.compatibleGameVersions) && registry.compatibleGameVersions.length > 0,
-    `${registryFile} has no compatible game versions.`,
+    registry.depends && typeof registry.depends === "object" && !Array.isArray(registry.depends),
+    `${registryFile} has no dependency map.`,
   );
-  requireValue(
-    registry.compatibleGameVersions.every((version) => isSemanticVersion(version)),
-    `${registryFile} has an invalid compatible game version.`,
-  );
-  requireValue(
-    new Set(registry.compatibleGameVersions).size === registry.compatibleGameVersions.length,
-    `${registryFile} repeats a compatible game version.`,
-  );
+  requireValue("rebellion2" in registry.depends, `${registryFile} does not depend on rebellion2.`);
+  for (const [id, requirement] of Object.entries(registry.depends)) {
+    requireValue(slug.test(id) && id !== registry.id, `${registryFile} has invalid dependency ${id}.`);
+    requireValue(
+      isVersionRequirement(requirement),
+      `${registryFile} has an invalid requirement for ${id}.`,
+    );
+  }
   requireValue(
     safeDirectory.test(registry.directory) && ![".", ".."].includes(registry.directory),
     `${registryFile} has an unsafe directory.`,
@@ -57,17 +57,12 @@ for (const registryFile of registryFiles) {
     isSemanticVersion(xmlValue(packXml, "Version")),
     `${registryFile} pack.xml has an invalid version.`,
   );
+  const basePackId = xmlValue(packXml, "BasePackID");
+  const contentDependencies = Object.keys(registry.depends).filter((id) => id !== "rebellion2");
   requireValue(
-    xmlValue(packXml, "BasePackID") === (registry.basePackId ?? ""),
-    `${registryFile} base pack differs from pack.xml.`,
-  );
-  requireValue(
-    Boolean(registry.basePackId) === Boolean(registry.basePackVersion),
-    `${registryFile} must declare its base pack id and version together.`,
-  );
-  requireValue(
-    !registry.basePackVersion || isSemanticVersion(registry.basePackVersion),
-    `${registryFile} has an invalid base pack version.`,
+    contentDependencies.length === (basePackId ? 1 : 0) &&
+      (!basePackId || contentDependencies[0] === basePackId),
+    `${registryFile} dependencies differ from pack.xml inheritance.`,
   );
 }
 

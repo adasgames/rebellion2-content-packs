@@ -26,11 +26,11 @@ pack's LFS objects, builds its manifest and content-addressed blobs, uploads the
 Launcher downloads are public at `https://rebellion2-content-packs.pages.dev/`. Repository and
 release storage share one R2 bucket but use separate key spaces.
 
-Each registry record declares the exact game versions it supports. Derived-pack registry records
-also declare the exact base-pack ID and version they require. Publishing rejects missing or
-malformed compatibility metadata, and the launcher lists and enforces those requirements before
-installation. Publish the compatibility-bearing catalogue before releasing a launcher that requires
-that metadata, so every launcher release sees the schema it understands.
+Each registry record declares its game and inherited-content requirements through a `depends` map.
+Requirements accept exact semantic versions, bounded comparisons such as `>=0.0.31 <0.0.40`, and
+arrays of alternative ranges. Publishing rejects missing or malformed dependency metadata, and the
+launcher lists and enforces those requirements before installation. Publish the dependency-bearing
+catalogue before releasing a launcher that requires that schema.
 
 Versioned manifests and content-addressed blobs are immutable and may be cached for one year. The
 mutable catalogue is cached for only 60 seconds, so compatibility and release updates propagate

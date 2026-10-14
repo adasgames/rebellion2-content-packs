@@ -1,14 +1,14 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
-import { isSemanticVersion } from "./semver.mjs";
+import { isSemanticVersion, isVersionRequirement } from "./semver.mjs";
 
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 const directory = /^[A-Za-z0-9][A-Za-z0-9._-]*$/u;
 
 /** Adds or replaces one independently published release in the pack catalog. */
 export function updateContentPackCatalog(catalog, release, manifest) {
-  if (catalog.schemaVersion !== 1 || !Array.isArray(catalog.packs)) {
-    throw new Error("Content-pack catalog must use schema version 1.");
+  if (![1, 2].includes(catalog.schemaVersion) || !Array.isArray(catalog.packs)) {
+    throw new Error("Content-pack catalog must use schema version 1 or 2.");
   }
   validateRelease(release);
   if (manifest.version !== release.version || !Array.isArray(manifest.files)) {
@@ -22,7 +22,10 @@ export function updateContentPackCatalog(catalog, release, manifest) {
     ...release,
     downloadSize,
   };
-  const packs = catalog.packs.filter((pack) => pack.id !== release.id);
+  const packs = catalog.packs
+    .map(migrateLegacyRelease)
+    .filter((pack) => pack.id !== release.id);
+  packs.forEach(validateRelease);
   const directoryOwner = packs.find(
     (pack) => pack.directory.toLowerCase() === release.directory.toLowerCase(),
   );
@@ -33,7 +36,7 @@ export function updateContentPackCatalog(catalog, release, manifest) {
   }
   packs.push(next);
   packs.sort((left, right) => left.name.localeCompare(right.name));
-  return { schemaVersion: 1, packs };
+  return { schemaVersion: 2, packs };
 }
 
 function validateRelease(release) {
@@ -56,23 +59,37 @@ function validateRelease(release) {
   ) {
     throw new Error("Content-pack channel path is unsafe.");
   }
-  if (release.basePackId && !slug.test(release.basePackId)) {
-    throw new Error("Base content-pack id must be a lowercase slug.");
+  if (!release.depends || typeof release.depends !== "object" || Array.isArray(release.depends)) {
+    throw new Error("Content-pack dependencies must be an object.");
   }
-  if (Boolean(release.basePackId) !== Boolean(release.basePackVersion)) {
-    throw new Error("Base content-pack id and version must be declared together.");
+  if (!("rebellion2" in release.depends)) {
+    throw new Error("Content pack must depend on rebellion2.");
   }
-  if (release.basePackVersion && !isSemanticVersion(release.basePackVersion)) {
-    throw new Error("Base content-pack version must be a semantic version.");
+  for (const [id, requirement] of Object.entries(release.depends)) {
+    if (!slug.test(id) || id === release.id) {
+      throw new Error(`Content-pack dependency id is invalid: ${id}.`);
+    }
+    if (!isVersionRequirement(requirement)) {
+      throw new Error(`Content-pack dependency requirement is invalid: ${id}.`);
+    }
   }
-  if (
-    !Array.isArray(release.compatibleGameVersions) ||
-    release.compatibleGameVersions.length === 0 ||
-    release.compatibleGameVersions.some((version) => !isSemanticVersion(version)) ||
-    new Set(release.compatibleGameVersions).size !== release.compatibleGameVersions.length
-  ) {
-    throw new Error("Compatible game versions must be unique semantic versions.");
+}
+
+/** Converts the only previously published catalogue schema into dependency requirements. */
+function migrateLegacyRelease(release) {
+  if (release.depends) return release;
+  const depends = {};
+  if (Array.isArray(release.compatibleGameVersions)) {
+    depends.rebellion2 =
+      release.compatibleGameVersions.length === 1
+        ? release.compatibleGameVersions[0]
+        : release.compatibleGameVersions;
   }
+  if (release.basePackId && release.basePackVersion) {
+    depends[release.basePackId] = release.basePackVersion;
+  }
+  const { basePackId, basePackVersion, compatibleGameVersions, ...current } = release;
+  return { ...current, depends };
 }
 
 function isChannelPath(value) {
@@ -91,7 +108,7 @@ async function main() {
       "Usage: node scripts/update-content-pack-catalog.mjs <catalog.json> <release.json> <manifest.json> <output.json>",
     );
   }
-  let catalog = { schemaVersion: 1, packs: [] };
+  let catalog = { schemaVersion: 2, packs: [] };
   try {
     catalog = JSON.parse(await readFile(catalogPath, "utf8"));
   } catch (error) {

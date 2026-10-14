@@ -42,6 +42,67 @@ export function isSemanticVersion(version) {
   }
 }
 
+/** Returns whether a dependency requirement contains only supported semantic-version constraints. */
+export function isVersionRequirement(requirement) {
+  try {
+    parseVersionRequirement(requirement);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** Returns whether one semantic version satisfies a dependency requirement. */
+export function satisfiesVersionRequirement(version, requirement) {
+  parseSemanticVersion(version);
+  return parseVersionRequirement(requirement).some((constraints) =>
+    constraints.every(({ operator, target }) =>
+      satisfiesConstraint(compareSemanticVersions(version, target), operator),
+    ),
+  );
+}
+
+/** Parses one requirement string or an array of alternative requirement strings. */
+function parseVersionRequirement(requirement) {
+  const alternatives = typeof requirement === "string" ? [requirement] : requirement;
+  if (!Array.isArray(alternatives) || alternatives.length === 0) {
+    throw new Error("Version requirement must be a string or a nonempty array of strings.");
+  }
+  return alternatives.map((alternative) => {
+    if (typeof alternative !== "string" || !alternative.trim()) {
+      throw new Error("Version requirement alternatives must be nonempty strings.");
+    }
+    return alternative.trim().split(/\s+/u).map(parseConstraint);
+  });
+}
+
+/** Parses one comparison token from a dependency requirement. */
+function parseConstraint(constraint) {
+  const match = /^(>=|<=|>|<|=)?(.+)$/u.exec(constraint);
+  if (!match || !isSemanticVersion(match[2])) {
+    throw new Error(`Invalid version constraint: ${constraint}`);
+  }
+  return { operator: match[1] ?? "=", target: match[2] };
+}
+
+/** Applies one comparison operator to a semantic-version ordering. */
+function satisfiesConstraint(comparison, operator) {
+  switch (operator) {
+    case "=":
+      return comparison === 0;
+    case ">":
+      return comparison > 0;
+    case ">=":
+      return comparison >= 0;
+    case "<":
+      return comparison < 0;
+    case "<=":
+      return comparison <= 0;
+    default:
+      throw new Error(`Unsupported version operator: ${operator}`);
+  }
+}
+
 /** Parses the subset of semantic versions accepted by the release workflows. */
 function parseSemanticVersion(version) {
   const match = /^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.-]+))?(?:\+([0-9A-Za-z.-]+))?$/u.exec(
