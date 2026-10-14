@@ -1,37 +1,47 @@
 # Rebellion 2 Content Packs
 
-Official optional content packs for Rebellion 2 live here independently from the game, launcher,
-and primary content repositories.
+## What this repository is
 
-## Repository layout
+This repository is the home for additional Rebellion 2 mods and content packs. Packs published
+here can add or replace game data, scenarios, factions, maps, artwork, audio, and other content
+without being bundled with the main game.
 
-- `Content/Packs/<directory>` contains each installable content pack.
-- `Source/<directory>` retains authoring and reference assets that are not installed with a pack.
-- `packs/<id>.json` contains the launcher catalogue metadata for that pack.
-- `hosting/` contains the public, read-only R2 gateway used by the launcher.
-- `scripts/` validates and packages immutable, content-addressed releases.
+Published packs are made available through the Rebellion 2 launcher, which handles installation
+and updates for players.
 
-## Large files
+## Submit your content for review
 
-Binary assets use Git LFS backed by the `rebellion2-content-packs` Cloudflare R2 bucket. Install
-[Git LFS](https://git-lfs.com/) before cloning. The committed `.lfsconfig` selects the project-owned
-LFS gateway; authorized contributors provide R2 credentials through their Git credential manager.
+Before submitting a large pack, contact a maintainer with:
 
-## Publishing
+- The pack's name and a short description.
+- A summary of what it adds or changes.
+- The source of its artwork, audio, and other assets.
+- Confirmation that those assets may be redistributed.
+- The versions of Rebellion 2 and any other content packs it requires.
 
-The `Publish content pack` workflow reads a pack's registry record and `pack.xml`, downloads that
-pack's LFS objects, builds its manifest and content-addressed blobs, uploads them to R2, and updates
-`catalogue.json` only after the immutable files are available.
+The repository uses a project-owned Git LFS service for large binary files. A maintainer must arrange
+upload access before you can push those assets.
 
-Launcher downloads are public at `https://rebellion2-content-packs.pages.dev/`. Repository and
-release storage share one R2 bucket but use separate key spaces.
+When the content is ready, open a pull request containing:
 
-Each registry record declares its game and inherited-content requirements through a `depends` map.
-Requirements accept exact semantic versions, bounded comparisons such as `>=0.0.31 <0.0.40`, and
-arrays of alternative ranges. Publishing rejects missing or malformed dependency metadata, and the
-launcher lists and enforces those requirements before installation. Publish the dependency-bearing
-catalogue before releasing a launcher that requires that schema.
+1. The installable pack under `Content/Packs/<Directory>`.
+2. A valid `pack.xml` inside that directory with a permanent lowercase, hyphenated ID, a semantic
+   version such as `1.0.0`, a display name, and the paths used by the pack.
+3. A matching catalogue record at `packs/<id>.json` containing the ID, display name, description,
+   directory, and version requirements.
+4. Optional authoring files under `Source/<Directory>` when they would help maintain the pack.
+5. Screenshots, audio samples, or testing notes that help reviewers evaluate the submission.
 
-Versioned manifests and content-addressed blobs are immutable and may be cached for one year. The
-mutable catalogue is cached for only 60 seconds, so compatibility and release updates propagate
-quickly without forcing clients to redownload unchanged assets.
+If the pack builds on another content pack, declare that pack in both `BasePackID` in `pack.xml` and
+the catalogue record's `depends` section. Only include files your pack owns or overrides; do not
+duplicate inherited content.
+
+Before opening the pull request, install Node.js, Git LFS, and `xmllint`, then run:
+
+```bash
+./build.sh all
+```
+
+The pull request must pass all repository checks and content review before it can be published. A
+maintainer will publish an approved pack through the repository's GitHub Actions workflow. Published
+versions are permanent, so any later file change requires a new version number in `pack.xml`.
