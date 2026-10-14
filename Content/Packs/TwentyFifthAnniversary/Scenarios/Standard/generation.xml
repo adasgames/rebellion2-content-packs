@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameGenerationConfig>
+  <Officers>
+    <NumStartingOfficers>
+      <Small>8</Small>
+      <Medium>9</Medium>
+      <Large>11</Large>
+    </NumStartingOfficers>
+    <StartingOfficers>
+      <StartingOfficerRule>
+        <OfficerInstanceID>MON_MOTHMA</OfficerInstanceID>
+        <DestinationTypeID>FACTION_HQ</DestinationTypeID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>LEIA_ORGANA</OfficerInstanceID>
+        <DestinationTypeID>PLSUM06</DestinationTypeID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>LUKE_SKYWALKER</OfficerInstanceID>
+        <DestinationTypeID>PLSUM06</DestinationTypeID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>HAN_SOLO</OfficerInstanceID>
+        <DestinationTypeID>PLSUM06</DestinationTypeID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>WEDGE_ANTILLES</OfficerInstanceID>
+        <DestinationTypeID>PLSUM06</DestinationTypeID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>CHEWBACCA</OfficerInstanceID>
+        <DestinationTypeID>PLSUM06</DestinationTypeID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>JAN_DODONNA</OfficerInstanceID>
+        <DestinationTypeID>PLSUM06</DestinationTypeID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>EMPEROR_PALPATINE</OfficerInstanceID>
+        <DestinationTypeID>PLSEW05</DestinationTypeID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>DARTH_VADER</OfficerInstanceID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>JERJERROD</OfficerInstanceID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>PIETT</OfficerInstanceID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>VEERS</OfficerInstanceID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>NEEDA</OfficerInstanceID>
+      </StartingOfficerRule>
+      <StartingOfficerRule>
+        <OfficerInstanceID>OZZEL</OfficerInstanceID>
+      </StartingOfficerRule>
+    </StartingOfficers>
+  </Officers>
+  <!-- Starting planet strength distribution by player faction and difficulty. -->
+  <GalaxyClassification>
+    <!-- Starting planet and garrison setup by faction. -->
+    <FactionSetups>
+      <FactionSetup>
+        <FactionID>FNALL1</FactionID>
+        <StartingPlanets>
+          <StartingPlanet>
+            <PlanetTypeID>PLSUM06</PlanetTypeID>
+            <IsHeadquarters>false</IsHeadquarters>
+            <Loyalty>100</Loyalty>
+            <PickFromRim>false</PickFromRim>
+            <!-- Factions that can see this planet at game start. -->
+            <VisibleToFactionIDs>
+              <FactionID>FNEMP1</FactionID>
+            </VisibleToFactionIDs>
+          </StartingPlanet>
+          <!-- Alliance headquarters is randomly picked from rim planets. -->
+          <StartingPlanet>
+            <IsHeadquarters>true</IsHeadquarters>
+            <Loyalty>100</Loyalty>
+            <PickFromRim>true</PickFromRim>
+          </StartingPlanet>
+        </StartingPlanets>
+      </FactionSetup>
+      <FactionSetup>
+        <FactionID>FNEMP1</FactionID>
+        <StartingPlanets>
+          <StartingPlanet>
+            <PlanetTypeID>PLSEW05</PlanetTypeID>
+            <IsHeadquarters>true</IsHeadquarters>
+            <Loyalty>100</Loyalty>
+            <PickFromRim>false</PickFromRim>
+          </StartingPlanet>
+        </StartingPlanets>
+      </FactionSetup>
+    </FactionSetups>
+    <!-- Base starting ownership, with optional difficulty and controller overrides. -->
+    <FactionBuckets>
+      <FactionBucketConfig>
+        <FactionID>FNALL1</FactionID>
+        <StrongPct>10</StrongPct>
+        <WeakPct>0</WeakPct>
+      </FactionBucketConfig>
+      <FactionBucketConfig>
+        <FactionID>FNEMP1</FactionID>
+        <StrongPct>10</StrongPct>
+        <WeakPct>4</WeakPct>
+        <Overrides>
+          <FactionBucketOverride>
+            <Difficulty>Hard</Difficulty>
+            <ControllerType>AI</ControllerType>
+            <StrongPct>14</StrongPct>
+            <WeakPct>0</WeakPct>
+          </FactionBucketOverride>
+        </Overrides>
+      </FactionBucketConfig>
+    </FactionBuckets>
+  </GalaxyClassification>
+  <!-- Resource ranges by availability setting. -->
+  <PlanetResources>
+    <Profiles>
+      <PlanetResourceProfile>
+        <Availability>Limited</Availability>
+        <CoreEnergy>
+          <Base>6</Base>
+          <Random1>3</Random1>
+          <Random2>0</Random2>
+        </CoreEnergy>
+        <RimEnergy>
+          <Base>1</Base>
+          <Random1>6</Random1>
+          <Random2>2</Random2>
+        </RimEnergy>
+        <CoreRawMaterials>
+          <Base>3</Base>
+          <Random1>6</Random1>
+          <Random2>0</Random2>
+        </CoreRawMaterials>
+        <RimRawMaterials>
+          <Base>1</Base>
+          <Random1>9</Random1>
+          <Random2>0</Random2>
+        </RimRawMaterials>
+        <EnergyMin>0</EnergyMin>
+        <EnergyMax>10</EnergyMax>
+        <RawMaterialsMin>0</RawMaterialsMin>
+        <RawMaterialsMax>10</RawMaterialsMax>
+        <RimColonizationPct>20</RimColonizationPct>
+      </PlanetResourceProfile>
+      <PlanetResourceProfile>
+        <Availability>Normal</Availability>
+        <CoreEnergy>
+          <Base>10</Base>
+          <Random1>4</Random1>
+          <Random2>0</Random2>
+        </CoreEnergy>
+        <RimEnergy>
+          <Base>1</Base>
+          <Random1>9</Random1>
+          <Random2>4</Random2>
+        </RimEnergy>
+        <CoreRawMaterials>
+          <Base>5</Base>
+          <Random1>9</Random1>
+          <Random2>0</Random2>
+        </CoreRawMaterials>
+        <RimRawMaterials>
+          <Base>1</Base>
+          <Random1>14</Random1>
+          <Random2>0</Random2>
+        </RimRawMaterials>
+        <EnergyMin>0</EnergyMin>
+        <EnergyMax>15</EnergyMax>
+        <RawMaterialsMin>0</RawMaterialsMin>
+        <RawMaterialsMax>15</RawMaterialsMax>
+        <RimColonizationPct>31</RimColonizationPct>
+      </PlanetResourceProfile>
+      <PlanetResourceProfile>
+        <Availability>Abundant</Availability>
+        <CoreEnergy>
+          <Base>14</Base>
+          <Random1>6</Random1>
+          <Random2>0</Random2>
+        </CoreEnergy>
+        <RimEnergy>
+          <Base>2</Base>
+          <Random1>12</Random1>
+          <Random2>6</Random2>
+        </RimEnergy>
+        <CoreRawMaterials>
+          <Base>7</Base>
+          <Random1>13</Random1>
+          <Random2>0</Random2>
+        </CoreRawMaterials>
+        <RimRawMaterials>
+          <Base>2</Base>
+          <Random1>18</Random1>
+          <Random2>0</Random2>
+        </RimRawMaterials>
+        <EnergyMin>0</EnergyMin>
+        <EnergyMax>20</EnergyMax>
+        <RawMaterialsMin>0</RawMaterialsMin>
+        <RawMaterialsMax>20</RawMaterialsMax>
+        <RimColonizationPct>45</RimColonizationPct>
+      </PlanetResourceProfile>
+    </Profiles>
+  </PlanetResources>
+  <!-- Starting popular-support ranges by ownership bucket. -->
+  <PlanetSupport>
+    <Strong>
+      <Base>60</Base>
+      <Random>30</Random>
+    </Strong>
+    <Weak>
+      <Base>20</Base>
+      <Random>30</Random>
+    </Weak>
+    <Neutral>
+      <Base>41</Base>
+      <Random>18</Random>
+    </Neutral>
+    <RimSupportRandom>0</RimSupportRandom>
+  </PlanetSupport>
+  <!-- Facility and infrastructure placement tables. -->
+  <FacilityGeneration>
+    <CoreMineMultiplier>4</CoreMineMultiplier>
+    <RimMineMultiplier>2</RimMineMultiplier>
+    <MineTypeID>BDFA04</MineTypeID>
+    <FacilityTableRollMin>0</FacilityTableRollMin>
+    <FacilityTableRollMaxExclusive>101</FacilityTableRollMaxExclusive>
+    <CoreFacilityTable>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>0</CumulativeWeight>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>36</CumulativeWeight>
+        <!-- Refinery. -->
+        <TypeID>BDFA05</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>79</CumulativeWeight>
+        <!-- Orbital Shipyard. -->
+        <TypeID>BDFA03</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>82</CumulativeWeight>
+        <!-- Training Facility. -->
+        <TypeID>BDFA02</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>85</CumulativeWeight>
+        <!-- Construction Yard. -->
+        <TypeID>BDFA01</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>88</CumulativeWeight>
+        <!-- GenCore Level I. -->
+        <TypeID>BDDF02</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>96</CumulativeWeight>
+        <!-- LNR Series I. -->
+        <TypeID>BDDF01</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>99</CumulativeWeight>
+        <!-- KDY-150. -->
+        <TypeID>BDDF03</TypeID>
+      </WeightedFacilityEntry>
+    </CoreFacilityTable>
+    <!-- Rim facility table. -->
+    <RimFacilityTable>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>0</CumulativeWeight>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>91</CumulativeWeight>
+        <!-- Refinery. -->
+        <TypeID>BDFA05</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>96</CumulativeWeight>
+        <!-- Orbital Shipyard. -->
+        <TypeID>BDFA03</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>97</CumulativeWeight>
+        <!-- Training Facility. -->
+        <TypeID>BDFA02</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>98</CumulativeWeight>
+        <!-- Construction Yard. -->
+        <TypeID>BDFA01</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>99</CumulativeWeight>
+        <!-- GenCore Level I. -->
+        <TypeID>BDDF02</TypeID>
+      </WeightedFacilityEntry>
+      <WeightedFacilityEntry>
+        <CumulativeWeight>100</CumulativeWeight>
+        <!-- LNR Series I. -->
+        <TypeID>BDDF01</TypeID>
+      </WeightedFacilityEntry>
+      <!-- Rim systems do not start with KDY-150 defenses. -->
+    </RimFacilityTable>
+    <HQLoadouts>
+      <!-- Coruscant fixed facilities. -->
+      <HQFacilityLoadout>
+        <PlanetTypeID>PLSEW05</PlanetTypeID>
+        <FacilityTypeIDs>
+          <!-- Construction Yard. -->
+          <string>BDFA01</string>
+        </FacilityTypeIDs>
+      </HQFacilityLoadout>
+      <!-- Alliance headquarters fixed facilities. -->
+      <HQFacilityLoadout>
+        <PlanetTypeID>FACTION_HQ</PlanetTypeID>
+        <FactionID>FNALL1</FactionID>
+        <FacilityTypeIDs>
+          <!-- Alliance Headquarters. -->
+          <string>BDHQ01</string>
+          <!-- Mine. -->
+          <string>BDFA04</string>
+          <!-- Refinery. -->
+          <string>BDFA05</string>
+          <!-- Construction Yard. -->
+          <string>BDFA01</string>
+          <!-- GenCore Level I. -->
+          <string>BDDF02</string>
+        </FacilityTypeIDs>
+      </HQFacilityLoadout>
+    </HQLoadouts>
+  </FacilityGeneration>
+  <!-- Starting unit, fleet, and deployment budget tables. -->
+  <UnitDeployment>
+    <UprisingPreventionThreshold>60</UprisingPreventionThreshold>
+    <SupportDeficitPerGarrisonTroop>10</SupportDeficitPerGarrisonTroop>
+    <FixedGarrisons>
+      <FixedGarrison>
+        <PlanetTypeID>PLSUM06</PlanetTypeID>
+        <FactionID>FNALL1</FactionID>
+        <Units>
+          <UnitEntry>
+            <!-- Alliance Army Regiment. -->
+            <TypeID>REAL002</TypeID>
+            <Count>2</Count>
+          </UnitEntry>
+          <UnitEntry>
+            <!-- X-Wing. -->
+            <TypeID>SFAL02</TypeID>
+            <Count>1</Count>
+          </UnitEntry>
+          <UnitEntry>
+            <!-- Y-Wing. -->
+            <TypeID>SFAL01</TypeID>
+            <Count>1</Count>
+          </UnitEntry>
+        </Units>
+      </FixedGarrison>
+      <FixedGarrison>
+        <PlanetTypeID>FACTION_HQ</PlanetTypeID>
+        <FactionID>FNALL1</FactionID>
+        <Units>
+          <UnitEntry>
+            <!-- Alliance Army Regiment. -->
+            <TypeID>REAL002</TypeID>
+            <Count>2</Count>
+          </UnitEntry>
+          <UnitEntry>
+            <!-- Alliance Fleet Regiment. -->
+            <TypeID>REAL001</TypeID>
+            <Count>1</Count>
+          </UnitEntry>
+          <UnitEntry>
+            <!-- X-Wing. -->
+            <TypeID>SFAL02</TypeID>
+            <Count>4</Count>
+          </UnitEntry>
+          <UnitEntry>
+            <!-- Y-Wing. -->
+            <TypeID>SFAL01</TypeID>
+            <Count>2</Count>
+          </UnitEntry>
+        </Units>
+      </FixedGarrison>
+      <FixedGarrison>
+        <PlanetTypeID>PLSEW05</PlanetTypeID>
+        <FactionID>FNEMP1</FactionID>
+        <Units>
+          <UnitEntry>
+            <!-- Stormtrooper Regiment. -->
+            <TypeID>REEM003</TypeID>
+            <Count>6</Count>
+          </UnitEntry>
+          <UnitEntry>
+            <!-- TIE Fighter. -->
+            <TypeID>SFEM01</TypeID>
+            <Count>10</Count>
+          </UnitEntry>
+        </Units>
+      </FixedGarrison>
+    </FixedGarrisons>
+    <FixedFleets>
+      <FixedFleet>
+        <PlanetTypeID>PLSEW05</PlanetTypeID>
+        <FactionID>FNEMP1</FactionID>
+        <SpawnChancePct>100</SpawnChancePct>
+        <ShipEntries>
+          <FixedFleetShip>
+            <!-- Imperial Star Destroyer. -->
+            <TypeID>CSEM006</TypeID>
+            <Count>1</Count>
+            <Cargo>
+              <UnitEntry>
+                <!-- TIE Fighter. -->
+                <TypeID>SFEM01</TypeID>
+                <Count>6</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- Stormtrooper Regiment. -->
+                <TypeID>REEM003</TypeID>
+                <Count>3</Count>
+              </UnitEntry>
+            </Cargo>
+          </FixedFleetShip>
+        </ShipEntries>
+      </FixedFleet>
+      <!-- Yavin starting fleet. -->
+      <FixedFleet>
+        <TargetPlanets>
+          <PlanetTypeID>PLSUM06</PlanetTypeID>
+          <PlanetTypeID>FACTION_HQ</PlanetTypeID>
+        </TargetPlanets>
+        <FactionID>FNALL1</FactionID>
+        <ShipEntries>
+          <FixedFleetShip>
+            <!-- Corellian Corvette. -->
+            <TypeID>ALCS006</TypeID>
+            <Count>1</Count>
+          </FixedFleetShip>
+          <FixedFleetShip>
+            <!-- Medium Transport. -->
+            <TypeID>ALCS003</TypeID>
+            <Count>1</Count>
+            <Cargo>
+              <UnitEntry>
+                <!-- Alliance Fleet Regiment. -->
+                <TypeID>REAL001</TypeID>
+                <Count>2</Count>
+              </UnitEntry>
+            </Cargo>
+          </FixedFleetShip>
+        </ShipEntries>
+      </FixedFleet>
+    </FixedFleets>
+    <FactionBudgets>
+      <FactionBudget>
+        <FactionID>FNALL1</FactionID>
+        <!-- Starting-unit budget percentage by galaxy size. -->
+        <BudgetLevels>
+          <BudgetLevel>
+            <GalaxySize>0</GalaxySize>
+            <Percentage>25</Percentage>
+          </BudgetLevel>
+          <BudgetLevel>
+            <GalaxySize>1</GalaxySize>
+            <Percentage>20</Percentage>
+          </BudgetLevel>
+          <BudgetLevel>
+            <GalaxySize>2</GalaxySize>
+            <Percentage>15</Percentage>
+          </BudgetLevel>
+        </BudgetLevels>
+        <UnitTable>
+          <!-- Alliance budget unit table. -->
+          <WeightedUnitEntry>
+            <Weight>8</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Bulk Cruiser. -->
+                <TypeID>CSAL002</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>4</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Alliance Escort Carrier. -->
+                <TypeID>ALCS005</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- X-Wing. -->
+                <TypeID>SFAL02</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- Y-Wing. -->
+                <TypeID>SFAL01</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>14</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Corellian Corvette. -->
+                <TypeID>ALCS006</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>9</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Medium Transport. -->
+                <TypeID>ALCS003</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- Alliance Army Regiment. -->
+                <TypeID>REAL002</TypeID>
+                <Count>2</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>4</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- X-Wing. -->
+                <TypeID>SFAL02</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>14</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Y-Wing. -->
+                <TypeID>SFAL01</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>4</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Alliance Fleet Regiment. -->
+                <TypeID>REAL001</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>31</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Alliance Army Regiment. -->
+                <TypeID>REAL002</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>1</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Guerrillas. -->
+                <TypeID>SPAL001</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>3</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Infiltrators. -->
+                <TypeID>SPAL002</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>4</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Longprobe Y-wing Recon. -->
+                <TypeID>SPAL003</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>4</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Bothan Spies. -->
+                <TypeID>SPAL004</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+        </UnitTable>
+        <Bonuses>
+          <StartingUnitBudgetBonus>
+            <Difficulty>Hard</Difficulty>
+            <AIOnly>true</AIOnly>
+            <Category>Starfighter</Category>
+            <BudgetLevels>
+              <BudgetLevel>
+                <GalaxySize>0</GalaxySize>
+                <Percentage>23</Percentage>
+              </BudgetLevel>
+              <BudgetLevel>
+                <GalaxySize>1</GalaxySize>
+                <Percentage>18</Percentage>
+              </BudgetLevel>
+              <BudgetLevel>
+                <GalaxySize>2</GalaxySize>
+                <Percentage>13</Percentage>
+              </BudgetLevel>
+            </BudgetLevels>
+          </StartingUnitBudgetBonus>
+          <StartingUnitBudgetBonus>
+            <Difficulty>Hard</Difficulty>
+            <AIOnly>true</AIOnly>
+            <Category>Regiment</Category>
+            <BudgetLevels>
+              <BudgetLevel>
+                <GalaxySize>0</GalaxySize>
+                <Percentage>10</Percentage>
+              </BudgetLevel>
+              <BudgetLevel>
+                <GalaxySize>1</GalaxySize>
+                <Percentage>7</Percentage>
+              </BudgetLevel>
+              <BudgetLevel>
+                <GalaxySize>2</GalaxySize>
+                <Percentage>5</Percentage>
+              </BudgetLevel>
+            </BudgetLevels>
+          </StartingUnitBudgetBonus>
+        </Bonuses>
+      </FactionBudget>
+      <FactionBudget>
+        <FactionID>FNEMP1</FactionID>
+        <!-- Starting-unit budget percentage by galaxy size. -->
+        <BudgetLevels>
+          <BudgetLevel>
+            <GalaxySize>0</GalaxySize>
+            <Percentage>25</Percentage>
+          </BudgetLevel>
+          <BudgetLevel>
+            <GalaxySize>1</GalaxySize>
+            <Percentage>20</Percentage>
+          </BudgetLevel>
+          <BudgetLevel>
+            <GalaxySize>2</GalaxySize>
+            <Percentage>15</Percentage>
+          </BudgetLevel>
+        </BudgetLevels>
+        <UnitTable>
+          <!-- Empire budget unit table. -->
+          <WeightedUnitEntry>
+            <Weight>8</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Carrack Light Cruiser. -->
+                <TypeID>CSEM004</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>11</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Victory Destroyer. -->
+                <TypeID>CSEM005</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- Imperial Fleet Regiment. -->
+                <TypeID>REEM001</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- TIE Fighter. -->
+                <TypeID>SFEM01</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>4</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Imperial Star Destroyer. -->
+                <TypeID>CSEM006</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- Stormtrooper Regiment. -->
+                <TypeID>REEM003</TypeID>
+                <Count>2</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- TIE Fighter. -->
+                <TypeID>SFEM01</TypeID>
+                <Count>2</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>5</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Dreadnaught. -->
+                <TypeID>CSEM001</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- Imperial Fleet Regiment. -->
+                <TypeID>REEM001</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- TIE Fighter. -->
+                <TypeID>SFEM01</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>10</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Galleon. -->
+                <TypeID>CSEM002</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+              <UnitEntry>
+                <!-- Imperial Fleet Regiment. -->
+                <TypeID>REEM001</TypeID>
+                <Count>2</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>22</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- TIE Fighter. -->
+                <TypeID>SFEM01</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>8</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Stormtrooper Regiment. -->
+                <TypeID>REEM003</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>15</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Imperial Army Regiment. -->
+                <TypeID>REEM002</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>5</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Imperial Probe Droid. -->
+                <TypeID>SPEM001</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>5</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Imperial Espionage Droid. -->
+                <TypeID>SPEM002</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>4</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Imperial Commandos. -->
+                <TypeID>SPEM003</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+          <WeightedUnitEntry>
+            <Weight>3</Weight>
+            <Units>
+              <UnitEntry>
+                <!-- Noghri Death Commandos. -->
+                <TypeID>SPEM004</TypeID>
+                <Count>1</Count>
+              </UnitEntry>
+            </Units>
+          </WeightedUnitEntry>
+        </UnitTable>
+        <Bonuses>
+          <StartingUnitBudgetBonus>
+            <Difficulty>Hard</Difficulty>
+            <AIOnly>true</AIOnly>
+            <Category>Starfighter</Category>
+            <BudgetLevels>
+              <BudgetLevel>
+                <GalaxySize>0</GalaxySize>
+                <Percentage>35</Percentage>
+              </BudgetLevel>
+              <BudgetLevel>
+                <GalaxySize>1</GalaxySize>
+                <Percentage>25</Percentage>
+              </BudgetLevel>
+              <BudgetLevel>
+                <GalaxySize>2</GalaxySize>
+                <Percentage>13</Percentage>
+              </BudgetLevel>
+            </BudgetLevels>
+          </StartingUnitBudgetBonus>
+          <StartingUnitBudgetBonus>
+            <Difficulty>Hard</Difficulty>
+            <AIOnly>true</AIOnly>
+            <Category>Regiment</Category>
+            <BudgetLevels>
+              <BudgetLevel>
+                <GalaxySize>0</GalaxySize>
+                <Percentage>16</Percentage>
+              </BudgetLevel>
+              <BudgetLevel>
+                <GalaxySize>1</GalaxySize>
+                <Percentage>12</Percentage>
+              </BudgetLevel>
+              <BudgetLevel>
+                <GalaxySize>2</GalaxySize>
+                <Percentage>8</Percentage>
+              </BudgetLevel>
+            </BudgetLevels>
+          </StartingUnitBudgetBonus>
+        </Bonuses>
+      </FactionBudget>
+    </FactionBudgets>
+  </UnitDeployment>
+  <Balance>
+    <SupportBoostPerUnit>2</SupportBoostPerUnit>
+    <MaxMilitaryPresenceBoost>10</MaxMilitaryPresenceBoost>
+  </Balance>
+</GameGenerationConfig>

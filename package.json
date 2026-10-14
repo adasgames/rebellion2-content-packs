@@ -1,0 +1,10 @@
+{
+  "name": "rebellion2-content-packs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:hosting": "node scripts/build-hosting.mjs",
+    "lint": "node scripts/validate-repository.mjs",
+    "test": "node --test scripts/*.test.mjs hosting/*.test.mjs"
+  }
+}
