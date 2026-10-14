@@ -16,6 +16,10 @@ test("isPublicPath allows only catalogue, versioned manifests, and hashed blobs"
 
 test("cacheControlFor keeps the catalogue fresh and immutable releases cached", () => {
   assert.match(cacheControlFor("dist/catalogue.json"), /must-revalidate/u);
+  assert.match(
+    cacheControlFor("dist/content-packs/sample-pack/manifest-1.2.3.json"),
+    /max-age=31536000, immutable/u,
+  );
   assert.match(cacheControlFor(`content-pack-blobs/${"a".repeat(64)}`), /immutable/u);
 });
 

@@ -23,6 +23,18 @@ for (const registryFile of registryFiles) {
   requireValue(registry.name?.trim(), `${registryFile} has no display name.`);
   requireValue(registry.description?.trim(), `${registryFile} has no description.`);
   requireValue(
+    Array.isArray(registry.compatibleGameVersions) && registry.compatibleGameVersions.length > 0,
+    `${registryFile} has no compatible game versions.`,
+  );
+  requireValue(
+    registry.compatibleGameVersions.every((version) => semanticVersion.test(version)),
+    `${registryFile} has an invalid compatible game version.`,
+  );
+  requireValue(
+    new Set(registry.compatibleGameVersions).size === registry.compatibleGameVersions.length,
+    `${registryFile} repeats a compatible game version.`,
+  );
+  requireValue(
     safeDirectory.test(registry.directory) && ![".", ".."].includes(registry.directory),
     `${registryFile} has an unsafe directory.`,
   );
@@ -48,6 +60,18 @@ for (const registryFile of registryFiles) {
   requireValue(
     xmlValue(packXml, "BasePackID") === (registry.basePackId ?? ""),
     `${registryFile} base pack differs from pack.xml.`,
+  );
+  requireValue(
+    Boolean(registry.basePackId) === Boolean(registry.basePackVersion),
+    `${registryFile} must declare its base pack id and version together.`,
+  );
+  requireValue(
+    !registry.basePackVersion || semanticVersion.test(registry.basePackVersion),
+    `${registryFile} has an invalid base pack version.`,
+  );
+  requireValue(
+    xmlValue(packXml, "BasePackVersion") === (registry.basePackVersion ?? ""),
+    `${registryFile} base pack version differs from pack.xml.`,
   );
 }
 

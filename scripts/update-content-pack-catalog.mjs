@@ -3,6 +3,7 @@ import { pathToFileURL } from "node:url";
 
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 const directory = /^[A-Za-z0-9][A-Za-z0-9._-]*$/u;
+const semanticVersion = /^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/u;
 
 /** Adds or replaces one independently published release in the pack catalog. */
 export function updateContentPackCatalog(catalog, release, manifest) {
@@ -55,6 +56,20 @@ function validateRelease(release) {
   }
   if (release.basePackId && !slug.test(release.basePackId)) {
     throw new Error("Base content-pack id must be a lowercase slug.");
+  }
+  if (Boolean(release.basePackId) !== Boolean(release.basePackVersion)) {
+    throw new Error("Base content-pack id and version must be declared together.");
+  }
+  if (release.basePackVersion && !semanticVersion.test(release.basePackVersion)) {
+    throw new Error("Base content-pack version must be a semantic version.");
+  }
+  if (
+    !Array.isArray(release.compatibleGameVersions) ||
+    release.compatibleGameVersions.length === 0 ||
+    release.compatibleGameVersions.some((version) => !semanticVersion.test(version)) ||
+    new Set(release.compatibleGameVersions).size !== release.compatibleGameVersions.length
+  ) {
+    throw new Error("Compatible game versions must be unique semantic versions.");
   }
 }
 

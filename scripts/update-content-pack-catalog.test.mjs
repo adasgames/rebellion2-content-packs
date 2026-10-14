@@ -13,6 +13,8 @@ function release(overrides = {}) {
     manifest: "dist/content-packs/sample-pack/manifest-1.2.3.json",
     blobs: "content-pack-blobs/",
     basePackId: "classic-galactic-civil-war",
+    basePackVersion: "1.0.0",
+    compatibleGameVersions: ["0.0.31"],
     ...overrides,
   };
 }
@@ -37,6 +39,8 @@ test("catalog records one independently versioned pack and its size", () => {
   assert.equal(result.packs.length, 1);
   assert.equal(result.packs[0].downloadSize, 35);
   assert.equal(result.packs[0].version, "1.2.3");
+  assert.equal(result.packs[0].basePackVersion, "1.0.0");
+  assert.deepEqual(result.packs[0].compatibleGameVersions, ["0.0.31"]);
 });
 
 test("publishing a new pack version replaces only that catalog entry", () => {
@@ -66,4 +70,38 @@ test("catalog rejects a directory owned by another pack", () => {
     () => updateContentPackCatalog(existing, release({ directory: "SharedDirectory" }), manifest()),
     /already belongs/u,
   );
+});
+
+test("catalog rejects a release without compatible game versions", () => {
+  assert.throws(
+    () =>
+      updateContentPackCatalog(
+        { schemaVersion: 1, packs: [] },
+        release({ compatibleGameVersions: [] }),
+        manifest(),
+      ),
+    /Compatible game versions/u,
+  );
+});
+
+test("catalog requires a base pack id and version together", () => {
+  assert.throws(
+    () =>
+      updateContentPackCatalog(
+        { schemaVersion: 1, packs: [] },
+        release({ basePackVersion: undefined }),
+        manifest(),
+      ),
+    /declared together/u,
+  );
+});
+
+test("catalog retains exact compatible game versions", () => {
+  const result = updateContentPackCatalog(
+    { schemaVersion: 1, packs: [] },
+    release({ compatibleGameVersions: ["0.0.31", "0.0.32"] }),
+    manifest(),
+  );
+
+  assert.deepEqual(result.packs[0].compatibleGameVersions, ["0.0.31", "0.0.32"]);
 });
