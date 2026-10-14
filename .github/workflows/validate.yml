@@ -1,0 +1,25 @@
+name: Validate content packs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          lfs: false
+
+      - name: Install validation tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq git-lfs libxml2-utils
+
+      - name: Run tests and lint
+        run: bash ./build.sh all
