@@ -1,0 +1,2332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CapitalShips>
+  <CapitalShip>
+    <TypeID>CSAL001</TypeID>
+    <DisplayName>MC40a Light Cruiser</DisplayName>
+    <ShipNamePoolID>B</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] MC40a Light Cruiser (550m)
+  Cost 44, Maintenance 33, Fighters 1, Troops 2
+
+ATK: vs Ships 70, vs Fighters 0, Reload 7
+DEF: Shield/Recharge 200/10, DamageControl 10, Hull 1200
+MOV: Maneuverability 1, Hyperdrive/Backup 80/180
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 40, 20, 70 (6000m)
+    + Ions/Torpedoes: -
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: This cruiser is a vessel that became increasingly significant in these times, particularly within the ranks of the Rebel Alliance. These cruisers are known for their unique design, a hallmark of Mon Calamari engineering. The MC40a played a critical role in the Rebel fleet due to its versatility as a warship. Equipped with formidable armaments and deflector shields, it was more than capable of engaging Imperial forces in various confrontations. The MC40a's blend of firepower and maneuverability made it a valuable asset in the Rebel Alliance's arsenal, particularly in the wake of the Death Star's destruction, contributing significantly to their strategic operations during the Galactic Civil War.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL001/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>44</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>33</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>1</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>2</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>200</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>40		20		70		70</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] MC40a Light Cruiser (550m)
+  Cost 44, Maintenance 33, Fighters 1, Troops 2
+
+ATK: vs Ships 70, vs Fighters 0, Reload 7
+DEF: Shield/Recharge 200/10, DamageControl 10, Hull 1200
+MOV: Maneuverability 1, Hyperdrive/Backup 80/180
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 40, 20, 70 (6000m)
+    + Ions/Torpedoes: -
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: This cruiser is a vessel that became increasingly significant in these times, particularly within the ranks of the Rebel Alliance. These cruisers are known for their unique design, a hallmark of Mon Calamari engineering. The MC40a played a critical role in the Rebel fleet due to its versatility as a warship. Equipped with formidable armaments and deflector shields, it was more than capable of engaging Imperial forces in various confrontations. The MC40a's blend of firepower and maneuverability made it a valuable asset in the Rebel Alliance's arsenal, particularly in the wake of the Death Star's destruction, contributing significantly to their strategic operations during the Galactic Civil War.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>SecondaryLine</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>44</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>33</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>0</ResearchOrder>
+    <ResearchDifficulty>0</ResearchDifficulty>
+    <MaxHullStrength>1200</MaxHullStrength>
+    <CurrentHullStrength>1200</CurrentHullStrength>
+    <DamageControl>10</DamageControl>
+    <MaxShieldStrength>200</MaxShieldStrength>
+    <ShieldRechargeRate>10</ShieldRechargeRate>
+    <Hyperdrive>80</Hyperdrive>
+    <SublightSpeed>3</SublightSpeed>
+    <Maneuverability>1</Maneuverability>
+    <StarfighterCapacity>1</StarfighterCapacity>
+    <RegimentCapacity>2</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>40</int>
+            <int>20</int>
+            <int>70</int>
+            <int>70</int>
+            <int>60</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>7</WeaponRecharge>
+    <Bombardment>1</Bombardment>
+    <TractorBeamPower>0</TractorBeamPower>
+    <TractorBeamnRange>0</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>10</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>CSAL002</TypeID>
+    <DisplayName>Bulk Cruiser</DisplayName>
+    <ShipNamePoolID>B</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] Neutron Star-class Bulk Cruiser (600m)
+  Cost 30, Maintenance 30, Fighters 0, Troops 0
+
+ATK: vs Ships 30, vs Fighters 0, Reload 6
+DEF: Shield/Recharge 200/10, DamageControl 5, Hull 1200
+MOV: Maneuverability 1, Hyperdrive/Backup 80/120
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 15, 0, 30 (3500m)
+    + Ions/Torpedoes: -
+    + Lasers: -
+
+Company: Rendili StarDrive
+History: These ships, distinguished by their robust structures and versatile capabilities, have been involved in various roles across the galaxy. They were primarily seen in service with the Galactic Empire, often deployed for military logistics and transport duties. Their design allows for modifications, making them a common choice for specialized missions. The destruction of the Death Star at the Battle of Yavin marked a period where the Empire relied heavily on such cruisers for rapid redeployment of resources, highlighting their strategic importance in the wake of significant losses.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL002/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>30</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>30</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>200</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>15		0		30		30</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] Neutron Star-class Bulk Cruiser (600m)
+  Cost 30, Maintenance 30, Fighters 0, Troops 0
+
+ATK: vs Ships 30, vs Fighters 0, Reload 6
+DEF: Shield/Recharge 200/10, DamageControl 5, Hull 1200
+MOV: Maneuverability 1, Hyperdrive/Backup 80/120
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 15, 0, 30 (3500m)
+    + Ions/Torpedoes: -
+    + Lasers: -
+
+Company: Rendili StarDrive
+History: These ships, distinguished by their robust structures and versatile capabilities, have been involved in various roles across the galaxy. They were primarily seen in service with the Galactic Empire, often deployed for military logistics and transport duties. Their design allows for modifications, making them a common choice for specialized missions. The destruction of the Death Star at the Battle of Yavin marked a period where the Empire relied heavily on such cruisers for rapid redeployment of resources, highlighting their strategic importance in the wake of significant losses.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>SecondaryLine</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>30</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>30</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>0</ResearchOrder>
+    <ResearchDifficulty>0</ResearchDifficulty>
+    <MaxHullStrength>1200</MaxHullStrength>
+    <CurrentHullStrength>1200</CurrentHullStrength>
+    <DamageControl>5</DamageControl>
+    <MaxShieldStrength>200</MaxShieldStrength>
+    <ShieldRechargeRate>10</ShieldRechargeRate>
+    <Hyperdrive>80</Hyperdrive>
+    <SublightSpeed>3</SublightSpeed>
+    <Maneuverability>1</Maneuverability>
+    <StarfighterCapacity>0</StarfighterCapacity>
+    <RegimentCapacity>0</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>15</int>
+            <int>0</int>
+            <int>30</int>
+            <int>30</int>
+            <int>35</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>6</WeaponRecharge>
+    <Bombardment>1</Bombardment>
+    <TractorBeamPower>1</TractorBeamPower>
+    <TractorBeamnRange>20</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>10</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>ALCS003</TypeID>
+    <DisplayName>Medium Transport</DisplayName>
+    <ShipNamePoolID>A</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] GR-75 Medium Transport (90m)
+  Cost 10, Maintenance 12, Fighters 0, Troops 2
+
+ATK: vs Ships 0, vs Fighters 30, Reload 2
+DEF: Shield/Recharge 100/5, DamageControl 5, Hull 360
+MOV: Maneuverability 2, Hyperdrive/Backup 100/-
+SPE: Bombardment 0
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: 0, 0, 30 (1700m)
+
+Company: Gallofree Yards, Inc.
+History: This transport has a distinguished history, particularly for its role within the Rebel Alliance. Initially designed for commercial cargo transport, these ships were repurposed by the Rebellion due to their high cargo capacity and modifiability. They were crucial in evacuating Rebel bases, most notably during the evacuation of Hoth, where their effectiveness in rapid deployment and retreat was demonstrated. GR-75 transports were often seen in Rebel convoys, transporting troops, supplies, and equipment crucial for the survival and operations of the Alliance in their struggle against the Galactic Empire. Their utilitarian design and reliability made them a backbone in the logistics of the Rebel fleet.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS003/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>10</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>12</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>2</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>100</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		30		30</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] GR-75 Medium Transport (90m)
+  Cost 10, Maintenance 12, Fighters 0, Troops 2
+
+ATK: vs Ships 0, vs Fighters 30, Reload 2
+DEF: Shield/Recharge 100/5, DamageControl 5, Hull 360
+MOV: Maneuverability 2, Hyperdrive/Backup 100/-
+SPE: Bombardment 0
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: 0, 0, 30 (1700m)
+
+Company: Gallofree Yards, Inc.
+History: This transport has a distinguished history, particularly for its role within the Rebel Alliance. Initially designed for commercial cargo transport, these ships were repurposed by the Rebellion due to their high cargo capacity and modifiability. They were crucial in evacuating Rebel bases, most notably during the evacuation of Hoth, where their effectiveness in rapid deployment and retreat was demonstrated. GR-75 transports were often seen in Rebel convoys, transporting troops, supplies, and equipment crucial for the survival and operations of the Alliance in their struggle against the Galactic Empire. Their utilitarian design and reliability made them a backbone in the logistics of the Rebel fleet.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>Transport</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>10</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>12</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>0</ResearchOrder>
+    <ResearchDifficulty>0</ResearchDifficulty>
+    <MaxHullStrength>360</MaxHullStrength>
+    <CurrentHullStrength>360</CurrentHullStrength>
+    <DamageControl>5</DamageControl>
+    <MaxShieldStrength>100</MaxShieldStrength>
+    <ShieldRechargeRate>5</ShieldRechargeRate>
+    <Hyperdrive>100</Hyperdrive>
+    <SublightSpeed>2</SublightSpeed>
+    <Maneuverability>2</Maneuverability>
+    <StarfighterCapacity>0</StarfighterCapacity>
+    <RegimentCapacity>2</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>30</int>
+            <int>30</int>
+            <int>17</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>2</WeaponRecharge>
+    <Bombardment>0</Bombardment>
+    <TractorBeamPower>0</TractorBeamPower>
+    <TractorBeamnRange>0</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>5</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>ALCS004</TypeID>
+    <DisplayName>Bulk Freighter</DisplayName>
+    <ShipNamePoolID>A</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] Action VI Bulk Freighter (100m)
+  Cost 24, Maintenance 22, Fighters 0, Troops 6
+
+ATK: vs Ships 0, vs Fighters 0, Reload -
+DEF: Shield/Recharge 200/10, DamageControl 5, Hull 600
+MOV: Maneuverability 1, Hyperdrive/Backup 90/-
+SPE: Bombardment 0
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: -
+
+Company: Corellian Engineering Corporation
+History: This freighter holds a significant place in the logistical and trade networks of the galaxy. Designed primarily for cargo transport, these freighters were a common sight in commercial space lanes, transporting goods across various sectors. Their robust design and large cargo holds made them popular among shipping companies and independent traders. While not heavily armed or particularly fast, the Action VI's reliability and ease of modification allowed it to maintain prominence in the galactic economy. In the wake of the Death Star's destruction, these freighters continued to play a vital role in both commercial and, occasionally, covert operations, supporting various factions during the Galactic Civil War.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS004/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>24</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>22</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>6</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>200</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		0		  0</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] Action VI Bulk Freighter (100m)
+  Cost 24, Maintenance 22, Fighters 0, Troops 6
+
+ATK: vs Ships 0, vs Fighters 0, Reload -
+DEF: Shield/Recharge 200/10, DamageControl 5, Hull 600
+MOV: Maneuverability 1, Hyperdrive/Backup 90/-
+SPE: Bombardment 0
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: -
+
+Company: Corellian Engineering Corporation
+History: This freighter holds a significant place in the logistical and trade networks of the galaxy. Designed primarily for cargo transport, these freighters were a common sight in commercial space lanes, transporting goods across various sectors. Their robust design and large cargo holds made them popular among shipping companies and independent traders. While not heavily armed or particularly fast, the Action VI's reliability and ease of modification allowed it to maintain prominence in the galactic economy. In the wake of the Death Star's destruction, these freighters continued to play a vital role in both commercial and, occasionally, covert operations, supporting various factions during the Galactic Civil War.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>Transport</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>24</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>22</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>0</ResearchOrder>
+    <ResearchDifficulty>0</ResearchDifficulty>
+    <MaxHullStrength>600</MaxHullStrength>
+    <CurrentHullStrength>600</CurrentHullStrength>
+    <DamageControl>5</DamageControl>
+    <MaxShieldStrength>200</MaxShieldStrength>
+    <ShieldRechargeRate>10</ShieldRechargeRate>
+    <Hyperdrive>90</Hyperdrive>
+    <SublightSpeed>1</SublightSpeed>
+    <Maneuverability>1</Maneuverability>
+    <StarfighterCapacity>0</StarfighterCapacity>
+    <RegimentCapacity>6</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>0</WeaponRecharge>
+    <Bombardment>0</Bombardment>
+    <TractorBeamPower>0</TractorBeamPower>
+    <TractorBeamnRange>0</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>1</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>ALCS005</TypeID>
+    <DisplayName>Alliance Escort Carrier</DisplayName>
+    <ShipNamePoolID>A</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] Quasar Fire-class Cruiser-Carrier (350m)
+  Cost 32, Maintenance 29, Fighters 6, Troops 0
+
+ATK: vs Ships 0, vs Fighters 60, Reload 4
+DEF: Shield/Recharge 200/10, DamageControl 5, Hull 900
+MOV: Maneuverability 1, Hyperdrive/Backup 80/120
+SPE: Bombardment 0
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: 30, 0, 60 (1700m)
+
+Company: Sienar Fleet Systems
+History: The Alliance Escort Carrier, was originally a Quasar Fire-class cruiser-carrier later repurposed by the Rebel Alliance. These vessels became crucial to the Alliance's fleet, primarily used for launching and supporting starfighter squadrons. Their adaptation from commercial cargo ships to military use was emblematic of the Rebellion's resourcefulness. These carriers played a significant role in the aftermath of the Death Star's destruction, enhancing the Rebel fleet's operational capabilities and providing vital starfighter support in numerous engagements against the Galactic Empire. The presence of these carriers allowed the Rebel Alliance to project power and maintain a mobile presence, crucial for their hit-and-run tactics against the more massive Imperial Navy.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS005/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>32</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>29</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>6</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>200</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>30		0		60		60</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] Quasar Fire-class Cruiser-Carrier (350m)
+  Cost 32, Maintenance 29, Fighters 6, Troops 0
+
+ATK: vs Ships 0, vs Fighters 60, Reload 4
+DEF: Shield/Recharge 200/10, DamageControl 5, Hull 900
+MOV: Maneuverability 1, Hyperdrive/Backup 80/120
+SPE: Bombardment 0
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: 30, 0, 60 (1700m)
+
+Company: Sienar Fleet Systems
+History: The Alliance Escort Carrier, was originally a Quasar Fire-class cruiser-carrier later repurposed by the Rebel Alliance. These vessels became crucial to the Alliance's fleet, primarily used for launching and supporting starfighter squadrons. Their adaptation from commercial cargo ships to military use was emblematic of the Rebellion's resourcefulness. These carriers played a significant role in the aftermath of the Death Star's destruction, enhancing the Rebel fleet's operational capabilities and providing vital starfighter support in numerous engagements against the Galactic Empire. The presence of these carriers allowed the Rebel Alliance to project power and maintain a mobile presence, crucial for their hit-and-run tactics against the more massive Imperial Navy.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>Carrier</CapitalShipRole>
+      <CapitalShipRole>Escort</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>32</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>29</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>0</ResearchOrder>
+    <ResearchDifficulty>0</ResearchDifficulty>
+    <MaxHullStrength>900</MaxHullStrength>
+    <CurrentHullStrength>900</CurrentHullStrength>
+    <DamageControl>5</DamageControl>
+    <MaxShieldStrength>200</MaxShieldStrength>
+    <ShieldRechargeRate>10</ShieldRechargeRate>
+    <Hyperdrive>80</Hyperdrive>
+    <SublightSpeed>2</SublightSpeed>
+    <Maneuverability>1</Maneuverability>
+    <StarfighterCapacity>6</StarfighterCapacity>
+    <RegimentCapacity>0</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>30</int>
+            <int>0</int>
+            <int>60</int>
+            <int>60</int>
+            <int>17</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>4</WeaponRecharge>
+    <Bombardment>0</Bombardment>
+    <TractorBeamPower>0</TractorBeamPower>
+    <TractorBeamnRange>0</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>10</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>ALCS006</TypeID>
+    <DisplayName>Corellian Corvette</DisplayName>
+    <ShipNamePoolID>A</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] CR90 Correlian Corvette (150m)
+  Cost 14, Maintenance 23, Fighters 0, Troops 0
+
+ATK: vs Ships 0, vs Fighters 120, Reload 8
+DEF: Shield/Recharge 200/10, DamageControl 10, Hull 500
+MOV: Maneuverability 3, Hyperdrive/Backup 80/-
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: 120, 90, 120 (1700m)
+
+Company: Corellian Engineering Corporation
+History: These corvettes are celebrated for their speed and versatility, making them a staple in various fleets. Notably, the CR90 became synonymous with the Rebel Alliance, serving as a key asset in their fight against the Galactic Empire. The most famous of these, the Tantive IV, played a crucial role in the events leading to the Battle of Yavin, involving the theft of the Death Star plans. The CR90's durability and adaptability have made it a symbol of resistance and hope in the Galactic Civil War.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS006/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>14</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>23</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>200</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>120		9 0		120		120</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] CR90 Correlian Corvette (150m)
+  Cost 14, Maintenance 23, Fighters 0, Troops 0
+
+ATK: vs Ships 0, vs Fighters 120, Reload 8
+DEF: Shield/Recharge 200/10, DamageControl 10, Hull 500
+MOV: Maneuverability 3, Hyperdrive/Backup 80/-
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: 120, 90, 120 (1700m)
+
+Company: Corellian Engineering Corporation
+History: These corvettes are celebrated for their speed and versatility, making them a staple in various fleets. Notably, the CR90 became synonymous with the Rebel Alliance, serving as a key asset in their fight against the Galactic Empire. The most famous of these, the Tantive IV, played a crucial role in the events leading to the Battle of Yavin, involving the theft of the Death Star plans. The CR90's durability and adaptability have made it a symbol of resistance and hope in the Galactic Civil War.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>Escort</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>14</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>23</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>0</ResearchOrder>
+    <ResearchDifficulty>0</ResearchDifficulty>
+    <MaxHullStrength>500</MaxHullStrength>
+    <CurrentHullStrength>500</CurrentHullStrength>
+    <DamageControl>10</DamageControl>
+    <MaxShieldStrength>200</MaxShieldStrength>
+    <ShieldRechargeRate>10</ShieldRechargeRate>
+    <Hyperdrive>80</Hyperdrive>
+    <SublightSpeed>6</SublightSpeed>
+    <Maneuverability>3</Maneuverability>
+    <StarfighterCapacity>0</StarfighterCapacity>
+    <RegimentCapacity>0</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>120</int>
+            <int>90</int>
+            <int>120</int>
+            <int>120</int>
+            <int>17</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>8</WeaponRecharge>
+    <Bombardment>1</Bombardment>
+    <TractorBeamPower>0</TractorBeamPower>
+    <TractorBeamnRange>0</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>20</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <DisplayName>Nebulon-B Frigate</DisplayName>
+    <ShipNamePoolID>A</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] EF76 Nebulon-B Escort Frigate (300m)
+  Cost 34, Maintenance 35, Fighters 2, Troops 0
+
+ATK: vs Ships 80, vs Fighters 60, Reload 12
+DEF: Shield/Recharge 300/15, DamageControl 20, Hull 600
+MOV: Maneuverability 2, Hyperdrive/Backup 80/120
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 80, 0, 40 (6000m)
+    + Ions/Torpedoes: -
+    + Lasers: 60, 60, 30 (1700m)
+
+Company: Kuat Drive Yards
+History: Initially designed for the Imperial Navy, these frigates became a symbol of versatility and resilience. After the Battle of Yavin and the destruction of the Death Star, several Nebulon-B frigates were captured or defected to the Rebel Alliance, where they served as key assets. Their adaptability for roles ranging from escort missions to medical services made them invaluable. The Nebulon-B's distinctive elongated design and its presence in numerous critical engagements made it a noteworthy contributor to the Galactic Civil War's naval operations.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS007/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>34</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>35</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>2</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>300</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>80		0		40		40</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>60		60		30		30</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] EF76 Nebulon-B Escort Frigate (300m)
+  Cost 34, Maintenance 35, Fighters 2, Troops 0
+
+ATK: vs Ships 80, vs Fighters 60, Reload 12
+DEF: Shield/Recharge 300/15, DamageControl 20, Hull 600
+MOV: Maneuverability 2, Hyperdrive/Backup 80/120
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 80, 0, 40 (6000m)
+    + Ions/Torpedoes: -
+    + Lasers: 60, 60, 30 (1700m)
+
+Company: Kuat Drive Yards
+History: Initially designed for the Imperial Navy, these frigates became a symbol of versatility and resilience. After the Battle of Yavin and the destruction of the Death Star, several Nebulon-B frigates were captured or defected to the Rebel Alliance, where they served as key assets. Their adaptability for roles ranging from escort missions to medical services made them invaluable. The Nebulon-B's distinctive elongated design and its presence in numerous critical engagements made it a noteworthy contributor to the Galactic Civil War's naval operations.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>Escort</CapitalShipRole>
+    </Roles>
+    <TypeID>ALCS007</TypeID>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>34</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>35</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>1</ResearchOrder>
+    <ResearchDifficulty>12</ResearchDifficulty>
+    <MaxHullStrength>600</MaxHullStrength>
+    <CurrentHullStrength>600</CurrentHullStrength>
+    <DamageControl>20</DamageControl>
+    <MaxShieldStrength>300</MaxShieldStrength>
+    <ShieldRechargeRate>15</ShieldRechargeRate>
+    <Hyperdrive>80</Hyperdrive>
+    <SublightSpeed>3</SublightSpeed>
+    <Maneuverability>2</Maneuverability>
+    <StarfighterCapacity>2</StarfighterCapacity>
+    <RegimentCapacity>0</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>80</int>
+            <int>0</int>
+            <int>40</int>
+            <int>40</int>
+            <int>60</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>60</int>
+            <int>60</int>
+            <int>30</int>
+            <int>30</int>
+            <int>17</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>12</WeaponRecharge>
+    <Bombardment>1</Bombardment>
+    <TractorBeamPower>1</TractorBeamPower>
+    <TractorBeamnRange>20</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>30</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>ALCS008</TypeID>
+    <DisplayName>MC80 Liberty Cruiser</DisplayName>
+    <ShipNamePoolID>C</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] MC80 Liberty type Heavy Star Cruiser (1200m)
+  Cost 92, Maintenance 70, Fighters 3, Troops 1
+
+ATK: vs Ships 180, vs Fighters 0, Reload 18
+DEF: Shield/Recharge 300/15, DamageControl 50, Hull 2400
+MOV: Maneuverability 2, Hyperdrive/Backup 60/100
+SPE: Bombardment 2
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 60, 60, 120 (5000m)
+    + Ions/Torpedoes: 40, 40, 60 (3500m)
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: Recently developed in  Mon Cala, a planet renowned for its shipbuilding expertise, these cruisers are fast becoming a backbone for the Rebel Alliance's fleet. Transitioning from peaceful star liners to formidable warships, they embody the Mon Calamari's steadfast commitment to resisting the Galactic Empire. Each MC80 is distinct, a testament to Mon Cala's approach to individualized design. Their participation in the Galactic Civil War, especially in recent key conflicts, marks them as potent symbols of hope and rebellion against the Empire's tyranny. Their unique design and capabilities have quickly made them a subject of both awe and inspiration in the fight for freedom across the galaxy.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/ALCS008/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>92</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>70</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>3</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>1</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>300</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>60		60		120		120</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>40		40		60		60</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] MC80 Liberty type Heavy Star Cruiser (1200m)
+  Cost 92, Maintenance 70, Fighters 3, Troops 1
+
+ATK: vs Ships 180, vs Fighters 0, Reload 18
+DEF: Shield/Recharge 300/15, DamageControl 50, Hull 2400
+MOV: Maneuverability 2, Hyperdrive/Backup 60/100
+SPE: Bombardment 2
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 60, 60, 120 (5000m)
+    + Ions/Torpedoes: 40, 40, 60 (3500m)
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: Recently developed in  Mon Cala, a planet renowned for its shipbuilding expertise, these cruisers are fast becoming a backbone for the Rebel Alliance's fleet. Transitioning from peaceful star liners to formidable warships, they embody the Mon Calamari's steadfast commitment to resisting the Galactic Empire. Each MC80 is distinct, a testament to Mon Cala's approach to individualized design. Their participation in the Galactic Civil War, especially in recent key conflicts, marks them as potent symbols of hope and rebellion against the Empire's tyranny. Their unique design and capabilities have quickly made them a subject of both awe and inspiration in the fight for freedom across the galaxy.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>PrimaryLine</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>92</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>70</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>2</ResearchOrder>
+    <ResearchDifficulty>24</ResearchDifficulty>
+    <MaxHullStrength>2400</MaxHullStrength>
+    <CurrentHullStrength>2400</CurrentHullStrength>
+    <DamageControl>50</DamageControl>
+    <MaxShieldStrength>300</MaxShieldStrength>
+    <ShieldRechargeRate>15</ShieldRechargeRate>
+    <Hyperdrive>60</Hyperdrive>
+    <SublightSpeed>4</SublightSpeed>
+    <Maneuverability>2</Maneuverability>
+    <StarfighterCapacity>3</StarfighterCapacity>
+    <RegimentCapacity>1</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>60</int>
+            <int>60</int>
+            <int>120</int>
+            <int>120</int>
+            <int>50</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>40</int>
+            <int>40</int>
+            <int>60</int>
+            <int>60</int>
+            <int>35</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>18</WeaponRecharge>
+    <Bombardment>2</Bombardment>
+    <TractorBeamPower>2</TractorBeamPower>
+    <TractorBeamnRange>20</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>10</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>CSAL009</TypeID>
+    <DisplayName>Corellian Gunship</DisplayName>
+    <ShipNamePoolID>A</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] DP20 Frigate Corellian Gunship (120m)
+  Cost 10, Maintenance 23, Fighters 0, Troops 0
+
+ATK: vs Ships 0, vs Fighters 150, Reload 10
+DEF: Shield/Recharge 200/10, DamageControl 20, Hull 300
+MOV: Maneuverability 4, Hyperdrive/Backup 80/160
+SPE: Bombardment 0
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: 90, 90, 150 (2500m)
+
+Company: Corellian Engineering Corporation
+History: Designed for fast-paced combat, these frigates were integral to numerous engagements during the Galactic Civil War. Their role was particularly pronounced within the Rebel Alliance, where they were valued for their speed and firepower. Capable of engaging larger Imperial ships and providing crucial support in fleet battles, DP20s were often at the forefront of skirmishes. Their effectiveness in hit-and-run tactics and ability to punch above their weight class made them a preferred choice for missions requiring agility and combat prowess. In the aftermath of the Death Star's destruction, DP20 frigates continued to play a key role in the ongoing conflict against the Empire.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL009/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>10</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>23</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>200</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>90		90		150		150</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] DP20 Frigate Corellian Gunship (120m)
+  Cost 10, Maintenance 23, Fighters 0, Troops 0
+
+ATK: vs Ships 0, vs Fighters 150, Reload 10
+DEF: Shield/Recharge 200/10, DamageControl 20, Hull 300
+MOV: Maneuverability 4, Hyperdrive/Backup 80/160
+SPE: Bombardment 0
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: -
+    + Ions/Torpedoes: -
+    + Lasers: 90, 90, 150 (2500m)
+
+Company: Corellian Engineering Corporation
+History: Designed for fast-paced combat, these frigates were integral to numerous engagements during the Galactic Civil War. Their role was particularly pronounced within the Rebel Alliance, where they were valued for their speed and firepower. Capable of engaging larger Imperial ships and providing crucial support in fleet battles, DP20s were often at the forefront of skirmishes. Their effectiveness in hit-and-run tactics and ability to punch above their weight class made them a preferred choice for missions requiring agility and combat prowess. In the aftermath of the Death Star's destruction, DP20 frigates continued to play a key role in the ongoing conflict against the Empire.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>Escort</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>10</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>23</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>4</ResearchOrder>
+    <ResearchDifficulty>48</ResearchDifficulty>
+    <MaxHullStrength>300</MaxHullStrength>
+    <CurrentHullStrength>300</CurrentHullStrength>
+    <DamageControl>20</DamageControl>
+    <MaxShieldStrength>200</MaxShieldStrength>
+    <ShieldRechargeRate>10</ShieldRechargeRate>
+    <Hyperdrive>80</Hyperdrive>
+    <SublightSpeed>10</SublightSpeed>
+    <Maneuverability>4</Maneuverability>
+    <StarfighterCapacity>0</StarfighterCapacity>
+    <RegimentCapacity>0</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>90</int>
+            <int>90</int>
+            <int>150</int>
+            <int>150</int>
+            <int>25</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>10</WeaponRecharge>
+    <Bombardment>0</Bombardment>
+    <TractorBeamPower>0</TractorBeamPower>
+    <TractorBeamnRange>0</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>30</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>CSAL010</TypeID>
+    <DisplayName>CC-7700 Frigate</DisplayName>
+    <ShipNamePoolID>B</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] CC-7700 Frigate (180m)
+  Cost 42, Maintenance 37, Fighters 0, Troops 0
+
+ATK: vs Ships 20, vs Fighters 90, Reload 8
+DEF: Shield/Recharge 300/15, DamageControl 30, Hull 1400
+MOV: Maneuverability 1, Hyperdrive/Backup 70/140
+SPE: Bombardment 1, Interdictor
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 10, 0, 20 (5000m)
+    + Ions/Torpedoes: -
+    + Lasers: 60, 90, 90 (1700m)
+
+Company: Rendili StarDrive
+History: This model, primarily noted for its experimental nature, was part of a series of frigates that featured cutting-edge technologies. The CC-7700's notable feature was its gravity well projectors, intended to prevent enemy ships from escaping into hyperspace, making it a strategic asset in controlling enemy movements during engagements. While not as heavily armed as some other combat vessels, the tactical advantage provided by its unique technology made it valuable in the Galactic Empire's fleet composition, especially in the period following the destruction of the Death Star, where controlling rebel movements became increasingly important.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL010/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>42</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>37</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>300</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>10		0		20		20</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>60		90		90		90</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] CC-7700 Frigate (180m)
+  Cost 42, Maintenance 37, Fighters 0, Troops 0
+
+ATK: vs Ships 20, vs Fighters 90, Reload 8
+DEF: Shield/Recharge 300/15, DamageControl 30, Hull 1400
+MOV: Maneuverability 1, Hyperdrive/Backup 70/140
+SPE: Bombardment 1, Interdictor
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 10, 0, 20 (5000m)
+    + Ions/Torpedoes: -
+    + Lasers: 60, 90, 90 (1700m)
+
+Company: Rendili StarDrive
+History: This model, primarily noted for its experimental nature, was part of a series of frigates that featured cutting-edge technologies. The CC-7700's notable feature was its gravity well projectors, intended to prevent enemy ships from escaping into hyperspace, making it a strategic asset in controlling enemy movements during engagements. While not as heavily armed as some other combat vessels, the tactical advantage provided by its unique technology made it valuable in the Galactic Empire's fleet composition, especially in the period following the destruction of the Death Star, where controlling rebel movements became increasingly important.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>Interdictor</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>42</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>37</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>6</ResearchOrder>
+    <ResearchDifficulty>70</ResearchDifficulty>
+    <MaxHullStrength>1400</MaxHullStrength>
+    <CurrentHullStrength>1400</CurrentHullStrength>
+    <DamageControl>30</DamageControl>
+    <MaxShieldStrength>300</MaxShieldStrength>
+    <ShieldRechargeRate>15</ShieldRechargeRate>
+    <Hyperdrive>70</Hyperdrive>
+    <SublightSpeed>4</SublightSpeed>
+    <Maneuverability>1</Maneuverability>
+    <StarfighterCapacity>0</StarfighterCapacity>
+    <RegimentCapacity>0</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>10</int>
+            <int>0</int>
+            <int>20</int>
+            <int>20</int>
+            <int>50</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>60</int>
+            <int>90</int>
+            <int>90</int>
+            <int>90</int>
+            <int>17</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>8</WeaponRecharge>
+    <Bombardment>1</Bombardment>
+    <TractorBeamPower>1</TractorBeamPower>
+    <TractorBeamnRange>20</TractorBeamnRange>
+    <HasGravityWell>true</HasGravityWell>
+    <DetectionRating>10</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>CSAL011</TypeID>
+    <DisplayName>Assault Frigate</DisplayName>
+    <ShipNamePoolID>B</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] Assault Frigate Mark I (700m)
+  Cost 60, Maintenance 60, Fighters 0, Troops 0
+
+ATK: vs Ships 160, vs Fighters 0, Reload 16
+DEF: Shield/Recharge 600/30, DamageControl 30, Hull 1400
+MOV: Maneuverability 2, Hyperdrive/Backup 80/120
+SPE: Bombardment 2
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 70, 0, 120 (6000m)
+    + Ions/Torpedoes: 50, 0, 40 (3500m)
+    + Lasers: -
+
+Company: Galactic Republic
+History: This frigate, a Rendili StarDrive Dreadnaught-class heavy cruiser, was extensively modified by the Rebel Alliance. These modifications were primarily for combat effectiveness against the Galactic Empire, particularly after the destruction of the Death Star at the Battle of Yavin. The Assault Frigate Mark I played a crucial role in the Rebel fleet, serving as a backbone for their naval forces. Its firepower, speed, and shielding made it a formidable opponent against Imperial forces. The ship's presence in key battles and its adaptability to various combat roles underscored its importance in the Alliance's efforts to restore democracy to the galaxy.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL011/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>60</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>60</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>600</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>70		0		120		120</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>50		0		40		40</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] Assault Frigate Mark I (700m)
+  Cost 60, Maintenance 60, Fighters 0, Troops 0
+
+ATK: vs Ships 160, vs Fighters 0, Reload 16
+DEF: Shield/Recharge 600/30, DamageControl 30, Hull 1400
+MOV: Maneuverability 2, Hyperdrive/Backup 80/120
+SPE: Bombardment 2
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 70, 0, 120 (6000m)
+    + Ions/Torpedoes: 50, 0, 40 (3500m)
+    + Lasers: -
+
+Company: Galactic Republic
+History: This frigate, a Rendili StarDrive Dreadnaught-class heavy cruiser, was extensively modified by the Rebel Alliance. These modifications were primarily for combat effectiveness against the Galactic Empire, particularly after the destruction of the Death Star at the Battle of Yavin. The Assault Frigate Mark I played a crucial role in the Rebel fleet, serving as a backbone for their naval forces. Its firepower, speed, and shielding made it a formidable opponent against Imperial forces. The ship's presence in key battles and its adaptability to various combat roles underscored its importance in the Alliance's efforts to restore democracy to the galaxy.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>SecondaryLine</CapitalShipRole>
+      <CapitalShipRole>Escort</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>60</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>60</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>7</ResearchOrder>
+    <ResearchDifficulty>60</ResearchDifficulty>
+    <MaxHullStrength>1400</MaxHullStrength>
+    <CurrentHullStrength>1400</CurrentHullStrength>
+    <DamageControl>30</DamageControl>
+    <MaxShieldStrength>600</MaxShieldStrength>
+    <ShieldRechargeRate>30</ShieldRechargeRate>
+    <Hyperdrive>80</Hyperdrive>
+    <SublightSpeed>5</SublightSpeed>
+    <Maneuverability>2</Maneuverability>
+    <StarfighterCapacity>0</StarfighterCapacity>
+    <RegimentCapacity>0</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>70</int>
+            <int>0</int>
+            <int>120</int>
+            <int>120</int>
+            <int>60</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>50</int>
+            <int>0</int>
+            <int>40</int>
+            <int>40</int>
+            <int>35</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>16</WeaponRecharge>
+    <Bombardment>2</Bombardment>
+    <TractorBeamPower>0</TractorBeamPower>
+    <TractorBeamnRange>0</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>15</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>CSAL012</TypeID>
+    <DisplayName>Liberator Cruiser</DisplayName>
+    <ShipNamePoolID>C</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] Liberator-class cruiser (470m)
+  Cost 66, Maintenance 55, Fighters 6, Troops 3
+
+ATK: vs Ships 160, vs Fighters 0, Reload 16
+DEF: Shield/Recharge 600/30, DamageControl 25, Hull 1840
+MOV: Maneuverability 2, Hyperdrive/Backup 80/120
+SPE: Bombardment 2
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 40, 40, 80 (6000m)
+    + Ions/Torpedoes: 40, 0, 80 (4000m)
+    + Lasers: -
+
+Company: SoroSuub Corporation
+History: This cruiser class became especially prominent within the ranks of the Rebel Alliance. Known for its combination of speed and firepower, the Liberator-class was adept at performing a variety of roles, from engaging in direct combat with Imperial forces to providing escort and support for other Alliance vessels. Its versatility made it a valuable asset in the Rebel fleet, especially in the strategic shifts following the destruction of the Death Star, where the Alliance increasingly relied on flexible and multi-role ships to challenge the Galactic Empire's dominance in space warfare.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL012/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>66</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>55</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>6</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>3</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>600</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>40		40		80		80</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>40		0		80		80</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] Liberator-class cruiser (470m)
+  Cost 66, Maintenance 55, Fighters 6, Troops 3
+
+ATK: vs Ships 160, vs Fighters 0, Reload 16
+DEF: Shield/Recharge 600/30, DamageControl 25, Hull 1840
+MOV: Maneuverability 2, Hyperdrive/Backup 80/120
+SPE: Bombardment 2
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 40, 40, 80 (6000m)
+    + Ions/Torpedoes: 40, 0, 80 (4000m)
+    + Lasers: -
+
+Company: SoroSuub Corporation
+History: This cruiser class became especially prominent within the ranks of the Rebel Alliance. Known for its combination of speed and firepower, the Liberator-class was adept at performing a variety of roles, from engaging in direct combat with Imperial forces to providing escort and support for other Alliance vessels. Its versatility made it a valuable asset in the Rebel fleet, especially in the strategic shifts following the destruction of the Death Star, where the Alliance increasingly relied on flexible and multi-role ships to challenge the Galactic Empire's dominance in space warfare.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>PrimaryLine</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>66</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>55</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>8</ResearchOrder>
+    <ResearchDifficulty>80</ResearchDifficulty>
+    <MaxHullStrength>1840</MaxHullStrength>
+    <CurrentHullStrength>1840</CurrentHullStrength>
+    <DamageControl>25</DamageControl>
+    <MaxShieldStrength>600</MaxShieldStrength>
+    <ShieldRechargeRate>30</ShieldRechargeRate>
+    <Hyperdrive>80</Hyperdrive>
+    <SublightSpeed>4</SublightSpeed>
+    <Maneuverability>2</Maneuverability>
+    <StarfighterCapacity>6</StarfighterCapacity>
+    <RegimentCapacity>3</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>40</int>
+            <int>40</int>
+            <int>80</int>
+            <int>80</int>
+            <int>60</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>40</int>
+            <int>0</int>
+            <int>80</int>
+            <int>80</int>
+            <int>40</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>16</WeaponRecharge>
+    <Bombardment>2</Bombardment>
+    <TractorBeamPower>1</TractorBeamPower>
+    <TractorBeamnRange>20</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>10</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>CSAL013</TypeID>
+    <DisplayName>MC30c Frigate</DisplayName>
+    <ShipNamePoolID>B</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] MC30c Frigate (380m)
+  Cost 58, Maintenance 53, Fighters 0, Troops 1
+
+ATK: vs Ships 160, vs Fighters 0, Reload 16
+DEF: Shield/Recharge 600/30, DamageControl 35, Hull 1200
+MOV: Maneuverability 2, Hyperdrive/Backup 60/100
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 60, 40, 120 (7500m)
+    + Ions/Torpedoes: 40, 0, 40 (3500m)
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: This class of frigate was primarily utilized by the Rebel Alliance and is recognized for its role in various naval engagements against the Galactic Empire. The MC30c, with its advanced shielding and substantial firepower, especially in the form of torpedoes and missiles, was designed for hit-and-run tactics, making it highly effective against larger Imperial warships. The versatility and firepower of the MC30c made it a key component in the Rebel fleet, particularly in the wake of the Death Star's destruction, where rapid, agile, and hard-hitting vessels became increasingly crucial in the asymmetric warfare tactics employed by the Rebellion.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL013/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>58</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>53</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>0</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>1</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>600</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>60		40		120		120</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>40		0		40		40</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] MC30c Frigate (380m)
+  Cost 58, Maintenance 53, Fighters 0, Troops 1
+
+ATK: vs Ships 160, vs Fighters 0, Reload 16
+DEF: Shield/Recharge 600/30, DamageControl 35, Hull 1200
+MOV: Maneuverability 2, Hyperdrive/Backup 60/100
+SPE: Bombardment 1
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 60, 40, 120 (7500m)
+    + Ions/Torpedoes: 40, 0, 40 (3500m)
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: This class of frigate was primarily utilized by the Rebel Alliance and is recognized for its role in various naval engagements against the Galactic Empire. The MC30c, with its advanced shielding and substantial firepower, especially in the form of torpedoes and missiles, was designed for hit-and-run tactics, making it highly effective against larger Imperial warships. The versatility and firepower of the MC30c made it a key component in the Rebel fleet, particularly in the wake of the Death Star's destruction, where rapid, agile, and hard-hitting vessels became increasingly crucial in the asymmetric warfare tactics employed by the Rebellion.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>SecondaryLine</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>58</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>53</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>9</ResearchOrder>
+    <ResearchDifficulty>80</ResearchDifficulty>
+    <MaxHullStrength>1200</MaxHullStrength>
+    <CurrentHullStrength>1200</CurrentHullStrength>
+    <DamageControl>35</DamageControl>
+    <MaxShieldStrength>600</MaxShieldStrength>
+    <ShieldRechargeRate>30</ShieldRechargeRate>
+    <Hyperdrive>60</Hyperdrive>
+    <SublightSpeed>6</SublightSpeed>
+    <Maneuverability>2</Maneuverability>
+    <StarfighterCapacity>0</StarfighterCapacity>
+    <RegimentCapacity>1</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>60</int>
+            <int>40</int>
+            <int>120</int>
+            <int>120</int>
+            <int>75</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>40</int>
+            <int>0</int>
+            <int>40</int>
+            <int>40</int>
+            <int>35</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>16</WeaponRecharge>
+    <Bombardment>1</Bombardment>
+    <TractorBeamPower>1</TractorBeamPower>
+    <TractorBeamnRange>20</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>10</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>CSAL014</TypeID>
+    <DisplayName>MC80a HomeOne Cruiser</DisplayName>
+    <ShipNamePoolID>B</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] MC80 Home One type Star Cruiser (1400m)
+  Cost 136, Maintenance 90, Fighters 4, Troops 2
+
+ATK: vs Ships 400, vs Fighters 0, Reload 40
+DEF: Shield/Recharge 800/20, DamageControl 45, Hull 2200
+MOV: Maneuverability 1, Hyperdrive/Backup 60/100
+SPE: Bombardment 2
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 120, 60, 200 (6500m)
+    + Ions/Torpedoes: 60, 60, 200 (4000m)
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: This cruiser has a pivotal role in the Rebel Alliance's fleet. This class of star cruiser, with its distinctive organic design, was a symbol of Mon Calamari craftsmanship and engineering. The MC80, particularly the flagship "Home One," commanded by Admiral Ackbar, became a beacon of hope and resilience for the Rebellion. Its advanced shielding and diverse armament made it a formidable opponent against the Imperial fleet. The Home One type played a central role in major battles, including the decisive Battle of Endor, contributing significantly to the downfall of the Galactic Empire and the restoration of peace in the galaxy.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL014/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>136</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>90</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>4</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>2</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>800</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>120		60		200		200</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>60		60		200		200</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] MC80 Home One type Star Cruiser (1400m)
+  Cost 136, Maintenance 90, Fighters 4, Troops 2
+
+ATK: vs Ships 400, vs Fighters 0, Reload 40
+DEF: Shield/Recharge 800/20, DamageControl 45, Hull 2200
+MOV: Maneuverability 1, Hyperdrive/Backup 60/100
+SPE: Bombardment 2
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 120, 60, 200 (6500m)
+    + Ions/Torpedoes: 60, 60, 200 (4000m)
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: This cruiser has a pivotal role in the Rebel Alliance's fleet. This class of star cruiser, with its distinctive organic design, was a symbol of Mon Calamari craftsmanship and engineering. The MC80, particularly the flagship "Home One," commanded by Admiral Ackbar, became a beacon of hope and resilience for the Rebellion. Its advanced shielding and diverse armament made it a formidable opponent against the Imperial fleet. The Home One type played a central role in major battles, including the decisive Battle of Endor, contributing significantly to the downfall of the Galactic Empire and the restoration of peace in the galaxy.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>Carrier</CapitalShipRole>
+      <CapitalShipRole>SecondaryLine</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>136</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>90</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>10</ResearchOrder>
+    <ResearchDifficulty>100</ResearchDifficulty>
+    <MaxHullStrength>2200</MaxHullStrength>
+    <CurrentHullStrength>2200</CurrentHullStrength>
+    <DamageControl>45</DamageControl>
+    <MaxShieldStrength>800</MaxShieldStrength>
+    <ShieldRechargeRate>20</ShieldRechargeRate>
+    <Hyperdrive>60</Hyperdrive>
+    <SublightSpeed>4</SublightSpeed>
+    <Maneuverability>1</Maneuverability>
+    <StarfighterCapacity>4</StarfighterCapacity>
+    <RegimentCapacity>2</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>120</int>
+            <int>60</int>
+            <int>200</int>
+            <int>200</int>
+            <int>65</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>60</int>
+            <int>60</int>
+            <int>200</int>
+            <int>200</int>
+            <int>40</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>40</WeaponRecharge>
+    <Bombardment>2</Bombardment>
+    <TractorBeamPower>2</TractorBeamPower>
+    <TractorBeamnRange>20</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>10</DetectionRating>
+  </CapitalShip>
+  <CapitalShip>
+    <TypeID>CSAL015</TypeID>
+    <DisplayName>Viscount Star Defender</DisplayName>
+    <ShipNamePoolID>C</ShipNamePoolID>
+    <DisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/display</DisplayImagePath>
+    <BattleResultImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/battle-result</BattleResultImagePath>
+    <BattleResultInTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/battle-result-in-transit</BattleResultInTransitImagePath>
+    <BattleResultDamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/battle-result-damaged</BattleResultDamagedImagePath>
+    <SmallDisplayImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/small-display</SmallDisplayImagePath>
+    <InTransitImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/in-transit</InTransitImagePath>
+    <InTransitSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/in-transit-small</InTransitSmallImagePath>
+    <DamagedImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/damaged</DamagedImagePath>
+    <DamagedSmallImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/damaged-small</DamagedSmallImagePath>
+    <Description>[ALLIANCE] Viscount-class Star Defender (17000m)
+  Cost 248, Maintenance 175, Fighters 10, Troops 4
+
+ATK: vs Ships 800, vs Fighters 0, Reload 80
+DEF: Shield/Recharge 1100/60, DamageControl 40, Hull 3000
+MOV: Maneuverability 2, Hyperdrive/Backup 60/100
+SPE: Bombardment 4
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 600, 120, 300 (7000m)
+    + Ions/Torpedoes: 200, 80, 150 (4000m)
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: The Viscount represents a significant development in starship design. This class was conceived as a direct response to the growing threat of the Galactic Empire, especially its Star Destroyers. The Viscount-class was designed to be a formidable opponent in large-scale space battles, equipped with heavy armaments and strong shields, making it capable of engaging the Empire's most powerful warships. Its development symbolized the increasing scale and intensity of the Galactic Civil War, as the Rebel Alliance and other factions sought more powerful ships to challenge Imperial supremacy in the galaxy. The Viscount-class played a crucial role in shifting the balance of power in space combat during this tumultuous period.</Description>
+    <EncyclopediaImagePath>Pack/Factions/Alliance/Units/CapitalShips/CSAL015/encyclopedia</EncyclopediaImagePath>
+    <EncyclopediaStats>
+      <EncyclopediaEntryStat>
+        <Label>Refined Material Cost</Label>
+        <Value>248</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Maintenance Cost</Label>
+        <Value>175</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Fighter Capacity</Label>
+        <Value>10</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Troop Capacity</Label>
+        <Value>4</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Shield Strength</Label>
+        <Value>1100</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Attack Strength</Label>
+        <Value>Fore	Aft		Port	Starboard</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Turbolaser</Label>
+        <Value>600		120		300		300</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Ion Cannon</Label>
+        <Value>200		80		150		150</Value>
+      </EncyclopediaEntryStat>
+      <EncyclopediaEntryStat>
+        <Label>Laser Cannon</Label>
+        <Value>0		0		0		0</Value>
+      </EncyclopediaEntryStat>
+    </EncyclopediaStats>
+    <EncyclopediaDescription>[ALLIANCE] Viscount-class Star Defender (17000m)
+  Cost 248, Maintenance 175, Fighters 10, Troops 4
+
+ATK: vs Ships 800, vs Fighters 0, Reload 80
+DEF: Shield/Recharge 1100/60, DamageControl 40, Hull 3000
+MOV: Maneuverability 2, Hyperdrive/Backup 60/100
+SPE: Bombardment 4
+
+DMG: Front, Back, Sides (Range)
+    + Turbolasers: 600, 120, 300 (7000m)
+    + Ions/Torpedoes: 200, 80, 150 (4000m)
+    + Lasers: -
+
+Company: Mon Calamari Shipyards
+History: The Viscount represents a significant development in starship design. This class was conceived as a direct response to the growing threat of the Galactic Empire, especially its Star Destroyers. The Viscount-class was designed to be a formidable opponent in large-scale space battles, equipped with heavy armaments and strong shields, making it capable of engaging the Empire's most powerful warships. Its development symbolized the increasing scale and intensity of the Galactic Civil War, as the Rebel Alliance and other factions sought more powerful ships to challenge Imperial supremacy in the galaxy. The Viscount-class played a crucial role in shifting the balance of power in space combat during this tumultuous period.</EncyclopediaDescription>
+    <Roles>
+      <CapitalShipRole>PrimaryLine</CapitalShipRole>
+      <CapitalShipRole>Carrier</CapitalShipRole>
+    </Roles>
+    <ManufacturingFactionInstanceIDs>
+      <String>FNALL1</String>
+    </ManufacturingFactionInstanceIDs>
+    <ConstructionCost>248</ConstructionCost>
+    <ProductionCapacity>40</ProductionCapacity>
+    <MaintenanceCost>175</MaintenanceCost>
+    <BaseBuildSpeed>0</BaseBuildSpeed>
+    <ResearchOrder>11</ResearchOrder>
+    <ResearchDifficulty>100</ResearchDifficulty>
+    <MaxHullStrength>3000</MaxHullStrength>
+    <CurrentHullStrength>3000</CurrentHullStrength>
+    <DamageControl>40</DamageControl>
+    <MaxShieldStrength>1100</MaxShieldStrength>
+    <ShieldRechargeRate>60</ShieldRechargeRate>
+    <Hyperdrive>60</Hyperdrive>
+    <SublightSpeed>3</SublightSpeed>
+    <Maneuverability>2</Maneuverability>
+    <StarfighterCapacity>10</StarfighterCapacity>
+    <RegimentCapacity>4</RegimentCapacity>
+    <PrimaryWeapons>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>Turbolaser</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>600</int>
+            <int>120</int>
+            <int>300</int>
+            <int>300</int>
+            <int>70</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>IonCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>200</int>
+            <int>80</int>
+            <int>150</int>
+            <int>150</int>
+            <int>40</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+      <Entry>
+        <Key>
+          <PrimaryWeaponType>LaserCannon</PrimaryWeaponType>
+        </Key>
+        <Value>
+          <ArrayOfInt>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+            <int>0</int>
+          </ArrayOfInt>
+        </Value>
+      </Entry>
+    </PrimaryWeapons>
+    <WeaponRecharge>80</WeaponRecharge>
+    <Bombardment>4</Bombardment>
+    <TractorBeamPower>6</TractorBeamPower>
+    <TractorBeamnRange>20</TractorBeamnRange>
+    <HasGravityWell>false</HasGravityWell>
+    <DetectionRating>10</DetectionRating>
+  </CapitalShip>
+</CapitalShips>

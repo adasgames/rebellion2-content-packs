@@ -1,0 +1,1858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageDefinitions>
+  <MessageDefinition>
+    <DisplayName>Traitor Discovered</DisplayName>
+    <ResultType>TraitorDiscovered</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{discoverer} Discovers Traitor</Subject>
+    <Body>Through the use of the Force, I have discovered that {traitor} has betrayed us to the {enemy}.</Body>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <BackgroundImage Key="mission_report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Fleet Arrived</DisplayName>
+    <ResultType>FleetArrived</ResultType>
+    <MessageType>Fleet</MessageType>
+    <Subject>Fleet Arrives at {system}</Subject>
+    <Body>{fleet} has arrived at {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-fleet-arrives</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/fleet-arrived</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/fleet-arrived</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Fleet Waypoints Completed</DisplayName>
+    <ResultType>FleetWaypointsCompleted</ResultType>
+    <MessageType>Fleet</MessageType>
+    <Subject>{fleet} Completes Waypoints</Subject>
+    <Body>{fleet} has completed all assigned waypoints.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/fleet-arrived</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/fleet-arrived</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Ships Arrived</DisplayName>
+    <ResultType>ShipsArrived</ResultType>
+    <MessageType>Fleet</MessageType>
+    <Subject>Ships arrive at {system}</Subject>
+    <Body>The following ships have arrived at {system}:
+{ships}</Body>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-units-arrive</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-units-arrive</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <BackgroundImage Key="ships_arrived"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Units Arrived</DisplayName>
+    <ResultType>UnitsArrived</ResultType>
+    <MessageType>Fleet</MessageType>
+    <Subject>Units Arrive at {system}</Subject>
+    <Body>The following units have arrived at {system}:
+{units}</Body>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-units-arrive</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-units-arrive</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <BackgroundImage Key="ships_arrived"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Personnel Arrived</DisplayName>
+    <ResultType>PersonnelArrived</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <Subject>Personnel arrive at {system}</Subject>
+    <Body>The following personnel have arrived at {system}:
+{personnel}</Body>
+    <BackgroundImage Key="ships_arrived"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Officer Arrived</DisplayName>
+    <ResultType>PersonnelArrivedByOfficer</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <Subject>{officer} Arrives at {system}</Subject>
+    <Body>I have arrived at {system}.</Body>
+    <BackgroundImage Key="ships_arrived"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Officer Arrived With Personnel</DisplayName>
+    <ResultType>PersonnelArrivedByOfficerWithCompany</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <Subject>{officer} Arrives at {system}</Subject>
+    <Body>I have arrived at {system}.  The following personnel have arrived with me:
+{personnel}</Body>
+    <BackgroundImage Key="ships_arrived"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Headquarters Arrived</DisplayName>
+    <ResultType>HeadquartersArrived</ResultType>
+    <MessageType>Fleet</MessageType>
+    <FactionInstanceID>FNALL1</FactionInstanceID>
+    <Subject>Headquarters Arrives</Subject>
+    <Body>The Alliance Headquarters has arrived at {system}</Body>
+    <BackgroundAudioPath>Pack/Factions/Alliance/Strategy/Messages/Audio/message-units-arrive</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/headquarters-arrived"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Capital Ship Repaired</DisplayName>
+    <ResultType>CapitalShipRepaired</ResultType>
+    <MessageType>Fleet</MessageType>
+    <Subject>Capital Ship Repaired</Subject>
+    <Body>{item} attached to {attachment} has repaired all battle damage and is fully operational.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-capital-ship-repaired</BackgroundAudioPath>
+    <BackgroundImage Key="capital_ship_repaired"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Squadron At Full Strength</DisplayName>
+    <ResultType>StarfighterRepaired</ResultType>
+    <MessageType>Fleet</MessageType>
+    <Subject>Squadron at Full Strength</Subject>
+    <Body>The {item} attached to {attachment} has replaced all fighters lost in combat.</Body>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-squadron-arrives</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-squadron-arrives</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <BackgroundImage Key="starfighter_repaired"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Emperor Seat Of Power</DisplayName>
+    <ResultType>EmperorSeatOfPower</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <MessageType>Mission</MessageType>
+    <Subject>Emperor Arrives at Coruscant</Subject>
+    <Body>I have returned to the Seat of Power at Coruscant.</Body>
+    <BackgroundAudioPath>Pack/Factions/Empire/Strategy/Messages/Audio/message-seat-of-power</BackgroundAudioPath>
+    <OfficerVoicePath>Pack/Factions/Empire/Units/Officers/OFEM001/Voice/seat-of-power-01</OfficerVoicePath>
+    <BackgroundImage Path="Pack/Factions/Empire/Strategy/Messages/Images/emperor-seat-of-power"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Coruscant Captured</DisplayName>
+    <ResultType>PlanetCaptured</ResultType>
+    <PlanetInstanceID>CORUSCANT</PlanetInstanceID>
+    <PreviousOwnerInstanceID>FNEMP1</PreviousOwnerInstanceID>
+    <NewOwnerInstanceID>FNALL1</NewOwnerInstanceID>
+    <MessageType>Mission</MessageType>
+    <Subject>Coruscant Captured</Subject>
+    <Body>The Alliance has seized the Imperial capital system of Coruscant.</Body>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <BackgroundImage Key="mission_report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Alliance Headquarters Destroyed</DisplayName>
+    <ResultType>HeadquartersDestroyed</ResultType>
+    <FactionInstanceID>FNALL1</FactionInstanceID>
+    <MessageType>Mission</MessageType>
+    <Subject>Alliance Headquarters Destroyed</Subject>
+    <Body>The Empire has destroyed the Alliance Headquarters.</Body>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <BackgroundImage Key="mission_report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Capital Ship Deployed</DisplayName>
+    <ResultType>CapitalShipDeployed</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <Subject>{type} Deployed at {system}</Subject>
+    <Body>The new {type}, {item}, has been deployed at {system}.</Body>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Death Star Deployed</DisplayName>
+    <ResultType>DeathStarDeployed</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <Subject>New Death Star Deployed at {system}</Subject>
+    <Body>The new Death Star, {item}, has been deployed at {system}.</Body>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Starfighter Squadron Deployed</DisplayName>
+    <ResultType>StarfighterDeployed</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <Subject>{item} Squadron Deployed at {system}</Subject>
+    <Body>A new {item} squadron has been deployed to {system}.</Body>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Regiment Deployed</DisplayName>
+    <ResultType>RegimentDeployed</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <Subject>{item} Deployed to {system}</Subject>
+    <Body>The following units have been deployed to {system}:
+{items}</Body>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Mine Deployed</DisplayName>
+    <ResultType>FacilityDeployed</ResultType>
+    <MessageType>Resource</MessageType>
+    <BuildingType>Mine</BuildingType>
+    <Subject>{item} Deployed at {system}</Subject>
+    <Body>A new {item} has been deployed to {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-production-complete</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA04/message"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Refinery Deployed</DisplayName>
+    <ResultType>FacilityDeployed</ResultType>
+    <MessageType>Resource</MessageType>
+    <BuildingType>Refinery</BuildingType>
+    <Subject>{item} Deployed at {system}</Subject>
+    <Body>A new {item} has been deployed to {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-production-complete</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA05/message"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Shipyard Deployed</DisplayName>
+    <ResultType>FacilityDeployed</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <BuildingType>Shipyard</BuildingType>
+    <Subject>{item} Deployed at {system}</Subject>
+    <Body>A new {item} has been deployed to {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-production-complete</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA03/message"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Training Facility Deployed</DisplayName>
+    <ResultType>FacilityDeployed</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <BuildingType>TrainingFacility</BuildingType>
+    <Subject>{item} Deployed at {system}</Subject>
+    <Body>A new {item} has been deployed to {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-production-complete</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA02/message"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Construction Yard Deployed</DisplayName>
+    <ResultType>FacilityDeployed</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <BuildingType>ConstructionFacility</BuildingType>
+    <Subject>{item} Deployed at {system}</Subject>
+    <Body>A new {item} has been deployed to {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-production-complete</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA01/message"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Facility Lost</DisplayName>
+    <ResultType>FacilityLost</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <Subject>Facility Lost</Subject>
+    <Body>New {item} could not be deployed to {system}.  The facility has been scrapped.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/destroyed-object</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/destroyed-object</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Smuggling Losses</DisplayName>
+    <ResultType>SmugglingLosses</ResultType>
+    <MessageType>Resource</MessageType>
+    <Subject>Smuggling Losses</Subject>
+    <Body>Dissention among the population has allowed smugglers to begin operations on {system}.  As a result, valuable resources are being lost.</Body>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/smuggling"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Smuggling Losses End</DisplayName>
+    <ResultType>SmugglingLossesEnded</ResultType>
+    <MessageType>Resource</MessageType>
+    <Subject>Smuggling Losses End</Subject>
+    <Body>Increasing support on {system} has put an end to the smuggling losses there.</Body>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/smuggling"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Smuggling Benefits</DisplayName>
+    <ResultType>SmugglingBenefits</ResultType>
+    <MessageType>Resource</MessageType>
+    <Subject>Smuggling Benefits</Subject>
+    <Body>Smugglers from {system} are providing us with additional resources.</Body>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/smuggling"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Smuggling Benefits End</DisplayName>
+    <ResultType>SmugglingBenefitsEnded</ResultType>
+    <MessageType>Resource</MessageType>
+    <Subject>Smuggling Benefits End</Subject>
+    <Body>Popular opinion on {system} has caused smugglers from that system to withdraw their support.</Body>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/smuggling"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Shipyard Idle</DisplayName>
+    <ResultType>ManufacturingIdle</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <ManufacturingType>Ship</ManufacturingType>
+    <Subject>Shipyard Idle on {system}</Subject>
+    <Body>The Shipyards at {system} are available for new construction orders.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-production-complete</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/shipyard-idle"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Training Facility Idle</DisplayName>
+    <ResultType>ManufacturingIdle</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <ManufacturingType>Troop</ManufacturingType>
+    <Subject>Training Facility Idle on {system}</Subject>
+    <Body>The Training Facilities at {system} are no longer in use.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-production-complete</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/training-facility-idle"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Construction Yard Idle</DisplayName>
+    <ResultType>ManufacturingIdle</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <ManufacturingType>Building</ManufacturingType>
+    <Subject>Construction Yard Idle on {system}</Subject>
+    <Body>The Construction Yards at {system} have completed their assigned tasks.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-production-complete</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/construction-yard-idle"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Diplomacy Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Diplomacy</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My diplomacy mission to {system} has increased popular support on that system.   {personnel_status}</Body>
+    <UnattributedSubject>Diplomacy Mission Report</UnattributedSubject>
+    <UnattributedBody>The diplomacy mission to {system} has increased popular support on that system.   {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-diplomacy"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Recon Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Reconnaissance</MissionTypeID>
+    <Subject>Recon Mission Report</Subject>
+    <Body>The reconnaissance mission to {system} was successful.
+ {personnel_status}</Body>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Espionage Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Espionage</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My espionage mission to {system} was successful.  {details}{personnel_status}</Body>
+    <UnattributedSubject>Espionage Mission Report</UnattributedSubject>
+    <UnattributedBody>The espionage mission to {system} was successful.  {details}{personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>
+Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>
+All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <DetailListHeaderTemplate>In addition, information was provided on the following systems:</DetailListHeaderTemplate>
+    <DetailListItemTemplate>
+     {system}</DetailListItemTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Sabotage Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Sabotage</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My sabotage mission to {system} targeting the {target} is complete.  The target was destroyed. {personnel_status}</Body>
+    <UnattributedSubject>Sabotage Mission Report</UnattributedSubject>
+    <UnattributedBody>The sabotage mission to {system} targeting the {target} is complete.  The target was destroyed. {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Incite Uprising Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>InciteUprising</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My Incite Uprising mission to {system} was successful.  The system has gone into uprising. {personnel_status}</Body>
+    <UnattributedSubject>Incite Uprising Mission Report</UnattributedSubject>
+    <UnattributedBody>The Incite Uprising mission to {system} was successful.   {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-subdue-uprising"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Recruitment Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Recruitment</MissionTypeID>
+    <Subject>{participant} Recruits {officer}</Subject>
+    <Body>My recruitment mission to {system} was successful. {officer} is at your command. {personnel_status}</Body>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/mission-report-recruitment</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/mission-report-recruitment</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Abduction Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Abduction</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My mission to abduct {officer} from {system} was a success.
+ {personnel_status}</Body>
+    <UnattributedSubject>Abduction Mission Report</UnattributedSubject>
+    <UnattributedBody>The mission to abduct {officer} from {system} succeeded.
+ {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Assassination Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Assassination</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My assassination mission is complete. {officer} {assassination_result}.
+ {personnel_status}</Body>
+    <UnattributedSubject>Assassination Mission Report</UnattributedSubject>
+    <UnattributedBody>The assassination mission to {system} is complete.  {officer} {assassination_result}.
+ {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Subdue Uprising Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>SubdueUprising</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My mission to subdue the uprising on {system} was successful.  Order has been restored. {personnel_status}</Body>
+    <UnattributedSubject>Subdue Uprising Mission Report</UnattributedSubject>
+    <UnattributedBody>The Subdue Uprising mission to {system} was successful.  Order has been restored. {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-subdue-uprising"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Rescue Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Rescue</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My mission to rescue {officer} from {system} was a success.
+ {personnel_status}</Body>
+    <UnattributedSubject>Rescue Mission Report</UnattributedSubject>
+    <UnattributedBody>The mission to rescue {officer} from {system} succeeded.
+ {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Research</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My {mission} Research mission at {system} has produced valuable results.   {personnel_status}</Body>
+    <UnattributedSubject>{mission} Mission Report</UnattributedSubject>
+    <UnattributedBody>The {mission} Mission at {system} has produced valuable results.   {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Jedi Training Mission Report Success</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>JediTraining</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My Jedi Training mission on {system} was a success. {personnel_status}</Body>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Key="mission_report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Diplomacy Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Diplomacy</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My diplomacy mission to {system} had no effect on popular support in that system.   {personnel_status}</Body>
+    <UnattributedSubject>Diplomacy Mission Report</UnattributedSubject>
+    <UnattributedBody>The diplomacy mission to {system} had no effect on our popular support on that system.   {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-diplomacy"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Recon Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Reconnaissance</MissionTypeID>
+    <Subject>Recon Mission Report</Subject>
+    <Body>The reconnaissance mission to {system} failed.
+ {personnel_status}</Body>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Espionage Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Espionage</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My espionage mission to {system} was not successful.{personnel_status}</Body>
+    <UnattributedSubject>Espionage Mission Report</UnattributedSubject>
+    <UnattributedBody>The espionage mission to {system} was not successful.{personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>
+Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>
+All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Sabotage Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Sabotage</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My sabotage mission to {system} targeting the {target} is complete.    The target was not destroyed. {personnel_status}</Body>
+    <UnattributedSubject>Sabotage Mission Report</UnattributedSubject>
+    <UnattributedBody>The sabotage mission to {system} targeting the {target} is complete.    The target was not destroyed. {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Incite Uprising Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>InciteUprising</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My Incite Uprising mission to {system} has not produced results.
+ {personnel_status}</Body>
+    <UnattributedSubject>Incite Uprising Mission Report</UnattributedSubject>
+    <UnattributedBody>The Incite Uprising mission to {system} has not produced results.
+ {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-subdue-uprising"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Recruitment Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Recruitment</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My recruitment mission to {system} is complete.  I have failed to recruit anyone. {personnel_status}</Body>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/mission-report-recruitment</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/mission-report-recruitment</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Abduction Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Abduction</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My mission to abduct {officer} from {system} failed. {personnel_status}</Body>
+    <UnattributedSubject>Abduction Mission Report</UnattributedSubject>
+    <UnattributedBody>The mission to abduct {officer} from {system} failed.
+ {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Assassination Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Assassination</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My assassination mission to {system} is complete.  {officer} has not been eliminated.
+ {personnel_status}</Body>
+    <UnattributedSubject>Assassination Mission Report</UnattributedSubject>
+    <UnattributedBody>The assassination mission to {system} is complete.  {officer} has not been eliminated.
+ {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Subdue Uprising Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>SubdueUprising</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My Subdue Uprising mission to {system} has not met with success.  The world is still in a state of uprising.
+ {personnel_status}</Body>
+    <UnattributedSubject>Subdue Uprising Mission Report</UnattributedSubject>
+    <UnattributedBody>The Subdue Uprising mission to {system} failed.  The populace is still in a state of uprising.
+ {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-subdue-uprising"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Rescue Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Rescue</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My mission to rescue {officer} from {system} failed. {personnel_status}</Body>
+    <UnattributedSubject>Rescue Mission Report</UnattributedSubject>
+    <UnattributedBody>The mission to rescue {officer} from {system} failed.
+ {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Research</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My {mission} Research mission at {system} has not produced new information.   {personnel_status}</Body>
+    <UnattributedSubject>{mission} Mission Report</UnattributedSubject>
+    <UnattributedBody>The {mission} Mission at {system} has not produced new information.   {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Jedi Training Mission Report Failed</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>JediTraining</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My Jedi Training mission on {system} has not met with success. {personnel_status}</Body>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Key="mission_report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Mission Report Target Unavailable</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MissionCompletionReason>TargetUnavailable</MissionCompletionReason>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <Subject>{participant} Mission Failed</Subject>
+    <Body>My {mission} Mission to {system} has failed because the target was not found at that location.  {personnel_status}</Body>
+    <UnattributedSubject>{mission} Mission Failed</UnattributedSubject>
+    <UnattributedBody>The {mission} Mission to {system} has failed because the target was not found at that location.  {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Mission Report Missing Facilities</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MissionTypeID>Research</MissionTypeID>
+    <MissionCompletionReason>NoResearchFacilities</MissionCompletionReason>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <Subject>{participant} Mission Failed</Subject>
+    <Body>My {mission} Mission to {system} has failed because we have no research facilities at that location. {personnel_status}</Body>
+    <UnattributedSubject>{mission} Mission Failed</UnattributedSubject>
+    <UnattributedBody>The {mission} Mission to {system} has failed because we have no research facilities at that location.  {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Mission Report Progress</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Success</Outcome>
+    <MissionTypeID>Research</MissionTypeID>
+    <MissionCompletionReason>ResearchProgress</MissionCompletionReason>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>My {mission} Research mission at {system} is making progress.  {personnel_status}</Body>
+    <UnattributedSubject>{mission} Mission Report</UnattributedSubject>
+    <UnattributedBody>The {mission} Mission at {system} is making progress.  {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Mission Report Target Changed Sides</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Failed</Outcome>
+    <MissionCompletionReason>TargetChangedSides</MissionCompletionReason>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <Subject>{participant} Mission Aborted</Subject>
+    <Body>My {mission} mission to {system} has been aborted because {target_change}.  {personnel_status}</Body>
+    <UnattributedSubject>{mission} Mission Aborted.</UnattributedSubject>
+    <UnattributedBody>The {mission} mission to {system} has been aborted because {target_change}.  {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <TargetJoinedTemplate>the system has joined the {target_owner}</TargetJoinedTemplate>
+    <TargetNeutralTemplate>the system has declared neutrality</TargetNeutralTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-diplomacy"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Mission Report Foiled</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>Foiled</Outcome>
+    <MessageType>Mission</MessageType>
+    <Subject>{participant} Mission Foiled</Subject>
+    <Body>My {mission} mission to {system} has been foiled by opposing forces.  {personnel_status}</Body>
+    <UnattributedSubject>{mission} Mission Foiled</UnattributedSubject>
+    <UnattributedBody>The {mission} mission to {system} has been foiled by opposing forces.  {personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Incite Uprising Enemy Mission Foiled</DisplayName>
+    <ResultType>EnemyMissionFoiled</ResultType>
+    <Outcome>Foiled</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>InciteUprising</MissionTypeID>
+    <Subject>Enemy Mission Foiled</Subject>
+    <Body>An enemy {mission} mission to {system} has been foiled by our forces.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/enemy-mission-foiled-incite-uprising</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/enemy-mission-foiled-incite-uprising</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Enemy Mission Foiled</DisplayName>
+    <ResultType>EnemyMissionFoiled</ResultType>
+    <Outcome>Foiled</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <Subject>Enemy Mission Foiled</Subject>
+    <Body>An enemy {mission} mission to {system} has been foiled by our forces.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/enemy-mission-foiled</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/enemy-mission-foiled</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Death Star Sabotaged</DisplayName>
+    <ResultType>SabotageStrike</ResultType>
+    <!-- Death Star -->
+    <GameObjectTypeID>CSEM015</GameObjectTypeID>
+    <MessageType>Mission</MessageType>
+    <Subject>Death Star Sabotaged</Subject>
+    <Body>The Rebel Alliance has sabotaged the Death Star at {system}.</Body>
+    <BackgroundImage Path="Pack/Factions/Alliance/Missions/DeathStarSabotage/encyclopedia"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Saboteurs Strike</DisplayName>
+    <ResultType>SabotageStrike</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>Saboteurs Strike at {system}</Subject>
+    <Body>The following units were destroyed by saboteurs at {system}:
+{item}</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-sabotage-maintenance-explosion</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/destroyed-object</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/destroyed-object</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Officer Recruited</DisplayName>
+    <ResultType>OfficerRecruited</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{officer} Recruited</Subject>
+    <Body>{officer} has joined our forces at {system}.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/mission-report-recruitment</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/mission-report-recruitment</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Recruitment Exhausted</DisplayName>
+    <ResultType>RecruitmentExhausted</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>Recruitment Done</Subject>
+    <Body>We regret to report that there are no more candidates to be recruited.</Body>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/mission-report-recruitment</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/mission-report-recruitment</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Officer Captured</DisplayName>
+    <ResultType>OfficerCaptured</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{officer} Captured</Subject>
+    <Body>{officer} was captured by the {captor} at {system}.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/character-captured</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/character-captured</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Enemy Officer Captured</DisplayName>
+    <ResultType>EnemyOfficerCaptured</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{officer} Captured</Subject>
+    <Body>{officer} was captured at {system}.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/character-captured</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/character-captured</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Officer Released</DisplayName>
+    <ResultType>OfficerReleased</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{officer} Escaped</Subject>
+    <Body>{officer} has escaped from imprisonment at {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-prisoner-escape</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/prisoner-escape"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Enemy Officer Released</DisplayName>
+    <ResultType>EnemyOfficerReleased</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{officer} Escaped Custody</Subject>
+    <Body>{officer} has escaped your custody at {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-prisoner-escape</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/prisoner-escape"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Officer Injured</DisplayName>
+    <ResultType>OfficerInjured</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{officer} Injured</Subject>
+    <Body>{officer} has been injured.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-character-injured</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/character-injured"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Officer Recovered</DisplayName>
+    <ResultType>OfficerRecovered</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{officer} Healed</Subject>
+    <Body>{officer} has been healed of all injuries.</Body>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/character-recovered"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Officer Killed</DisplayName>
+    <ResultType>OfficerKilled</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{officer} Killed</Subject>
+    <Body>{officer} has been killed.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/character-killed</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/character-killed</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Officer Assassinated</DisplayName>
+    <ResultType>OfficerAssassinated</ResultType>
+    <MessageType>Mission</MessageType>
+    <Subject>{officer} Killed</Subject>
+    <Body>{officer} was assassinated at {system}.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/character-killed</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/character-killed</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Force Growth</DisplayName>
+    <ResultType>ForceGrowth</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <Subject>Force Growth</Subject>
+    <Body>My recent experience has given me new insights and I have grown in my skills in the Force.  My ranking is {rank}.</Body>
+    <BackgroundImage Key="mission_report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Future Jedi Discovered</DisplayName>
+    <ResultType>ForceUserDiscovered</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <MessageType>Mission</MessageType>
+    <Subject>Future Jedi Discovered</Subject>
+    <Body>I have detected that {officer} has the ability to use the Force.  We should consider allowing me to conduct training in the way of the Force.</Body>
+    <BackgroundImage Key="mission_report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Future Jedi Discovered By Student</DisplayName>
+    <ResultType>ForceUserDiscoveredByStudent</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <MessageType>Mission</MessageType>
+    <Subject>Future Jedi Discovered</Subject>
+    <Body>I have detected that {officer} has the ability to use the Force.  Once I reach the rank of Jedi Knight, I should conduct training in the use of the Force.</Body>
+    <BackgroundImage Key="mission_report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Complete Ship</DisplayName>
+    <ResultType>ResearchComplete</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <ResearchDiscipline>ShipDesign</ResearchDiscipline>
+    <Subject>{item} Research Complete</Subject>
+    <Body>R&amp;D Reports that the {item} is now available for manufacture.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-research-successful</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Complete Troop</DisplayName>
+    <ResultType>ResearchComplete</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <ResearchDiscipline>TroopTraining</ResearchDiscipline>
+    <Subject>{item} Research Complete</Subject>
+    <Body>R&amp;D Reports that the {item} is now available for manufacture.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-research-successful</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Complete Facility</DisplayName>
+    <ResultType>ResearchComplete</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <ResearchDiscipline>FacilityDesign</ResearchDiscipline>
+    <Subject>{item} Research Complete</Subject>
+    <Body>R&amp;D Reports that the {item} is now available for manufacture.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-research-successful</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Exhausted Ship</DisplayName>
+    <ResultType>ResearchExhausted</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <ResearchDiscipline>ShipDesign</ResearchDiscipline>
+    <Subject>Research Exhausted</Subject>
+    <Body>There are no further advances expected in ship construction.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-research-successful</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Exhausted Troop</DisplayName>
+    <ResultType>ResearchExhausted</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <ResearchDiscipline>TroopTraining</ResearchDiscipline>
+    <Subject>Research Exhausted</Subject>
+    <Body>There are no further advances expected in troop training.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-research-successful</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Research Exhausted Facility</DisplayName>
+    <ResultType>ResearchExhausted</ResultType>
+    <MessageType>Manufacturing</MessageType>
+    <ResearchDiscipline>FacilityDesign</ResearchDiscipline>
+    <Subject>Research Exhausted</Subject>
+    <Body>There are no further advances expected in facility construction.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-research-successful</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Near Uprising</DisplayName>
+    <ResultType>NearUprising</ResultType>
+    <MessageType>PopularSupport</MessageType>
+    <Subject>{system} Near Uprising</Subject>
+    <Body>Unrest has pushed {system} close to uprising.</Body>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-near-uprising</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-near-uprising</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/near-uprising</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/near-uprising</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Uprising Started</DisplayName>
+    <ResultType>UprisingStarted</ResultType>
+    <MessageType>PopularSupport</MessageType>
+    <Subject>Uprising Begins on {system}</Subject>
+    <Body>An uprising has begun on the {faction} controlled system {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-uprising-started</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/uprising-started"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Uprising Ended</DisplayName>
+    <ResultType>UprisingEnded</ResultType>
+    <MessageType>PopularSupport</MessageType>
+    <Subject>Uprising Ends on {system}</Subject>
+    <Body>The uprising on {system} has ended.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-uprising-ended</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/uprising-ended</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/uprising-ended</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Planet Joined by Support</DisplayName>
+    <ResultType>PlanetJoinedBySupport</ResultType>
+    <MessageType>PopularSupport</MessageType>
+    <Subject>{system} Joins</Subject>
+    <Body>Popular support on {system} has caused that world to join the {faction}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-planet-joins</BackgroundAudioPath>
+    <BackgroundImage Key="planet_allegiance_evolves"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Planet Joined Enemy by Support</DisplayName>
+    <ResultType>PlanetJoinedEnemyBySupport</ResultType>
+    <MessageType>PopularSupport</MessageType>
+    <Subject>{system} Joins Enemy</Subject>
+    <Body>Popular dissent on {system} has caused that world to join the {faction}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-planet-joins</BackgroundAudioPath>
+    <BackgroundImage Key="planet_allegiance_evolves"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Planet Declared Neutrality by Support</DisplayName>
+    <ResultType>PlanetDeclaredNeutralityBySupport</ResultType>
+    <MessageType>PopularSupport</MessageType>
+    <Subject>{system} Declares Neutrality</Subject>
+    <Body>Divided loyalty on {system} has caused that world to abandon the {faction} cause.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-planet-declares-neutrality</BackgroundAudioPath>
+    <BackgroundImage Key="planet_allegiance_evolves"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Blockade Initiated</DisplayName>
+    <ResultType>BlockadeInitiated</ResultType>
+    <MessageType>Fleet</MessageType>
+    <Subject>Fleet Initiates Blockade of {system}</Subject>
+    <Body>{fleet} has initiated a blockade of {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-planetary-blockade</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/blockade</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/blockade</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Blockade Detected</DisplayName>
+    <ResultType>BlockadeDetected</ResultType>
+    <MessageType>Fleet</MessageType>
+    <Subject>{system} Under Blockade</Subject>
+    <Body>{faction} ships have been detected at {system}.  The world is under enemy blockade.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-planetary-blockade</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/blockade</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/blockade</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Evacuation Losses</DisplayName>
+    <ResultType>EvacuationLosses</ResultType>
+    <MessageType>Fleet</MessageType>
+    <Subject>Evacuation Losses</Subject>
+    <Body>The following units were lost running an enemy blockade of {system}.
+
+{units}</Body>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-blockade-breach-failed</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-blockade-breach-failed</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/evacuation-losses</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/evacuation-losses</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Maintenance Autoscrap</DisplayName>
+    <ResultType>MaintenanceAutoscrap</ResultType>
+    <MessageType>Resource</MessageType>
+    <Subject>Maintenance Shortfall</Subject>
+    <Body>The following units have been destroyed at {system} due to a maintenance shortfall:
+{items}</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-sabotage-maintenance-explosion</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/decommissioned-object</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/decommissioned-object</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Space Battle Victory</DisplayName>
+    <ResultType>SpaceBattle</ResultType>
+    <Outcome>Victory</Outcome>
+    <MessageType>Conflict</MessageType>
+    <Subject>Battle at {system}</Subject>
+    <Body>The {faction} fleet is victorious at {system}.
+Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/space-battle-victory</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/space-battle-victory</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Space Battle Defeat</DisplayName>
+    <ResultType>SpaceBattle</ResultType>
+    <Outcome>Defeat</Outcome>
+    <MessageType>Conflict</MessageType>
+    <Subject>Battle at {system}</Subject>
+    <Body>The {faction} fleet is defeated at {system}.
+Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/space-battle-defeat</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/space-battle-defeat</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Space Battle Stalemate</DisplayName>
+    <ResultType>SpaceBattle</ResultType>
+    <Outcome>Stalemate</Outcome>
+    <MessageType>Conflict</MessageType>
+    <Subject>Battle at {system}</Subject>
+    <Body>The battle at {system} is indecisive.
+Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Body>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/space-battle</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/space-battle</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Death Star Destroys Owned System</DisplayName>
+    <ResultType>Bombardment</ResultType>
+    <Outcome>TargetLosses</Outcome>
+    <PlanetOwnership>Owned</PlanetOwnership>
+    <PlanetDestroyed>true</PlanetDestroyed>
+    <MessageType>Conflict</MessageType>
+    <Subject>{system} Destroyed!</Subject>
+    <Body>The Death Star has destroyed the {target} system {system}.</Body>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-target-losses"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Death Star Destroys Neutral System</DisplayName>
+    <ResultType>Bombardment</ResultType>
+    <Outcome>TargetLosses</Outcome>
+    <PlanetOwnership>Neutral</PlanetOwnership>
+    <PlanetDestroyed>true</PlanetDestroyed>
+    <MessageType>Conflict</MessageType>
+    <Subject>{system} Destroyed!</Subject>
+    <Body>The Death Star has destroyed the neutral system {system}.</Body>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-target-losses"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Bombardment Owned No Losses</DisplayName>
+    <ResultType>Bombardment</ResultType>
+    <Outcome>NoLosses</Outcome>
+    <PlanetOwnership>Owned</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Orbital bombardment of {system}</Subject>
+    <Body>{faction} ships have conducted an orbital strike on the {target} system of {system}</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-orbital-bombardment</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-no-losses"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Bombardment Owned Target Losses</DisplayName>
+    <ResultType>Bombardment</ResultType>
+    <Outcome>TargetLosses</Outcome>
+    <PlanetOwnership>Owned</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Orbital bombardment of {system}</Subject>
+    <Body>{faction} ships have conducted an orbital strike on the {target} system of {system}</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-orbital-bombardment</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-target-losses"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Bombardment Owned Attacker Losses</DisplayName>
+    <ResultType>Bombardment</ResultType>
+    <Outcome>AttackerLosses</Outcome>
+    <PlanetOwnership>Owned</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Orbital bombardment of {system}</Subject>
+    <Body>{faction} ships have conducted an orbital strike on the {target} system of {system}</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-orbital-bombardment</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-attacker-losses"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Bombardment Neutral No Losses</DisplayName>
+    <ResultType>Bombardment</ResultType>
+    <Outcome>NoLosses</Outcome>
+    <PlanetOwnership>Neutral</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Orbital bombardment of {system}</Subject>
+    <Body>{faction} ships have conducted an orbital strike on the non-aligned system {system}</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-orbital-bombardment</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-no-losses"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Bombardment Neutral Target Losses</DisplayName>
+    <ResultType>Bombardment</ResultType>
+    <Outcome>TargetLosses</Outcome>
+    <PlanetOwnership>Neutral</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Orbital bombardment of {system}</Subject>
+    <Body>{faction} ships have conducted an orbital strike on the non-aligned system {system}</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-orbital-bombardment</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-target-losses"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Bombardment Neutral Attacker Losses</DisplayName>
+    <ResultType>Bombardment</ResultType>
+    <Outcome>AttackerLosses</Outcome>
+    <PlanetOwnership>Neutral</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Orbital bombardment of {system}</Subject>
+    <Body>{faction} ships have conducted an orbital strike on the non-aligned system {system}</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-orbital-bombardment</BackgroundAudioPath>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-attacker-losses"/>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Assault Captured Owned System</DisplayName>
+    <ResultType>PlanetaryAssault</ResultType>
+    <Outcome>Success</Outcome>
+    <PlanetOwnership>Owned</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Assault on {system}</Subject>
+    <Body>{faction} troops have taken control of the {target} system {system}</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-planetary-assault</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/assault</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/assault</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Assault Defended Owned System</DisplayName>
+    <ResultType>PlanetaryAssault</ResultType>
+    <Outcome>Failed</Outcome>
+    <PlanetOwnership>Owned</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Assault on {system}</Subject>
+    <Body>{target} Troops have defended {system} from an {faction} assault.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-planetary-assault</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/assault</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/assault</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Assault Neutral Success</DisplayName>
+    <ResultType>PlanetaryAssault</ResultType>
+    <Outcome>Success</Outcome>
+    <PlanetOwnership>Neutral</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Assault on {system}</Subject>
+    <Body>{faction} troops have seized control of the neutral system {system}.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-planetary-assault</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/assault</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/assault</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+  <MessageDefinition>
+    <DisplayName>Assault Neutral Failed</DisplayName>
+    <ResultType>PlanetaryAssault</ResultType>
+    <Outcome>Failed</Outcome>
+    <PlanetOwnership>Neutral</PlanetOwnership>
+    <MessageType>Conflict</MessageType>
+    <Subject>Assault on {system}</Subject>
+    <Body>The neutral system {system} has repulsed an attack by {faction} troops.</Body>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-planetary-assault</BackgroundAudioPath>
+    <ImagePaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Images/assault</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Images/assault</Value>
+      </Entry>
+    </ImagePaths>
+  </MessageDefinition>
+</MessageDefinitions>
