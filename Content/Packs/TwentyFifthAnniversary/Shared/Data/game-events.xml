@@ -58,7 +58,7 @@
               <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
             </Any>
           </Not>
-          <HasParent NodeInstanceID="EMPEROR_PALPATINE" ParentInstanceID="CORUSCANT"/>
+          <HasParent UnitInstanceID="EMPEROR_PALPATINE" ParentInstanceID="CORUSCANT"/>
           <IsOwned PlanetInstanceID="CORUSCANT" FactionInstanceID="FNEMP1"/>
         </Conditionals>
         <Actions>
