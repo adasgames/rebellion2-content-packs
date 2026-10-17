@@ -58,11 +58,7 @@
               <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
             </Any>
           </Not>
-          <IsAtLocation>
-            <UnitInstanceID>EMPEROR_PALPATINE</UnitInstanceID>
-            <LocationInstanceID>CORUSCANT</LocationInstanceID>
-            <RequireDirectParent>true</RequireDirectParent>
-          </IsAtLocation>
+          <HasParent NodeInstanceID="EMPEROR_PALPATINE" ParentInstanceID="CORUSCANT"/>
           <IsOwned PlanetInstanceID="CORUSCANT" FactionInstanceID="FNEMP1"/>
         </Conditionals>
         <Actions>
