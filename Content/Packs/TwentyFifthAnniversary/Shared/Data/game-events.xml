@@ -44,6 +44,41 @@
     </Actions>
   </GameEvent>
   <GameEvent>
+    <InstanceID>EMPEROR_LEADERSHIP_BONUS</InstanceID>
+    <Schedule>
+      <Every Ticks="1"/>
+    </Schedule>
+    <Actions>
+      <If>
+        <Conditionals>
+          <Not>
+            <Any>
+              <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+              <IsKilled OfficerInstanceID="EMPEROR_PALPATINE"/>
+              <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
+            </Any>
+          </Not>
+          <HasParent UnitInstanceID="EMPEROR_PALPATINE" ParentInstanceID="CORUSCANT"/>
+          <IsOwned PlanetInstanceID="CORUSCANT" FactionInstanceID="FNEMP1"/>
+        </Conditionals>
+        <Actions>
+          <ApplyOfficerTrait TraitID="leadership-bonus">
+            <Officers>
+              <SelectOfficers OwnerFactionInstanceID="FNEMP1" IncludeInactive="true"/>
+            </Officers>
+          </ApplyOfficerTrait>
+        </Actions>
+        <Else>
+          <RemoveOfficerTrait TraitID="leadership-bonus">
+            <Officers>
+              <SelectOfficers OwnerFactionInstanceID="FNEMP1" IncludeInactive="true"/>
+            </Officers>
+          </RemoveOfficerTrait>
+        </Else>
+      </If>
+    </Actions>
+  </GameEvent>
+  <GameEvent>
     <InstanceID>LUKE_LEAVES_DAGOBAH</InstanceID>
     <Schedule>
       <After EventInstanceID="LUKE_VISITS_YODA" DelayTicks="100"/>

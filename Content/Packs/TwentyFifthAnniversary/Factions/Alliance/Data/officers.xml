@@ -263,6 +263,9 @@
     <TypeID>OFAL004</TypeID>
     <InstanceID>HAN_SOLO</InstanceID>
     <DisplayName>Han Solo</DisplayName>
+    <Traits>
+      <TraitID>smuggler</TraitID>
+    </Traits>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
       <OfficerRank>Admiral</OfficerRank>
