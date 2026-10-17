@@ -8,6 +8,7 @@
   <MainMenuMusicPath>Pack/Shared/Strategy/Audio/Music/battle-of-endor-1-medley</MainMenuMusicPath>
   <PlanetSectorsPath>Shared/Data/planet-sectors.xml</PlanetSectorsPath>
   <BuildingsPath>Data/buildings.xml</BuildingsPath>
+  <OfficerTraitsPath>Shared/Data/officer-traits.xml</OfficerTraitsPath>
   <GameEventsPath>Shared/Data/game-events.xml</GameEventsPath>
   <MessageDefinitionsPath>Shared/Data/message-definitions.xml</MessageDefinitionsPath>
   <EncyclopediaEntriesPath>Shared/Data/encyclopedia-entries.xml</EncyclopediaEntriesPath>
