@@ -2,7 +2,7 @@
 <ContentPack>
   <ID>twenty-fifth-anniversary</ID>
   <BasePackID>classic-galactic-civil-war</BasePackID>
-  <Version>1.0.1</Version>
+  <Version>1.0.2</Version>
   <DisplayName>25th Anniversary (by Metasharp)</DisplayName>
   <DefaultScenarioID>standard</DefaultScenarioID>
   <MainMenuMusicPath>Pack/Shared/Strategy/Audio/Music/battle-of-endor-1-medley</MainMenuMusicPath>
