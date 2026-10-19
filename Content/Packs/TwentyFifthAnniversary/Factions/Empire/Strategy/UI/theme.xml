@@ -2218,10 +2218,10 @@
         <TroopFinderBackgroundImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Finder/finder-window-troop-finder-background</TroopFinderBackgroundImagePath>
         <TroopColumnTypeIDs>
           <string>REEM002</string>
-          <string>REEM003</string>
-          <string>REEM001</string>
-          <string>REEM004</string>
           <string>REEM005</string>
+          <string>REEM001</string>
+          <string>REEM003</string>
+          <string>REEM004</string>
         </TroopColumnTypeIDs>
         <SpecialForcesColumnTypeIDs>
           <string>SPEM001</string>
