@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GameEvents>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>LUKE_VISITS_YODA</InstanceID>
     <Schedule>
       <RandomDelay MinimumTicks="200" MaximumTicks="300"/>
@@ -28,7 +28,7 @@
       <SetDisplayStatus TargetInstanceID="LUKE_SKYWALKER" Status="On Mission (Dagobah)"/>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>EMPEROR_RETURNS_TO_CORUSCANT</InstanceID>
     <Triggers>
       <UnitArrived UnitInstanceID="EMPEROR_PALPATINE" DestinationInstanceID="CORUSCANT"/>
@@ -78,7 +78,7 @@
       </If>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>LUKE_LEAVES_DAGOBAH</InstanceID>
     <Schedule>
       <After EventInstanceID="LUKE_VISITS_YODA" DelayTicks="100"/>
@@ -135,7 +135,7 @@
       </SetOfficerVoiceSet>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>HAN_BOUNTY_HUNTERS</InstanceID>
     <Schedule>
       <RandomInterval MinimumTicks="1" MaximumTicks="100">
@@ -201,7 +201,7 @@
       </RollOutcome>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_RESCUES_HAN_FROM_JABBA</InstanceID>
     <Schedule>
       <Every Ticks="1"/>
@@ -234,7 +234,7 @@
       <SetDisplayStatus TargetInstanceID="LUKE_SKYWALKER" Status="On Mission"/>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>LUKE_RESCUE_OF_HAN_RESOLVES</InstanceID>
     <Schedule>
       <After EventInstanceID="LUKE_RESCUES_HAN_FROM_JABBA" DelayTicks="10"/>
@@ -312,7 +312,7 @@
       </If>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LEIA_RESCUES_HAN_FROM_JABBA</InstanceID>
     <Schedule>
       <Every Ticks="1"/>
@@ -346,7 +346,7 @@
       <SetDisplayStatus TargetInstanceID="LEIA_ORGANA" Status="On Mission"/>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>LEIA_RESCUE_OF_HAN_RESOLVES</InstanceID>
     <Schedule>
       <After EventInstanceID="LEIA_RESCUES_HAN_FROM_JABBA" DelayTicks="10"/>
@@ -424,7 +424,7 @@
       </If>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>CHEWBACCA_RESCUES_HAN_FROM_JABBA</InstanceID>
     <Schedule>
       <Every Ticks="1"/>
@@ -457,7 +457,7 @@
       <SetDisplayStatus TargetInstanceID="CHEWBACCA" Status="On Mission"/>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>CHEWBACCA_RESCUE_OF_HAN_RESOLVES</InstanceID>
     <Schedule>
       <After EventInstanceID="CHEWBACCA_RESCUES_HAN_FROM_JABBA" DelayTicks="10"/>
@@ -535,7 +535,7 @@
       </If>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>JABBA_RESCUE_CLEANUP</InstanceID>
     <Schedule>
       <Every Ticks="1"/>
@@ -597,7 +597,7 @@
       </If>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>VADER_COLLECTS_JABBAS_PRISONERS</InstanceID>
     <Schedule>
       <Every Ticks="1"/>
@@ -637,7 +637,7 @@
       <SetDisplayStatus TargetInstanceID="DARTH_VADER" Status="On Mission (Jabba's Palace)"/>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>JABBA_DELIVERS_PRISONERS</InstanceID>
     <Schedule>
       <After EventInstanceID="VADER_COLLECTS_JABBAS_PRISONERS" DelayTicks="100"/>
@@ -717,7 +717,7 @@
     </Actions>
   </GameEvent>
   <!-- Linked-character comparisons are one-shot story encounters, resolved only when the pair meets. -->
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_ENCOUNTERS_VADER</InstanceID>
     <Triggers>
       <MissionStarted>
@@ -770,7 +770,7 @@
       </If>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_VADER_ENCOUNTER_EFFECTS</InstanceID>
     <Triggers>
       <DuelCompleted SourceEventInstanceID="LUKE_ENCOUNTERS_VADER" FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="DARTH_VADER">
@@ -793,7 +793,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_DISCOVERS_HERITAGE</InstanceID>
     <Bindings>
       <Bind As="$lukeForce">
@@ -849,7 +849,7 @@
       </If>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LEIA_DISCOVERS_HERITAGE</InstanceID>
     <Schedule>
       <Every Ticks="1"/>
@@ -868,7 +868,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_ENCOUNTERS_PALPATINE</InstanceID>
     <Triggers>
       <MissionStarted>
@@ -921,7 +921,7 @@
       </If>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_PALPATINE_ENCOUNTER_EFFECTS</InstanceID>
     <Triggers>
       <DuelCompleted SourceEventInstanceID="LUKE_ENCOUNTERS_PALPATINE" FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="EMPEROR_PALPATINE">
@@ -944,7 +944,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LEIA_ENCOUNTERS_VADER</InstanceID>
     <Triggers>
       <MissionStarted>
@@ -982,7 +982,7 @@
       </TriggerDuel>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LEIA_VADER_ENCOUNTER_EFFECTS</InstanceID>
     <Triggers>
       <DuelCompleted SourceEventInstanceID="LEIA_ENCOUNTERS_VADER" FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="DARTH_VADER">
@@ -1005,7 +1005,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LEIA_ENCOUNTERS_PALPATINE</InstanceID>
     <Triggers>
       <MissionStarted>
@@ -1043,7 +1043,7 @@
       </TriggerDuel>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LEIA_PALPATINE_ENCOUNTER_EFFECTS</InstanceID>
     <Triggers>
       <DuelCompleted SourceEventInstanceID="LEIA_ENCOUNTERS_PALPATINE" FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="EMPEROR_PALPATINE">
@@ -1066,7 +1066,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_AND_VADER_DETECT_EACH_OTHER</InstanceID>
     <Triggers>
       <UnitArrived UnitInstanceID="LUKE_SKYWALKER"/>
@@ -1099,7 +1099,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_AND_PALPATINE_DETECT_EACH_OTHER</InstanceID>
     <Triggers>
       <UnitArrived UnitInstanceID="LUKE_SKYWALKER"/>
@@ -1132,7 +1132,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LEIA_AND_VADER_DETECT_EACH_OTHER</InstanceID>
     <Triggers>
       <UnitArrived UnitInstanceID="LEIA_ORGANA"/>
@@ -1165,7 +1165,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LEIA_AND_PALPATINE_DETECT_EACH_OTHER</InstanceID>
     <Triggers>
       <UnitArrived UnitInstanceID="LEIA_ORGANA"/>
@@ -1198,7 +1198,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>VADER_TAKES_LUKE_TO_EMPEROR</InstanceID>
     <Bindings>
       <Bind As="$lukeForce">
@@ -1252,7 +1252,7 @@
       </SendUnits>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Story">
     <InstanceID>VADER_REACHES_LUKE</InstanceID>
     <Schedule>
       <Every Ticks="1">
@@ -1312,7 +1312,7 @@
       </SendUnits>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_WINS_FINAL_BATTLE</InstanceID>
     <Schedule>
       <Every Ticks="1"/>
@@ -1348,7 +1348,7 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1">
+  <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_LOSES_FINAL_BATTLE</InstanceID>
     <Schedule>
       <Every Ticks="1"/>
@@ -1472,7 +1472,7 @@
       </If>
     </Actions>
   </GameEvent>
-  <GameEvent>
+  <GameEvent Category="Disaster">
     <InstanceID>NATURAL_DISASTER</InstanceID>
     <Bindings>
       <Bind As="$planet">
