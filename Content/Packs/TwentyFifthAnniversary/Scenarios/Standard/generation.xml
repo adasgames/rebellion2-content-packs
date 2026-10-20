@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameGenerationConfig>
   <Officers>
-    <NumStartingOfficers>
-      <Small>8</Small>
-      <Medium>9</Medium>
-      <Large>11</Large>
-    </NumStartingOfficers>
     <StartingOfficers>
       <StartingOfficerRule>
         <OfficerInstanceID>MON_MOTHMA</OfficerInstanceID>
@@ -65,6 +60,12 @@
     <FactionSetups>
       <FactionSetup>
         <FactionID>FNALL1</FactionID>
+        <StartingResearchLevel>0</StartingResearchLevel>
+        <NumStartingOfficers>
+          <Small>8</Small>
+          <Medium>9</Medium>
+          <Large>11</Large>
+        </NumStartingOfficers>
         <StartingPlanets>
           <StartingPlanet>
             <PlanetTypeID>PLSUM06</PlanetTypeID>
@@ -86,6 +87,12 @@
       </FactionSetup>
       <FactionSetup>
         <FactionID>FNEMP1</FactionID>
+        <StartingResearchLevel>0</StartingResearchLevel>
+        <NumStartingOfficers>
+          <Small>8</Small>
+          <Medium>9</Medium>
+          <Large>11</Large>
+        </NumStartingOfficers>
         <StartingPlanets>
           <StartingPlanet>
             <PlanetTypeID>PLSEW05</PlanetTypeID>

@@ -2142,6 +2142,7 @@ History: The Super Star Destroyer, is one of the most formidable warships in the
   <CapitalShip>
     <TypeID>CSEM015</TypeID>
     <CanDestroyPlanets>true</CanDestroyPlanets>
+    <SectorSuppression>2</SectorSuppression>
     <DisplayName>Death Star</DisplayName>
     <ShipNamePoolID>C</ShipNamePoolID>
     <DisplayImagePath>Pack/Factions/Empire/Units/CapitalShips/CSEM015/display</DisplayImagePath>
