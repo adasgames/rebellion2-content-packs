@@ -118,7 +118,7 @@
           <FactionBucketOverride>
             <Difficulty>Hard</Difficulty>
             <ControllerType>AI</ControllerType>
-            <StrongPct>14</StrongPct>
+            <StrongPct>25</StrongPct>
             <WeakPct>0</WeakPct>
           </FactionBucketOverride>
         </Overrides>
