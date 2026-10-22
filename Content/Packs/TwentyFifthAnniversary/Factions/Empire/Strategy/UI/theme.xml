@@ -694,6 +694,9 @@
     <VictoryCutscenePath>Pack/Factions/Empire/Cutscenes/victory</VictoryCutscenePath>
     <DefeatCutscenePath>Pack/Factions/Empire/Cutscenes/defeat</DefeatCutscenePath>
     <HeadquartersDestroyedCutscenePath>Pack/Factions/Empire/Cutscenes/headquarters-destroyed</HeadquartersDestroyedCutscenePath>
+    <PlanetDestructionCutscenes>
+      <Cutscene ShipTypeID="CSEM015" Path="Pack/Shared/Cutscenes/planet-destroyed"/>
+    </PlanetDestructionCutscenes>
     <!-- Faction UI Images/Placements -->
     <TacticalHUDLayout>
       <ImagePath>Pack/Factions/Empire/Strategy/UI/Shared/background</ImagePath>
@@ -2218,10 +2221,10 @@
         <TroopFinderBackgroundImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Finder/finder-window-troop-finder-background</TroopFinderBackgroundImagePath>
         <TroopColumnTypeIDs>
           <string>REEM002</string>
-          <string>REEM003</string>
-          <string>REEM001</string>
-          <string>REEM004</string>
           <string>REEM005</string>
+          <string>REEM001</string>
+          <string>REEM003</string>
+          <string>REEM004</string>
         </TroopColumnTypeIDs>
         <SpecialForcesColumnTypeIDs>
           <string>SPEM001</string>

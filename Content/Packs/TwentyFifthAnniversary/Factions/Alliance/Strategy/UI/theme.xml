@@ -696,6 +696,9 @@
     <VictoryCutscenePath>Pack/Factions/Alliance/Cutscenes/victory</VictoryCutscenePath>
     <DefeatCutscenePath>Pack/Factions/Alliance/Cutscenes/defeat</DefeatCutscenePath>
     <HeadquartersDestroyedCutscenePath>Pack/Factions/Alliance/Cutscenes/headquarters-destroyed</HeadquartersDestroyedCutscenePath>
+    <PlanetDestructionCutscenes>
+      <Cutscene ShipTypeID="CSEM015" Path="Pack/Shared/Cutscenes/planet-destroyed"/>
+    </PlanetDestructionCutscenes>
     <!-- Faction UI Images/Placements -->
     <TacticalHUDLayout>
       <ImagePath>Pack/Shared/Strategy/UI/Shell/background</ImagePath>
