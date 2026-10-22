@@ -1582,7 +1582,7 @@
         <From>
           <SelectRandom Count="1">
             <From>
-              <SelectPlanets SectorType="Core"/>
+              <SelectPlanets/>
             </From>
           </SelectRandom>
         </From>
@@ -1597,139 +1597,178 @@
     <Schedule>
       <RandomInterval MinimumTicks="1" MaximumTicks="500"/>
     </Schedule>
-    <Conditionals>
-      <Any>
-        <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
-        <IsOwned PlanetBinding="$planet" FactionInstanceID="FNEMP1"/>
-      </Any>
-    </Conditionals>
     <Actions>
       <RollOutcome>
         <Outcomes>
           <Outcome Weight="1">
-            <Conditionals>
-              <EvaluateBinding Binding="$rawResourceNodes" Comparison="GreaterThan" CompareTo="0"/>
-              <HasBuildingType Type="Mine" PlanetBinding="$planet"/>
-            </Conditionals>
             <Actions>
-              <ChangeRawResourceNodes PlanetBinding="$planet">
-                <Amount>-1</Amount>
-              </ChangeRawResourceNodes>
               <If>
                 <Conditionals>
-                  <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                  <EvaluateBinding Binding="$rawResourceNodes" Comparison="GreaterThan" CompareTo="0"/>
+                  <HasBuildingType Type="Mine" PlanetBinding="$planet"/>
                 </Conditionals>
                 <Actions>
-                  <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
-                    <Subject>Resources Depleted on {subject}</Subject>
-                    <Body>Operations on {subject} have reduced the raw materials available.</Body>
-                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
-                  </SendMessage>
+                  <ChangeRawResourceNodes PlanetBinding="$planet">
+                    <Amount>-1</Amount>
+                  </ChangeRawResourceNodes>
+                  <If>
+                    <Conditionals>
+                      <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                    </Conditionals>
+                    <Actions>
+                      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                        <Subject>Resources Depleted on {subject}</Subject>
+                        <Body>Operations on {subject} have reduced the raw materials available.</Body>
+                        <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                      </SendMessage>
+                    </Actions>
+                    <Else>
+                      <If>
+                        <Conditionals>
+                          <IsOwned PlanetBinding="$planet" FactionInstanceID="FNEMP1"/>
+                        </Conditionals>
+                        <Actions>
+                          <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                            <Subject>Resources Depleted on {subject}</Subject>
+                            <Body>Operations on {subject} have reduced the raw materials available.</Body>
+                            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                          </SendMessage>
+                        </Actions>
+                      </If>
+                    </Else>
+                  </If>
                 </Actions>
-                <Else>
-                  <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
-                    <Subject>Resources Depleted on {subject}</Subject>
-                    <Body>Operations on {subject} have reduced the raw materials available.</Body>
-                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
-                  </SendMessage>
-                </Else>
               </If>
             </Actions>
           </Outcome>
           <Outcome Weight="1">
-            <Conditionals>
-              <EvaluateBinding Binding="$energyCapacity" Comparison="GreaterThan" CompareTo="0"/>
-              <Any>
-                <HasBuildingType Type="Mine" PlanetBinding="$planet"/>
-                <HasBuildingType Type="Refinery" PlanetBinding="$planet"/>
-                <HasBuildingType Type="Shipyard" PlanetBinding="$planet"/>
-                <HasBuildingType Type="TrainingFacility" PlanetBinding="$planet"/>
-                <HasBuildingType Type="ConstructionFacility" PlanetBinding="$planet"/>
-                <HasBuildingType Type="Defense" PlanetBinding="$planet"/>
-                <HasBuildingType Type="Weapon" PlanetBinding="$planet"/>
-                <HasBuildingType Type="Headquarters" PlanetBinding="$planet"/>
-              </Any>
-            </Conditionals>
             <Actions>
-              <ChangeEnergyCapacity PlanetBinding="$planet">
-                <Amount>-1</Amount>
-              </ChangeEnergyCapacity>
               <If>
                 <Conditionals>
-                  <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                  <EvaluateBinding Binding="$energyCapacity" Comparison="GreaterThan" CompareTo="0"/>
+                  <Any>
+                    <HasBuildingType Type="Mine" PlanetBinding="$planet"/>
+                    <HasBuildingType Type="Refinery" PlanetBinding="$planet"/>
+                    <HasBuildingType Type="Shipyard" PlanetBinding="$planet"/>
+                    <HasBuildingType Type="TrainingFacility" PlanetBinding="$planet"/>
+                    <HasBuildingType Type="ConstructionFacility" PlanetBinding="$planet"/>
+                    <HasBuildingType Type="Defense" PlanetBinding="$planet"/>
+                    <HasBuildingType Type="Weapon" PlanetBinding="$planet"/>
+                    <HasBuildingType Type="Headquarters" PlanetBinding="$planet"/>
+                  </Any>
                 </Conditionals>
                 <Actions>
-                  <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
-                    <Subject>Resources Depleted on {subject}</Subject>
-                    <Body>Operations on {subject} have reduced the energy available.</Body>
-                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
-                  </SendMessage>
+                  <ChangeEnergyCapacity PlanetBinding="$planet">
+                    <Amount>-1</Amount>
+                  </ChangeEnergyCapacity>
+                  <If>
+                    <Conditionals>
+                      <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                    </Conditionals>
+                    <Actions>
+                      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                        <Subject>Resources Depleted on {subject}</Subject>
+                        <Body>Operations on {subject} have reduced the energy available.</Body>
+                        <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                      </SendMessage>
+                    </Actions>
+                    <Else>
+                      <If>
+                        <Conditionals>
+                          <IsOwned PlanetBinding="$planet" FactionInstanceID="FNEMP1"/>
+                        </Conditionals>
+                        <Actions>
+                          <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                            <Subject>Resources Depleted on {subject}</Subject>
+                            <Body>Operations on {subject} have reduced the energy available.</Body>
+                            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                          </SendMessage>
+                        </Actions>
+                      </If>
+                    </Else>
+                  </If>
                 </Actions>
-                <Else>
-                  <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
-                    <Subject>Resources Depleted on {subject}</Subject>
-                    <Body>Operations on {subject} have reduced the energy available.</Body>
-                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
-                  </SendMessage>
-                </Else>
               </If>
             </Actions>
           </Outcome>
           <Outcome Weight="1">
-            <Conditionals>
-              <EvaluateBinding Binding="$rawResourceNodes" Comparison="LessThan" CompareTo="15"/>
-            </Conditionals>
             <Actions>
-              <ChangeRawResourceNodes PlanetBinding="$planet">
-                <Amount>1</Amount>
-              </ChangeRawResourceNodes>
               <If>
                 <Conditionals>
-                  <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                  <EvaluateBinding Binding="$rawResourceNodes" Comparison="LessThan" CompareTo="15"/>
+                  <EvaluateBinding Binding="$rawResourceNodes" Comparison="LessThan" CompareToBinding="$energyCapacity"/>
                 </Conditionals>
                 <Actions>
-                  <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
-                    <Subject>New Resources on {subject}</Subject>
-                    <Body>New sources of raw materials have been discovered on {subject}.</Body>
-                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
-                  </SendMessage>
+                  <ChangeRawResourceNodes PlanetBinding="$planet">
+                    <Amount>1</Amount>
+                  </ChangeRawResourceNodes>
+                  <If>
+                    <Conditionals>
+                      <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                    </Conditionals>
+                    <Actions>
+                      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                        <Subject>New Resources on {subject}</Subject>
+                        <Body>New sources of raw materials have been discovered on {subject}.</Body>
+                        <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                      </SendMessage>
+                    </Actions>
+                    <Else>
+                      <If>
+                        <Conditionals>
+                          <IsOwned PlanetBinding="$planet" FactionInstanceID="FNEMP1"/>
+                        </Conditionals>
+                        <Actions>
+                          <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                            <Subject>New Resources on {subject}</Subject>
+                            <Body>New sources of raw materials have been discovered on {subject}.</Body>
+                            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                          </SendMessage>
+                        </Actions>
+                      </If>
+                    </Else>
+                  </If>
                 </Actions>
-                <Else>
-                  <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
-                    <Subject>New Resources on {subject}</Subject>
-                    <Body>New sources of raw materials have been discovered on {subject}.</Body>
-                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
-                  </SendMessage>
-                </Else>
               </If>
             </Actions>
           </Outcome>
           <Outcome Weight="1">
-            <Conditionals>
-              <EvaluateBinding Binding="$energyCapacity" Comparison="LessThan" CompareTo="15"/>
-            </Conditionals>
             <Actions>
-              <ChangeEnergyCapacity PlanetBinding="$planet">
-                <Amount>1</Amount>
-              </ChangeEnergyCapacity>
               <If>
                 <Conditionals>
-                  <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                  <EvaluateBinding Binding="$energyCapacity" Comparison="LessThan" CompareTo="15"/>
                 </Conditionals>
                 <Actions>
-                  <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
-                    <Subject>New Resources on {subject}</Subject>
-                    <Body>New sources of energy have been discovered on {subject}.</Body>
-                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
-                  </SendMessage>
+                  <ChangeEnergyCapacity PlanetBinding="$planet">
+                    <Amount>1</Amount>
+                  </ChangeEnergyCapacity>
+                  <If>
+                    <Conditionals>
+                      <IsOwned PlanetBinding="$planet" FactionInstanceID="FNALL1"/>
+                    </Conditionals>
+                    <Actions>
+                      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                        <Subject>New Resources on {subject}</Subject>
+                        <Body>New sources of energy have been discovered on {subject}.</Body>
+                        <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                      </SendMessage>
+                    </Actions>
+                    <Else>
+                      <If>
+                        <Conditionals>
+                          <IsOwned PlanetBinding="$planet" FactionInstanceID="FNEMP1"/>
+                        </Conditionals>
+                        <Actions>
+                          <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
+                            <Subject>New Resources on {subject}</Subject>
+                            <Body>New sources of energy have been discovered on {subject}.</Body>
+                            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
+                          </SendMessage>
+                        </Actions>
+                      </If>
+                    </Else>
+                  </If>
                 </Actions>
-                <Else>
-                  <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Resource">
-                    <Subject>New Resources on {subject}</Subject>
-                    <Body>New sources of energy have been discovered on {subject}.</Body>
-                    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/resources"/>
-                  </SendMessage>
-                </Else>
               </If>
             </Actions>
           </Outcome>
