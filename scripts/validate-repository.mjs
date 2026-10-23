@@ -1,6 +1,10 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
-import { isSemanticVersion, isVersionRequirement } from "./semver.mjs";
+import {
+  compareSemanticVersions,
+  isSemanticVersion,
+  isVersionRequirement,
+} from "./semver.mjs";
 
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 const safeDirectory = /^[A-Za-z0-9][A-Za-z0-9._-]*$/u;
@@ -22,6 +26,12 @@ for (const registryFile of registryFiles) {
   requireValue(registryFile === `${registry.id}.json`, `${registryFile} does not match its id.`);
   requireValue(registry.name?.trim(), `${registryFile} has no display name.`);
   requireValue(registry.description?.trim(), `${registryFile} has no description.`);
+  if (registry.minimumSupportedVersion !== undefined) {
+    requireValue(
+      isSemanticVersion(registry.minimumSupportedVersion),
+      `${registryFile} has an invalid minimum supported version.`,
+    );
+  }
   requireValue(
     registry.depends && typeof registry.depends === "object" && !Array.isArray(registry.depends),
     `${registryFile} has no dependency map.`,
@@ -57,6 +67,15 @@ for (const registryFile of registryFiles) {
     isSemanticVersion(xmlValue(packXml, "Version")),
     `${registryFile} pack.xml has an invalid version.`,
   );
+  if (registry.minimumSupportedVersion !== undefined) {
+    requireValue(
+      compareSemanticVersions(
+        registry.minimumSupportedVersion,
+        xmlValue(packXml, "Version"),
+      ) <= 0,
+      `${registryFile} minimum supported version exceeds its pack version.`,
+    );
+  }
   const basePackId = xmlValue(packXml, "BasePackID");
   const contentDependencies = Object.keys(registry.depends).filter((id) => id !== "rebellion2");
   requireValue(

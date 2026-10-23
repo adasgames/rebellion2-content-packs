@@ -3,6 +3,7 @@
   "name": "25th Anniversary (by Metasharp)",
   "description": "Adds the accurate galaxy layout, expanded faction and unit data, interface artwork, mission and message assets, and restored music.",
   "directory": "TwentyFifthAnniversary",
+  "minimumSupportedVersion": "1.0.3",
   "depends": {
     "rebellion2": ">0.0.33",
     "classic-galactic-civil-war": "1.0.0"
