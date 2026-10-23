@@ -46,6 +46,7 @@ jobs:
           directory="$(jq -r '.directory' "$metadata")"
           name="$(jq -r '.name' "$metadata")"
           description="$(jq -r '.description' "$metadata")"
+          minimum_supported_version="$(jq -r '.minimumSupportedVersion // empty' "$metadata")"
           dependencies="$(jq -c '.depends' "$metadata")"
           [[ "$directory" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]]
           pack_xml="Content/Packs/${directory}/pack.xml"
@@ -56,6 +57,7 @@ jobs:
             echo "directory=$directory"
             echo "name=$name"
             echo "description=$description"
+            echo "minimum_supported_version=$minimum_supported_version"
             echo "dependencies=$dependencies"
             echo "version=$version"
           } >> "$GITHUB_OUTPUT"
@@ -89,6 +91,7 @@ jobs:
           DISPLAY_NAME: ${{ steps.pack.outputs.name }}
           PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
           PACK_ID: ${{ inputs.pack_id }}
+          MINIMUM_SUPPORTED_VERSION: ${{ steps.pack.outputs.minimum_supported_version }}
           VERSION: ${{ steps.pack.outputs.version }}
         run: |
           python - <<'PY'
@@ -114,6 +117,7 @@ jobs:
           DISPLAY_NAME: ${{ steps.pack.outputs.name }}
           PACK_DIRECTORY: ${{ steps.pack.outputs.directory }}
           PACK_ID: ${{ inputs.pack_id }}
+          MINIMUM_SUPPORTED_VERSION: ${{ steps.pack.outputs.minimum_supported_version }}
           VERSION: ${{ steps.pack.outputs.version }}
         run: |
           set -euo pipefail
@@ -127,11 +131,13 @@ jobs:
             --arg name "$DISPLAY_NAME" \
             --arg description "$DESCRIPTION" \
             --arg version "$VERSION" \
+            --arg minimum_supported_version "$MINIMUM_SUPPORTED_VERSION" \
             --arg directory "$PACK_DIRECTORY" \
             --arg manifest "dist/content-packs/${PACK_ID}/manifest-${VERSION}.json" \
             --arg blobs "content-pack-blobs/" \
             --argjson depends "$DEPENDENCIES" \
-            '{id:$id,name:$name,description:$description,version:$version,directory:$directory,manifest:$manifest,blobs:$blobs,depends:$depends}' \
+            '{id:$id,name:$name,description:$description,version:$version,directory:$directory,manifest:$manifest,blobs:$blobs,depends:$depends}
+              + (if $minimum_supported_version == "" then {} else {minimumSupportedVersion:$minimum_supported_version} end)' \
             > package/release.json
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

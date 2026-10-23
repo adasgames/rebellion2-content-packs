@@ -9,6 +9,7 @@ function release(overrides = {}) {
     name: "Sample Pack",
     description: "A sample.",
     version: "1.2.3",
+    minimumSupportedVersion: "1.1.0",
     directory: "SamplePack",
     manifest: "dist/content-packs/sample-pack/manifest-1.2.3.json",
     blobs: "content-pack-blobs/",
@@ -40,6 +41,7 @@ test("catalog records one independently versioned pack and its size", () => {
   assert.equal(result.packs.length, 1);
   assert.equal(result.packs[0].downloadSize, 35);
   assert.equal(result.packs[0].version, "1.2.3");
+  assert.equal(result.packs[0].minimumSupportedVersion, "1.1.0");
   assert.equal(result.schemaVersion, 2);
   assert.deepEqual(result.packs[0].depends, {
     rebellion2: ">=0.0.31",
@@ -112,6 +114,20 @@ test("catalog rejects a noncanonical pack version", () => {
           manifest({ version }),
         ),
       /Content-pack version/u,
+    );
+  }
+});
+
+test("catalog rejects an invalid minimum supported version", () => {
+  for (const minimumSupportedVersion of ["next", "1.2.4"]) {
+    assert.throws(
+      () =>
+        updateContentPackCatalog(
+          { schemaVersion: 2, packs: [] },
+          release({ minimumSupportedVersion }),
+          manifest(),
+        ),
+      /minimum supported version/u,
     );
   }
 });

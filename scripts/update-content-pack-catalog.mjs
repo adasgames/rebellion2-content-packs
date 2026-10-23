@@ -1,6 +1,10 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
-import { isSemanticVersion, isVersionRequirement } from "./semver.mjs";
+import {
+  compareSemanticVersions,
+  isSemanticVersion,
+  isVersionRequirement,
+} from "./semver.mjs";
 
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 const directory = /^[A-Za-z0-9][A-Za-z0-9._-]*$/u;
@@ -44,6 +48,13 @@ function validateRelease(release) {
   if (!release.name?.trim()) throw new Error("Content-pack name is required.");
   if (!isSemanticVersion(release.version)) {
     throw new Error("Content-pack version must be a semantic version.");
+  }
+  if (
+    release.minimumSupportedVersion !== undefined &&
+    (!isSemanticVersion(release.minimumSupportedVersion) ||
+      compareSemanticVersions(release.minimumSupportedVersion, release.version) > 0)
+  ) {
+    throw new Error("Content-pack minimum supported version is invalid.");
   }
   if (
     !directory.test(release.directory) ||
