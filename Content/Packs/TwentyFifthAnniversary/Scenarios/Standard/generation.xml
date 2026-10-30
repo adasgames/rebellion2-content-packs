@@ -880,7 +880,7 @@
     </FactionBudgets>
   </UnitDeployment>
   <Balance>
-    <SupportBoostPerUnit>2</SupportBoostPerUnit>
-    <MaxMilitaryPresenceBoost>10</MaxMilitaryPresenceBoost>
+    <SupportBoostPerUnit>0</SupportBoostPerUnit>
+    <MaxMilitaryPresenceBoost>0</MaxMilitaryPresenceBoost>
   </Balance>
 </GameGenerationConfig>
