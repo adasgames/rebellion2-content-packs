@@ -109,6 +109,20 @@
         <FactionID>FNALL1</FactionID>
         <StrongPct>10</StrongPct>
         <WeakPct>0</WeakPct>
+        <Overrides>
+          <FactionBucketOverride>
+            <Difficulty>Hard</Difficulty>
+            <ControllerType>AI</ControllerType>
+            <StrongPct>40</StrongPct>
+            <WeakPct>0</WeakPct>
+          </FactionBucketOverride>
+          <FactionBucketOverride>
+            <Difficulty>Hard</Difficulty>
+            <ControllerType>Human</ControllerType>
+            <StrongPct>15</StrongPct>
+            <WeakPct>0</WeakPct>
+          </FactionBucketOverride>
+        </Overrides>
       </FactionBucketConfig>
       <FactionBucketConfig>
         <FactionID>FNEMP1</FactionID>
@@ -118,8 +132,14 @@
           <FactionBucketOverride>
             <Difficulty>Hard</Difficulty>
             <ControllerType>AI</ControllerType>
-            <StrongPct>25</StrongPct>
-            <WeakPct>0</WeakPct>
+            <StrongPct>30</StrongPct>
+            <WeakPct>10</WeakPct>
+          </FactionBucketOverride>
+          <FactionBucketOverride>
+            <Difficulty>Hard</Difficulty>
+            <ControllerType>Human</ControllerType>
+            <StrongPct>10</StrongPct>
+            <WeakPct>5</WeakPct>
           </FactionBucketOverride>
         </Overrides>
       </FactionBucketConfig>
