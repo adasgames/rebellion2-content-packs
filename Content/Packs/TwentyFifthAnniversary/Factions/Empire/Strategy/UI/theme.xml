@@ -2430,20 +2430,20 @@
       </UnitTileIcons>
       <PlanetOverlayIcons>
         <Fleets>
-          <NormalImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Fleet/planetsector-planet-fleet-up</NormalImagePath>
-          <HoverImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Fleet/planetsector-planet-fleet-pressed</HoverImagePath>
+          <NormalImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Fleet/planet-fleet-normal</NormalImagePath>
+          <HoverImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Fleet/planet-fleet-highlighted</HoverImagePath>
         </Fleets>
         <Defenses>
-          <NormalImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Defense/planetsector-planet-defense-up</NormalImagePath>
-          <HoverImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Defense/planetsector-planet-defense-pressed</HoverImagePath>
+          <NormalImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Defense/planet-garrison-normal</NormalImagePath>
+          <HoverImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Defense/planet-garrison-highlighted</HoverImagePath>
         </Defenses>
         <Missions>
-          <NormalImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Missions/mission-icon</NormalImagePath>
-          <HoverImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Missions/mission-hover-icon</HoverImagePath>
+          <NormalImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Missions/planet-mission-normal</NormalImagePath>
+          <HoverImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Missions/planet-mission-highlighted</HoverImagePath>
         </Missions>
         <Buildings>
-          <NormalImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Facility/planetsector-planet-facility-up</NormalImagePath>
-          <HoverImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Facility/planetsector-planet-facility-pressed</HoverImagePath>
+          <NormalImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Facility/planet-manufacturing-normal</NormalImagePath>
+          <HoverImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Facility/planet-manufacturing-highlighted</HoverImagePath>
         </Buildings>
       </PlanetOverlayIcons>
     </PlanetOverlayTheme>
