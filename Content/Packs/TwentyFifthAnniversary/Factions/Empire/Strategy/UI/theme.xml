@@ -2151,6 +2151,10 @@
             <ImagePath>Pack/Factions/Empire/Strategy/Messages/Images/mission-report</ImagePath>
           </MessageDetailImageTheme>
           <MessageDetailImageTheme>
+            <Key>informants</Key>
+            <ImagePath>Pack/Factions/Empire/Strategy/Messages/Images/informants</ImagePath>
+          </MessageDetailImageTheme>
+          <MessageDetailImageTheme>
             <Key>advice</Key>
             <ImagePath>Pack/Factions/Empire/Strategy/Messages/Images/advice</ImagePath>
           </MessageDetailImageTheme>
