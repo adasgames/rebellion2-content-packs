@@ -152,10 +152,14 @@
     <FacilityResearch>0</FacilityResearch>
     <FacilityResearchVariance>0</FacilityResearchVariance>
     <CanBetray>false</CanBetray>
-    <JediProbability>0</JediProbability>
+    <JediProbability>100</JediProbability>
     <JediLevel>10</JediLevel>
     <JediLevelVariance>0</JediLevelVariance>
     <GrowsForceOnMission>true</GrowsForceOnMission>
+    <ForceDiscoveryConditionals>
+      <BindingIncludesUnit Binding="$discoverer" UnitInstanceID="LUKE_SKYWALKER"/>
+      <HasEventActivated EventInstanceID="LUKE_ENCOUNTERS_VADER"/>
+    </ForceDiscoveryConditionals>
     <CurrentRank>None</CurrentRank>
   </Officer>
   <Officer>
@@ -256,6 +260,7 @@
     <JediLevel>50</JediLevel>
     <JediLevelVariance>0</JediLevelVariance>
     <IsKnownJedi>true</IsKnownJedi>
+    <IsJediTrainer>true</IsJediTrainer>
     <GrowsForceOnMission>true</GrowsForceOnMission>
     <CurrentRank>None</CurrentRank>
   </Officer>

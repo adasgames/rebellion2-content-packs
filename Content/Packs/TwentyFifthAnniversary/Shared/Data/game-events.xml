@@ -851,22 +851,9 @@
   </GameEvent>
   <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LEIA_DISCOVERS_HERITAGE</InstanceID>
-    <Schedule>
-      <Every Ticks="1"/>
-    </Schedule>
-    <Conditionals>
-      <HasEventActivated EventInstanceID="LUKE_VADER_ENCOUNTER_EFFECTS"/>
-    </Conditionals>
-    <Actions>
-      <SetForceSensitive OfficerInstanceID="LEIA_ORGANA"/>
-      <SetForceEligible OfficerInstanceID="LEIA_ORGANA"/>
-      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" Type="Mission">
-        <Subject>Leia Uses Force</Subject>
-        <Body>My heritage as a member of the Skywalker family has given me the ability to use the Force, as it has my brother and father.</Body>
-        <BackgroundImage Key="mission_report"/>
-        <OverlayImage Path="Pack/Factions/Alliance/Units/Officers/OFAL002/message"/>
-      </SendMessage>
-    </Actions>
+    <Triggers>
+      <ForceDiscoveryChanged OfficerInstanceID="LEIA_ORGANA" DiscovererInstanceID="LUKE_SKYWALKER" EventType="ForceUserDiscovered"/>
+    </Triggers>
   </GameEvent>
   <GameEvent MaximumActivations="1" Category="Story">
     <InstanceID>LUKE_ENCOUNTERS_PALPATINE</InstanceID>
@@ -944,124 +931,250 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
+  <GameEvent Category="Story">
     <InstanceID>LEIA_ENCOUNTERS_VADER</InstanceID>
     <Triggers>
-      <MissionStarted>
-        <Participants Match="Any">
-          <Units>
-            <Unit UnitInstanceID="LEIA_ORGANA"/>
-            <Unit UnitInstanceID="DARTH_VADER"/>
-          </Units>
-        </Participants>
-      </MissionStarted>
-      <UnitArrived/>
-    </Triggers>
-    <Conditionals>
-      <ShareAncestor Type="Planet">
-        <Units>
-          <Unit UnitInstanceID="LEIA_ORGANA"/>
-          <Unit UnitInstanceID="DARTH_VADER"/>
-        </Units>
-      </ShareAncestor>
-      <Not>
-        <Any>
-          <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
-          <IsKilled OfficerInstanceID="LEIA_ORGANA"/>
-          <IsInTransit UnitInstanceID="LEIA_ORGANA"/>
-          <IsCaptured OfficerInstanceID="DARTH_VADER"/>
-          <IsKilled OfficerInstanceID="DARTH_VADER"/>
-          <IsInTransit UnitInstanceID="DARTH_VADER"/>
-        </Any>
-      </Not>
-    </Conditionals>
-    <Actions>
-      <TriggerDuel FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="DARTH_VADER">
-        <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/leia-encounters-vader</ImagePath>
-        <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/leia-vader</AudioPath>
-      </TriggerDuel>
-    </Actions>
-  </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>LEIA_VADER_ENCOUNTER_EFFECTS</InstanceID>
-    <Triggers>
-      <DuelCompleted SourceEventInstanceID="LEIA_ENCOUNTERS_VADER" FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="DARTH_VADER">
-        <Bindings>
-          <Bind Argument="ImagePath" As="$imagePath"/>
-          <Bind Argument="AudioPath" As="$audioPath"/>
-        </Bindings>
-      </DuelCompleted>
+      <DuelCompleted FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="DARTH_VADER">
+        </DuelCompleted>
+      <DuelCompleted FirstOfficerInstanceID="DARTH_VADER" SecondOfficerInstanceID="LEIA_ORGANA">
+        </DuelCompleted>
     </Triggers>
     <Actions>
-      <IncreaseForceRank OfficerInstanceID="LEIA_ORGANA" ReferenceOfficerInstanceID="DARTH_VADER" MinimumAmount="1">
-        <PercentOfPositiveGap>20</PercentOfPositiveGap>
-      </IncreaseForceRank>
+      <If>
+        <Conditionals>
+          <Not>
+            <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+          </Not>
+          <IsForceEligible OfficerInstanceID="LEIA_ORGANA"/>
+        </Conditionals>
+        <Actions>
+          <IncreaseForceRank OfficerInstanceID="LEIA_ORGANA" ReferenceOfficerInstanceID="DARTH_VADER" MinimumAmount="1">
+            <PercentOfPositiveGap>20</PercentOfPositiveGap>
+          </IncreaseForceRank>
+        </Actions>
+      </If>
       <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
-        <BackgroundImage Binding="$imagePath"/>
-        <BackgroundAudio Binding="$audioPath"/>
+        <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/leia-encounters-vader"/>
+        <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/leia-vader"/>
         <Subject>{subject} Confronts {relatedSubject}</Subject>
         <Body>{subject} has fought {relatedSubject}.  </Body>
+        <BodySections>
+          <Section>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+            </Conditionals>
+            <Text>{subject} was captured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+              </Not>
+              <IsInjured OfficerInstanceID="LEIA_ORGANA"/>
+            </Conditionals>
+            <Text>{subject} was injured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+            </Conditionals>
+            <Text>{relatedSubject} was captured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+              </Not>
+              <IsInjured OfficerInstanceID="DARTH_VADER"/>
+            </Conditionals>
+            <Text>{relatedSubject} was injured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+                <IsInjured OfficerInstanceID="LEIA_ORGANA"/>
+                <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                <IsInjured OfficerInstanceID="DARTH_VADER"/>
+              </Not>
+            </Conditionals>
+            <Text>Both combatants escaped uninjured.</Text>
+          </Section>
+        </BodySections>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" RelatedSubjectInstanceID="LEIA_ORGANA" Type="Mission">
+        <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/leia-encounters-vader"/>
+        <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/leia-vader"/>
+        <Subject>{relatedSubject} Confronts {subject}</Subject>
+        <Body>{relatedSubject} has fought {subject}.  </Body>
+        <BodySections>
+          <Section>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+            </Conditionals>
+            <Text>{relatedSubject} was captured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+              </Not>
+              <IsInjured OfficerInstanceID="LEIA_ORGANA"/>
+            </Conditionals>
+            <Text>{relatedSubject} was injured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+            </Conditionals>
+            <Text>{subject} was captured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+              </Not>
+              <IsInjured OfficerInstanceID="DARTH_VADER"/>
+            </Conditionals>
+            <Text>{subject} was injured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+                <IsInjured OfficerInstanceID="LEIA_ORGANA"/>
+                <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                <IsInjured OfficerInstanceID="DARTH_VADER"/>
+              </Not>
+            </Conditionals>
+            <Text>Both combatants escaped uninjured.</Text>
+          </Section>
+        </BodySections>
         <AdvisorNotification Preset="SubjectReport"/>
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
+  <GameEvent Category="Story">
     <InstanceID>LEIA_ENCOUNTERS_PALPATINE</InstanceID>
     <Triggers>
-      <MissionStarted>
-        <Participants Match="Any">
-          <Units>
-            <Unit UnitInstanceID="LEIA_ORGANA"/>
-            <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
-          </Units>
-        </Participants>
-      </MissionStarted>
-      <UnitArrived/>
-    </Triggers>
-    <Conditionals>
-      <ShareAncestor Type="Planet">
-        <Units>
-          <Unit UnitInstanceID="LEIA_ORGANA"/>
-          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
-        </Units>
-      </ShareAncestor>
-      <Not>
-        <Any>
-          <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
-          <IsKilled OfficerInstanceID="LEIA_ORGANA"/>
-          <IsInTransit UnitInstanceID="LEIA_ORGANA"/>
-          <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
-          <IsKilled OfficerInstanceID="EMPEROR_PALPATINE"/>
-          <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
-        </Any>
-      </Not>
-    </Conditionals>
-    <Actions>
-      <TriggerDuel FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="EMPEROR_PALPATINE">
-        <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/leia-encounters-palpatine</ImagePath>
-        <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/leia-palpatine</AudioPath>
-      </TriggerDuel>
-    </Actions>
-  </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>LEIA_PALPATINE_ENCOUNTER_EFFECTS</InstanceID>
-    <Triggers>
-      <DuelCompleted SourceEventInstanceID="LEIA_ENCOUNTERS_PALPATINE" FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="EMPEROR_PALPATINE">
-        <Bindings>
-          <Bind Argument="ImagePath" As="$imagePath"/>
-          <Bind Argument="AudioPath" As="$audioPath"/>
-        </Bindings>
-      </DuelCompleted>
+      <DuelCompleted FirstOfficerInstanceID="LEIA_ORGANA" SecondOfficerInstanceID="EMPEROR_PALPATINE">
+        </DuelCompleted>
+      <DuelCompleted FirstOfficerInstanceID="EMPEROR_PALPATINE" SecondOfficerInstanceID="LEIA_ORGANA">
+        </DuelCompleted>
     </Triggers>
     <Actions>
-      <IncreaseForceRank OfficerInstanceID="LEIA_ORGANA" ReferenceOfficerInstanceID="EMPEROR_PALPATINE" MinimumAmount="1">
-        <PercentOfPositiveGap>20</PercentOfPositiveGap>
-      </IncreaseForceRank>
+      <If>
+        <Conditionals>
+          <Not>
+            <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+          </Not>
+          <IsForceEligible OfficerInstanceID="LEIA_ORGANA"/>
+        </Conditionals>
+        <Actions>
+          <IncreaseForceRank OfficerInstanceID="LEIA_ORGANA" ReferenceOfficerInstanceID="EMPEROR_PALPATINE" MinimumAmount="1">
+            <PercentOfPositiveGap>20</PercentOfPositiveGap>
+          </IncreaseForceRank>
+        </Actions>
+      </If>
       <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
-        <BackgroundImage Binding="$imagePath"/>
-        <BackgroundAudio Binding="$audioPath"/>
+        <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/leia-encounters-palpatine"/>
+        <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/leia-palpatine"/>
         <Subject>{subject} Confronts {relatedSubject}</Subject>
         <Body>{subject} has fought {relatedSubject}.  </Body>
+        <BodySections>
+          <Section>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+            </Conditionals>
+            <Text>{subject} was captured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+              </Not>
+              <IsInjured OfficerInstanceID="LEIA_ORGANA"/>
+            </Conditionals>
+            <Text>{subject} was injured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+            </Conditionals>
+            <Text>{relatedSubject} was captured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+              </Not>
+              <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+            </Conditionals>
+            <Text>{relatedSubject} was injured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+                <IsInjured OfficerInstanceID="LEIA_ORGANA"/>
+                <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+              </Not>
+            </Conditionals>
+            <Text>Both combatants escaped uninjured.</Text>
+          </Section>
+        </BodySections>
+        <AdvisorNotification Preset="SubjectReport"/>
+      </SendMessage>
+      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="EMPEROR_PALPATINE" RelatedSubjectInstanceID="LEIA_ORGANA" Type="Mission">
+        <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/leia-encounters-palpatine"/>
+        <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/leia-palpatine"/>
+        <Subject>{relatedSubject} Confronts {subject}</Subject>
+        <Body>{relatedSubject} has fought {subject}.  </Body>
+        <BodySections>
+          <Section>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+            </Conditionals>
+            <Text>{relatedSubject} was captured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+              </Not>
+              <IsInjured OfficerInstanceID="LEIA_ORGANA"/>
+            </Conditionals>
+            <Text>{relatedSubject} was injured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+            </Conditionals>
+            <Text>{subject} was captured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+              </Not>
+              <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+            </Conditionals>
+            <Text>{subject} was injured.  </Text>
+          </Section>
+          <Section>
+            <Conditionals>
+              <Not>
+                <IsCaptured OfficerInstanceID="LEIA_ORGANA"/>
+                <IsInjured OfficerInstanceID="LEIA_ORGANA"/>
+                <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+              </Not>
+            </Conditionals>
+            <Text>Both combatants escaped uninjured.</Text>
+          </Section>
+        </BodySections>
         <AdvisorNotification Preset="SubjectReport"/>
       </SendMessage>
     </Actions>
@@ -1124,72 +1237,6 @@
         <AdvisorNotification Preset="SubjectReport"/>
       </SendMessage>
       <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="EMPEROR_PALPATINE" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
-        <Subject>{subject} Detects {relatedSubject}</Subject>
-        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
-        <BackgroundImage Key="mission_report"/>
-        <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
-    </Actions>
-  </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>LEIA_AND_VADER_DETECT_EACH_OTHER</InstanceID>
-    <Triggers>
-      <UnitArrived UnitInstanceID="LEIA_ORGANA"/>
-      <UnitArrived UnitInstanceID="DARTH_VADER"/>
-    </Triggers>
-    <Conditionals>
-      <ShareAncestor Type="Planet">
-        <Units>
-          <Unit UnitInstanceID="LEIA_ORGANA"/>
-          <Unit UnitInstanceID="DARTH_VADER"/>
-        </Units>
-      </ShareAncestor>
-      <IsForceEligible OfficerInstanceID="LEIA_ORGANA"/>
-      <IsForceEligible OfficerInstanceID="DARTH_VADER"/>
-    </Conditionals>
-    <Actions>
-      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
-        <Subject>{subject} Detects {relatedSubject}</Subject>
-        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
-        <BackgroundImage Key="mission_report"/>
-        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
-      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" RelatedSubjectInstanceID="LEIA_ORGANA" Type="Mission">
-        <Subject>{subject} Detects {relatedSubject}</Subject>
-        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
-        <BackgroundImage Key="mission_report"/>
-        <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
-    </Actions>
-  </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>LEIA_AND_PALPATINE_DETECT_EACH_OTHER</InstanceID>
-    <Triggers>
-      <UnitArrived UnitInstanceID="LEIA_ORGANA"/>
-      <UnitArrived UnitInstanceID="EMPEROR_PALPATINE"/>
-    </Triggers>
-    <Conditionals>
-      <ShareAncestor Type="Planet">
-        <Units>
-          <Unit UnitInstanceID="LEIA_ORGANA"/>
-          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
-        </Units>
-      </ShareAncestor>
-      <IsForceEligible OfficerInstanceID="LEIA_ORGANA"/>
-      <IsForceEligible OfficerInstanceID="EMPEROR_PALPATINE"/>
-    </Conditionals>
-    <Actions>
-      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
-        <Subject>{subject} Detects {relatedSubject}</Subject>
-        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
-        <BackgroundImage Key="mission_report"/>
-        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
-      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="EMPEROR_PALPATINE" RelatedSubjectInstanceID="LEIA_ORGANA" Type="Mission">
         <Subject>{subject} Detects {relatedSubject}</Subject>
         <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
         <BackgroundImage Key="mission_report"/>
@@ -1388,23 +1435,14 @@
   </GameEvent>
   <GameEvent>
     <InstanceID>PLANET_INFORMANTS</InstanceID>
-    <Bindings>
-      <Bind As="$planet">
-        <From>
-          <SelectRandom Count="1">
-            <From>
-              <SelectPlanets/>
-            </From>
-          </SelectRandom>
-        </From>
-      </Bind>
-    </Bindings>
+    <ForEach As="$planet">
+      <From>
+        <SelectPlanets IsOwned="true"/>
+      </From>
+    </ForEach>
     <Schedule>
       <RandomInterval MinimumTicks="30" MaximumTicks="1000"/>
     </Schedule>
-    <Conditionals>
-      <IsOwned PlanetBinding="$planet"/>
-    </Conditionals>
     <Actions>
       <If>
         <Conditionals>
@@ -1414,26 +1452,58 @@
           </Not>
         </Conditionals>
         <Actions>
-          <RevealToFaction FactionInstanceID="FNEMP1">
-            <Targets>
-              <SelectRandom Count="1">
-                <From>
-                  <SelectBinding Binding="$planet"/>
-                  <SelectCapitalShips PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
-                  <SelectStarfighters PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
-                  <SelectRegiments PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
-                  <SelectSpecialForces PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
-                  <SelectBuildings PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
-                  <SelectOfficers PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
-                  <SelectMissions PlanetBinding="$planet" OwnerFactionInstanceID="FNALL1"/>
-                </From>
-              </SelectRandom>
-            </Targets>
-          </RevealToFaction>
+          <RollOutcome>
+            <Outcomes>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="PlanetControl"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="PlanetResources"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="Starfighters" IncludeDescendants="false"/>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="Regiments" IncludeDescendants="false"/>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="PlanetaryDefenses"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="Manufacturing"/>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="ProductionFacilities"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="Fleets"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="PlanetMilitaryProduction" IncludeDescendants="false"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="Officers" IncludeDescendants="false"/>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="SpecialForces" IncludeDescendants="false"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNEMP1" PlanetBinding="$planet" Category="All" IncludeDescendants="false"/>
+                </Actions>
+              </Outcome>
+            </Outcomes>
+          </RollOutcome>
           <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectBinding="$planet" LocationBinding="$planet" Type="Advice">
             <Subject>Informants Provide Information</Subject>
             <Body>Informants have provided us with information about {location}.</Body>
-            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/informants-provide-information"/>
+            <BackgroundImage Key="informants"/>
             <AdvisorNotification Preset="SubjectReport"/>
           </SendMessage>
         </Actions>
@@ -1446,26 +1516,58 @@
           </Not>
         </Conditionals>
         <Actions>
-          <RevealToFaction FactionInstanceID="FNALL1">
-            <Targets>
-              <SelectRandom Count="1">
-                <From>
-                  <SelectBinding Binding="$planet"/>
-                  <SelectCapitalShips PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
-                  <SelectStarfighters PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
-                  <SelectRegiments PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
-                  <SelectSpecialForces PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
-                  <SelectBuildings PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
-                  <SelectOfficers PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
-                  <SelectMissions PlanetBinding="$planet" OwnerFactionInstanceID="FNEMP1"/>
-                </From>
-              </SelectRandom>
-            </Targets>
-          </RevealToFaction>
+          <RollOutcome>
+            <Outcomes>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="PlanetControl"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="PlanetResources"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="Starfighters" IncludeDescendants="false"/>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="Regiments" IncludeDescendants="false"/>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="PlanetaryDefenses"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="Manufacturing"/>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="ProductionFacilities"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="Fleets"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="PlanetMilitaryProduction" IncludeDescendants="false"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="Officers" IncludeDescendants="false"/>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="SpecialForces" IncludeDescendants="false"/>
+                </Actions>
+              </Outcome>
+              <Outcome Weight="1">
+                <Actions>
+                  <RevealToFaction FactionInstanceID="FNALL1" PlanetBinding="$planet" Category="All" IncludeDescendants="false"/>
+                </Actions>
+              </Outcome>
+            </Outcomes>
+          </RollOutcome>
           <SendMessage RecipientFactionInstanceID="FNALL1" SubjectBinding="$planet" LocationBinding="$planet" Type="Advice">
             <Subject>Informants Provide Information</Subject>
             <Body>Informants have provided us with information about {location}.</Body>
-            <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/informants-provide-information"/>
+            <BackgroundImage Key="informants"/>
             <AdvisorNotification Preset="SubjectReport"/>
           </SendMessage>
         </Actions>
