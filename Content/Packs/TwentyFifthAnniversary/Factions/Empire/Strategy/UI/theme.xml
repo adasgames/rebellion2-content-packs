@@ -2420,7 +2420,7 @@
       <PlanetSectorUprisingImagePath>Pack/Factions/Empire/Strategy/UI/Windows/PlanetSector/planetsector-planet-uprising-overlay</PlanetSectorUprisingImagePath>
       <UnitTileIcons>
         <FleetTileImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Fleet/fleet-icon</FleetTileImagePath>
-        <MissionTileImagePath>Pack/Shared/Strategy/UI/Windows/Missions/mission-icon</MissionTileImagePath>
+        <MissionTileImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Missions/planet-mission-normal</MissionTileImagePath>
         <FleetListIconImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Fleet/fleet-list-row-icon</FleetListIconImagePath>
         <FleetListEnrouteIconImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Fleet/fleet-list-in-transit</FleetListEnrouteIconImagePath>
         <FleetListDamagedIconImagePath>Pack/Factions/Empire/Strategy/UI/Windows/Fleet/fleet-list-damaged</FleetListDamagedIconImagePath>
