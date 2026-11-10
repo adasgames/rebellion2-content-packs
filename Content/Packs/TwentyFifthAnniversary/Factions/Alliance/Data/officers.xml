@@ -3,6 +3,7 @@
   <Officer>
     <TypeID>OFAL001</TypeID>
     <InstanceID>MON_MOTHMA</InstanceID>
+    <RosterOrder>1</RosterOrder>
     <DisplayName>Mon Mothma</DisplayName>
     <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL001/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -74,6 +75,7 @@
   <Officer>
     <TypeID>OFAL002</TypeID>
     <InstanceID>LEIA_ORGANA</InstanceID>
+    <RosterOrder>2</RosterOrder>
     <DisplayName>Leia Organa</DisplayName>
     <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL002/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -165,6 +167,7 @@
   <Officer>
     <TypeID>OFAL003</TypeID>
     <InstanceID>LUKE_SKYWALKER</InstanceID>
+    <RosterOrder>3</RosterOrder>
     <DisplayName>Luke Skywalker</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -267,6 +270,7 @@
   <Officer>
     <TypeID>OFAL004</TypeID>
     <InstanceID>HAN_SOLO</InstanceID>
+    <RosterOrder>4</RosterOrder>
     <DisplayName>Han Solo</DisplayName>
     <Traits>
       <TraitID>smuggler</TraitID>
@@ -352,6 +356,7 @@
   <Officer>
     <TypeID>OFAL005</TypeID>
     <InstanceID>ACKBAR</InstanceID>
+    <RosterOrder>7</RosterOrder>
     <DisplayName>Ackbar</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -409,6 +414,7 @@
   <Officer>
     <TypeID>OFAL006</TypeID>
     <InstanceID>WEDGE_ANTILLES</InstanceID>
+    <RosterOrder>8</RosterOrder>
     <DisplayName>Wedge Antilles</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -467,6 +473,7 @@
   <Officer>
     <TypeID>OFAL007</TypeID>
     <InstanceID>LANDO_CALRISSIAN</InstanceID>
+    <RosterOrder>9</RosterOrder>
     <DisplayName>Lando Calrissian</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -525,6 +532,7 @@
   <Officer>
     <TypeID>OFAL008</TypeID>
     <InstanceID>CHEWBACCA</InstanceID>
+    <RosterOrder>10</RosterOrder>
     <DisplayName>Chewbacca</DisplayName>
     <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL008/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -578,6 +586,7 @@
   <Officer>
     <TypeID>OFAL009</TypeID>
     <InstanceID>JAN_DODONNA</InstanceID>
+    <RosterOrder>11</RosterOrder>
     <DisplayName>Jan Dodonna</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -635,6 +644,7 @@
   <Officer>
     <TypeID>OFAL010</TypeID>
     <InstanceID>CRIX_MADINE</InstanceID>
+    <RosterOrder>12</RosterOrder>
     <DisplayName>Crix Madine</DisplayName>
     <AllowedRanks>
       <OfficerRank>General</OfficerRank>
@@ -691,6 +701,7 @@
   <Officer>
     <TypeID>OFAL011</TypeID>
     <InstanceID>CARLIST_RIEEKAN</InstanceID>
+    <RosterOrder>13</RosterOrder>
     <DisplayName>Carlist Rieekan</DisplayName>
     <AllowedRanks>
       <OfficerRank>General</OfficerRank>
@@ -747,6 +758,7 @@
   <Officer>
     <TypeID>OFAL012</TypeID>
     <InstanceID>AFYON</InstanceID>
+    <RosterOrder>14</RosterOrder>
     <DisplayName>Afyon</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -805,6 +817,7 @@
   <Officer>
     <TypeID>OFAL013</TypeID>
     <InstanceID>DRAYSON</InstanceID>
+    <RosterOrder>15</RosterOrder>
     <DisplayName>Drayson</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -862,6 +875,7 @@
   <Officer>
     <TypeID>OFAL014</TypeID>
     <InstanceID>BORSK_FEYLA</InstanceID>
+    <RosterOrder>16</RosterOrder>
     <DisplayName>Borsk Fey'lya</DisplayName>
     <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL014/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -915,6 +929,7 @@
   <Officer>
     <TypeID>OFAL015</TypeID>
     <InstanceID>TURA_RAFTICAN</InstanceID>
+    <RosterOrder>17</RosterOrder>
     <DisplayName>Tura Raftican</DisplayName>
     <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL015/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -968,6 +983,7 @@
   <Officer>
     <TypeID>OFAL016</TypeID>
     <InstanceID>BREN_DERLIN</InstanceID>
+    <RosterOrder>18</RosterOrder>
     <DisplayName>Bren Derlin</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1025,6 +1041,7 @@
   <Officer>
     <TypeID>OFAL017</TypeID>
     <InstanceID>GARM_BEL_IBLIS</InstanceID>
+    <RosterOrder>19</RosterOrder>
     <DisplayName>Garm Bel Iblis</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -1082,6 +1099,7 @@
   <Officer>
     <TypeID>OFAL018</TypeID>
     <InstanceID>TALON_KARRDE</InstanceID>
+    <RosterOrder>20</RosterOrder>
     <DisplayName>Talon Karrde</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1140,6 +1158,7 @@
   <Officer>
     <TypeID>OFAL019</TypeID>
     <InstanceID>NARRA</InstanceID>
+    <RosterOrder>21</RosterOrder>
     <DisplayName>Narra</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1197,6 +1216,7 @@
   <Officer>
     <TypeID>OFAL020</TypeID>
     <InstanceID>HUOBA_NEVA</InstanceID>
+    <RosterOrder>22</RosterOrder>
     <DisplayName>Huoba Neva</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -1254,6 +1274,7 @@
   <Officer>
     <TypeID>OFAL021</TypeID>
     <InstanceID>PAGE</InstanceID>
+    <RosterOrder>23</RosterOrder>
     <DisplayName>Page</DisplayName>
     <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL021/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -1307,6 +1328,7 @@
   <Officer>
     <TypeID>OFAL022</TypeID>
     <InstanceID>SYUB_SNUNB</InstanceID>
+    <RosterOrder>24</RosterOrder>
     <DisplayName>Syub Snunb</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1364,6 +1386,7 @@
   <Officer>
     <TypeID>OFAL023</TypeID>
     <InstanceID>ADAR_TALLON</InstanceID>
+    <RosterOrder>25</RosterOrder>
     <DisplayName>Adar Tallon</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1422,6 +1445,7 @@
   <Officer>
     <TypeID>OFAL024</TypeID>
     <InstanceID>SARIN_VIRGILIO</InstanceID>
+    <RosterOrder>26</RosterOrder>
     <DisplayName>Sarin Virgilio</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -1479,6 +1503,7 @@
   <Officer>
     <TypeID>OFAL025</TypeID>
     <InstanceID>VANDEN_WILLARD</InstanceID>
+    <RosterOrder>27</RosterOrder>
     <DisplayName>Vanden Willard</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -1536,6 +1561,7 @@
   <Officer>
     <TypeID>OFAL026</TypeID>
     <InstanceID>ROGET_JIRISS</InstanceID>
+    <RosterOrder>28</RosterOrder>
     <DisplayName>Roget Jiriss</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1593,6 +1619,7 @@
   <Officer>
     <TypeID>OFAL027</TypeID>
     <InstanceID>KAIYA_ANDRIMETRUM</InstanceID>
+    <RosterOrder>29</RosterOrder>
     <DisplayName>Kaiya Andrimetrum</DisplayName>
     <AllowedRanks>
       <OfficerRank>General</OfficerRank>
@@ -1649,6 +1676,7 @@
   <Officer>
     <TypeID>OFAL028</TypeID>
     <InstanceID>MAZER_RACKUS</InstanceID>
+    <RosterOrder>30</RosterOrder>
     <DisplayName>Mazer Rackus</DisplayName>
     <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL028/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -1702,6 +1730,7 @@
   <Officer>
     <TypeID>OFAL029</TypeID>
     <InstanceID>ORRIMAARKO</InstanceID>
+    <RosterOrder>31</RosterOrder>
     <DisplayName>Orrimaarko</DisplayName>
     <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL029/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -1755,6 +1784,7 @@
   <Officer>
     <TypeID>OFAL030</TypeID>
     <InstanceID>MAWSHIYE</InstanceID>
+    <RosterOrder>32</RosterOrder>
     <DisplayName>Ma'w'shiye</DisplayName>
     <DisplayImagePath>Pack/Factions/Alliance/Units/Officers/OFAL030/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>

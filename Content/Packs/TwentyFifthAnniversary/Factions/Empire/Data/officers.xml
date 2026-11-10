@@ -3,6 +3,7 @@
   <Officer>
     <TypeID>OFEM001</TypeID>
     <InstanceID>EMPEROR_PALPATINE</InstanceID>
+    <RosterOrder>5</RosterOrder>
     <DisplayName>Emperor Palpatine</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM001/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -81,6 +82,7 @@
   <Officer>
     <TypeID>OFEM002</TypeID>
     <InstanceID>DARTH_VADER</InstanceID>
+    <RosterOrder>6</RosterOrder>
     <DisplayName>Darth Vader</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -165,6 +167,7 @@
   <Officer>
     <TypeID>OFEM003</TypeID>
     <InstanceID>JERJERROD</InstanceID>
+    <RosterOrder>33</RosterOrder>
     <DisplayName>Jerjerrod</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -223,6 +226,7 @@
   <Officer>
     <TypeID>OFEM004</TypeID>
     <InstanceID>PIETT</InstanceID>
+    <RosterOrder>35</RosterOrder>
     <DisplayName>Piett</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -281,6 +285,7 @@
   <Officer>
     <TypeID>OFEM005</TypeID>
     <InstanceID>VEERS</InstanceID>
+    <RosterOrder>36</RosterOrder>
     <DisplayName>Veers</DisplayName>
     <AllowedRanks>
       <OfficerRank>General</OfficerRank>
@@ -337,6 +342,7 @@
   <Officer>
     <TypeID>OFEM006</TypeID>
     <InstanceID>BRANDEI</InstanceID>
+    <RosterOrder>37</RosterOrder>
     <DisplayName>Brandei</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -395,6 +401,7 @@
   <Officer>
     <TypeID>OFEM007</TypeID>
     <InstanceID>DORJA</InstanceID>
+    <RosterOrder>39</RosterOrder>
     <DisplayName>Dorja</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -453,6 +460,7 @@
   <Officer>
     <TypeID>OFEM008</TypeID>
     <InstanceID>BIN_ESSADA</InstanceID>
+    <RosterOrder>40</RosterOrder>
     <DisplayName>Bin Essada</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM008/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -506,6 +514,7 @@
   <Officer>
     <TypeID>OFEM009</TypeID>
     <InstanceID>NILES_FERRIER</InstanceID>
+    <RosterOrder>41</RosterOrder>
     <DisplayName>Niles Ferrier</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM009/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -559,6 +568,7 @@
   <Officer>
     <TypeID>OFEM010</TypeID>
     <InstanceID>GRAMMEL</InstanceID>
+    <RosterOrder>42</RosterOrder>
     <DisplayName>Grammel</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -617,6 +627,7 @@
   <Officer>
     <TypeID>OFEM011</TypeID>
     <InstanceID>GRIFF</InstanceID>
+    <RosterOrder>43</RosterOrder>
     <DisplayName>Griff</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -674,6 +685,7 @@
   <Officer>
     <TypeID>OFEM012</TypeID>
     <InstanceID>KLEV</InstanceID>
+    <RosterOrder>44</RosterOrder>
     <DisplayName>Klev</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -731,6 +743,7 @@
   <Officer>
     <TypeID>OFEM013</TypeID>
     <InstanceID>NEEDA</InstanceID>
+    <RosterOrder>45</RosterOrder>
     <DisplayName>Needa</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -789,6 +802,7 @@
   <Officer>
     <TypeID>OFEM014</TypeID>
     <InstanceID>BANE_NOTHOS</InstanceID>
+    <RosterOrder>46</RosterOrder>
     <DisplayName>Bane Nothos</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -847,6 +861,7 @@
   <Officer>
     <TypeID>OFEM015</TypeID>
     <InstanceID>ORLOK</InstanceID>
+    <RosterOrder>47</RosterOrder>
     <DisplayName>Orlok</DisplayName>
     <AllowedRanks>
       <OfficerRank>General</OfficerRank>
@@ -903,6 +918,7 @@
   <Officer>
     <TypeID>OFEM016</TypeID>
     <InstanceID>PALLAEON</InstanceID>
+    <RosterOrder>48</RosterOrder>
     <DisplayName>Pellaeon</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -961,6 +977,7 @@
   <Officer>
     <TypeID>OFEM017</TypeID>
     <InstanceID>SCREED</InstanceID>
+    <RosterOrder>49</RosterOrder>
     <DisplayName>Screed</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1019,6 +1036,7 @@
   <Officer>
     <TypeID>OFEM018</TypeID>
     <InstanceID>THRAWN</InstanceID>
+    <RosterOrder>50</RosterOrder>
     <DisplayName>Thrawn</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1077,6 +1095,7 @@
   <Officer>
     <TypeID>OFEM019</TypeID>
     <InstanceID>ZUGGS</InstanceID>
+    <RosterOrder>51</RosterOrder>
     <DisplayName>Zuggs</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1135,6 +1154,7 @@
   <Officer>
     <TypeID>OFEM020</TypeID>
     <InstanceID>DAALA</InstanceID>
+    <RosterOrder>52</RosterOrder>
     <DisplayName>Daala</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1193,6 +1213,7 @@
   <Officer>
     <TypeID>OFEM021</TypeID>
     <InstanceID>THANAS</InstanceID>
+    <RosterOrder>53</RosterOrder>
     <DisplayName>Pter Thanas</DisplayName>
     <AllowedRanks>
       <OfficerRank>Commander</OfficerRank>
@@ -1251,6 +1272,7 @@
   <Officer>
     <TypeID>OFEM022</TypeID>
     <InstanceID>OZZEL</InstanceID>
+    <RosterOrder>34</RosterOrder>
     <DisplayName>Ozzel</DisplayName>
     <AllowedRanks>
       <OfficerRank>Admiral</OfficerRank>
@@ -1308,6 +1330,7 @@
   <Officer>
     <TypeID>OFEM023</TypeID>
     <InstanceID>COVELL</InstanceID>
+    <RosterOrder>38</RosterOrder>
     <DisplayName>Covell</DisplayName>
     <AllowedRanks>
       <OfficerRank>General</OfficerRank>
@@ -1364,6 +1387,7 @@
   <Officer>
     <TypeID>OFEM024</TypeID>
     <InstanceID>BEVEL_LEMELISK</InstanceID>
+    <RosterOrder>54</RosterOrder>
     <DisplayName>Bevel Lemelisk</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM024/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -1417,6 +1441,7 @@
   <Officer>
     <TypeID>OFEM025</TypeID>
     <InstanceID>SHENIR_RIX</InstanceID>
+    <RosterOrder>55</RosterOrder>
     <DisplayName>Shenir Rix</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM025/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -1470,6 +1495,7 @@
   <Officer>
     <TypeID>OFEM026</TypeID>
     <InstanceID>NOVAL_GARAINT</InstanceID>
+    <RosterOrder>56</RosterOrder>
     <DisplayName>Noval Garaint</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM026/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -1523,6 +1549,7 @@
   <Officer>
     <TypeID>OFEM027</TypeID>
     <InstanceID>GARINDAN</InstanceID>
+    <RosterOrder>57</RosterOrder>
     <DisplayName>Garindan</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM027/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -1576,6 +1603,7 @@
   <Officer>
     <TypeID>OFEM028</TypeID>
     <InstanceID>MENNDO</InstanceID>
+    <RosterOrder>58</RosterOrder>
     <DisplayName>Menndo</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM028/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -1629,6 +1657,7 @@
   <Officer>
     <TypeID>OFEM029</TypeID>
     <InstanceID>LABANSAT</InstanceID>
+    <RosterOrder>59</RosterOrder>
     <DisplayName>Labansat</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM029/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
@@ -1682,6 +1711,7 @@
   <Officer>
     <TypeID>OFEM030</TypeID>
     <InstanceID>VILLAR</InstanceID>
+    <RosterOrder>60</RosterOrder>
     <DisplayName>Villar</DisplayName>
     <DisplayImagePath>Pack/Factions/Empire/Units/Officers/OFEM030/display</DisplayImagePath>
     <InjuredImagePath>Pack/Shared/Units/Officers/personnel-injured-status</InjuredImagePath>
