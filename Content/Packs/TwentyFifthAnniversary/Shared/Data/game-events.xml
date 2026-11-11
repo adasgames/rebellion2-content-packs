@@ -716,135 +716,436 @@
       </If>
     </Actions>
   </GameEvent>
-  <!-- Linked-character comparisons are one-shot story encounters, resolved only when the pair meets. -->
-  <GameEvent MaximumActivations="1" Category="Story">
+  <!-- Named encounter reactions apply after each completed comparison. -->
+  <GameEvent Category="Story">
     <InstanceID>LUKE_ENCOUNTERS_VADER</InstanceID>
     <Triggers>
-      <MissionStarted>
-        <Participants Match="Any">
-          <Units>
-            <Unit UnitInstanceID="LUKE_SKYWALKER"/>
-            <Unit UnitInstanceID="DARTH_VADER"/>
-          </Units>
-        </Participants>
-      </MissionStarted>
-      <UnitArrived/>
+      <DuelCompleted FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="DARTH_VADER">
+        <Bindings>
+          <Bind Argument="Location" As="$encounterLocation"/>
+        </Bindings>
+      </DuelCompleted>
+      <DuelCompleted FirstOfficerInstanceID="DARTH_VADER" SecondOfficerInstanceID="LUKE_SKYWALKER">
+        <Bindings>
+          <Bind Argument="Location" As="$encounterLocation"/>
+        </Bindings>
+      </DuelCompleted>
     </Triggers>
-    <Conditionals>
-      <ShareAncestor Type="Planet">
-        <Units>
-          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
-          <Unit UnitInstanceID="DARTH_VADER"/>
-        </Units>
-      </ShareAncestor>
-      <Not>
-        <Any>
-          <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
-          <IsKilled OfficerInstanceID="LUKE_SKYWALKER"/>
-          <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
-          <IsCaptured OfficerInstanceID="DARTH_VADER"/>
-          <IsKilled OfficerInstanceID="DARTH_VADER"/>
-          <IsInTransit UnitInstanceID="DARTH_VADER"/>
-        </Any>
-      </Not>
-    </Conditionals>
+    <Bindings>
+      <Bind As="$forceRank">
+        <OfficerForce OfficerInstanceID="LUKE_SKYWALKER"/>
+      </Bind>
+    </Bindings>
     <Actions>
       <If>
         <Conditionals>
           <Not>
-            <HasEventActivated EventInstanceID="LUKE_LEAVES_DAGOBAH"/>
+            <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
           </Not>
         </Conditionals>
         <Actions>
-          <TriggerDuel FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="DARTH_VADER">
-            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-vader-untrained</ImagePath>
-            <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/luke-vader-dagobah-incomplete</AudioPath>
-          </TriggerDuel>
-        </Actions>
-        <Else>
-          <TriggerDuel FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="DARTH_VADER">
-            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-vader-trained</ImagePath>
-            <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/luke-vader-dagobah-complete</AudioPath>
-          </TriggerDuel>
-        </Else>
-      </If>
-    </Actions>
-  </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>LUKE_VADER_ENCOUNTER_EFFECTS</InstanceID>
-    <Triggers>
-      <DuelCompleted SourceEventInstanceID="LUKE_ENCOUNTERS_VADER" FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="DARTH_VADER">
-        <Bindings>
-          <Bind Argument="ImagePath" As="$imagePath"/>
-          <Bind Argument="AudioPath" As="$audioPath"/>
-        </Bindings>
-      </DuelCompleted>
-    </Triggers>
-    <Actions>
-      <IncreaseForceRank OfficerInstanceID="LUKE_SKYWALKER" ReferenceOfficerInstanceID="DARTH_VADER" MinimumAmount="1">
-        <PercentOfPositiveGap>25</PercentOfPositiveGap>
-      </IncreaseForceRank>
-      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
-        <BackgroundImage Binding="$imagePath"/>
-        <BackgroundAudio Binding="$audioPath"/>
-        <Subject>{subject} Confronts {relatedSubject}</Subject>
-        <Body>{subject} has fought {relatedSubject}.  </Body>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
-    </Actions>
-  </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>LUKE_DISCOVERS_HERITAGE</InstanceID>
-    <Bindings>
-      <Bind As="$lukeForce">
-        <OfficerForce OfficerInstanceID="LUKE_SKYWALKER"/>
-      </Bind>
-    </Bindings>
-    <Schedule>
-      <Every Ticks="1"/>
-    </Schedule>
-    <Conditionals>
-      <HasEventActivated EventInstanceID="LUKE_VADER_ENCOUNTER_EFFECTS"/>
-      <EvaluateBinding Binding="$lukeForce" Comparison="GreaterThanOrEqual" CompareTo="60"/>
-    </Conditionals>
-    <Actions>
-      <If>
-        <Conditionals>
-          <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
-        </Conditionals>
-        <Actions>
-          <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
-            <Subject>Luke Discovers His Heritage</Subject>
-            <Body>Luke has learned that Vader is his father. Luke has been captured by Vader.</Body>
-            <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-discovers-heritage"/>
-            <BackgroundAudio Path="Pack/Shared/Events/LukeDiscoversHeritage/Audio/dialogue"/>
-            <AdvisorNotification Preset="SubjectReport"/>
-          </SendMessage>
-        </Actions>
-        <Else>
           <If>
             <Conditionals>
-              <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+              <Not>
+                <HasEventActivated EventInstanceID="LUKE_ENCOUNTERS_VADER"/>
+              </Not>
+              <EvaluateBinding Binding="$forceRank" Comparison="LessThan" CompareTo="80"/>
             </Conditionals>
             <Actions>
-              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
-                <Subject>Luke Discovers His Heritage</Subject>
-                <Body>Luke has learned that Vader is his father. Luke was injured during the battle.</Body>
-                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-discovers-heritage"/>
-                <BackgroundAudio Path="Pack/Shared/Events/LukeDiscoversHeritage/Audio/dialogue"/>
+              <ApplyOfficerInjury OfficerInstanceID="LUKE_SKYWALKER">
+                <MinimumInjury>1</MinimumInjury>
+                <MaximumInjury>100</MaximumInjury>
+              </ApplyOfficerInjury>
+            </Actions>
+          </If>
+          <IncreaseForceRank OfficerInstanceID="LUKE_SKYWALKER" ReferenceOfficerInstanceID="DARTH_VADER" MinimumAmount="1">
+            <PercentOfPositiveGap>25</PercentOfPositiveGap>
+          </IncreaseForceRank>
+        </Actions>
+      </If>
+      <If>
+        <Conditionals>
+          <HasEventActivated EventInstanceID="LUKE_ENCOUNTERS_VADER"/>
+        </Conditionals>
+        <Actions>
+          <If>
+            <Conditionals>
+              <Not>
+                <HasEventActivated EventInstanceID="LUKE_LEAVES_DAGOBAH"/>
+              </Not>
+            </Conditionals>
+            <Actions>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-vader-untrained"/>
+                <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/luke-vader-dagobah-incomplete"/>
+                <Subject>{subject} Confronts {relatedSubject}</Subject>
+                <Body>{subject} has fought {relatedSubject}.  </Body>
+                <BodySections>
+                  <Section>
+                    <Conditionals>
+                      <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    </Conditionals>
+                    <Text>{subject} was captured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                      </Not>
+                      <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    </Conditionals>
+                    <Text>{subject} was injured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                    </Conditionals>
+                    <Text>{relatedSubject} was captured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                      </Not>
+                      <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                    </Conditionals>
+                    <Text>{relatedSubject} was injured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                        <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                        <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                        <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                      </Not>
+                    </Conditionals>
+                    <Text>Both combatants escaped uninjured.</Text>
+                  </Section>
+                </BodySections>
                 <AdvisorNotification Preset="SubjectReport"/>
               </SendMessage>
             </Actions>
             <Else>
-              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
-                <Subject>Luke Discovers His Heritage</Subject>
-                <Body>Luke has learned that Vader is his father. Luke escaped capture after the battle.</Body>
-                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-discovers-heritage"/>
-                <BackgroundAudio Path="Pack/Shared/Events/LukeDiscoversHeritage/Audio/dialogue"/>
+              <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-vader-trained"/>
+                <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/luke-vader-dagobah-complete"/>
+                <Subject>{subject} Confronts {relatedSubject}</Subject>
+                <Body>{subject} has fought {relatedSubject}.  </Body>
+                <BodySections>
+                  <Section>
+                    <Conditionals>
+                      <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    </Conditionals>
+                    <Text>{subject} was captured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                      </Not>
+                      <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    </Conditionals>
+                    <Text>{subject} was injured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                    </Conditionals>
+                    <Text>{relatedSubject} was captured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                      </Not>
+                      <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                    </Conditionals>
+                    <Text>{relatedSubject} was injured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                        <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                        <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                        <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                      </Not>
+                    </Conditionals>
+                    <Text>Both combatants escaped uninjured.</Text>
+                  </Section>
+                </BodySections>
                 <AdvisorNotification Preset="SubjectReport"/>
               </SendMessage>
             </Else>
           </If>
+          <If>
+            <Conditionals>
+              <Not>
+                <HasEventActivated EventInstanceID="LUKE_LEAVES_DAGOBAH"/>
+              </Not>
+            </Conditionals>
+            <Actions>
+              <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-vader-untrained"/>
+                <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/luke-vader-dagobah-incomplete"/>
+                <Subject>{relatedSubject} Confronts {subject}</Subject>
+                <Body>{relatedSubject} has fought {subject}.  </Body>
+                <BodySections>
+                  <Section>
+                    <Conditionals>
+                      <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    </Conditionals>
+                    <Text>{relatedSubject} was captured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                      </Not>
+                      <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    </Conditionals>
+                    <Text>{relatedSubject} was injured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                    </Conditionals>
+                    <Text>{subject} was captured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                      </Not>
+                      <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                    </Conditionals>
+                    <Text>{subject} was injured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                        <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                        <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                        <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                      </Not>
+                    </Conditionals>
+                    <Text>Both combatants escaped uninjured.</Text>
+                  </Section>
+                </BodySections>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </Actions>
+            <Else>
+              <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+                <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-vader-trained"/>
+                <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/luke-vader-dagobah-complete"/>
+                <Subject>{relatedSubject} Confronts {subject}</Subject>
+                <Body>{relatedSubject} has fought {subject}.  </Body>
+                <BodySections>
+                  <Section>
+                    <Conditionals>
+                      <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    </Conditionals>
+                    <Text>{relatedSubject} was captured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                      </Not>
+                      <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    </Conditionals>
+                    <Text>{relatedSubject} was injured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                    </Conditionals>
+                    <Text>{subject} was captured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                      </Not>
+                      <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                    </Conditionals>
+                    <Text>{subject} was injured.  </Text>
+                  </Section>
+                  <Section>
+                    <Conditionals>
+                      <Not>
+                        <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                        <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                        <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                        <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                      </Not>
+                    </Conditionals>
+                    <Text>Both combatants escaped uninjured.</Text>
+                  </Section>
+                </BodySections>
+                <AdvisorNotification Preset="SubjectReport"/>
+              </SendMessage>
+            </Else>
+          </If>
+        </Actions>
+        <Else>
+          <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
+            <Subject>Luke Discovers His Heritage</Subject>
+            <Body>Luke has learned that Vader is his father.  </Body>
+            <BodySections>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  <All>
+                    <ShareParent>
+                      <Units>
+                        <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+                        <Unit UnitInstanceID="DARTH_VADER"/>
+                      </Units>
+                    </ShareParent>
+                    <IsOnMission UnitInstanceID="LUKE_SKYWALKER"/>
+                    <HasParent UnitInstanceID="EMPEROR_PALPATINE" ParentBinding="$encounterLocation"/>
+                  </All>
+                </Conditionals>
+                <Text>Luke has been captured by Vader and taken to the Emperor.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  <Not>
+                    <All>
+                      <ShareParent>
+                        <Units>
+                          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+                          <Unit UnitInstanceID="DARTH_VADER"/>
+                        </Units>
+                      </ShareParent>
+                      <IsOnMission UnitInstanceID="LUKE_SKYWALKER"/>
+                      <HasParent UnitInstanceID="EMPEROR_PALPATINE" ParentBinding="$encounterLocation"/>
+                    </All>
+                  </Not>
+                </Conditionals>
+                <Text>Luke has been captured by Vader.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>Luke was injured during the battle.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                  </Not>
+                </Conditionals>
+                <Text>Luke escaped capture after the battle.</Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                </Conditionals>
+                <Text>Darth Vader was captured by Luke.</Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                </Conditionals>
+                <Text>Vader was injured during the battle.</Text>
+              </Section>
+            </BodySections>
+            <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-discovers-heritage"/>
+            <BackgroundAudio Path="Pack/Shared/Events/LukeDiscoversHeritage/Audio/dialogue"/>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+          <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+            <Subject>Luke Discovers His Heritage</Subject>
+            <Body>Luke has learned that Vader is his father.  </Body>
+            <BodySections>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  <All>
+                    <ShareParent>
+                      <Units>
+                        <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+                        <Unit UnitInstanceID="DARTH_VADER"/>
+                      </Units>
+                    </ShareParent>
+                    <IsOnMission UnitInstanceID="LUKE_SKYWALKER"/>
+                    <HasParent UnitInstanceID="EMPEROR_PALPATINE" ParentBinding="$encounterLocation"/>
+                  </All>
+                </Conditionals>
+                <Text>Luke has been captured by Vader and taken to the Emperor.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  <Not>
+                    <All>
+                      <ShareParent>
+                        <Units>
+                          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
+                          <Unit UnitInstanceID="DARTH_VADER"/>
+                        </Units>
+                      </ShareParent>
+                      <IsOnMission UnitInstanceID="LUKE_SKYWALKER"/>
+                      <HasParent UnitInstanceID="EMPEROR_PALPATINE" ParentBinding="$encounterLocation"/>
+                    </All>
+                  </Not>
+                </Conditionals>
+                <Text>Luke has been captured by Vader.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>Luke was injured during the battle.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                  </Not>
+                </Conditionals>
+                <Text>Luke escaped capture after the battle.</Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                </Conditionals>
+                <Text>Darth Vader was captured by Luke.</Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="DARTH_VADER"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="DARTH_VADER"/>
+                </Conditionals>
+                <Text>Vader was injured during the battle.</Text>
+              </Section>
+            </BodySections>
+            <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-discovers-heritage"/>
+            <BackgroundAudio Path="Pack/Shared/Events/LukeDiscoversHeritage/Audio/dialogue"/>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
         </Else>
       </If>
     </Actions>
@@ -855,38 +1156,27 @@
       <ForceDiscoveryChanged OfficerInstanceID="LEIA_ORGANA" DiscovererInstanceID="LUKE_SKYWALKER" EventType="ForceUserDiscovered"/>
     </Triggers>
   </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
+  <GameEvent Category="Story">
     <InstanceID>LUKE_ENCOUNTERS_PALPATINE</InstanceID>
     <Triggers>
-      <MissionStarted>
-        <Participants Match="Any">
-          <Units>
-            <Unit UnitInstanceID="LUKE_SKYWALKER"/>
-            <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
-          </Units>
-        </Participants>
-      </MissionStarted>
-      <UnitArrived/>
+      <DuelCompleted FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="EMPEROR_PALPATINE">
+        </DuelCompleted>
+      <DuelCompleted FirstOfficerInstanceID="EMPEROR_PALPATINE" SecondOfficerInstanceID="LUKE_SKYWALKER">
+        </DuelCompleted>
     </Triggers>
-    <Conditionals>
-      <ShareAncestor Type="Planet">
-        <Units>
-          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
-          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
-        </Units>
-      </ShareAncestor>
-      <Not>
-        <Any>
-          <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
-          <IsKilled OfficerInstanceID="LUKE_SKYWALKER"/>
-          <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
-          <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
-          <IsKilled OfficerInstanceID="EMPEROR_PALPATINE"/>
-          <IsInTransit UnitInstanceID="EMPEROR_PALPATINE"/>
-        </Any>
-      </Not>
-    </Conditionals>
     <Actions>
+      <If>
+        <Conditionals>
+          <Not>
+            <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+          </Not>
+        </Conditionals>
+        <Actions>
+          <IncreaseForceRank OfficerInstanceID="LUKE_SKYWALKER" ReferenceOfficerInstanceID="EMPEROR_PALPATINE" MinimumAmount="1">
+            <PercentOfPositiveGap>20</PercentOfPositiveGap>
+          </IncreaseForceRank>
+        </Actions>
+      </If>
       <If>
         <Conditionals>
           <Not>
@@ -894,41 +1184,221 @@
           </Not>
         </Conditionals>
         <Actions>
-          <TriggerDuel FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="EMPEROR_PALPATINE">
-            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-palpatine-untrained</ImagePath>
-            <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/luke-palpatine-dagobah-incomplete</AudioPath>
-          </TriggerDuel>
+          <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
+            <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-palpatine-untrained"/>
+            <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/luke-palpatine-dagobah-incomplete"/>
+            <Subject>{subject} Confronts {relatedSubject}</Subject>
+            <Body>{subject} has fought {relatedSubject}.  </Body>
+            <BodySections>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>{subject} was captured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>{subject} was injured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                </Conditionals>
+                <Text>{relatedSubject} was captured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                </Conditionals>
+                <Text>{relatedSubject} was injured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                    <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                  </Not>
+                </Conditionals>
+                <Text>Both combatants escaped uninjured.</Text>
+              </Section>
+            </BodySections>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
         </Actions>
         <Else>
-          <TriggerDuel FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="EMPEROR_PALPATINE">
-            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-palpatine-trained</ImagePath>
-            <AudioPath>Pack/Shared/Events/JediConfrontation/Audio/luke-palpatine-dagobah-complete</AudioPath>
-          </TriggerDuel>
+          <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
+            <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-palpatine-trained"/>
+            <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/luke-palpatine-dagobah-complete"/>
+            <Subject>{subject} Confronts {relatedSubject}</Subject>
+            <Body>{subject} has fought {relatedSubject}.  </Body>
+            <BodySections>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>{subject} was captured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>{subject} was injured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                </Conditionals>
+                <Text>{relatedSubject} was captured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                </Conditionals>
+                <Text>{relatedSubject} was injured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                    <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                  </Not>
+                </Conditionals>
+                <Text>Both combatants escaped uninjured.</Text>
+              </Section>
+            </BodySections>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
         </Else>
       </If>
-    </Actions>
-  </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>LUKE_PALPATINE_ENCOUNTER_EFFECTS</InstanceID>
-    <Triggers>
-      <DuelCompleted SourceEventInstanceID="LUKE_ENCOUNTERS_PALPATINE" FirstOfficerInstanceID="LUKE_SKYWALKER" SecondOfficerInstanceID="EMPEROR_PALPATINE">
-        <Bindings>
-          <Bind Argument="ImagePath" As="$imagePath"/>
-          <Bind Argument="AudioPath" As="$audioPath"/>
-        </Bindings>
-      </DuelCompleted>
-    </Triggers>
-    <Actions>
-      <IncreaseForceRank OfficerInstanceID="LUKE_SKYWALKER" ReferenceOfficerInstanceID="EMPEROR_PALPATINE" MinimumAmount="1">
-        <PercentOfPositiveGap>20</PercentOfPositiveGap>
-      </IncreaseForceRank>
-      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
-        <BackgroundImage Binding="$imagePath"/>
-        <BackgroundAudio Binding="$audioPath"/>
-        <Subject>{subject} Confronts {relatedSubject}</Subject>
-        <Body>{subject} has fought {relatedSubject}.  </Body>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
+      <If>
+        <Conditionals>
+          <Not>
+            <HasEventActivated EventInstanceID="LUKE_LEAVES_DAGOBAH"/>
+          </Not>
+        </Conditionals>
+        <Actions>
+          <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="EMPEROR_PALPATINE" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+            <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-palpatine-untrained"/>
+            <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/luke-palpatine-dagobah-incomplete"/>
+            <Subject>{relatedSubject} Confronts {subject}</Subject>
+            <Body>{relatedSubject} has fought {subject}.  </Body>
+            <BodySections>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>{relatedSubject} was captured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>{relatedSubject} was injured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                </Conditionals>
+                <Text>{subject} was captured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                </Conditionals>
+                <Text>{subject} was injured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                    <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                  </Not>
+                </Conditionals>
+                <Text>Both combatants escaped uninjured.</Text>
+              </Section>
+            </BodySections>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+        </Actions>
+        <Else>
+          <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="EMPEROR_PALPATINE" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
+            <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/luke-encounters-palpatine-trained"/>
+            <BackgroundAudio Path="Pack/Shared/Events/JediConfrontation/Audio/luke-palpatine-dagobah-complete"/>
+            <Subject>{relatedSubject} Confronts {subject}</Subject>
+            <Body>{relatedSubject} has fought {subject}.  </Body>
+            <BodySections>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>{relatedSubject} was captured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                </Conditionals>
+                <Text>{relatedSubject} was injured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                </Conditionals>
+                <Text>{subject} was captured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                  </Not>
+                  <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                </Conditionals>
+                <Text>{subject} was injured.  </Text>
+              </Section>
+              <Section>
+                <Conditionals>
+                  <Not>
+                    <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsInjured OfficerInstanceID="LUKE_SKYWALKER"/>
+                    <IsCaptured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                    <IsInjured OfficerInstanceID="EMPEROR_PALPATINE"/>
+                  </Not>
+                </Conditionals>
+                <Text>Both combatants escaped uninjured.</Text>
+              </Section>
+            </BodySections>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+        </Else>
+      </If>
     </Actions>
   </GameEvent>
   <GameEvent Category="Story">
@@ -1179,72 +1649,6 @@
       </SendMessage>
     </Actions>
   </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>LUKE_AND_VADER_DETECT_EACH_OTHER</InstanceID>
-    <Triggers>
-      <UnitArrived UnitInstanceID="LUKE_SKYWALKER"/>
-      <UnitArrived UnitInstanceID="DARTH_VADER"/>
-    </Triggers>
-    <Conditionals>
-      <ShareAncestor Type="Planet">
-        <Units>
-          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
-          <Unit UnitInstanceID="DARTH_VADER"/>
-        </Units>
-      </ShareAncestor>
-      <IsForceEligible OfficerInstanceID="LUKE_SKYWALKER"/>
-      <IsForceEligible OfficerInstanceID="DARTH_VADER"/>
-    </Conditionals>
-    <Actions>
-      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="DARTH_VADER" Type="Mission">
-        <Subject>{subject} Detects {relatedSubject}</Subject>
-        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
-        <BackgroundImage Key="mission_report"/>
-        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
-      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="DARTH_VADER" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
-        <Subject>{subject} Detects {relatedSubject}</Subject>
-        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
-        <BackgroundImage Key="mission_report"/>
-        <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
-    </Actions>
-  </GameEvent>
-  <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>LUKE_AND_PALPATINE_DETECT_EACH_OTHER</InstanceID>
-    <Triggers>
-      <UnitArrived UnitInstanceID="LUKE_SKYWALKER"/>
-      <UnitArrived UnitInstanceID="EMPEROR_PALPATINE"/>
-    </Triggers>
-    <Conditionals>
-      <ShareAncestor Type="Planet">
-        <Units>
-          <Unit UnitInstanceID="LUKE_SKYWALKER"/>
-          <Unit UnitInstanceID="EMPEROR_PALPATINE"/>
-        </Units>
-      </ShareAncestor>
-      <IsForceEligible OfficerInstanceID="LUKE_SKYWALKER"/>
-      <IsForceEligible OfficerInstanceID="EMPEROR_PALPATINE"/>
-    </Conditionals>
-    <Actions>
-      <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" RelatedSubjectInstanceID="EMPEROR_PALPATINE" Type="Mission">
-        <Subject>{subject} Detects {relatedSubject}</Subject>
-        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
-        <BackgroundImage Key="mission_report"/>
-        <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
-      <SendMessage RecipientFactionInstanceID="FNEMP1" SubjectInstanceID="EMPEROR_PALPATINE" RelatedSubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
-        <Subject>{subject} Detects {relatedSubject}</Subject>
-        <Body>{subject} has detected {relatedSubject} through a disturbance in the Force.</Body>
-        <BackgroundImage Key="mission_report"/>
-        <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
-        <AdvisorNotification Preset="SubjectReport"/>
-      </SendMessage>
-    </Actions>
-  </GameEvent>
   <GameEvent Category="Story">
     <InstanceID>VADER_TAKES_LUKE_TO_EMPEROR</InstanceID>
     <Bindings>
@@ -1384,8 +1788,8 @@
     </Conditionals>
     <Actions>
       <SetCaptureStatus OfficerInstanceID="LUKE_SKYWALKER" IsCaptured="false"/>
-      <SetCaptureStatus OfficerInstanceID="DARTH_VADER" IsCaptured="true" CaptorFactionInstanceID="FNALL1"/>
-      <SetCaptureStatus OfficerInstanceID="EMPEROR_PALPATINE" IsCaptured="true" CaptorFactionInstanceID="FNALL1"/>
+      <SetCaptureStatus OfficerInstanceID="DARTH_VADER" IsCaptured="true" CaptorFactionInstanceID="FNALL1" CanEscape="false"/>
+      <SetCaptureStatus OfficerInstanceID="EMPEROR_PALPATINE" IsCaptured="true" CaptorFactionInstanceID="FNALL1" CanEscape="false"/>
       <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission">
         <Subject>The Final Battle</Subject>
         <Body>Luke has been brought before the Emperor by Vader.  Luke confronted and overcame the Emperor.  Both Emperor Palpatine and Darth Vader were lost.</Body>
@@ -1419,7 +1823,7 @@
       <HasForceRank OfficerInstanceID="LUKE_SKYWALKER" Comparison="LessThan" Rank="ForceKnight"/>
     </Conditionals>
     <Actions>
-      <SetCaptureStatus OfficerInstanceID="LUKE_SKYWALKER" IsCaptured="true" CaptorFactionInstanceID="FNEMP1"/>
+      <SetCaptureStatus OfficerInstanceID="LUKE_SKYWALKER" IsCaptured="true" CaptorFactionInstanceID="FNEMP1" CanEscape="false"/>
       <ApplyOfficerInjury OfficerInstanceID="LUKE_SKYWALKER">
         <MinimumInjury>1</MinimumInjury>
         <MaximumInjury>200</MaximumInjury>
@@ -1876,6 +2280,99 @@
           </Outcome>
         </Outcomes>
       </RollOutcome>
+    </Actions>
+  </GameEvent>
+  <GameEvent Category="Story">
+    <InstanceID>FORCE_ENCOUNTER_REPORT</InstanceID>
+    <Triggers>
+      <DuelCompleted>
+        <Bindings>
+          <Bind Argument="FirstOfficer" As="$first"/>
+          <Bind Argument="SecondOfficer" As="$second"/>
+          <Bind Argument="FirstOfficerInstanceID" As="$firstID"/>
+          <Bind Argument="SecondOfficerInstanceID" As="$secondID"/>
+          <Bind Argument="FirstOfficerOwnerInstanceID" As="$firstOwner"/>
+          <Bind Argument="SecondOfficerOwnerInstanceID" As="$secondOwner"/>
+        </Bindings>
+      </DuelCompleted>
+    </Triggers>
+    <Conditionals>
+      <Not>
+        <Any>
+          <All>
+            <Any>
+              <EvaluateBinding Binding="$firstID" Comparison="Equal" CompareTo="LUKE_SKYWALKER"/>
+              <EvaluateBinding Binding="$firstID" Comparison="Equal" CompareTo="LEIA_ORGANA"/>
+            </Any>
+            <Any>
+              <EvaluateBinding Binding="$secondID" Comparison="Equal" CompareTo="DARTH_VADER"/>
+              <EvaluateBinding Binding="$secondID" Comparison="Equal" CompareTo="EMPEROR_PALPATINE"/>
+            </Any>
+          </All>
+          <All>
+            <Any>
+              <EvaluateBinding Binding="$secondID" Comparison="Equal" CompareTo="LUKE_SKYWALKER"/>
+              <EvaluateBinding Binding="$secondID" Comparison="Equal" CompareTo="LEIA_ORGANA"/>
+            </Any>
+            <Any>
+              <EvaluateBinding Binding="$firstID" Comparison="Equal" CompareTo="DARTH_VADER"/>
+              <EvaluateBinding Binding="$firstID" Comparison="Equal" CompareTo="EMPEROR_PALPATINE"/>
+            </Any>
+          </All>
+        </Any>
+      </Not>
+    </Conditionals>
+    <Actions>
+      <If>
+        <Conditionals>
+          <EvaluateBinding Binding="$firstOwner" Comparison="Equal" CompareTo="FNALL1"/>
+        </Conditionals>
+        <Actions>
+          <SendMessage RecipientFactionBinding="$firstOwner" SubjectBinding="$first" RelatedSubjectBinding="$second" ShowSubjectImage="true" Type="Mission">
+            <Subject>{subject} Detects Enemy</Subject>
+            <Body>{subject} has detected {relatedSubject} because of a disturbance in the Force.</Body>
+            <BackgroundImage Key="mission_report"/>
+            <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+            <OfficerVoice Preset="EnemyDetected"/>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+        </Actions>
+        <Else>
+          <SendMessage RecipientFactionBinding="$firstOwner" SubjectBinding="$first" RelatedSubjectBinding="$second" ShowSubjectImage="true" Type="Mission">
+            <Subject>{subject} Detects Enemy</Subject>
+            <Body>{subject} has detected {relatedSubject} because of a disturbance in the Force.</Body>
+            <BackgroundImage Key="mission_report"/>
+            <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
+            <OfficerVoice Preset="EnemyDetected"/>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+        </Else>
+      </If>
+      <If>
+        <Conditionals>
+          <EvaluateBinding Binding="$secondOwner" Comparison="Equal" CompareTo="FNALL1"/>
+        </Conditionals>
+        <Actions>
+          <SendMessage RecipientFactionBinding="$secondOwner" SubjectBinding="$second" RelatedSubjectBinding="$first" ShowSubjectImage="true" Type="Mission">
+            <Subject>{subject} Detects Enemy</Subject>
+            <Body>{subject} has detected {relatedSubject} because of a disturbance in the Force.</Body>
+            <BackgroundImage Key="mission_report"/>
+            <BackgroundAudio Path="Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report"/>
+            <OfficerVoice Preset="EnemyDetected"/>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+        </Actions>
+        <Else>
+          <SendMessage RecipientFactionBinding="$secondOwner" SubjectBinding="$second" RelatedSubjectBinding="$first" ShowSubjectImage="true" Type="Mission">
+            <Subject>{subject} Detects Enemy</Subject>
+            <Body>{subject} has detected {relatedSubject} because of a disturbance in the Force.</Body>
+            <BackgroundImage Key="mission_report"/>
+            <BackgroundAudio Path="Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report"/>
+            <OfficerVoice Preset="EnemyDetected"/>
+            <AdvisorNotification Preset="SubjectReport"/>
+          </SendMessage>
+        </Else>
+      </If>
     </Actions>
   </GameEvent>
 </GameEvents>

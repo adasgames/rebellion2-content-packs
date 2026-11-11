@@ -1268,6 +1268,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <DisplayName>Officer Captured</DisplayName>
     <ResultType>OfficerCaptured</ResultType>
     <MessageType>Mission</MessageType>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-officer-captured</BackgroundAudioPath>
     <Subject>{officer} Captured</Subject>
     <Body>{officer} was captured by the {captor} at {system}.</Body>
     <ImagePaths>
@@ -1285,6 +1286,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <DisplayName>Enemy Officer Captured</DisplayName>
     <ResultType>EnemyOfficerCaptured</ResultType>
     <MessageType>Mission</MessageType>
+    <BackgroundAudioPath>Application/Strategy/Messages/Audio/message-officer-captured</BackgroundAudioPath>
     <Subject>{officer} Captured</Subject>
     <Body>{officer} was captured at {system}.</Body>
     <ImagePaths>
