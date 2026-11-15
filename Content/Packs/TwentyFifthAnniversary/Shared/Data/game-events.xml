@@ -210,6 +210,9 @@
       <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
       <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
       <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
+      <Not>
+        <IsActive NodeInstanceID="HAN_SOLO"/>
+      </Not>
       <IsActive NodeInstanceID="LUKE_SKYWALKER"/>
       <Not>
         <Any>
@@ -220,7 +223,6 @@
           <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
         </Any>
       </Not>
-      <IsCaptured OfficerInstanceID="HAN_SOLO"/>
     </Conditionals>
     <Actions>
       <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LUKE_SKYWALKER" Type="Mission" ShowSubjectImage="true">
@@ -322,6 +324,9 @@
       <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
       <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
       <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
+      <Not>
+        <IsActive NodeInstanceID="HAN_SOLO"/>
+      </Not>
       <IsActive NodeInstanceID="LEIA_ORGANA"/>
       <Not>
         <Any>
@@ -332,7 +337,6 @@
           <IsInTransit UnitInstanceID="LEIA_ORGANA"/>
         </Any>
       </Not>
-      <IsCaptured OfficerInstanceID="HAN_SOLO"/>
     </Conditionals>
     <Actions>
       <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="LEIA_ORGANA" Type="Mission">
@@ -435,6 +439,9 @@
       <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
       <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
       <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
+      <Not>
+        <IsActive NodeInstanceID="HAN_SOLO"/>
+      </Not>
       <IsActive NodeInstanceID="CHEWBACCA"/>
       <Not>
         <Any>
@@ -445,7 +452,6 @@
           <IsInTransit UnitInstanceID="CHEWBACCA"/>
         </Any>
       </Not>
-      <IsCaptured OfficerInstanceID="HAN_SOLO"/>
     </Conditionals>
     <Actions>
       <SendMessage RecipientFactionInstanceID="FNALL1" SubjectInstanceID="CHEWBACCA" Type="Mission">
@@ -539,7 +545,7 @@
     </Actions>
   </GameEvent>
   <GameEvent MaximumActivations="1" Category="Story">
-    <InstanceID>JABBA_RESCUE_CLEANUP</InstanceID>
+    <InstanceID>JABBA_RETURNS_RESCUERS</InstanceID>
     <Schedule>
       <Every Ticks="1"/>
     </Schedule>
@@ -550,6 +556,18 @@
       <If>
         <Conditionals>
           <HasEventActivated EventInstanceID="LUKE_RESCUES_HAN_FROM_JABBA"/>
+          <Not>
+            <Any>
+              <IsActive NodeInstanceID="LUKE_SKYWALKER"/>
+              <IsKilled OfficerInstanceID="LUKE_SKYWALKER"/>
+            </Any>
+          </Not>
+          <Any>
+            <Not>
+              <HasEventActivated EventInstanceID="LUKE_VISITS_YODA"/>
+            </Not>
+            <HasEventActivated EventInstanceID="LUKE_LEAVES_DAGOBAH"/>
+          </Any>
         </Conditionals>
         <Actions>
           <If>
@@ -567,6 +585,12 @@
       <If>
         <Conditionals>
           <HasEventActivated EventInstanceID="LEIA_RESCUES_HAN_FROM_JABBA"/>
+          <Not>
+            <Any>
+              <IsActive NodeInstanceID="LEIA_ORGANA"/>
+              <IsKilled OfficerInstanceID="LEIA_ORGANA"/>
+            </Any>
+          </Not>
         </Conditionals>
         <Actions>
           <If>
@@ -584,6 +608,12 @@
       <If>
         <Conditionals>
           <HasEventActivated EventInstanceID="CHEWBACCA_RESCUES_HAN_FROM_JABBA"/>
+          <Not>
+            <Any>
+              <IsActive NodeInstanceID="CHEWBACCA"/>
+              <IsKilled OfficerInstanceID="CHEWBACCA"/>
+            </Any>
+          </Not>
         </Conditionals>
         <Actions>
           <If>
@@ -609,6 +639,9 @@
       <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
       <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
       <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
+      <Not>
+        <IsActive NodeInstanceID="HAN_SOLO"/>
+      </Not>
       <IsActive NodeInstanceID="DARTH_VADER"/>
       <Not>
         <Any>
@@ -654,6 +687,7 @@
       <ClearDisplayStatus TargetInstanceID="DARTH_VADER"/>
       <If>
         <Conditionals>
+          <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
           <Any>
             <IsCaptured OfficerInstanceID="HAN_SOLO"/>
             <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
