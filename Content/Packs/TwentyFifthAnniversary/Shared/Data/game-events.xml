@@ -209,6 +209,7 @@
     <Conditionals>
       <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
       <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
+      <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
       <IsActive NodeInstanceID="LUKE_SKYWALKER"/>
       <Not>
         <Any>
@@ -320,6 +321,7 @@
     <Conditionals>
       <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
       <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
+      <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
       <IsActive NodeInstanceID="LEIA_ORGANA"/>
       <Not>
         <Any>
@@ -432,6 +434,7 @@
     <Conditionals>
       <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
       <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
+      <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
       <IsActive NodeInstanceID="CHEWBACCA"/>
       <Not>
         <Any>
@@ -605,6 +608,7 @@
     <Conditionals>
       <IsCaptured OfficerInstanceID="HAN_SOLO" CaptorFactionInstanceID="FNEMP1"/>
       <EvaluateEventVariable Key="jabba.bounty.capture.completed" Comparison="Equal" CompareTo="1"/>
+      <EvaluateEventVariable Key="jabba.rescue.completed" Comparison="Equal" CompareTo="0"/>
       <IsActive NodeInstanceID="DARTH_VADER"/>
       <Not>
         <Any>
