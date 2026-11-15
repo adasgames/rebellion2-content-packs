@@ -420,6 +420,10 @@ The buttons along the bottom of the window allow three different approaches to r
         <IsMobile>false</IsMobile>
         <IsBombardable>false</IsBombardable>
       </Headquarters>
+      <ConquestOfficerInstanceIDs>
+        <String>EMPEROR_PALPATINE</String>
+        <String>DARTH_VADER</String>
+      </ConquestOfficerInstanceIDs>
     </Settings>
   </Faction>
 </Factions>
