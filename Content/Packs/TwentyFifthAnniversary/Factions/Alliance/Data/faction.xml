@@ -388,6 +388,10 @@ There are three different approaches to resolving  the battle with the buttons a
         <IsMobile>true</IsMobile>
         <IsBombardable>true</IsBombardable>
       </Headquarters>
+      <ConquestOfficerInstanceIDs>
+        <String>MON_MOTHMA</String>
+        <String>LUKE_SKYWALKER</String>
+      </ConquestOfficerInstanceIDs>
     </Settings>
   </Faction>
 </Factions>

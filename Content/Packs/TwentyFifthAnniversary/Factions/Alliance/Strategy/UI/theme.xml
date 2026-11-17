@@ -983,6 +983,7 @@
       <Width>95</Width>
       <ListHeight>294</ListHeight>
       <ItemHeight>22</ItemHeight>
+      <IconOffsetX>2</IconOffsetX>
       <IconOffsetY>0</IconOffsetY>
       <IconWidth>12</IconWidth>
       <IconHeight>12</IconHeight>
