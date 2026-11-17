@@ -496,6 +496,135 @@
         </StrategyAdvisorNotificationTheme>
       </Notifications>
     </StrategyAdvisor>
+    <StrategyBriefing>
+      <Segments>
+        <Segment>
+          <Animation>Introduction</Animation>
+          <FrameCount>137</FrameCount>
+          <Audio>Introduction</Audio>
+          <DelayBeforeSeconds>2.2</DelayBeforeSeconds>
+        </Segment>
+        <Segment>
+          <Animation>PopularSupport</Animation>
+          <FrameCount>76</FrameCount>
+          <Audio>PopularSupport</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>PopularSupport</MapMode>
+          <Label>Popular Support</Label>
+        </Segment>
+        <Segment>
+          <Animation>OpponentLoyalty</Animation>
+          <FrameCount>78</FrameCount>
+          <Audio>OpponentLoyalty</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>OpponentLoyalty</MapMode>
+          <Label>Systems Loyal to the Empire</Label>
+        </Segment>
+        <Segment>
+          <Animation>PlayerLoyalty</Animation>
+          <FrameCount>68</FrameCount>
+          <Audio>PlayerLoyalty</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>PlayerLoyalty</MapMode>
+          <Label>Systems Loyal to the Alliance</Label>
+        </Segment>
+        <Segment>
+          <Animation>MilitaryControl</Animation>
+          <FrameCount>164</FrameCount>
+          <Audio>MilitaryControl</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>MilitaryControl</MapMode>
+          <Label>Systems Under Military Control</Label>
+        </Segment>
+        <Segment>
+          <Animation>UnexploredSystems</Animation>
+          <FrameCount>129</FrameCount>
+          <Audio>UnexploredSystems</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>UnexploredSystems</MapMode>
+          <Label>Unexplored Systems</Label>
+        </Segment>
+        <Segment>
+          <Animation>AllianceBaseAtYavin</Animation>
+          <FrameCount>380</FrameCount>
+          <Audio>AllianceBaseAtYavin</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>Target</Focus>
+          <TargetInstanceID>YAVIN</TargetInstanceID>
+        </Segment>
+        <Segment>
+          <Animation>PlayerHeadquarters</Animation>
+          <FrameCount>307</FrameCount>
+          <Audio>PlayerHeadquarters</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>PlayerHeadquarters</Focus>
+          <Label>Alliance Headquarters</Label>
+        </Segment>
+        <Segment>
+          <Animation>ImperialCapital</Animation>
+          <FrameCount>227</FrameCount>
+          <Audio>ImperialCapital</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>Target</Focus>
+          <TargetInstanceID>CORUSCANT</TargetInstanceID>
+        </Segment>
+        <Segment>
+          <Animation>IdleFleets</Animation>
+          <FrameCount>146</FrameCount>
+          <Audio>IdleFleets</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>IdleFleets</MapMode>
+          <Label>Rebel Fleets</Label>
+        </Segment>
+        <Segment>
+          <Animation>Defenses</Animation>
+          <FrameCount>139</FrameCount>
+          <Audio>Defenses</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>AllDefenses</MapMode>
+          <Label>All Defenses</Label>
+        </Segment>
+        <Segment>
+          <Animation>MonMothma</Animation>
+          <FrameCount>173</FrameCount>
+          <Audio>MonMothma</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>Target</Focus>
+          <TargetInstanceID>MON_MOTHMA</TargetInstanceID>
+        </Segment>
+        <Segment>
+          <Animation>LukeSkywalker</Animation>
+          <FrameCount>210</FrameCount>
+          <Audio>LukeSkywalker</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>Target</Focus>
+          <TargetInstanceID>LUKE_SKYWALKER</TargetInstanceID>
+        </Segment>
+        <Segment>
+          <Animation>OpponentHeadquarters</Animation>
+          <FrameCount>187</FrameCount>
+          <Audio>OpponentHeadquarters</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>Target</Focus>
+          <TargetInstanceID>CORUSCANT</TargetInstanceID>
+        </Segment>
+        <Segment>
+          <Animation>Conclusion</Animation>
+          <FrameCount>50</FrameCount>
+          <Audio>Conclusion</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+        </Segment>
+        <Segment>
+          <Animation>ReturnToIdle</Animation>
+          <FrameCount>121</FrameCount>
+          <Audio>ReturnToIdle</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+        </Segment>
+      </Segments>
+    </StrategyBriefing>
+    <PlanetDestructionCutscenes>
+      <Cutscene ShipTypeID="CSEM015" Path="Pack/Shared/Cutscenes/planet-destroyed" />
+    </PlanetDestructionCutscenes>
     <TacticalHUDLayout>
       <ImagePath>Pack/Shared/Strategy/UI/Shell/background</ImagePath>
       <SpeedIndicators>
@@ -737,6 +866,9 @@
         </StrategyHudButtonTheme>
       </Buttons>
     </TacticalHUDLayout>
+    <StrategyBookmarkLayout>
+      <IconOffsetX>2</IconOffsetX>
+    </StrategyBookmarkLayout>
     <GalacticInformationDisplay>
       <SubmenuArrowInactiveImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-submenu-arrow-inactive</SubmenuArrowInactiveImagePath>
       <SubmenuArrowActiveImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-submenu-arrow-active</SubmenuArrowActiveImagePath>
@@ -1476,5 +1608,6 @@
         </Missions>
       </PlanetOverlayIcons>
     </PlanetOverlayTheme>
+    <SaveIndicatorAnimation Remove="true" />
   </FactionTheme>
 </FactionThemes>

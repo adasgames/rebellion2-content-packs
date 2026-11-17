@@ -495,6 +495,134 @@
         </StrategyAdvisorNotificationTheme>
       </Notifications>
     </StrategyAdvisor>
+    <StrategyBriefing>
+      <Segments>
+        <Segment>
+          <Animation>Introduction</Animation>
+          <FrameCount>167</FrameCount>
+          <Audio>Introduction</Audio>
+          <DelayBeforeSeconds>2.2</DelayBeforeSeconds>
+        </Segment>
+        <Segment>
+          <Animation>PopularSupport</Animation>
+          <FrameCount>80</FrameCount>
+          <Audio>PopularSupport</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>PopularSupport</MapMode>
+          <Label>Popular Support</Label>
+        </Segment>
+        <Segment>
+          <Animation>PlayerLoyalty</Animation>
+          <FrameCount>52</FrameCount>
+          <Audio>PlayerLoyalty</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>PlayerLoyalty</MapMode>
+          <Label>Systems Loyal to the Empire</Label>
+        </Segment>
+        <Segment>
+          <Animation>OpponentLoyalty</Animation>
+          <FrameCount>93</FrameCount>
+          <Audio>OpponentLoyalty</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>OpponentLoyalty</MapMode>
+          <Label>Systems Loyal to the Alliance</Label>
+        </Segment>
+        <Segment>
+          <Animation>MilitaryControl</Animation>
+          <FrameCount>117</FrameCount>
+          <Audio>MilitaryControl</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>MilitaryControl</MapMode>
+          <Label>Systems Under Military Control</Label>
+        </Segment>
+        <Segment>
+          <Animation>UnexploredSystems</Animation>
+          <FrameCount>189</FrameCount>
+          <Audio>UnexploredSystems</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>UnexploredSystems</MapMode>
+          <Label>Unexplored Systems</Label>
+        </Segment>
+        <Segment>
+          <Animation>ImperialCapital</Animation>
+          <FrameCount>283</FrameCount>
+          <Audio>ImperialCapital</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>Target</Focus>
+          <TargetInstanceID>CORUSCANT</TargetInstanceID>
+        </Segment>
+        <Segment>
+          <Animation>AllianceBaseAtYavin</Animation>
+          <FrameCount>308</FrameCount>
+          <Audio>AllianceBaseAtYavin</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>Target</Focus>
+          <TargetInstanceID>YAVIN</TargetInstanceID>
+        </Segment>
+        <Segment>
+          <Animation>SearchForOpponentHeadquarters</Animation>
+          <FrameCount>422</FrameCount>
+          <Audio>SearchForOpponentHeadquarters</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>UnexploredSystems</MapMode>
+          <Label>Unexplored Systems</Label>
+        </Segment>
+        <Segment>
+          <Animation>IdleFleets</Animation>
+          <FrameCount>134</FrameCount>
+          <Audio>IdleFleets</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>IdleFleets</MapMode>
+          <Label>Idle Fleets</Label>
+        </Segment>
+        <Segment>
+          <Animation>Defenses</Animation>
+          <FrameCount>135</FrameCount>
+          <Audio>Defenses</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <MapMode>AllDefenses</MapMode>
+          <Label>All Defenses</Label>
+        </Segment>
+        <Segment>
+          <Animation>EmperorPalpatine</Animation>
+          <FrameCount>45</FrameCount>
+          <Audio>EmperorPalpatine</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>Target</Focus>
+          <TargetInstanceID>EMPEROR_PALPATINE</TargetInstanceID>
+        </Segment>
+        <Segment>
+          <Animation>DarthVader</Animation>
+          <FrameCount>248</FrameCount>
+          <Audio>DarthVader</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>Target</Focus>
+          <TargetInstanceID>DARTH_VADER</TargetInstanceID>
+        </Segment>
+        <Segment>
+          <Animation>OpponentHeadquarters</Animation>
+          <FrameCount>398</FrameCount>
+          <Audio>OpponentHeadquarters</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+          <Focus>OpponentHeadquarters</Focus>
+        </Segment>
+        <Segment>
+          <Animation>Conclusion</Animation>
+          <FrameCount>32</FrameCount>
+          <Audio>Conclusion</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+        </Segment>
+        <Segment>
+          <Animation>ReturnToIdle</Animation>
+          <FrameCount>16</FrameCount>
+          <Audio>ReturnToIdle</Audio>
+          <DelayBeforeSeconds>0.1</DelayBeforeSeconds>
+        </Segment>
+      </Segments>
+    </StrategyBriefing>
+    <PlanetDestructionCutscenes>
+      <Cutscene ShipTypeID="CSEM015" Path="Pack/Shared/Cutscenes/planet-destroyed" />
+    </PlanetDestructionCutscenes>
     <TacticalHUDLayout>
       <ImagePath>Pack/Factions/Empire/Strategy/UI/Shared/background</ImagePath>
       <SpeedIndicators>
@@ -747,5 +875,6 @@
         </MissionsButton>
       </Encyclopedia>
     </StrategyWindows>
+    <SaveIndicatorAnimation Remove="true" />
   </FactionTheme>
 </FactionThemes>

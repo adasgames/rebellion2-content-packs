@@ -126,8 +126,5 @@
         </Names>
       </NamePool>
     </ShipNamePools>
-    <Settings>
-      <ConquestOfficerInstanceIDs Remove="true" />
-    </Settings>
   </Faction>
 </Factions>

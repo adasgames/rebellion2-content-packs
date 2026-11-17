@@ -6,6 +6,7 @@
   <DisplayName>25th Anniversary (by Metasharp)</DisplayName>
   <DefaultScenarioID>standard</DefaultScenarioID>
   <MainMenuMusicPath>Pack/Shared/Strategy/Audio/Music/battle-of-endor-1-medley</MainMenuMusicPath>
+  <GameConfigPath>Shared/Data/game-config.xml</GameConfigPath>
   <PlanetSectorsPath>Shared/Data/planet-sectors.xml</PlanetSectorsPath>
   <BuildingsPath>Data/buildings.xml</BuildingsPath>
   <OfficerTraitsPath>Shared/Data/officer-traits.xml</OfficerTraitsPath>

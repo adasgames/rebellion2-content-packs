@@ -3,6 +3,7 @@
   <Officer>
     <TypeID>OFEM001</TypeID>
     <Description>Although aged and decrepit looking, Emperor Palpatine is the ultimate power in the Empire.  Palpatine formed the Empire and declared himself Emperor when the Old Republic Senate fell.  Since that time, the Empire under Palpatine's direction has virtually conquered the known galaxy.  A true master in the dark side of the Force, Palpatine was responsible for Darth Vader's instruction in the dark side.  The true extent of his powers is as yet unknown.</Description>
+    <AIBehavior Remove="true" />
   </Officer>
   <Officer>
     <TypeID>OFEM002</TypeID>

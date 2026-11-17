@@ -18,44 +18,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Rendili StarDrive
 History: This Dreadnought is an evolution of the earlier Republic-era Dreadnought-class cruisers. Around ABY 0, these vessels were incorporated into the Imperial Navy, reflecting the Empire's strategy of modifying existing ship designs for their purposes. The Imperial Dreadnought-class was known for its durability and firepower, making it a reliable asset in various combat scenarios. While not as large or as powerful as the Star Destroyers, these heavy cruisers were often used in secondary roles such as patrol, escort, and occupation duties across the galaxy. In the period following the destruction of the Death Star, the Imperial Dreadnought-class Heavy Cruisers continued to be a part of the Empire's efforts to maintain control, showcasing the versatility and adaptability of the Imperial fleet.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>44</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>33</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>1</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>2</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>200</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>40		20		70		70</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Imperial Dreadnought-class Heavy Cruiser (600m)
   Cost 44, Maintenance 33, Fighters 1, Troops 2
 
@@ -91,44 +53,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Rothana Heavy Engineering
 History: These ships were primarily used as troop transports and dropships, capable of rapid deployment of ground forces and vehicles, including walkers and speeder bikes. Their notable use began with the Battle of Geonosis, marking the start of the Clone Wars. Acclamator-class ships were heavily armed, doubling as assault ships capable of space and ground combat. Post-Clone Wars, some of these transports were adapted by the Galactic Empire, continuing their service in a different capacity. Their design influenced later Imperial ships, showcasing their lasting impact on military shipbuilding in the galaxy.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>10</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>10</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>2</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>100</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Acclamator-class Transport Drop Ship (752m)
   Cost 10, Maintenance 10, Fighters 0, Troops 2
 
@@ -163,44 +87,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Kuat Drive Yards
 History: This Carrier is an essential component of the Galactic Empire's naval strategy. This carrier was primarily designed for the rapid deployment and support of TIE fighter squadrons, significantly enhancing the Empire's patrol and enforcement capabilities across various star systems. Its ability to quickly transport and launch a sizable contingent of starfighters made it a valuable asset in both offensive and defensive operations. In the aftermath of the Death Star's destruction, the Imperial Escort Carriers played a pivotal role in maintaining Imperial space superiority, especially in outlying regions where larger Star Destroyers were less practical. These carriers were a testament to the Empire's adaptation to the changing dynamics of the Galactic Civil War, relying on fast, efficient, and versatile ships to extend their reach and control.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>34</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>30</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>6</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>200</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>30		30		60		60</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Imperial Escort Carrier (500m)
   Cost 34, Maintenance 30, Fighters 6, Troops 0
 
@@ -236,44 +122,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Kuat Drive Yards
 History: This class of cruiser was recognized for its distinctive design, featuring a slender frame and elongated bridge. Employed extensively by the Galactic Empire, these cruisers served various roles, including patrol, escort, and support missions. Their versatility made them a common sight in the Empire's efforts to maintain control across the galaxy. In the aftermath of the Death Star's destruction, the Arquitens-class light cruisers continued to be a crucial component of the Imperial Navy, particularly in smaller-scale operations where their agility and moderate firepower were most effective. Their presence in numerous conflicts underscored their reliability and adaptability in a wide range of tactical scenarios.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>26</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>24</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>200</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>5		5		15		15</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>60		60		90		90</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Arquitens-class Light Cruiser (325m)
   Cost 26, Maintenance 24, Fighters 0, Troops 0
 
@@ -309,57 +157,6 @@ History: This class of cruiser was recognized for its distinctive design, featur
   </CapitalShip>
   <CapitalShip>
     <TypeID>CSEM005</TypeID>
-    <Description>Refined Material Cost:	68
-Maintenance Cost:		44
-Fighter Capacity:		2
-Troop Capacity:			2
-Shield Strength:			200
-
-Attack Strength:		Fore	Aft		Port	Starboard
-
-	Turbolaser:			120		0		100		100
-	Ion Cannon:			0		0		0		0
-	Laser Cannon:		0		0		0		0
-
-The Victory Destroyer is an older star cruiser that proved to be an important part of the Imperial space fleet. This vessel was designed with planetary bombardment in mind. While a capable combat vessel, the Victory Star Destroyer can deliver accurate and devastating bombardments from orbit.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>68</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>44</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>2</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>2</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>200</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>120		0		100		100</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <UprisingDefense Remove="true" />
   </CapitalShip>
   <CapitalShip>
@@ -380,44 +177,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Kuat Drive Yards
 History: This Star Destroyer stands as one of the most iconic symbols of the Galactic Empire's military might. These colossal warships were central to the Empire's strategy of asserting control and instilling fear across the galaxy. Equipped with a vast array of weaponry and capable of carrying a large complement of TIE fighters, stormtroopers, and various ground vehicles, the Imperial I-class excelled in both space battles and ground assaults. Following the destruction of the Death Star, these Star Destroyers played a crucial role in the Empire's efforts to quell the Rebel Alliance and maintain its grip on the galaxy. Their formidable presence in numerous battles showcased the Empire's reliance on overwhelming power and technological superiority to achieve its objectives.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>112</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>71</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>6</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>3</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>300</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>100		40		60		60</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>100		40		40		40</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Imperial I-class Star Destroyer (1600m)
   Cost 112, Maintenance 71, Fighters 6, Troops 3
 
@@ -452,44 +211,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Kuat Drive Yards
 History: This class of frigate was specifically designed to counter the threat of starfighters, which had become increasingly prominent and effective, as evidenced by the destruction of the Death Star. Equipped with numerous laser cannons, the Lancer-class excelled in providing anti-fighter support for larger Imperial vessels. Their deployment signified a strategic shift in the Imperial Navy, acknowledging the need for dedicated anti-starfighter vessels to protect their capital ships from agile Rebel fighters. The Lancer-class frigates' specialized role made them a crucial component in the Empire's efforts to maintain space superiority.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>14</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>30</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>300</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>150		150		150		150</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Lancer-class Frigate (250m)
   Cost 14, Maintenance 30, Fighters 0, Troops 0
 
@@ -525,44 +246,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Kuat Drive Yards
 History: The Star Galleon is a heavily armed freighter. It was used by the Galactic Empire for secure transportation of valuable cargo, including currency, artifacts, and other resources crucial to Imperial operations. The Star Galleon combined the robust defensive capabilities of a military vessel with the cargo capacity of a freighter, making it an ideal choice for high-risk transport missions. Its ability to defend itself against pirate attacks and other threats was highly valued in the volatile climate of the Galactic Civil War, where the security of supply lines was paramount for both the Empire and the Rebel Alliance. The Star Galleon's design and purpose reflected the Empire's need for versatile ships capable of both combat and logistics in a galaxy rife with conflict and rebellion.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>15</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>20</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>3</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>200</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>0		30		30		30</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Star Galleon Frigate (300m)
   Cost 15, Maintenance 20, Fighters 0, Troops 3
 
@@ -598,44 +281,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Kuat Drive Yards
 History: Originally designed as a patrol ship, its role evolved to become more combat-oriented. This class of Star Destroyer was smaller than the larger Imperial-class but was highly effective in its designated roles, including escort missions, planetary defense, and rapid response actions. The Gladiator-class was particularly noted for its firepower and versatility, capable of operating independently in environments where larger Star Destroyers were not as effective. In the wake of the Death Star's destruction, the Gladiator-class vessels were increasingly utilized in the Empire's military campaigns, playing a vital role in asserting control over the Outer Rim territories and engaging Rebel forces in key conflicts. Their deployment demonstrated the Empire's strategic shift to a more diverse and adaptable fleet composition.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>12</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>29</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>1</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>300</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>150		0		60		60</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Gladiator-class Star Destroyer (600m)
   Cost 12, Maintenance 29, Fighters 0, Troops 1
 
@@ -671,44 +316,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Sienar Fleet Systems
 History: Known colloquially as the Interdictor, this vessel became infamous for its ability to generate gravity well projectors, effectively preventing hyperspace travel in its vicinity. The Immobilizer 418 played a critical role in the Galactic Empire's strategy, especially after the destruction of the Death Star. It was instrumental in trapping Rebel ships, hindering their escape or reinforcements via hyperspace, and thus becoming a key asset in blockades and ambushes. The introduction of this technology marked a significant development in galactic warfare, altering the dynamics of space engagements and showcasing the Empire's continuous innovation in military technology.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>40</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>34</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>600</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>10		0		20		20</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>0		0		10		10</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>90		0		60		60</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Immobilizer 418 Cruiser (600m)
   Cost 40, Maintenance 34, Fighters 0, Troops 0
 
@@ -743,44 +350,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Kuat Drive Yards
 History: This Destroyer is an evolution of the earlier Victory I-class, tailored for enhanced combat performance. By ABY 0, these ships played a notable role in the Imperial fleet. The Victory II-class was distinguished by improved ion engines and greater firepower, including enhanced turbolaser batteries and ion cannons. Designed to be faster and more versatile than its predecessor, it was adept in both space and atmospheric combat, making it a more flexible option for the Galactic Empire's diverse military needs. Following the destruction of the Death Star, the Victory II-class Star Destroyers were instrumental in enforcing Imperial rule and engaging Rebel forces, reflecting the Empire's ongoing efforts to adapt and strengthen its naval capabilities.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>72</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>63</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>2</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>600</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>120		80		80		80</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>40		40		40		40</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Victory II-class Star Destroyer (900m)
   Cost 72, Maintenance 63, Fighters 2, Troops 0
 
@@ -816,44 +385,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Rendili StarDrive
 History: These cruisers were primarily utilized by the Galactic Empire, serving as a core part of its formidable fleet. The Vindicator-class was known for its balance of firepower, speed, and defensive capabilities, making it a versatile asset in various combat scenarios. These ships were often deployed in key battles against the Rebel Alliance, especially in the aftermath of the Death Star's destruction. Their presence in the Imperial fleet underscored the Empire's reliance on well-rounded and heavily armed vessels to maintain control over the galaxy.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>70</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>60</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>1</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>0</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>600</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>120		80		40		40</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>60		0		40		40</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Vindicator-class Heavy Cruiser (600m)
   Cost 70, Maintenance 60, Fighters 1, Troops 0
 
@@ -873,57 +404,6 @@ History: These cruisers were primarily utilized by the Galactic Empire, serving 
   </CapitalShip>
   <CapitalShip>
     <TypeID>CSEM013</TypeID>
-    <Description>Refined Material Cost:	158
-Maintenance Cost:		99
-Fighter Capacity:		6
-Troop Capacity:			3
-Shield Strength:			800
-
-Attack Strength:		Fore	Aft		Port	Starboard
-
-	Turbolaser:			200		60		120		120
-	Ion Cannon:			200		20		80		80
-	Laser Cannon:		0		0		0		0
-
-An upgraded version of the Imperial Star Destroyer which boasts a heavily reinforced hull and more powerful heavy turbolaser batteries and cannons.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>158</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>99</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>6</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>3</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>800</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>200		60		120		120</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>200		20		80		80</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <UprisingDefense Remove="true" />
   </CapitalShip>
   <CapitalShip>
@@ -943,44 +423,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Kuat Drive Yards, Fondor Shipyards
 History: The Super Star Destroyer, is one of the most formidable warships in the galaxy. This class, including the infamous flagship Executor of Darth Vader, represented the pinnacle of Imperial naval power. With overwhelming firepower and a massive complement of troops and TIE fighters, the Executor-class played a pivotal role in asserting the Galactic Empire's dominance. Its deployment often signified the importance of a mission or the need to exert maximum force. Post the destruction of the Death Star, the Executor and its sister ships became symbols of the Empire's response and commitment to crushing the Rebel Alliance, serving as a key element in major battles and strategic operations across the galaxy.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>282</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>170</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>12</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>9</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Shield Strength</Label>
-        <Value>1200</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Attack Strength</Label>
-        <Value>Fore	Aft		Port	Starboard</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Turbolaser</Label>
-        <Value>500		150		300		300</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Ion Cannon</Label>
-        <Value>200		100		200		200</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Laser Cannon</Label>
-        <Value>0		0		0		0</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Executor-class Star Dreadnought (19000m)
   Cost 282, Maintenance 170, Fighters 12, Troops 9
 
@@ -1015,24 +457,6 @@ DMG: Front, Back, Sides (Range)
 
 Company: Imperial Department of Military Research, Sienar Fleet Systems, and various other contractors
 History: The Death Star is a massive space station and superweapon. It represents the pinnacle of the Galactic Empire's quest for dominance, designed to instill fear and suppress rebellion through its planet-destroying capabilities. Completed around ABY 0, the Death Star was a focal point in the Galactic Civil War. Its first and only use on the planet Alderaan showcased its destructive power. However, it also became a symbol of Imperial hubris, as the Rebel Alliance exploited a critical weakness to destroy it during the Battle of Yavin, marking a significant turning point in the war and galvanizing resistance across the galaxy.</Description>
-    <EncyclopediaStats>
-      <EncyclopediaEntryStat>
-        <Label>Refined Material Cost</Label>
-        <Value>584</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Maintenance Cost</Label>
-        <Value>600</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Fighter Capacity</Label>
-        <Value>24</Value>
-      </EncyclopediaEntryStat>
-      <EncyclopediaEntryStat>
-        <Label>Troop Capacity</Label>
-        <Value>18</Value>
-      </EncyclopediaEntryStat>
-    </EncyclopediaStats>
     <EncyclopediaDescription>[EMPIRE] Death Star (160000m)
   Cost 584, Maintenance 600, Fighters 24, Troops 18
 
