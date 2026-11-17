@@ -45,3 +45,20 @@ Before opening the pull request, install Node.js, Git LFS, and `xmllint`, then r
 The pull request must pass all repository checks and content review before it can be published. A
 maintainer will publish an approved pack through the repository's GitHub Actions workflow. Published
 versions are permanent, so any later file change requires a new version number in `pack.xml`.
+
+## Anniversary setting inheritance
+
+The anniversary pack requires Rebellion 2 0.1.7 or newer. Its data and theme documents marked
+`Inherit="true"` contain the settings it overrides. Omitted settings follow the base pack, and the
+unchanged officer traits are inherited through the manifest's existing path.
+
+These documents remain complete replacements:
+
+- `pack.xml` declares the pack's identity and content paths; its fields are read directly.
+- `Shared/Data/planet-sectors.xml` preserves the pack's planet order.
+- `Shared/Data/game-events.xml` preserves the pack's event order.
+- `Shared/Data/message-definitions.xml` is an ordered collection that the current merger replaces
+  as a whole.
+
+Nested collections without stable record identities also replace as a whole. Keep their complete
+authored contents when overriding them, including notification lists and ship-name pools.

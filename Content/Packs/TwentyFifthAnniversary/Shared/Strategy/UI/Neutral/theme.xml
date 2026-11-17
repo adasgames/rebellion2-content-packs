@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FactionThemes>
+<FactionThemes Inherit="true">
   <FactionTheme>
     <FactionInstanceID>DEFAULT</FactionInstanceID>
-    <FactionPrimaryColorHex>1CECF9</FactionPrimaryColorHex>
     <TacticalHUDLayout>
       <ImagePath>Pack/Shared/Strategy/UI/Shell/background</ImagePath>
-      <TickCounterSourceLayout>
-        <X>96</X>
-        <Y>20</Y>
-        <Width>80</Width>
-        <Height>11</Height>
-      </TickCounterSourceLayout>
-      <RawMaterialsSourceLayout>
-        <X>459</X>
-        <Y>20</Y>
-        <Width>80</Width>
-        <Height>11</Height>
-      </RawMaterialsSourceLayout>
-      <RefinedMaterialsSourceLayout>
-        <X>553</X>
-        <Y>20</Y>
-        <Width>80</Width>
-        <Height>11</Height>
-      </RefinedMaterialsSourceLayout>
-      <MaintenanceSourceLayout>
-        <X>653</X>
-        <Y>20</Y>
-        <Width>80</Width>
-        <Height>11</Height>
-      </MaintenanceSourceLayout>
-      <SpeedIndicatorSourceLayout>
-        <X>167</X>
-        <Y>20</Y>
-        <Width>16</Width>
-        <Height>10</Height>
-      </SpeedIndicatorSourceLayout>
-      <SpeedContextSourceLayout>
-        <X>106</X>
-        <Y>19</Y>
-        <Width>80</Width>
-        <Height>11</Height>
-      </SpeedContextSourceLayout>
       <SpeedIndicators>
         <PausedImagePath>Pack/Shared/Strategy/UI/Shell/speed-paused</PausedImagePath>
         <VerySlowImagePath>Pack/Shared/Strategy/UI/Shell/speed-very-slow</VerySlowImagePath>
@@ -280,105 +243,9 @@
         </StrategyHudButtonTheme>
       </Buttons>
     </TacticalHUDLayout>
-    <!-- Faction Cutscenes -->
-    <StrategyBookmarkLayout>
-      <StartX>758</StartX>
-      <StartY>57</StartY>
-      <Width>95</Width>
-      <ListHeight>294</ListHeight>
-      <ItemHeight>22</ItemHeight>
-      <IconOffsetY>0</IconOffsetY>
-      <IconWidth>12</IconWidth>
-      <IconHeight>12</IconHeight>
-      <LabelOffsetX>15</LabelOffsetX>
-      <LabelOffsetY>0</LabelOffsetY>
-      <LabelWidth>50</LabelWidth>
-    </StrategyBookmarkLayout>
-    <StrategyBookmarkIcons>
-      <FacilityImagePath>Pack/Shared/Strategy/UI/Bookmarks/bookmark-facility-icon</FacilityImagePath>
-      <DefenseImagePath>Pack/Shared/Strategy/UI/Bookmarks/bookmark-defense-icon</DefenseImagePath>
-      <FleetImagePath>Pack/Shared/Strategy/UI/Bookmarks/bookmark-fleet-icon</FleetImagePath>
-      <MissionImagePath>Pack/Shared/Strategy/UI/Bookmarks/bookmark-mission-icon</MissionImagePath>
-    </StrategyBookmarkIcons>
-    <GalaxyBackground>
-      <ImagePath>Pack/Shared/Strategy/UI/Shell/galaxy-background</ImagePath>
-      <SourcePosition>
-        <X>49</X>
-        <Y>26</Y>
-      </SourcePosition>
-      <UnexploredPlanetIconPath>Pack/Shared/Strategy/UI/Windows/PlanetSector/star-unknown</UnexploredPlanetIconPath>
-      <DestroyedPlanetIconPath>Pack/Shared/Strategy/UI/Windows/PlanetSector/destroyed-planet-icon</DestroyedPlanetIconPath>
-      <PlanetIcons>
-        <Small>Pack/Shared/Strategy/UI/Shell/star-0</Small>
-        <Medium>Pack/Shared/Strategy/UI/Shell/star-33</Medium>
-        <Large>Pack/Shared/Strategy/UI/Shell/star-66</Large>
-        <XL>Pack/Shared/Strategy/UI/Shell/star-100</XL>
-        <Mixed>Pack/Shared/Strategy/UI/Shell/star-mixed</Mixed>
-      </PlanetIcons>
-    </GalaxyBackground>
     <GalacticInformationDisplay>
-      <BackgroundColorHex>393939E6</BackgroundColorHex>
-      <ActiveFilterLabelColorHex>1CECF9</ActiveFilterLabelColorHex>
-      <ActiveFilterLabelSourceLayout>
-        <X>55</X>
-        <Y>40</Y>
-        <Width>693</Width>
-        <Height>16</Height>
-      </ActiveFilterLabelSourceLayout>
-      <ActiveFilterLabelFontSize>16</ActiveFilterLabelFontSize>
-      <SelectorSourceLayout>
-        <X>583</X>
-        <Y>233</Y>
-        <Width>160</Width>
-        <Height>160</Height>
-      </SelectorSourceLayout>
-      <LegendSourcePosition>
-        <X>150</X>
-        <Y>120</Y>
-      </LegendSourcePosition>
-      <CloseSourceInset>
-        <X>3</X>
-        <Y>3</Y>
-      </CloseSourceInset>
-      <DisplayOffRowSourceLayout>
-        <X>50</X>
-        <Y>142</Y>
-        <Width>110</Width>
-        <Height>18</Height>
-      </DisplayOffRowSourceLayout>
-      <MenuIconSourceLayout>
-        <X>0</X>
-        <Y>0</Y>
-        <Width>20</Width>
-        <Height>20</Height>
-      </MenuIconSourceLayout>
-      <MenuTextSourceLayout>
-        <X>20</X>
-        <Y>0</Y>
-        <Width>190</Width>
-        <Height>20</Height>
-      </MenuTextSourceLayout>
-      <SubmenuArrowSourceLayout>
-        <X>6</X>
-        <Y>0</Y>
-        <Width>17</Width>
-        <Height>20</Height>
-      </SubmenuArrowSourceLayout>
-      <DisplayOffLabel>Display Off</DisplayOffLabel>
       <SubmenuArrowInactiveImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-submenu-arrow-inactive</SubmenuArrowInactiveImagePath>
       <SubmenuArrowActiveImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-submenu-arrow-active</SubmenuArrowActiveImagePath>
-      <CloseUpImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-close-up</CloseUpImagePath>
-      <ClosePressedImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-close-pressed</ClosePressedImagePath>
-      <Frame>
-        <TopLeftImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-frame-top-left</TopLeftImagePath>
-        <TopRightImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-frame-top-right</TopRightImagePath>
-        <BottomLeftImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-frame-bottom-left</BottomLeftImagePath>
-        <BottomRightImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-frame-bottom-right</BottomRightImagePath>
-        <TopImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-frame-top</TopImagePath>
-        <LeftImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-frame-left</LeftImagePath>
-        <RightImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-frame-right</RightImagePath>
-        <BottomImagePath>Pack/Shared/Strategy/UI/GalacticInformation/gid-frame-bottom</BottomImagePath>
-      </Frame>
       <Categories>
         <GalacticInformationCategoryTheme>
           <Label>Loyalty</Label>
@@ -819,56 +686,6 @@
         </GalacticInformationCategoryTheme>
       </Categories>
     </GalacticInformationDisplay>
-    <StrategyWindowPlacements>
-      <WindowBounds>
-        <X>55</X>
-        <Y>36</Y>
-        <Width>693</Width>
-        <Height>349</Height>
-      </WindowBounds>
-      <SectorLeftPosition>
-        <X>59</X>
-        <Y>36</Y>
-      </SectorLeftPosition>
-      <SectorMiddlePosition>
-        <X>290</X>
-        <Y>36</Y>
-      </SectorMiddlePosition>
-      <SectorRightPosition>
-        <X>521</X>
-        <Y>36</Y>
-      </SectorRightPosition>
-      <UtilityWindowPosition>
-        <X>62</X>
-        <Y>49</Y>
-      </UtilityWindowPosition>
-      <MissionCreateOffset>
-        <X>-25</X>
-        <Y>-25</Y>
-      </MissionCreateOffset>
-    </StrategyWindowPlacements>
-    <StrategyWindowSounds>
-      <PlanetWindowOpenSoundPath>Application/Strategy/Audio/Controls/planetpanel-open</PlanetWindowOpenSoundPath>
-      <PlanetWindowExpandSoundPath>Application/Strategy/Audio/Controls/window-restore</PlanetWindowExpandSoundPath>
-      <PlanetWindowCollapseSoundPath>Application/Strategy/Audio/Controls/planetpanel-close</PlanetWindowCollapseSoundPath>
-      <PlanetWindowMinimizeSoundPath>Application/Strategy/Audio/Controls/window-minimize</PlanetWindowMinimizeSoundPath>
-    </StrategyWindowSounds>
-    <StrategyMusic>
-      <NeutralTrackPaths>
-        <string>Pack/Shared/Strategy/Audio/Music/rescue-of-the-princess-heroics-of-luke-and-han-wampas-lair-jedi-training-medley</string>
-        <string>Pack/Shared/Strategy/Audio/Music/main-title-death-star-tatooine-emperor-medley</string>
-        <string>Pack/Shared/Strategy/Audio/Music/brother-and-sister-father-and-son-fleet-enters-hyperspace-heroic-ewok-medley</string>
-      </NeutralTrackPaths>
-      <StrongAdvantageTrackPath>Pack/Shared/Strategy/Audio/Music/landos-palace</StrongAdvantageTrackPath>
-      <AdvantageTrackPath>Pack/Shared/Strategy/Audio/Music/emperor-arrives-death-of-yoda-obi-wans-revelation-medley</AdvantageTrackPath>
-      <DisadvantageTrackPath>Pack/Shared/Strategy/Audio/Music/imperial-march-darth-vaders-theme-intro-and-stinger</DisadvantageTrackPath>
-      <NeutralTracksBetweenStrategicTracks>3</NeutralTracksBetweenStrategicTracks>
-      <PlanetRatioScale>100</PlanetRatioScale>
-      <NoOpponentPlanetMultiplier>10</NoOpponentPlanetMultiplier>
-      <StrongAdvantageMinimumRatio>300</StrongAdvantageMinimumRatio>
-      <AdvantageMinimumRatio>200</AdvantageMinimumRatio>
-      <DisadvantageMaximumRatio>50</DisadvantageMaximumRatio>
-    </StrategyMusic>
     <ConfirmDialogTheme>
       <BackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Confirm/confirm-move-background</BackgroundImagePath>
       <MoveTitleImagePath>Pack/Shared/Strategy/UI/Windows/Confirm/confirm-move-title</MoveTitleImagePath>
@@ -876,72 +693,18 @@
       <RetireTitleImagePath>Pack/Shared/Strategy/UI/Windows/Confirm/confirm-retire-title</RetireTitleImagePath>
       <StopConstructionTitleImagePath>Pack/Shared/Strategy/UI/Windows/Construction/confirm-stop-construction-title</StopConstructionTitleImagePath>
       <MissionAbortTitleImagePath>Pack/Shared/Strategy/UI/Windows/Confirm/confirm-abort-title</MissionAbortTitleImagePath>
-      <ScrapRetireSoundPath>Application/Strategy/Messages/Audio/message-confirm-scrap-retire</ScrapRetireSoundPath>
-      <StopConstructionSoundPath>Application/Strategy/Messages/Audio/message-confirm-stop-construction</StopConstructionSoundPath>
     </ConfirmDialogTheme>
     <StrategyContextMenuTheme>
       <ArrowOnImagePath>Pack/Shared/Strategy/UI/ContextMenus/context-menu-arrow-on</ArrowOnImagePath>
       <ArrowOffImagePath>Pack/Shared/Strategy/UI/ContextMenus/context-menu-arrow-off</ArrowOffImagePath>
-      <CheckMarkImagePath>Pack/Shared/Strategy/UI/ContextMenus/context-menu-check-mark</CheckMarkImagePath>
     </StrategyContextMenuTheme>
-    <StrategyCheckboxTheme>
-      <FrameImagePath>Pack/Shared/Strategy/UI/Controls/checkbox-frame</FrameImagePath>
-      <CheckMarkImagePath>Pack/Shared/Strategy/UI/ContextMenus/context-menu-check-mark</CheckMarkImagePath>
-    </StrategyCheckboxTheme>
-    <WindowTitleTheme>
-      <ActiveImagePath>Pack/Shared/Strategy/UI/Windows/window-title-active</ActiveImagePath>
-      <InactiveImagePath>Pack/Shared/Strategy/UI/Windows/window-title-inactive</InactiveImagePath>
-    </WindowTitleTheme>
     <StrategyWindows>
       <Facility>
-        <ControlTab>
-          <ActiveImagePath>Pack/Shared/Strategy/UI/Windows/Facility/facility-window-tab-control-tab-active</ActiveImagePath>
-          <InactiveImagePath>Pack/Shared/Strategy/UI/Windows/Facility/facility-window-tab-control-tab-inactive</InactiveImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Windows/Facility/facility-window-tab-control-tab-disabled</DisabledImagePath>
-        </ControlTab>
-        <SelectionImagePath>Pack/Shared/Strategy/UI/Windows/Facility/facility-window-selection</SelectionImagePath>
         <RawResourceNodeImagePath>Pack/Shared/Strategy/UI/Shell/raw-materials</RawResourceNodeImagePath>
-        <ConstructionImages>
-          <FacilityConstructionImageTheme>
-            <TypeID>BDFA01</TypeID>
-            <ImagePath>Pack/Shared/Units/Facilities/BDFA01/under-construction-small</ImagePath>
-          </FacilityConstructionImageTheme>
-          <FacilityConstructionImageTheme>
-            <TypeID>BDFA02</TypeID>
-            <ImagePath>Pack/Shared/Units/Facilities/BDFA02/under-construction-small</ImagePath>
-          </FacilityConstructionImageTheme>
-          <FacilityConstructionImageTheme>
-            <TypeID>BDFA03</TypeID>
-            <ImagePath>Pack/Shared/Units/Facilities/BDFA03/under-construction-small</ImagePath>
-          </FacilityConstructionImageTheme>
-          <FacilityConstructionImageTheme>
-            <TypeID>BDFA04</TypeID>
-            <ImagePath>Pack/Shared/Units/Facilities/BDFA04/under-construction-small</ImagePath>
-          </FacilityConstructionImageTheme>
-          <FacilityConstructionImageTheme>
-            <TypeID>BDFA05</TypeID>
-            <ImagePath>Pack/Shared/Units/Facilities/BDFA05/under-construction-small</ImagePath>
-          </FacilityConstructionImageTheme>
-          <FacilityConstructionImageTheme>
-            <TypeID>BDFA06</TypeID>
-            <ImagePath>Pack/Shared/Units/Facilities/BDFA06/under-construction-small</ImagePath>
-          </FacilityConstructionImageTheme>
-          <FacilityConstructionImageTheme>
-            <TypeID>BDFA07</TypeID>
-            <ImagePath>Pack/Shared/Units/Facilities/BDFA07/under-construction-small</ImagePath>
-          </FacilityConstructionImageTheme>
-          <FacilityConstructionImageTheme>
-            <TypeID>BDFA08</TypeID>
-            <ImagePath>Pack/Shared/Units/Facilities/BDFA08/under-construction-small</ImagePath>
-          </FacilityConstructionImageTheme>
-        </ConstructionImages>
       </Facility>
       <Defense>
         <PersonnelTab>
           <ActiveImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-personnel-active-tab</ActiveImagePath>
-          <InactiveImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-personnel-blank-tab</InactiveImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-personnel-blank-tab</DisabledImagePath>
-          <EmptyImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-personnel-blank-tab</EmptyImagePath>
         </PersonnelTab>
         <TroopTab>
           <ActiveImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-troop-active-tab</ActiveImagePath>
@@ -950,29 +713,11 @@
         </TroopTab>
         <FighterTab>
           <ActiveImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-fighter-active-tab</ActiveImagePath>
-          <InactiveImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-fighter-blank-tab</InactiveImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-fighter-blank-tab</DisabledImagePath>
-          <EmptyImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-fighter-blank-tab</EmptyImagePath>
         </FighterTab>
-        <ShieldTab>
-          <ActiveImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-shield-active-tab</ActiveImagePath>
-          <InactiveImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-shield-available-tab</InactiveImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-shield-disabled-tab</DisabledImagePath>
-        </ShieldTab>
-        <BatteryTab>
-          <ActiveImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-battery-active-tab</ActiveImagePath>
-          <InactiveImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-battery-available-tab</InactiveImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-tab-battery-disabled-tab</DisabledImagePath>
-        </BatteryTab>
-        <SelectionImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-selection</SelectionImagePath>
-        <PersonnelBackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-personnel-background</PersonnelBackgroundImagePath>
-        <EnrouteBackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-enroute-background</EnrouteBackgroundImagePath>
       </Defense>
       <Fleet>
         <DetailBackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/fleet-detail-background</DetailBackgroundImagePath>
         <BannerImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/fleet-banner</BannerImagePath>
-        <PersonnelBackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-personnel-background</PersonnelBackgroundImagePath>
-        <PersonnelEnrouteBackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Defense/defense-window-enroute-background</PersonnelEnrouteBackgroundImagePath>
         <Tabs>
           <CapitalShips>
             <ActiveImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/fleetspane-capitalship-selected-icon</ActiveImagePath>
@@ -1024,302 +769,22 @@
         <FleetBannerImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/fleet-banner</FleetBannerImagePath>
         <FleetBannerEnrouteImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/fleet-banner-in-transit</FleetBannerEnrouteImagePath>
         <FleetBannerDamagedImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/fleet-banner-damaged</FleetBannerDamagedImagePath>
-        <ShipyardImagePath>Pack/Shared/Units/Facilities/BDFA03/display</ShipyardImagePath>
-        <ConstructionImagePath>Pack/Shared/Units/Facilities/BDFA01/display</ConstructionImagePath>
-        <TrainingImagePath>Pack/Shared/Units/Facilities/BDFA02/display</TrainingImagePath>
-        <EnrouteImagePath>Pack/Shared/Strategy/UI/Shell/status-enroute</EnrouteImagePath>
       </Status>
       <BattleAlert>
-        <FrameImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-frame</FrameImagePath>
-        <ResultFrameImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-frame</ResultFrameImagePath>
-        <ResultSummaryImagePath>Pack/Shared/Strategy/UI/Combat/tactical-result-summary-background</ResultSummaryImagePath>
-        <PlanetaryAssaultImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/assault</PlanetaryAssaultImagePath>
-        <BombardmentNoLossesImagePath>Pack/Shared/Strategy/Messages/Images/bombardment-no-losses</BombardmentNoLossesImagePath>
-        <BombardmentAttackerLossesImagePath>Pack/Shared/Strategy/Messages/Images/bombardment-attacker-losses</BombardmentAttackerLossesImagePath>
-        <BombardmentTargetLossesImagePath>Pack/Shared/Strategy/Messages/Images/bombardment-target-losses</BombardmentTargetLossesImagePath>
-        <BattleMusicPath>Pack/Shared/Strategy/Audio/Music/attacking-a-star-destroyer</BattleMusicPath>
-        <ResultMusicPath>Pack/Shared/Strategy/Audio/Music/sail-barge-assault-alternate</ResultMusicPath>
-        <ResultVictoryMusicPath>Pack/Shared/Strategy/Audio/Music/sail-barge-assault-alternate</ResultVictoryMusicPath>
-        <ResultDefeatMusicPath>Pack/Shared/Strategy/Audio/Music/battle-of-endor-3-medley</ResultDefeatMusicPath>
-        <ResultDrawMusicPath>Pack/Shared/Strategy/Audio/Music/battle-of-endor-3-medley</ResultDrawMusicPath>
-        <SummaryBackgroundImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-summary-background</SummaryBackgroundImagePath>
-        <ListBackgroundImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-list-background</ListBackgroundImagePath>
-        <ResultListBackgroundImagePath>Pack/Shared/Strategy/UI/Combat/tactical-result-list-background</ResultListBackgroundImagePath>
-        <ResultPersonnelListBackgroundImagePath>Pack/Shared/Strategy/UI/Combat/tactical-result-personnel-list-background</ResultPersonnelListBackgroundImagePath>
-        <ResultDirectBackgroundImagePath>Pack/Shared/Strategy/UI/Combat/tactical-result-summary-background</ResultDirectBackgroundImagePath>
-        <SummaryButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-summary-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-summary-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>21</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </SummaryButton>
-        <FirstForcesButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-first-forces-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-first-forces-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>81</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </FirstForcesButton>
-        <SecondForcesButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-second-forces-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-second-forces-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>141</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </SecondForcesButton>
-        <SystemAssetsButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-system-assets-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-system-assets-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>201</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </SystemAssetsButton>
-        <ResultSummaryButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-summary-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-summary-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>88</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </ResultSummaryButton>
-        <FirstForcesResultDefeatedButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-defeated-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-defeated-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>141</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </FirstForcesResultDefeatedButton>
-        <FirstForcesResultVictoriousButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-victorious-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-victorious-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>141</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </FirstForcesResultVictoriousButton>
-        <SecondForcesResultDefeatedButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-defeated-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-defeated-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>196</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </SecondForcesResultDefeatedButton>
-        <SecondForcesResultVictoriousButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-victorious-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-victorious-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>196</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </SecondForcesResultVictoriousButton>
-        <ResultDirectButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-direct-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-direct-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>418</X>
-            <Y>250</Y>
-            <Width>41</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </ResultDirectButton>
-        <ResultCapitalShipsButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-capital-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-capital-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>130</X>
-            <Y>59</Y>
-            <Width>49</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </ResultCapitalShipsButton>
-        <ResultStarfightersButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-starfighter-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-starfighter-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>179</X>
-            <Y>59</Y>
-            <Width>49</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </ResultStarfightersButton>
-        <ResultTroopsButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-troops-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-troops-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>228</X>
-            <Y>59</Y>
-            <Width>49</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </ResultTroopsButton>
-        <ResultPersonnelButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-personnel-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-personnel-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>277</X>
-            <Y>59</Y>
-            <Width>49</Width>
-            <Height>41</Height>
-          </SourceLayout>
-        </ResultPersonnelButton>
-        <ResultManufacturingButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-manufacturing-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-manufacturing-button-pressed</DownImagePath>
-        </ResultManufacturingButton>
-        <ResultDefenseButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Defense/tactical-result-defense-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Defense/tactical-result-defense-button-pressed</DownImagePath>
-        </ResultDefenseButton>
-        <PlanetaryResultCapitalShipsLayout>
-          <X>36</X>
-          <Y>59</Y>
-          <Width>49</Width>
-          <Height>41</Height>
-        </PlanetaryResultCapitalShipsLayout>
-        <PlanetaryResultStarfightersLayout>
-          <X>98</X>
-          <Y>59</Y>
-          <Width>49</Width>
-          <Height>41</Height>
-        </PlanetaryResultStarfightersLayout>
-        <PlanetaryResultManufacturingLayout>
-          <X>160</X>
-          <Y>59</Y>
-          <Width>49</Width>
-          <Height>41</Height>
-        </PlanetaryResultManufacturingLayout>
-        <PlanetaryResultDefenseLayout>
-          <X>222</X>
-          <Y>59</Y>
-          <Width>49</Width>
-          <Height>41</Height>
-        </PlanetaryResultDefenseLayout>
-        <PlanetaryResultTroopsLayout>
-          <X>284</X>
-          <Y>59</Y>
-          <Width>49</Width>
-          <Height>41</Height>
-        </PlanetaryResultTroopsLayout>
-        <PlanetaryResultPersonnelLayout>
-          <X>348</X>
-          <Y>59</Y>
-          <Width>49</Width>
-          <Height>41</Height>
-        </PlanetaryResultPersonnelLayout>
-        <ResultDirectSectorButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Combat/tactical-result-system-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-result-system-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>29</X>
-            <Y>182</Y>
-            <Width>169</Width>
-            <Height>96</Height>
-          </SourceLayout>
-        </ResultDirectSectorButton>
         <ResultDirectFleetButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/tactical-result-fleet-button-up</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/tactical-result-fleet-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>226</X>
-            <Y>182</Y>
-            <Width>169</Width>
-            <Height>96</Height>
-          </SourceLayout>
         </ResultDirectFleetButton>
-        <RetreatButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-retreat-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-retreat-button-pressed</DownImagePath>
-          <DisabledImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-retreat-button-disabled</DisabledImagePath>
-          <SourceLayout>
-            <X>12</X>
-            <Y>296</Y>
-            <Width>134</Width>
-            <Height>27</Height>
-          </SourceLayout>
-        </RetreatButton>
-        <AutoResolveButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-autoresolve-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-autoresolve-button-pressed</DownImagePath>
-          <DisabledImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-autoresolve-button-disabled</DisabledImagePath>
-          <SourceLayout>
-            <X>146</X>
-            <Y>296</Y>
-            <Width>134</Width>
-            <Height>27</Height>
-          </SourceLayout>
-        </AutoResolveButton>
-        <TakeCommandButton>
-          <UpImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-take-command-button-up</UpImagePath>
-          <DownImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-take-command-button-pressed</DownImagePath>
-          <DisabledImagePath>Pack/Factions/Alliance/Strategy/UI/Combat/tactical-begin-take-command-button-disabled</DisabledImagePath>
-          <SourceLayout>
-            <X>280</X>
-            <Y>296</Y>
-            <Width>134</Width>
-            <Height>27</Height>
-          </SourceLayout>
-        </TakeCommandButton>
         <ResultCloseButton>
           <UpImagePath>Pack/Shared/Strategy/UI/ContextMenus/dialog-close-button</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/ContextMenus/dialog-close-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>423</X>
-            <Y>25</Y>
-            <Width>32</Width>
-            <Height>31</Height>
-          </SourceLayout>
         </ResultCloseButton>
       </BattleAlert>
       <Messages>
-        <AllButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-all-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-all-button-pressed</DownImagePath>
-        </AllButton>
-        <ResourceButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-resource-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-resource-button-pressed</DownImagePath>
-        </ResourceButton>
-        <ManufacturingButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-manufacturing-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-manufacturing-button-pressed</DownImagePath>
-        </ManufacturingButton>
         <DefenseButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Defense/messages-window-defense-button-up</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Defense/messages-window-defense-button-pressed</DownImagePath>
         </DefenseButton>
-        <ConflictButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-conflict-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-conflict-button-pressed</DownImagePath>
-        </ConflictButton>
-        <ChatButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-chat-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-chat-button-pressed</DownImagePath>
-        </ChatButton>
         <SupportButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-support-button-up</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-support-button-pressed</DownImagePath>
@@ -1339,66 +804,30 @@
         <CloseButton>
           <UpImagePath>Pack/Shared/Strategy/UI/ContextMenus/dialog-close-button</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/ContextMenus/dialog-close-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>423</X>
-            <Y>25</Y>
-            <Width>32</Width>
-            <Height>31</Height>
-          </SourceLayout>
         </CloseButton>
         <DisplayButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-display-button-up</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-display-button-pressed</DownImagePath>
           <DisabledImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-display-button-disabled</DisabledImagePath>
-          <SourceLayout>
-            <X>423</X>
-            <Y>93</Y>
-            <Width>32</Width>
-            <Height>31</Height>
-          </SourceLayout>
         </DisplayButton>
         <IndexButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-index-button-up</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-index-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>423</X>
-            <Y>93</Y>
-            <Width>32</Width>
-            <Height>31</Height>
-          </SourceLayout>
         </IndexButton>
         <SignalButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-signal-button-up</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-signal-button-pressed</DownImagePath>
-          <SourceLayout>
-            <X>423</X>
-            <Y>147</Y>
-            <Width>32</Width>
-            <Height>31</Height>
-          </SourceLayout>
         </SignalButton>
         <SignalSilentImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-signal-button-silent</SignalSilentImagePath>
         <SignalTargetButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-location-button-up</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-location-button-pressed</DownImagePath>
           <DisabledImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-location-button-disabled</DisabledImagePath>
-          <SourceLayout>
-            <X>423</X>
-            <Y>201</Y>
-            <Width>32</Width>
-            <Height>31</Height>
-          </SourceLayout>
         </SignalTargetButton>
         <ChatCommandButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-chat-command-button-up</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-chat-command-button-pressed</DownImagePath>
           <DisabledImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-chat-command-button-disabled</DisabledImagePath>
-          <SourceLayout>
-            <X>423</X>
-            <Y>255</Y>
-            <Width>32</Width>
-            <Height>31</Height>
-          </SourceLayout>
         </ChatCommandButton>
         <Icons>
           <MessageWindowIconTheme>
@@ -1450,52 +879,8 @@
         <SelectionImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-selection</SelectionImagePath>
         <OverlayFrameImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-overlay-frame</OverlayFrameImagePath>
         <ButtonStripImagePath>Pack/Shared/Strategy/UI/Windows/Messages/messages-window-button-strip</ButtonStripImagePath>
-        <SelectedRowTextColorHex>FFFFFF</SelectedRowTextColorHex>
-        <DetailImages>
-          <MessageDetailImageTheme>
-            <Key>mission_report</Key>
-            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/mission-report</ImagePath>
-          </MessageDetailImageTheme>
-          <MessageDetailImageTheme>
-            <Key>advice</Key>
-            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/advice</ImagePath>
-          </MessageDetailImageTheme>
-          <MessageDetailImageTheme>
-            <Key>ships_arrived</Key>
-            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/units-arrive</ImagePath>
-          </MessageDetailImageTheme>
-          <MessageDetailImageTheme>
-            <Key>capital_ship_repaired</Key>
-            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/capital-ship-repaired</ImagePath>
-          </MessageDetailImageTheme>
-          <MessageDetailImageTheme>
-            <Key>starfighter_repaired</Key>
-            <ImagePath>Pack/Factions/Alliance/Strategy/Messages/Images/starfighter-repaired</ImagePath>
-          </MessageDetailImageTheme>
-          <MessageDetailImageTheme>
-            <Key>planet_allegiance_evolves</Key>
-            <ImagePath>Pack/Shared/Strategy/Messages/Images/planet-allegiance-evolves</ImagePath>
-          </MessageDetailImageTheme>
-        </DetailImages>
       </Messages>
       <Finder>
-        <AllSystemsButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-all-systems-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-all-systems-button-pressed</DownImagePath>
-        </AllSystemsButton>
-        <UnexploredSystemsButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-unexplored-systems-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-unexplored-systems-button-pressed</DownImagePath>
-        </UnexploredSystemsButton>
-        <SystemFinderBackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-system-finder-background</SystemFinderBackgroundImagePath>
-        <SystemsButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-systems-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-systems-button-pressed</DownImagePath>
-        </SystemsButton>
-        <NeutralSystemsButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-systems-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-systems-button-pressed</DownImagePath>
-        </NeutralSystemsButton>
         <FleetButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/dialog-fleet-button</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/dialog-fleet-button-pressed</DownImagePath>
@@ -1525,24 +910,11 @@
         <PersonnelFinderBackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-personnel-finder-background</PersonnelFinderBackgroundImagePath>
         <SpecialForcesFinderBackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-spec-forces-finder-background</SpecialForcesFinderBackgroundImagePath>
         <TroopFinderBackgroundImagePath>Pack/Shared/Strategy/UI/Windows/Finder/finder-window-troop-finder-background</TroopFinderBackgroundImagePath>
-        <SystemsText>Faction Systems</SystemsText>
-        <FleetsText>Faction Fleets</FleetsText>
-        <ShipsText>Faction Ships</ShipsText>
-        <TroopsText>Faction Troops</TroopsText>
-        <PersonnelText>Faction Personnel</PersonnelText>
         <OverlayFrameImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-overlay-frame</OverlayFrameImagePath>
         <TwoButtonStripImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-two-button-strip</TwoButtonStripImagePath>
         <FourButtonStripImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-four-button-strip</FourButtonStripImagePath>
       </Finder>
       <Encyclopedia>
-        <AllDatabasesButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-all-systems-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-all-systems-button-pressed</DownImagePath>
-        </AllDatabasesButton>
-        <SystemsButton>
-          <UpImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-system-button-up</UpImagePath>
-          <DownImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-system-button-pressed</DownImagePath>
-        </SystemsButton>
         <FacilityButton>
           <UpImagePath>Pack/Shared/Strategy/UI/Windows/Facility/encyclopedia-window-facility-button-up</UpImagePath>
           <DownImagePath>Pack/Shared/Strategy/UI/Windows/Facility/encyclopedia-window-facility-button-pressed</DownImagePath>
@@ -1578,85 +950,7 @@
         <OverlayFrameImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-overlay-frame</OverlayFrameImagePath>
         <ButtonStripImagePath>Pack/Shared/Strategy/UI/Windows/Encyclopedia/encyclopedia-window-three-button-strip</ButtonStripImagePath>
       </Encyclopedia>
-      <AdvisorReport>
-        <BackgroundImagePath>Pack/Shared/Strategy/Advisor/Images/advisor-report-background</BackgroundImagePath>
-        <GalaxyImagePath>Pack/Shared/Strategy/Advisor/Images/advisor-report-galaxy</GalaxyImagePath>
-      </AdvisorReport>
     </StrategyWindows>
-    <MissionIcons>
-      <Icons>
-        <MissionIconTheme>
-          <Key>Diplomacy</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/Diplomacy/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/Diplomacy/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>Rescue</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/Rescue/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/Rescue/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>Sabotage</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/Sabotage/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/Sabotage/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>Espionage</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/Espionage/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/Espionage/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>Reconnaissance</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/Reconnaissance/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/Reconnaissance/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>Recruitment</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/Recruitment/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/Recruitment/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>Abduction</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/Abduction/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/Abduction/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>ResearchShipDesign</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/ResearchShipDesign/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/ResearchShipDesign/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>ResearchFacilityDesign</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/ResearchFacilityDesign/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/ResearchFacilityDesign/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>ResearchTroopTraining</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/ResearchTroopTraining/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/ResearchTroopTraining/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>InciteUprising</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/InciteUprising/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/InciteUprising/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>JediTraining</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/JediTraining/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/JediTraining/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>SubdueUprising</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/SubdueUprising/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/SubdueUprising/small-display</SmallImagePath>
-        </MissionIconTheme>
-        <MissionIconTheme>
-          <Key>Assassination</Key>
-          <LargeImagePath>Pack/Factions/Alliance/Missions/Assassination/display</LargeImagePath>
-          <SmallImagePath>Pack/Factions/Alliance/Missions/Assassination/small-display</SmallImagePath>
-        </MissionIconTheme>
-      </Icons>
-    </MissionIcons>
     <PlanetOverlayTheme>
       <PlanetSectorUprisingImagePath>Pack/Shared/Strategy/UI/Windows/PlanetSector/planetsector-planet-uprising-overlay</PlanetSectorUprisingImagePath>
       <UnitTileIcons>
@@ -1673,61 +967,6 @@
         <FleetTroopsBadgeImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/fleet-troops-badge</FleetTroopsBadgeImagePath>
         <FleetPersonnelBadgeImagePath>Pack/Shared/Strategy/UI/Windows/Fleet/fleet-personnel-badge</FleetPersonnelBadgeImagePath>
       </UnitTileIcons>
-      <PlanetOverlayIcons>
-        <Defenses>
-          <NormalImagePath>Pack/Shared/Strategy/UI/Windows/Defense/planet-garrison-normal</NormalImagePath>
-          <HoverImagePath>Pack/Shared/Strategy/UI/Windows/Defense/planet-garrison-highlighted</HoverImagePath>
-        </Defenses>
-        <Buildings>
-          <NormalImagePath>Pack/Shared/Strategy/UI/Windows/Facility/planet-manufacturing-normal</NormalImagePath>
-          <HoverImagePath>Pack/Shared/Strategy/UI/Windows/Facility/planet-manufacturing-highlighted</HoverImagePath>
-        </Buildings>
-      </PlanetOverlayIcons>
     </PlanetOverlayTheme>
-    <PlanetWindowTheme>
-      <BuildingsPane>
-        <BuildingsTabs>
-          <Production>
-            <NormalImagePath>Pack/Shared/Strategy/UI/Shell/buildingspane-build-icon</NormalImagePath>
-            <SelectedImagePath>Pack/Shared/Strategy/UI/Shell/buildingspane-build-selected-icon</SelectedImagePath>
-            <DisabledImagePath>Pack/Shared/Strategy/UI/Shell/buildingspane-build-disabled-icon</DisabledImagePath>
-          </Production>
-        </BuildingsTabs>
-        <ConstructionHeader>
-          <ImagePath>Pack/Shared/Strategy/UI/Windows/Construction/buildingspane-construction-header</ImagePath>
-        </ConstructionHeader>
-        <ManufacturingLaneState>
-          <ActiveImagePath>Pack/Shared/Strategy/UI/Windows/Facility/facility-manufacturing-lane-active-state</ActiveImagePath>
-          <InactiveImagePath>Pack/Shared/Strategy/UI/Windows/Facility/facility-manufacturing-lane-inactive-state</InactiveImagePath>
-        </ManufacturingLaneState>
-      </BuildingsPane>
-      <GarrisonPanel>
-        <Officers>
-          <NormalImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-empty-icon</NormalImagePath>
-          <SelectedImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-empty-selected-icon</SelectedImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-empty-disabled-icon</DisabledImagePath>
-        </Officers>
-        <Starfighters>
-          <NormalImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-empty-icon</NormalImagePath>
-          <SelectedImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-empty-selected-icon</SelectedImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-empty-disabled-icon</DisabledImagePath>
-        </Starfighters>
-        <Regiments>
-          <NormalImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-empty-icon</NormalImagePath>
-          <SelectedImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-empty-selected-icon</SelectedImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-empty-disabled-icon</DisabledImagePath>
-        </Regiments>
-        <Shields>
-          <NormalImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-shields-icon</NormalImagePath>
-          <SelectedImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-shields-selected-icon</SelectedImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Neutral/Strategy/garrisonpane-shields-disabled-icon</DisabledImagePath>
-        </Shields>
-        <Weapons>
-          <NormalImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-weapons-icon</NormalImagePath>
-          <SelectedImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-weapons-selected-icon</SelectedImagePath>
-          <DisabledImagePath>Pack/Shared/Strategy/UI/Shell/garrisonpane-weapons-disabled-icon</DisabledImagePath>
-        </Weapons>
-      </GarrisonPanel>
-    </PlanetWindowTheme>
   </FactionTheme>
 </FactionThemes>
