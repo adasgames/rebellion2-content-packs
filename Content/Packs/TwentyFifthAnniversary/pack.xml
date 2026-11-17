@@ -5,7 +5,7 @@
   <Version>1.0.6</Version>
   <DisplayName>25th Anniversary (by Metasharp)</DisplayName>
   <DefaultScenarioID>standard</DefaultScenarioID>
-  <GameConfigPath>Shared/Data/space-combat-config.xml</GameConfigPath>
+  <GameConfigPath>Shared/Data/game-config.xml</GameConfigPath>
   <MainMenuMusicPath>Pack/Shared/Strategy/Audio/Music/battle-of-endor-1-medley</MainMenuMusicPath>
   <PlanetSectorsPath>Shared/Data/planet-sectors.xml</PlanetSectorsPath>
   <BuildingsPath>Data/buildings.xml</BuildingsPath>
