@@ -576,6 +576,33 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
+    <DisplayName>Abduction target killed report</DisplayName>
+    <ResultType>MissionReport</ResultType>
+    <ShowSubjectImage>true</ShowSubjectImage>
+    <Outcome>TargetKilled</Outcome>
+    <MessageType>Mission</MessageType>
+    <BackgroundAudioPaths>
+      <Entry>
+        <Key>FNALL1</Key>
+        <Value>Pack/Factions/Alliance/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+      <Entry>
+        <Key>FNEMP1</Key>
+        <Value>Pack/Factions/Empire/Strategy/Messages/Audio/message-faction-report</Value>
+      </Entry>
+    </BackgroundAudioPaths>
+    <MissionTypeID>Abduction</MissionTypeID>
+    <Subject>{participant} Mission Report</Subject>
+    <Body>{officer} was killed during my abduction attempt at {system}.
+{personnel_status}</Body>
+    <UnattributedSubject>Abduction Mission Report</UnattributedSubject>
+    <UnattributedBody>{officer} was killed during the abduction attempt at {system}.
+{personnel_status}</UnattributedBody>
+    <PersonnelReturningTemplate>Personnel are returning to {destination}.</PersonnelReturningTemplate>
+    <PersonnelLostTemplate>All personnel assigned to the mission have failed to return.</PersonnelLostTemplate>
+    <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
+  </MessageDefinition>
+  <MessageDefinition>
     <DisplayName>Assassination Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
