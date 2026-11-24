@@ -12,7 +12,6 @@
           <IsCaptured OfficerInstanceID="LUKE_SKYWALKER"/>
           <IsKilled OfficerInstanceID="LUKE_SKYWALKER"/>
           <IsInTransit UnitInstanceID="LUKE_SKYWALKER"/>
-          <IsOnMission UnitInstanceID="LUKE_SKYWALKER"/>
         </Any>
       </Not>
     </Conditionals>
@@ -151,7 +150,6 @@
         <Any>
           <IsCaptured OfficerInstanceID="HAN_SOLO"/>
           <IsKilled OfficerInstanceID="HAN_SOLO"/>
-          <IsOnMission UnitInstanceID="HAN_SOLO"/>
           <IsInTransit UnitInstanceID="HAN_SOLO"/>
         </Any>
       </Not>
