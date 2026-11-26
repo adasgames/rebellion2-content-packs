@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MessageDefinitions>
   <MessageDefinition>
-    <InstanceID>message-traitor-discovered</InstanceID>
+    <InstanceID>MESSAGE_TRAITOR_DISCOVERED</InstanceID>
     <DisplayName>Traitor Discovered</DisplayName>
     <ResultType>TraitorDiscovered</ResultType>
     <MessageType>Mission</MessageType>
@@ -11,7 +11,7 @@
     <BackgroundImage Key="mission_report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-fleet-arrived</InstanceID>
+    <InstanceID>MESSAGE_FLEET_ARRIVED</InstanceID>
     <DisplayName>Fleet Arrived</DisplayName>
     <ResultType>FleetArrived</ResultType>
     <MessageType>Fleet</MessageType>
@@ -30,7 +30,7 @@
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-fleet-waypoints-completed</InstanceID>
+    <InstanceID>MESSAGE_FLEET_WAYPOINTS_COMPLETED</InstanceID>
     <DisplayName>Fleet Waypoints Completed</DisplayName>
     <ResultType>FleetWaypointsCompleted</ResultType>
     <MessageType>Fleet</MessageType>
@@ -48,7 +48,7 @@
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-ships-arrived</InstanceID>
+    <InstanceID>MESSAGE_SHIPS_ARRIVED</InstanceID>
     <DisplayName>Ships Arrived</DisplayName>
     <ResultType>ShipsArrived</ResultType>
     <MessageType>Fleet</MessageType>
@@ -68,7 +68,7 @@
     <BackgroundImage Key="ships_arrived"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-units-arrived</InstanceID>
+    <InstanceID>MESSAGE_UNITS_ARRIVED</InstanceID>
     <DisplayName>Units Arrived</DisplayName>
     <ResultType>UnitsArrived</ResultType>
     <MessageType>Fleet</MessageType>
@@ -88,7 +88,7 @@
     <BackgroundImage Key="ships_arrived"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-personnel-arrived</InstanceID>
+    <InstanceID>MESSAGE_PERSONNEL_ARRIVED</InstanceID>
     <DisplayName>Personnel Arrived</DisplayName>
     <ResultType>PersonnelArrived</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -109,7 +109,7 @@
     <BackgroundImage Key="ships_arrived"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-officer-arrived</InstanceID>
+    <InstanceID>MESSAGE_OFFICER_ARRIVED</InstanceID>
     <DisplayName>Officer Arrived</DisplayName>
     <ResultType>PersonnelArrivedByOfficer</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -129,7 +129,7 @@
     <BackgroundImage Key="ships_arrived"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-officer-arrived-with-personnel</InstanceID>
+    <InstanceID>MESSAGE_OFFICER_ARRIVED_WITH_PERSONNEL</InstanceID>
     <DisplayName>Officer Arrived With Personnel</DisplayName>
     <ResultType>PersonnelArrivedByOfficerWithCompany</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -150,7 +150,7 @@
     <BackgroundImage Key="ships_arrived"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-headquarters-arrived</InstanceID>
+    <InstanceID>MESSAGE_HEADQUARTERS_ARRIVED</InstanceID>
     <DisplayName>Headquarters Arrived</DisplayName>
     <ResultType>HeadquartersArrived</ResultType>
     <MessageType>Fleet</MessageType>
@@ -161,7 +161,7 @@
     <BackgroundImage Path="Pack/Factions/Alliance/Strategy/Messages/Images/headquarters-arrived"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-capital-ship-repaired</InstanceID>
+    <InstanceID>MESSAGE_CAPITAL_SHIP_REPAIRED</InstanceID>
     <DisplayName>Capital Ship Repaired</DisplayName>
     <ResultType>CapitalShipRepaired</ResultType>
     <MessageType>Fleet</MessageType>
@@ -171,7 +171,7 @@
     <BackgroundImage Key="capital_ship_repaired"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-squadron-at-full-strength</InstanceID>
+    <InstanceID>MESSAGE_SQUADRON_AT_FULL_STRENGTH</InstanceID>
     <DisplayName>Squadron At Full Strength</DisplayName>
     <ResultType>StarfighterRepaired</ResultType>
     <MessageType>Fleet</MessageType>
@@ -190,7 +190,7 @@
     <BackgroundImage Key="starfighter_repaired"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-emperor-seat-of-power</InstanceID>
+    <InstanceID>MESSAGE_EMPEROR_SEAT_OF_POWER</InstanceID>
     <DisplayName>Emperor Seat Of Power</DisplayName>
     <ResultType>EmperorSeatOfPower</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -202,7 +202,7 @@
     <BackgroundImage Path="Pack/Factions/Empire/Strategy/Messages/Images/emperor-seat-of-power"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-coruscant-captured</InstanceID>
+    <InstanceID>MESSAGE_CORUSCANT_CAPTURED</InstanceID>
     <DisplayName>Coruscant Captured</DisplayName>
     <ResultType>PlanetCaptured</ResultType>
     <PlanetInstanceID>CORUSCANT</PlanetInstanceID>
@@ -224,7 +224,7 @@
     <BackgroundImage Key="mission_report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-alliance-headquarters-destroyed</InstanceID>
+    <InstanceID>MESSAGE_ALLIANCE_HEADQUARTERS_DESTROYED</InstanceID>
     <DisplayName>Alliance Headquarters Destroyed</DisplayName>
     <ResultType>HeadquartersDestroyed</ResultType>
     <FactionInstanceID>FNALL1</FactionInstanceID>
@@ -244,7 +244,7 @@
     <BackgroundImage Key="mission_report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-capital-ship-deployed</InstanceID>
+    <InstanceID>MESSAGE_CAPITAL_SHIP_DEPLOYED</InstanceID>
     <DisplayName>Capital Ship Deployed</DisplayName>
     <ResultType>CapitalShipDeployed</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -252,7 +252,7 @@
     <Body>The new {type}, {item}, has been deployed at {system}.</Body>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-death-star-deployed</InstanceID>
+    <InstanceID>MESSAGE_DEATH_STAR_DEPLOYED</InstanceID>
     <DisplayName>Death Star Deployed</DisplayName>
     <ResultType>DeathStarDeployed</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -260,7 +260,7 @@
     <Body>The new Death Star, {item}, has been deployed at {system}.</Body>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-starfighter-squadron-deployed</InstanceID>
+    <InstanceID>MESSAGE_STARFIGHTER_SQUADRON_DEPLOYED</InstanceID>
     <DisplayName>Starfighter Squadron Deployed</DisplayName>
     <ResultType>StarfighterDeployed</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -268,7 +268,7 @@
     <Body>A new {item} squadron has been deployed to {system}.</Body>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-regiment-deployed</InstanceID>
+    <InstanceID>MESSAGE_REGIMENT_DEPLOYED</InstanceID>
     <DisplayName>Regiment Deployed</DisplayName>
     <ResultType>RegimentDeployed</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -277,7 +277,7 @@
 {items}</Body>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-mine-deployed</InstanceID>
+    <InstanceID>MESSAGE_MINE_DEPLOYED</InstanceID>
     <DisplayName>Mine Deployed</DisplayName>
     <ResultType>FacilityDeployed</ResultType>
     <MessageType>Resource</MessageType>
@@ -288,7 +288,7 @@
     <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA04/message"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-refinery-deployed</InstanceID>
+    <InstanceID>MESSAGE_REFINERY_DEPLOYED</InstanceID>
     <DisplayName>Refinery Deployed</DisplayName>
     <ResultType>FacilityDeployed</ResultType>
     <MessageType>Resource</MessageType>
@@ -299,7 +299,7 @@
     <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA05/message"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-shipyard-deployed</InstanceID>
+    <InstanceID>MESSAGE_SHIPYARD_DEPLOYED</InstanceID>
     <DisplayName>Shipyard Deployed</DisplayName>
     <ResultType>FacilityDeployed</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -310,7 +310,7 @@
     <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA03/message"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-training-facility-deployed</InstanceID>
+    <InstanceID>MESSAGE_TRAINING_FACILITY_DEPLOYED</InstanceID>
     <DisplayName>Training Facility Deployed</DisplayName>
     <ResultType>FacilityDeployed</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -321,7 +321,7 @@
     <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA02/message"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-construction-yard-deployed</InstanceID>
+    <InstanceID>MESSAGE_CONSTRUCTION_YARD_DEPLOYED</InstanceID>
     <DisplayName>Construction Yard Deployed</DisplayName>
     <ResultType>FacilityDeployed</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -332,7 +332,7 @@
     <BackgroundImage Path="Pack/Shared/Units/Facilities/BDFA01/message"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-facility-lost</InstanceID>
+    <InstanceID>MESSAGE_FACILITY_LOST</InstanceID>
     <DisplayName>Facility Lost</DisplayName>
     <ResultType>FacilityLost</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -350,7 +350,7 @@
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-smuggling-losses</InstanceID>
+    <InstanceID>MESSAGE_SMUGGLING_LOSSES</InstanceID>
     <DisplayName>Smuggling Losses</DisplayName>
     <ResultType>SmugglingLosses</ResultType>
     <MessageType>Resource</MessageType>
@@ -359,7 +359,7 @@
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/smuggling"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-smuggling-losses-end</InstanceID>
+    <InstanceID>MESSAGE_SMUGGLING_LOSSES_END</InstanceID>
     <DisplayName>Smuggling Losses End</DisplayName>
     <ResultType>SmugglingLossesEnded</ResultType>
     <MessageType>Resource</MessageType>
@@ -368,7 +368,7 @@
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/smuggling"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-smuggling-benefits</InstanceID>
+    <InstanceID>MESSAGE_SMUGGLING_BENEFITS</InstanceID>
     <DisplayName>Smuggling Benefits</DisplayName>
     <ResultType>SmugglingBenefits</ResultType>
     <MessageType>Resource</MessageType>
@@ -377,7 +377,7 @@
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/smuggling"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-smuggling-benefits-end</InstanceID>
+    <InstanceID>MESSAGE_SMUGGLING_BENEFITS_END</InstanceID>
     <DisplayName>Smuggling Benefits End</DisplayName>
     <ResultType>SmugglingBenefitsEnded</ResultType>
     <MessageType>Resource</MessageType>
@@ -386,7 +386,7 @@
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/smuggling"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-shipyard-idle</InstanceID>
+    <InstanceID>MESSAGE_SHIPYARD_IDLE</InstanceID>
     <DisplayName>Shipyard Idle</DisplayName>
     <ResultType>ManufacturingIdle</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -397,7 +397,7 @@
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/shipyard-idle"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-training-facility-idle</InstanceID>
+    <InstanceID>MESSAGE_TRAINING_FACILITY_IDLE</InstanceID>
     <DisplayName>Training Facility Idle</DisplayName>
     <ResultType>ManufacturingIdle</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -408,7 +408,7 @@
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/training-facility-idle"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-construction-yard-idle</InstanceID>
+    <InstanceID>MESSAGE_CONSTRUCTION_YARD_IDLE</InstanceID>
     <DisplayName>Construction Yard Idle</DisplayName>
     <ResultType>ManufacturingIdle</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -419,7 +419,7 @@
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/construction-yard-idle"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-diplomacy-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_DIPLOMACY_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Diplomacy Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -445,7 +445,7 @@
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-diplomacy"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-recon-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_RECON_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Recon Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -470,7 +470,7 @@
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-espionage-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_ESPIONAGE_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Espionage Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -501,7 +501,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-sabotage-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_SABOTAGE_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Sabotage Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -527,7 +527,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-incite-uprising-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_INCITE_UPRISING_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Incite Uprising Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -553,7 +553,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-subdue-uprising"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-recruitment-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_RECRUITMENT_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Recruitment Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -586,7 +586,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-abduction-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_ABDUCTION_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Abduction Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -614,7 +614,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-abduction-target-killed-report</InstanceID>
+    <InstanceID>MESSAGE_ABDUCTION_TARGET_KILLED_REPORT</InstanceID>
     <DisplayName>Abduction target killed report</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -642,7 +642,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-assassination-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_ASSASSINATION_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Assassination Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -670,7 +670,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-subdue-uprising-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_SUBDUE_UPRISING_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Subdue Uprising Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -696,7 +696,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-subdue-uprising"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-rescue-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_RESCUE_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Rescue Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -724,7 +724,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Research Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -750,7 +750,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-jedi-training-mission-report-success</InstanceID>
+    <InstanceID>MESSAGE_JEDI_TRAINING_MISSION_REPORT_SUCCESS</InstanceID>
     <DisplayName>Jedi Training Mission Report Success</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -774,7 +774,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Key="mission_report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-diplomacy-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_DIPLOMACY_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Diplomacy Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -800,7 +800,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-diplomacy"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-recon-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_RECON_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Recon Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -825,7 +825,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-espionage-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_ESPIONAGE_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Espionage Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -853,7 +853,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-sabotage-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_SABOTAGE_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Sabotage Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -879,7 +879,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-incite-uprising-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_INCITE_UPRISING_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Incite Uprising Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -907,7 +907,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-subdue-uprising"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-recruitment-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_RECRUITMENT_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Recruitment Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -940,7 +940,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-abduction-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_ABDUCTION_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Abduction Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -967,7 +967,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-assassination-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_ASSASSINATION_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Assassination Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -995,7 +995,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-subdue-uprising-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_SUBDUE_UPRISING_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Subdue Uprising Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1023,7 +1023,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-subdue-uprising"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-rescue-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_RESCUE_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Rescue Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1050,7 +1050,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Research Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1076,7 +1076,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-jedi-training-mission-report-failed</InstanceID>
+    <InstanceID>MESSAGE_JEDI_TRAINING_MISSION_REPORT_FAILED</InstanceID>
     <DisplayName>Jedi Training Mission Report Failed</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1100,7 +1100,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Key="mission_report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-mission-report-target-unavailable</InstanceID>
+    <InstanceID>MESSAGE_MISSION_REPORT_TARGET_UNAVAILABLE</InstanceID>
     <DisplayName>Mission Report Target Unavailable</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1126,7 +1126,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-mission-report-missing-facilities</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_MISSION_REPORT_MISSING_FACILITIES</InstanceID>
     <DisplayName>Research Mission Report Missing Facilities</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1153,7 +1153,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-mission-report-progress</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_MISSION_REPORT_PROGRESS</InstanceID>
     <DisplayName>Research Mission Report Progress</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1180,7 +1180,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-mission-report-target-changed-sides</InstanceID>
+    <InstanceID>MESSAGE_MISSION_REPORT_TARGET_CHANGED_SIDES</InstanceID>
     <DisplayName>Mission Report Target Changed Sides</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1208,7 +1208,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-diplomacy"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-mission-report-foiled</InstanceID>
+    <InstanceID>MESSAGE_MISSION_REPORT_FOILED</InstanceID>
     <DisplayName>Mission Report Foiled</DisplayName>
     <ResultType>MissionReport</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1223,7 +1223,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/mission-report-espionage"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-incite-uprising-enemy-mission-foiled</InstanceID>
+    <InstanceID>MESSAGE_INCITE_UPRISING_ENEMY_MISSION_FOILED</InstanceID>
     <DisplayName>Incite Uprising Enemy Mission Foiled</DisplayName>
     <ResultType>EnemyMissionFoiled</ResultType>
     <Outcome>Foiled</Outcome>
@@ -1253,7 +1253,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-enemy-mission-foiled</InstanceID>
+    <InstanceID>MESSAGE_ENEMY_MISSION_FOILED</InstanceID>
     <DisplayName>Enemy Mission Foiled</DisplayName>
     <ResultType>EnemyMissionFoiled</ResultType>
     <Outcome>Foiled</Outcome>
@@ -1282,7 +1282,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-death-star-sabotaged</InstanceID>
+    <InstanceID>MESSAGE_DEATH_STAR_SABOTAGED</InstanceID>
     <DisplayName>Death Star Sabotaged</DisplayName>
     <ResultType>SabotageStrike</ResultType>
     <!-- Death Star -->
@@ -1293,7 +1293,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Factions/Alliance/Missions/DeathStarSabotage/encyclopedia"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-saboteurs-strike</InstanceID>
+    <InstanceID>MESSAGE_SABOTEURS_STRIKE</InstanceID>
     <DisplayName>Saboteurs Strike</DisplayName>
     <ResultType>SabotageStrike</ResultType>
     <MessageType>Mission</MessageType>
@@ -1313,7 +1313,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-officer-recruited</InstanceID>
+    <InstanceID>MESSAGE_OFFICER_RECRUITED</InstanceID>
     <DisplayName>Officer Recruited</DisplayName>
     <ResultType>OfficerRecruited</ResultType>
     <MessageType>Mission</MessageType>
@@ -1331,7 +1331,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-recruitment-exhausted</InstanceID>
+    <InstanceID>MESSAGE_RECRUITMENT_EXHAUSTED</InstanceID>
     <DisplayName>Recruitment Exhausted</DisplayName>
     <ResultType>RecruitmentExhausted</ResultType>
     <MessageType>Mission</MessageType>
@@ -1359,7 +1359,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-officer-captured</InstanceID>
+    <InstanceID>MESSAGE_OFFICER_CAPTURED</InstanceID>
     <DisplayName>Officer Captured</DisplayName>
     <ResultType>OfficerCaptured</ResultType>
     <MessageType>Mission</MessageType>
@@ -1378,7 +1378,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-enemy-officer-captured</InstanceID>
+    <InstanceID>MESSAGE_ENEMY_OFFICER_CAPTURED</InstanceID>
     <DisplayName>Enemy Officer Captured</DisplayName>
     <ResultType>EnemyOfficerCaptured</ResultType>
     <MessageType>Mission</MessageType>
@@ -1397,7 +1397,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-officer-released</InstanceID>
+    <InstanceID>MESSAGE_OFFICER_RELEASED</InstanceID>
     <DisplayName>Officer Released</DisplayName>
     <ResultType>OfficerReleased</ResultType>
     <MessageType>Mission</MessageType>
@@ -1407,7 +1407,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/prisoner-escape"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-enemy-officer-released</InstanceID>
+    <InstanceID>MESSAGE_ENEMY_OFFICER_RELEASED</InstanceID>
     <DisplayName>Enemy Officer Released</DisplayName>
     <ResultType>EnemyOfficerReleased</ResultType>
     <MessageType>Mission</MessageType>
@@ -1417,7 +1417,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/prisoner-escape"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-officer-injured</InstanceID>
+    <InstanceID>MESSAGE_OFFICER_INJURED</InstanceID>
     <DisplayName>Officer Injured</DisplayName>
     <ResultType>OfficerInjured</ResultType>
     <MessageType>Mission</MessageType>
@@ -1427,7 +1427,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/character-injured"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-officer-recovered</InstanceID>
+    <InstanceID>MESSAGE_OFFICER_RECOVERED</InstanceID>
     <DisplayName>Officer Recovered</DisplayName>
     <ResultType>OfficerRecovered</ResultType>
     <MessageType>Mission</MessageType>
@@ -1437,7 +1437,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/character-recovered"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-officer-killed</InstanceID>
+    <InstanceID>MESSAGE_OFFICER_KILLED</InstanceID>
     <DisplayName>Officer Killed</DisplayName>
     <ResultType>OfficerKilled</ResultType>
     <MessageType>Mission</MessageType>
@@ -1455,7 +1455,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-officer-assassinated</InstanceID>
+    <InstanceID>MESSAGE_OFFICER_ASSASSINATED</InstanceID>
     <DisplayName>Officer Assassinated</DisplayName>
     <ResultType>OfficerAssassinated</ResultType>
     <MessageType>Mission</MessageType>
@@ -1473,7 +1473,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-force-growth</InstanceID>
+    <InstanceID>MESSAGE_FORCE_GROWTH</InstanceID>
     <DisplayName>Force Growth</DisplayName>
     <ResultType>ForceGrowth</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1493,7 +1493,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Key="mission_report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-future-jedi-discovered</InstanceID>
+    <InstanceID>MESSAGE_FUTURE_JEDI_DISCOVERED</InstanceID>
     <DisplayName>Future Jedi Discovered</DisplayName>
     <ResultType>ForceUserDiscovered</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1503,7 +1503,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Key="mission_report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-future-jedi-discovered-by-student</InstanceID>
+    <InstanceID>MESSAGE_FUTURE_JEDI_DISCOVERED_BY_STUDENT</InstanceID>
     <DisplayName>Future Jedi Discovered By Student</DisplayName>
     <ResultType>ForceUserDiscoveredByStudent</ResultType>
     <ShowSubjectImage>true</ShowSubjectImage>
@@ -1513,7 +1513,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Key="mission_report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-complete-ship</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_COMPLETE_SHIP</InstanceID>
     <DisplayName>Research Complete Ship</DisplayName>
     <ResultType>ResearchComplete</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -1524,7 +1524,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-complete-troop</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_COMPLETE_TROOP</InstanceID>
     <DisplayName>Research Complete Troop</DisplayName>
     <ResultType>ResearchComplete</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -1535,7 +1535,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-complete-facility</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_COMPLETE_FACILITY</InstanceID>
     <DisplayName>Research Complete Facility</DisplayName>
     <ResultType>ResearchComplete</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -1546,7 +1546,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-exhausted-ship</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_EXHAUSTED_SHIP</InstanceID>
     <DisplayName>Research Exhausted Ship</DisplayName>
     <ResultType>ResearchExhausted</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -1557,7 +1557,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-exhausted-troop</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_EXHAUSTED_TROOP</InstanceID>
     <DisplayName>Research Exhausted Troop</DisplayName>
     <ResultType>ResearchExhausted</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -1568,7 +1568,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-research-exhausted-facility</InstanceID>
+    <InstanceID>MESSAGE_RESEARCH_EXHAUSTED_FACILITY</InstanceID>
     <DisplayName>Research Exhausted Facility</DisplayName>
     <ResultType>ResearchExhausted</ResultType>
     <MessageType>Manufacturing</MessageType>
@@ -1579,7 +1579,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/research-report"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-near-uprising</InstanceID>
+    <InstanceID>MESSAGE_NEAR_UPRISING</InstanceID>
     <DisplayName>Near Uprising</DisplayName>
     <ResultType>NearUprising</ResultType>
     <MessageType>PopularSupport</MessageType>
@@ -1607,7 +1607,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-uprising-started</InstanceID>
+    <InstanceID>MESSAGE_UPRISING_STARTED</InstanceID>
     <DisplayName>Uprising Started</DisplayName>
     <ResultType>UprisingStarted</ResultType>
     <MessageType>PopularSupport</MessageType>
@@ -1617,7 +1617,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/uprising-started"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-uprising-ended</InstanceID>
+    <InstanceID>MESSAGE_UPRISING_ENDED</InstanceID>
     <DisplayName>Uprising Ended</DisplayName>
     <ResultType>UprisingEnded</ResultType>
     <MessageType>PopularSupport</MessageType>
@@ -1636,7 +1636,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-planet-joined-by-support</InstanceID>
+    <InstanceID>MESSAGE_PLANET_JOINED_BY_SUPPORT</InstanceID>
     <DisplayName>Planet Joined by Support</DisplayName>
     <ResultType>PlanetJoinedBySupport</ResultType>
     <MessageType>PopularSupport</MessageType>
@@ -1646,7 +1646,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Key="planet_allegiance_evolves"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-planet-joined-enemy-by-support</InstanceID>
+    <InstanceID>MESSAGE_PLANET_JOINED_ENEMY_BY_SUPPORT</InstanceID>
     <DisplayName>Planet Joined Enemy by Support</DisplayName>
     <ResultType>PlanetJoinedEnemyBySupport</ResultType>
     <MessageType>PopularSupport</MessageType>
@@ -1656,7 +1656,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Key="planet_allegiance_evolves"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-planet-declared-neutrality-by-support</InstanceID>
+    <InstanceID>MESSAGE_PLANET_DECLARED_NEUTRALITY_BY_SUPPORT</InstanceID>
     <DisplayName>Planet Declared Neutrality by Support</DisplayName>
     <ResultType>PlanetDeclaredNeutralityBySupport</ResultType>
     <MessageType>PopularSupport</MessageType>
@@ -1666,7 +1666,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     <BackgroundImage Key="planet_allegiance_evolves"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-blockade-initiated</InstanceID>
+    <InstanceID>MESSAGE_BLOCKADE_INITIATED</InstanceID>
     <DisplayName>Blockade Initiated</DisplayName>
     <ResultType>BlockadeInitiated</ResultType>
     <MessageType>Fleet</MessageType>
@@ -1685,7 +1685,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-blockade-detected</InstanceID>
+    <InstanceID>MESSAGE_BLOCKADE_DETECTED</InstanceID>
     <DisplayName>Blockade Detected</DisplayName>
     <ResultType>BlockadeDetected</ResultType>
     <MessageType>Fleet</MessageType>
@@ -1704,7 +1704,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-evacuation-losses</InstanceID>
+    <InstanceID>MESSAGE_EVACUATION_LOSSES</InstanceID>
     <DisplayName>Evacuation Losses</DisplayName>
     <ResultType>EvacuationLosses</ResultType>
     <MessageType>Fleet</MessageType>
@@ -1734,7 +1734,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-maintenance-autoscrap</InstanceID>
+    <InstanceID>MESSAGE_MAINTENANCE_AUTOSCRAP</InstanceID>
     <DisplayName>Maintenance Autoscrap</DisplayName>
     <ResultType>MaintenanceAutoscrap</ResultType>
     <MessageType>Resource</MessageType>
@@ -1754,7 +1754,7 @@ All personnel assigned to the mission have failed to return.</PersonnelLostTempl
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-space-battle-victory</InstanceID>
+    <InstanceID>MESSAGE_SPACE_BATTLE_VICTORY</InstanceID>
     <DisplayName>Space Battle Victory</DisplayName>
     <ResultType>SpaceBattle</ResultType>
     <Outcome>Victory</Outcome>
@@ -1774,7 +1774,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-space-battle-defeat</InstanceID>
+    <InstanceID>MESSAGE_SPACE_BATTLE_DEFEAT</InstanceID>
     <DisplayName>Space Battle Defeat</DisplayName>
     <ResultType>SpaceBattle</ResultType>
     <Outcome>Defeat</Outcome>
@@ -1794,7 +1794,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-space-battle-stalemate</InstanceID>
+    <InstanceID>MESSAGE_SPACE_BATTLE_STALEMATE</InstanceID>
     <DisplayName>Space Battle Stalemate</DisplayName>
     <ResultType>SpaceBattle</ResultType>
     <Outcome>Stalemate</Outcome>
@@ -1814,7 +1814,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-death-star-destroys-owned-system</InstanceID>
+    <InstanceID>MESSAGE_DEATH_STAR_DESTROYS_OWNED_SYSTEM</InstanceID>
     <DisplayName>Death Star Destroys Owned System</DisplayName>
     <ResultType>Bombardment</ResultType>
     <Outcome>TargetLosses</Outcome>
@@ -1826,7 +1826,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-target-losses"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-death-star-destroys-neutral-system</InstanceID>
+    <InstanceID>MESSAGE_DEATH_STAR_DESTROYS_NEUTRAL_SYSTEM</InstanceID>
     <DisplayName>Death Star Destroys Neutral System</DisplayName>
     <ResultType>Bombardment</ResultType>
     <Outcome>TargetLosses</Outcome>
@@ -1838,7 +1838,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-target-losses"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-bombardment-owned-no-losses</InstanceID>
+    <InstanceID>MESSAGE_BOMBARDMENT_OWNED_NO_LOSSES</InstanceID>
     <DisplayName>Bombardment Owned No Losses</DisplayName>
     <ResultType>Bombardment</ResultType>
     <Outcome>NoLosses</Outcome>
@@ -1850,7 +1850,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-no-losses"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-bombardment-owned-target-losses</InstanceID>
+    <InstanceID>MESSAGE_BOMBARDMENT_OWNED_TARGET_LOSSES</InstanceID>
     <DisplayName>Bombardment Owned Target Losses</DisplayName>
     <ResultType>Bombardment</ResultType>
     <Outcome>TargetLosses</Outcome>
@@ -1862,7 +1862,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-target-losses"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-bombardment-owned-attacker-losses</InstanceID>
+    <InstanceID>MESSAGE_BOMBARDMENT_OWNED_ATTACKER_LOSSES</InstanceID>
     <DisplayName>Bombardment Owned Attacker Losses</DisplayName>
     <ResultType>Bombardment</ResultType>
     <Outcome>AttackerLosses</Outcome>
@@ -1874,7 +1874,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-attacker-losses"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-bombardment-neutral-no-losses</InstanceID>
+    <InstanceID>MESSAGE_BOMBARDMENT_NEUTRAL_NO_LOSSES</InstanceID>
     <DisplayName>Bombardment Neutral No Losses</DisplayName>
     <ResultType>Bombardment</ResultType>
     <Outcome>NoLosses</Outcome>
@@ -1886,7 +1886,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-no-losses"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-bombardment-neutral-target-losses</InstanceID>
+    <InstanceID>MESSAGE_BOMBARDMENT_NEUTRAL_TARGET_LOSSES</InstanceID>
     <DisplayName>Bombardment Neutral Target Losses</DisplayName>
     <ResultType>Bombardment</ResultType>
     <Outcome>TargetLosses</Outcome>
@@ -1898,7 +1898,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-target-losses"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-bombardment-neutral-attacker-losses</InstanceID>
+    <InstanceID>MESSAGE_BOMBARDMENT_NEUTRAL_ATTACKER_LOSSES</InstanceID>
     <DisplayName>Bombardment Neutral Attacker Losses</DisplayName>
     <ResultType>Bombardment</ResultType>
     <Outcome>AttackerLosses</Outcome>
@@ -1910,7 +1910,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     <BackgroundImage Path="Pack/Shared/Strategy/Messages/Images/bombardment-attacker-losses"/>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-assault-captured-owned-system</InstanceID>
+    <InstanceID>MESSAGE_ASSAULT_CAPTURED_OWNED_SYSTEM</InstanceID>
     <DisplayName>Assault Captured Owned System</DisplayName>
     <ResultType>PlanetaryAssault</ResultType>
     <Outcome>Success</Outcome>
@@ -1931,7 +1931,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-assault-defended-owned-system</InstanceID>
+    <InstanceID>MESSAGE_ASSAULT_DEFENDED_OWNED_SYSTEM</InstanceID>
     <DisplayName>Assault Defended Owned System</DisplayName>
     <ResultType>PlanetaryAssault</ResultType>
     <Outcome>Failed</Outcome>
@@ -1952,7 +1952,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-assault-neutral-success</InstanceID>
+    <InstanceID>MESSAGE_ASSAULT_NEUTRAL_SUCCESS</InstanceID>
     <DisplayName>Assault Neutral Success</DisplayName>
     <ResultType>PlanetaryAssault</ResultType>
     <Outcome>Success</Outcome>
@@ -1973,7 +1973,7 @@ Fleet outcome: {factionOutcome}. Opposing fleet outcome: {opponentOutcome}.</Bod
     </ImagePaths>
   </MessageDefinition>
   <MessageDefinition>
-    <InstanceID>message-assault-neutral-failed</InstanceID>
+    <InstanceID>MESSAGE_ASSAULT_NEUTRAL_FAILED</InstanceID>
     <DisplayName>Assault Neutral Failed</DisplayName>
     <ResultType>PlanetaryAssault</ResultType>
     <Outcome>Failed</Outcome>
