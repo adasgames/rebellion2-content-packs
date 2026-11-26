@@ -1,3 +1,5 @@
 hosting/dist/
 hosting/.wrangler/
 package/
+
+__pycache__/

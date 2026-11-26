@@ -6,8 +6,8 @@ This repository is the home for additional Rebellion 2 mods and content packs. P
 here can add or replace game data, scenarios, factions, maps, artwork, audio, and other content
 without being bundled with the main game.
 
-Published packs are made available through the Rebellion 2 launcher, which handles installation
-and updates for players.
+Published packs are available on [Thunderstore](https://thunderstore.io/c/rebellion-2/).
+Players install and update them through the content pack editor’s mod manager.
 
 ## Submit your content for review
 
@@ -27,16 +27,17 @@ When the content is ready, open a pull request containing:
 1. The installable pack under `Content/Packs/<Directory>`.
 2. A valid `pack.xml` inside that directory with a permanent lowercase, hyphenated ID, a semantic
    version such as `1.0.0`, a display name, and the paths used by the pack.
-3. A matching catalogue record at `packs/<id>.json` containing the ID, display name, description,
+3. A matching pack registry record at `packs/<id>.json` containing the ID, display name, description,
    directory, and version requirements.
-4. Optional authoring files under `Source/<Directory>` when they would help maintain the pack.
-5. Screenshots, audio samples, or testing notes that help reviewers evaluate the submission.
+4. Thunderstore metadata, a 256 × 256 icon, and a package README under `packs/<id>/`.
+5. Optional authoring files under `Source/<Directory>` when they would help maintain the pack.
+6. Screenshots, audio samples, or testing notes that help reviewers evaluate the submission.
 
 If the pack builds on another content pack, declare that pack in both `BasePackID` in `pack.xml` and
 the catalogue record's `depends` section. Only include files your pack owns or overrides; do not
 duplicate inherited content.
 
-Before opening the pull request, install Node.js, Git LFS, and `xmllint`, then run:
+Before opening the pull request, install Node.js, Python 3.11 or newer, Git LFS, and `xmllint`, then run:
 
 ```bash
 ./build.sh all
@@ -62,3 +63,18 @@ These documents remain complete replacements:
 
 Nested collections without stable record identities also replace as a whole. Keep their complete
 authored contents when overriding them, including notification lists and ship-name pools.
+
+## Publishing to Thunderstore
+
+The **Publish content pack** workflow builds a ZIP with the official Thunderstore CLI, pinned in
+`.config/dotnet-tools.json`. Its version comes from `pack.xml`; publishing metadata, artwork,
+and package README live in `packs/<id>/`. Native pack IDs remain unchanged.
+
+Run the workflow with `publish` disabled to produce and validate an artifact. Enable `publish`
+only when ready to release. Configure the repository secret `THUNDERSTORE_TOKEN` with a
+service-account token authorized to publish under the namespace in `thunderstore.toml`.
+The existing Anniversary package is `AdasGames-25th_Anniversary`. Every update must increase
+`pack.xml`'s version; already published versions are rejected before upload.
+
+The workflow still reads Git LFS assets from the repository's private storage. Releases are
+uploaded to Thunderstore; it no longer updates the patcher's R2 catalogue or release blobs.

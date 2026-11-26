@@ -9,6 +9,7 @@ fi
 
 run_tests() {
   npm test
+  "${PYTHON:-python3}" -m unittest discover -s scripts -p 'test_*.py'
 }
 
 run_lint() {
