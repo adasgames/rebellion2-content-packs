@@ -1,0 +1,26 @@
+[config]
+schemaVersion = "0.0.1"
+
+[package]
+namespace = "AdasGames"
+name = "25th_Anniversary"
+# The release workflow supplies the version from pack.xml.
+versionNumber = "0.0.0"
+description = "Metasharp's Anniversary pack for Rebellion 2. A reworked galaxy map, distinct planet artwork, expanded unit data, and updated interface art and music."
+websiteUrl = "https://github.com/adasgames/rebellion2-content-packs"
+containsNsfwContent = false
+
+[package.dependencies]
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "../../package"
+
+[[build.copy]]
+source = "../../Content/Packs/TwentyFifthAnniversary"
+target = "Mods/twenty-fifth-anniversary/"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = ["rebellion-2"]
